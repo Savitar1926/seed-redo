@@ -45,7 +45,11 @@ export default {
       window.addEventListener(evt, this.changeColour, false)
     );
   },
-  mounted() {},
+  mounted() {
+    document.querySelectorAll(".stroke path").forEach((path) => {
+      path.setAttribute("stroke", "#E1E4F0");
+    });
+  },
   methods: {
     loopComplete() {
       gsap.to(".on-mounted", {
@@ -107,8 +111,9 @@ export default {
         sectionChangeTop - 80 >= window.scrollY ||
         window.scrollY >= sectionChangeBottom - 80
       ) {
-        nav.style.background = "rgb(238 239 243 / 0.8)";
-        nav.style.boxShadow = "3px 1px 15px 0px rgba(217, 217, 217, 0.49)";
+        nav.style.background = "rgba(238, 239, 243, 0.2)";
+        nav.style.boxShadow =
+          "-11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02)";
         mobileIcon.style.color = "var(--dark)";
         colorLinks.forEach((link) => {
           link.style.color = "var(--dark)";
@@ -144,7 +149,10 @@ export default {
       <section class="section__light">
         <section class="section__hero">
           <Hero />
-          <CenterAnimation class="animate-lead" style="z-index: 2; align-self: center" />
+          <CenterAnimation
+            classx="animate-lead"
+            style="z-index: 2; align-self: center"
+          />
         </section>
         <section class="section__usecases">
           <Usecases />
@@ -168,7 +176,11 @@ export default {
       <section class="section__simple" id="sectionSimple">
         <Simple />
       </section>
-      <section class="section__further" id="sectionFurther" style="position: relative">
+      <section
+        class="section__further"
+        id="sectionFurther"
+        style="position: relative"
+      >
         <FurtherTogether />
         <MakeInteractive />
         <ExportEverywhere />
@@ -301,7 +313,7 @@ main {
       width: 100%;
       position: absolute;
       inset: 0 0 auto;
-      margin-top: -3.25rem;
+      margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;
     }

@@ -3,180 +3,68 @@
     <!-- Logo -->
     <svg
       v-if="name === 'logo'"
-      viewBox="0 0 300 300"
-      fill="currentColor"
+      width="37"
+      height="50"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="m267.238 183.487-83.751 83.751c-18.349 18.349-48.494 18.349-66.974 0l-83.751-83.751c-18.35-18.349-18.35-48.494 0-66.974l83.751-83.751c18.349-18.35 48.494-18.35 66.974 0l83.751 83.751c18.349 18.48 18.349 48.625 0 66.974Z"
-        fill="#26282E"
-      />
-      <path
-        d="m267.238 183.487-83.751 83.751c-18.349 18.349-48.494 18.349-66.974 0l-83.751-83.751c-18.35-18.349-18.35-48.494 0-66.974l83.751-83.751c18.349-18.35 48.494-18.35 66.974 0l83.751 83.751c18.349 18.48 18.349 48.625 0 66.974Z"
-        stroke="#11CED0"
-        stroke-width="18"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="m267.238 183.487-83.751 83.751c-18.349 18.349-48.494 18.349-66.974 0l-83.751-83.751c-18.35-18.349-18.35-48.494 0-66.974l83.751-83.751c18.349-18.35 48.494-18.35 66.974 0l83.751 83.751c18.349 18.48 18.349 48.625 0 66.974Z"
+        d="M17.528 3.7C8.54 2.286 6.048 32.52 11.967 41.304"
         stroke="url(#a)"
-        stroke-width="18"
+        stroke-width="5.786"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M117.47 168.906a9 9 0 0 0 13.06 12.387l-13.06-12.387ZM153.5 93.1v9-9Zm48.353 87.19a9 9 0 0 0-2.163-12.543 9 9 0 0 0-12.543 2.162l14.706 10.381Zm-71.323 1.003c28.755-30.318 41.3-52.517 43.74-68.361 1.259-8.174-.07-15.528-4.372-21.021-4.303-5.493-10.569-7.811-16.398-7.811v18c1.171 0 1.842.419 2.227.91.385.492 1.494 2.369.753 7.183-1.56 10.131-10.765 28.932-39.01 58.713l13.06 12.387ZM153.5 84.1c-8.791 0-15.191 5.28-19.351 11.368-4.115 6.022-6.844 13.856-8.575 22.026-3.479 16.422-3.475 36.881.038 54.25 1.759 8.697 4.487 17.071 8.429 23.922 3.896 6.771 9.536 12.981 17.478 15.532 8.265 2.655 16.898.691 25.137-4.59 8.082-5.18 16.436-13.907 25.197-26.318l-14.706-10.381c-8.114 11.495-14.885 18.136-20.204 21.545-5.162 3.309-8.205 3.157-9.919 2.607-2.034-.654-4.673-2.666-7.381-7.372-2.662-4.626-4.865-10.985-6.388-18.514-3.051-15.084-3.016-33.056-.072-46.95 1.48-6.989 3.56-12.284 5.828-15.602 2.222-3.253 3.778-3.523 4.489-3.523v-18Z"
-        fill="url(#b)"
+        d="M3.625 41.322C20.269 21.183 23.94 4.96 17.532 3.711"
+        stroke="url(#b)"
+        stroke-width="5.786"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.996 41.302c5.714 8.48 15.919 5.532 17.377-1.458"
+        stroke="url(#c)"
+        stroke-width="5.786"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <defs>
         <linearGradient
           id="a"
-          x1="281"
-          y1="321.5"
-          x2="184.981"
-          y2="46.552"
+          x1="68.987"
+          y1="48.277"
+          x2="74.991"
+          y2="16.366"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#627AF6" />
-          <stop offset="1" stop-color="#20DDAE" />
+          <stop stop-color="#A45BD3" />
+          <stop offset=".411" stop-color="#EE3183" />
+          <stop offset="1" stop-color="#FFB92A" />
         </linearGradient>
         <linearGradient
           id="b"
-          x1="195"
-          y1="196"
-          x2="118"
-          y2="100.001"
+          x1="14.265"
+          y1="-1.314"
+          x2="-2.287"
+          y2="-.902"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#627AF6" />
-          <stop offset="1" stop-color="#20DDAE" />
+          <stop stop-color="#FEB82A" />
+          <stop offset=".573" stop-color="#EE3183" />
+          <stop offset="1" stop-color="#7C71FD" />
         </linearGradient>
-      </defs>
-    </svg>
-
-    <svg v-else-if="name === 'background'" width="3609" height="2879" fill="none">
-      <g filter="url(#filter0_f_773_13274)">
-        <circle
-          cx="2399"
-          cy="1669"
-          r="1178"
-          transform="rotate(-180 2399 1669)"
-          fill="url(#paint0_radial_773_13274)"
-        />
-        <circle
-          cx="1657"
-          cy="1276"
-          r="1178"
-          transform="rotate(-90 1657 1276)"
-          fill="url(#paint1_radial_773_13274)"
-        />
-        <path
-          d="M1210 66a1178 1178 0 1 1 0 2356 1178 1178 0 0 1 0-2356Z"
-          fill="url(#paint2_radial_773_13274)"
-        />
-        <circle
-          cx="2089"
-          cy="1139"
-          r="776"
-          transform="rotate(-90 2089 1139)"
-          fill="url(#paint3_radial_773_13274)"
-        />
-        <circle
-          cx="2662"
-          cy="808"
-          r="776"
-          transform="rotate(-90 2662 808)"
-          fill="url(#paint4_radial_773_13274)"
-        />
-        <circle
-          cx="2705"
-          cy="1123"
-          r="776"
-          transform="rotate(-90 2705 1123)"
-          fill="url(#paint5_radial_773_13274)"
-        />
-      </g>
-      <defs>
-        <radialGradient
-          id="paint0_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
+        <linearGradient
+          id="c"
+          x1="38.691"
+          y1="19.393"
+          x2="23.162"
+          y2="13.836"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(146 785 1271) scale(609.643)"
         >
-          <stop stop-color="#607EF4" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient
-          id="paint1_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(29 -2388 3594) scale(793.161)"
-        >
-          <stop stop-color="#607EF4" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient
-          id="paint2_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(23 -2956 4234) scale(766.636)"
-        >
-          <stop stop-color="#607EF4" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient
-          id="paint3_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(90 475 1614) scale(776)"
-        >
-          <stop stop-color="#19E8A6" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient
-          id="paint4_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(89 906 1759) scale(776.258)"
-        >
-          <stop stop-color="#627AF6" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient
-          id="paint5_radial_773_13274"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(88 761 1952) scale(574.348 590.753)"
-        >
-          <stop stop-color="#20DDAE" />
-          <stop offset="1" stop-color="#2B2B2B" stop-opacity="0" />
-        </radialGradient>
-        <filter
-          id="filter0_f_773_13274"
-          x="0"
-          y="0"
-          width="3609"
-          height="2879"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="16" result="effect1_foregroundBlur_773_13274" />
-        </filter>
+          <stop stop-color="#FFB92A" />
+          <stop offset=".525" stop-color="#EE3183" />
+          <stop offset="1" stop-color="#A45BD3" />
+        </linearGradient>
       </defs>
     </svg>
     <svg

@@ -50,7 +50,7 @@ export default {
   --architects_daughter: "Architects Daughter", cursive;
 
   // Colours
-  --primary: #eeeff3;
+  --primary: #f0f2f8;
   --dark: #2b2b2b;
   --dark-sub: #9195ad;
   --dark-blue: #00d3ec;
@@ -165,7 +165,7 @@ button {
   transition: all 200ms ease-out;
   &:hover,
   &:focus-visible {
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
 
   &:active {

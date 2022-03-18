@@ -16,6 +16,7 @@ export default {
   },
   mounted() {
     this.checkScreen();
+    document.querySelector("svg").style.fill = "none";
   },
   created() {
     window.addEventListener("resize", this.checkScreen);
@@ -105,8 +106,8 @@ export default {
   height: var(--navigation);
   transition: all 150ms linear;
   width: 100vw;
-  background: rgb(238 239 243 / 0.5);
-  box-shadow: 3px 1px 15px 0px rgba(217, 217, 217, 0.49);
+  background: rgba(238, 239, 243, 0.2);
+  box-shadow: -11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02);
 
   .highlight {
     background: linear-gradient(
@@ -176,7 +177,6 @@ export default {
 
     .logo {
       color: var(--dark);
-      width: var(--step-3);
     }
   }
 
@@ -238,12 +238,12 @@ export default {
   }
 
   a {
-    font-size: var(--step--3);
+    font-size: 14px;
     font-weight: var(--medium);
     padding-inline: var(--step-0);
     padding-block: var(--step--4);
     transition: all 200ms ease-out;
-    border-radius: var(--step--2);
+    border-radius: var(--step--4);
     display: inline-block;
     position: relative;
     color: var(--dark);

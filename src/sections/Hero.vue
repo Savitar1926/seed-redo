@@ -35,60 +35,6 @@ export default {
   },
   mounted() {
     this.checkScreen();
-    let TxtType = function (el, toRotate, period) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = parseInt(period, 10) || 2000;
-      this.txt = "";
-      this.tick();
-      this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function () {
-      var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
-
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-      }
-
-      this.el.innerHTML = '<span class="wrap">' + " " + this.txt + "</span>";
-
-      var that = this;
-      var delta = 200 - Math.random() * 100;
-      if (this.isDeleting) {
-        delta /= 2;
-      }
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === "") {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 200;
-      }
-      setTimeout(function () {
-        that.tick();
-      }, delta);
-    };
-
-    window.onload = function () {
-      const elements = document.getElementsByClassName("typewrite");
-      for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute("data-type");
-        var period = elements[i].getAttribute("data-period");
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-        if (this.txt == "life.") {
-          console.log("Added");
-          break;
-        }
-      }
-    };
   },
 };
 </script>
@@ -96,33 +42,21 @@ export default {
   <main class="hero limiter position-lift" id="parent_hero">
     <div
       class="hero position-lift"
-      style="padding-top: clamp(11.2rem, 4.08rem + 10.05vw, 12.1rem)"
+      style="padding-top: clamp(8.84rem, calc(2.34rem + 9.12vw), 4.17rem)"
     >
       <lottie-animation
-        style="transform: scale(0.75); height: 100%; margin-bottom: -2rem"
+        style="transform: scale(0.88); height: 100%; margin-bottom: -2rem"
         :animationData="require('@/assets/hero-text.json')"
         :loop="true"
       />
-      <!-- <h1 class="animate-title animate-title-2">
-        Create animations for your <br v-show="!mobile" />
-        <a
-          class="typewrite hero--highlight"
-          data-period="1000"
-          data-type='[ "websites", "apps", "products" ]'
-        >
-          <span class="wrap"></span>
-        </a>
-        <br v-show="mobile" />
-        faster.
-      </h1> -->
       <div class="hero__lead animate-lead">
         <p>
-          Create and ship delightful product animations with the simplest motion design
-          editor for lottie animations
+          Bring your websites and apps to life with the <br />
+          <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
       <div class="button">
-        <button class="button__beta animate-lead">Join Beta</button>
+        <button class="button__beta animate-lead">Get early access</button>
       </div>
     </div>
   </main>
@@ -149,7 +83,7 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 48px;
     width: 100%;
 
     h1 {
@@ -158,7 +92,11 @@ main {
       width: 80%;
     }
     &--highlight {
-      background: linear-gradient(150deg, var(--teal) 0%, rgba(98, 122, 246, 1) 100%);
+      background: linear-gradient(
+        150deg,
+        var(--teal) 0%,
+        rgba(98, 122, 246, 1) 100%
+      );
       background-size: 200%;
       right: 0;
       left: 100%;
@@ -169,8 +107,9 @@ main {
     &__lead {
       width: clamp(18.75rem, 12.41rem + 31.71vw, 35rem);
       font-weight: var(--normal);
-      font-size: var(--step--3);
+      font-size: clamp(0.5rem, calc(0.21rem + 1.46vw), 1.25rem);
       line-height: var(--step-0);
+      color: #5c617c;
     }
   }
 
@@ -178,18 +117,54 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--step-0);
+    position: relative;
+    padding: 4px;
+    transition: all 200ms ease-out;
+    border-radius: var(--step--1);
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(0.96);
+    }
+
+    &:active {
+      transform: scale(0.85);
+    }
 
     button {
-      border-radius: var(--step--1);
+      border-radius: inherit;
       font-size: var(--step--3);
       line-height: var(--step-0);
-      padding-block: var(--step--5);
+      padding-block: var(--step--3);
       padding-inline: var(--step-1);
+      transform: none !important;
+    }
+
+    &:after {
+      content: "";
+      height: inherit;
+      background-image: linear-gradient(
+        79.84deg,
+        rgb(122, 111, 251, 0.5) -1%,
+        rgb(255, 84, 103, 0.5) 88%,
+        rgb(253, 190, 4, 0.5) 100%
+      );
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: inherit;
     }
     &__beta {
-      background-image: linear-gradient(to left top, #627af6, #12f19e);
+      background-image: linear-gradient(
+        79.84deg,
+        #7a6ffb -1%,
+        #ff5467 88%,
+        #fdbe04 132%
+      );
       color: #ffffff;
-      border: 4px #49c9d7 solid;
 
       &:hover {
         -webkit-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
