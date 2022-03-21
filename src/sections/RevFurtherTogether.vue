@@ -147,7 +147,8 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 80%;
+        max-width: 80%;
+        min-width: 360px;
         gap: 16px;
 
         details {

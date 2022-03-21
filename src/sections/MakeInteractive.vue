@@ -1,24 +1,17 @@
 <template>
-  <div class="panel">
-    <div class="container position-lift limiter">
+  <div class="panel limiter">
+    <div class="container position-lift">
       <div class="container-coming-soon">
         <div class="coming-soon">Coming Soon</div>
       </div>
       <div class="col__one">
         <div class="section__title">
           <div class="section__title">
-            <h1>
-              Make it <br />
-              interactive
-            </h1>
+            <h1>Make it interactive</h1>
             <span>
-              New to product animations or know your <br />
-              way around - no worries.</span
+              New to product animations or know your way around - no
+              worries.</span
             >
-            <button class="full">
-              Coming Soon
-              <icon name="arrow" class="arrow" />
-            </button>
           </div>
         </div>
         <div class="card__one card__interactive">
@@ -87,7 +80,6 @@
 </template>
 
 <script>
-import icon from "@/assets/Icons.vue";
 import { LottieInteractive } from "lottie-interactive";
 export default {
   name: "SimpleForEveryone",
@@ -99,7 +91,6 @@ export default {
     };
   },
   components: {
-    icon,
     LottieInteractive,
   },
 };
@@ -109,14 +100,14 @@ export default {
 .panel {
   background: linear-gradient(
       61.31deg,
-      rgba(254, 184, 42, 0) -58.21%,
-      rgba(238, 49, 131, 0.8) 72.74%,
+      rgba(254, 184, 42, 0.5) -58.21%,
+      rgba(238, 49, 131, 0.5) 72.74%,
       rgba(124, 113, 253, 0) 105.16%
     ),
     linear-gradient(
       243.29deg,
       rgba(254, 184, 42, 0) -7.96%,
-      rgba(238, 49, 131, 0.8) 35.93%,
+      rgba(238, 49, 131, 0.5) 35.93%,
       rgba(124, 113, 253, 0) 68.85%
     );
   // border: 16px solid rgba(43, 43, 43, 0.8);
@@ -124,6 +115,7 @@ export default {
   border-radius: 40px;
   z-index: 2;
   position: relative;
+  margin-inline: auto;
   .container-coming-soon {
     position: absolute;
     top: 0;
@@ -193,19 +185,10 @@ export default {
 
     .section__title {
       grid-area: section__title;
+
       span {
         line-height: var(--step-0);
-      }
-      button {
-        gap: var(--step--4);
-        align-items: center;
-        height: max-content;
-        color: white;
-
-        .arrow {
-          display: flex;
-          stroke: white;
-        }
+        -webkit-line-clamp: 3;
       }
     }
 

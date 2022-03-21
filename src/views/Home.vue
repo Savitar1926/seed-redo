@@ -197,15 +197,21 @@ export default {
         style="position: relative"
       >
         <RevFurtherTogether />
-        <MakeInteractive style="margin-inline: 96px" />
+        <MakeInteractive class="section__make-interactive" />
         <ExportEverywhere />
         <SupportedDevice />
         <!-- <Testimonials /> -->
         <img src="@/assets/Stars.svg" class="bg__stars" alt="" />
         <img src="@/assets/Background.svg" class="bg__gradient" />
-        <img src="@/assets/dark-bg.svg" class="bg__gradient" />
+        <img
+          src="@/assets/dark-bg.svg"
+          style="transform: scale(1)"
+          class="bg__gradient"
+        />
       </section>
       <section class="section__meet-lottie" id="sectionWhite">
+        <MeetLottie />
+        <MeetLottie />
         <MeetLottie />
       </section>
       <section class="section__footer">
@@ -285,7 +291,9 @@ main {
       padding-block: var(--step-7);
       position: relative;
     }
-
+    &__make-interactive {
+      margin-inline: var(--step-4);
+    }
     &__meet-lottie {
       background: white;
       z-index: 0;

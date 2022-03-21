@@ -81,8 +81,9 @@ export default {
     flex-direction: column;
     gap: var(--step-0);
     h1 {
-      font-size: var(--step-2);
-      line-height: var(--step-3);
+      font-size: var(--step-3);
+      line-height: var(--step-4);
+      -webkit-line-clamp: 2;
     }
 
     span {

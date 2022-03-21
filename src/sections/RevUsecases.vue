@@ -10,22 +10,112 @@
               <icon name="arrow" class="arrow" />
             </button>
           </div>
-          <div class="usecase-hero card card--shadow"></div>
+          <div class="usecase-hero card card--shadow">
+            <!-- Usecase Content  -->
+            <div class="usecase-header">
+              <icon name="edit" class="arrow" />
+              <div class="usecase-title-container">
+                <span class="usecase-wrap usecase-title">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+                <span class="usecase-wrap usecase-filesize">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+              </div>
+            </div>
+            <div class="usecase-lottie"></div>
+            <!-- Usecase Content  -->
+          </div>
         </div>
       </div>
     </div>
     <div class="section section_right">
       <div class="container">
         <div class="col-1">
-          <div class="usecase-phone card card--shadow"></div>
+          <div class="usecase-phone card card--shadow">
+            <!-- Usecase Content  -->
+            <div class="usecase-header">
+              <icon name="edit" class="arrow" />
+              <div class="usecase-title-container">
+                <span class="usecase-wrap usecase-title">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+                <span class="usecase-wrap usecase-filesize">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+              </div>
+            </div>
+            <div class="usecase-lottie"></div>
+            <!-- Usecase Content  -->
+          </div>
         </div>
         <div class="col-2">
           <div class="container-cases">
-            <div class="usecase-loading_1 card card--shadow"></div>
-            <div class="usecase-loading_2 card card--shadow"></div>
+            <div class="usecase-loading_1 card card--shadow">
+              <!-- Usecase Content  -->
+              <div class="usecase-header">
+                <icon name="edit" class="arrow" />
+                <div class="usecase-title-container">
+                  <span class="usecase-wrap usecase-title">
+                    HellHellHellHellHellHellHellHellHello
+                  </span>
+                  <span class="usecase-wrap usecase-filesize">
+                    HellHellHellHellHellHellHellHellHello
+                  </span>
+                </div>
+              </div>
+              <div class="usecase-lottie"></div>
+              <!-- Usecase Content  -->
+            </div>
+            <div class="usecase-loading_2 card card--shadow">
+              <!-- Usecase Content  -->
+              <div class="usecase-header">
+                <icon name="edit" class="arrow" />
+                <div class="usecase-title-container">
+                  <span class="usecase-wrap usecase-title">
+                    HellHellHellHellHellHellHellHellHello
+                  </span>
+                  <span class="usecase-wrap usecase-filesize">
+                    HellHellHellHellHellHellHellHellHello
+                  </span>
+                </div>
+              </div>
+              <div class="usecase-lottie"></div>
+              <!-- Usecase Content  -->
+            </div>
           </div>
-          <div class="usecase-headphones card card--shadow"></div>
-          <div class="usecase-notification card card--shadow"></div>
+          <div class="usecase-headphones card card--shadow">
+            <!-- Usecase Content  -->
+            <div class="usecase-header">
+              <icon name="edit" class="arrow" />
+              <div class="usecase-title-container">
+                <span class="usecase-wrap usecase-title">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+                <span class="usecase-wrap usecase-filesize">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+              </div>
+            </div>
+            <div class="usecase-lottie"></div>
+            <!-- Usecase Content  -->
+          </div>
+          <div class="usecase-notification card card--shadow">
+            <!-- Usecase Content  -->
+            <div class="usecase-header">
+              <icon name="edit" class="arrow" />
+              <div class="usecase-title-container">
+                <span class="usecase-wrap usecase-title">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+                <span class="usecase-wrap usecase-filesize">
+                  HellHellHellHellHellHellHellHellHello
+                </span>
+              </div>
+            </div>
+            <div class="usecase-lottie"></div>
+            <!-- Usecase Content  -->
+          </div>
         </div>
       </div>
     </div>
@@ -52,6 +142,36 @@ export default {
   .card {
     background: rgba(240, 242, 248, 0.9);
     backdrop-filter: blur(16px);
+  }
+  .usecase-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    .usecase-title {
+      color: red;
+      font-weight: var(--semi-bold);
+    }
+    .usecase-filesize {
+      color: red;
+      font-size: var(--step--5);
+    }
+    .usecase-title-container {
+      display: flex;
+      flex-direction: column;
+
+      .usecase-wrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 50%;
+      }
+    }
+  }
+  .usecase-lottie {
+    height: 100%;
+    width: 100%;
+    background: red;
+    border-radius: var(--step-0);
   }
 
   .section {
