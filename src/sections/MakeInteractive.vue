@@ -1,73 +1,84 @@
 <template>
-  <div class="container position-lift limiter">
-    <div class="col__one">
-      <div class="section__title">
+  <div class="panel">
+    <div class="container position-lift limiter">
+      <div class="container-coming-soon">
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+      <div class="col__one">
         <div class="section__title">
-          <h1>
-            Make it <br />
-            interactive
-          </h1>
-          <span>
-            New to product animations or know your <br />
-            way around - no worries.</span
+          <div class="section__title">
+            <h1>
+              Make it <br />
+              interactive
+            </h1>
+            <span>
+              New to product animations or know your <br />
+              way around - no worries.</span
+            >
+            <button class="full">
+              Coming Soon
+              <icon name="arrow" class="arrow" />
+            </button>
+          </div>
+        </div>
+        <div class="card__one card__interactive">
+          <div
+            class="card box box__ditch"
+            style="background: rgba(0, 0, 0, 0.2)"
           >
-          <button class="full">
-            Coming Soon
-            <icon name="arrow" class="arrow" />
-          </button>
+            <h2>State based animations</h2>
+            <span
+              >We keep it simple, so you’re free to create powerful results - no
+              After Effects qualifications needed.</span
+            >
+          </div>
+        </div>
+        <div class="card__two card__interactive">
+          <div
+            class="card box box__ditch"
+            style="background: rgba(0, 0, 0, 0.2)"
+          >
+            <h2>State based animations</h2>
+            <span
+              >We keep it simple, so you’re free to create powerful results - no
+              After Effects qualifications needed.</span
+            >
+          </div>
         </div>
       </div>
-      <div class="card__one card__interactive">
-        <div class="card card--dark card--shadow-dark box box__ditch">
-          <h2>State based animations</h2>
-          <span
-            >We keep it simple, so you’re free to create powerful results - no After
-            Effects qualifications needed.</span
-          >
-        </div>
-      </div>
-      <div class="card__two card__interactive">
-        <div class="card card--dark card--shadow-dark box box__ditch">
-          <h2>State based animations</h2>
-          <span
-            >We keep it simple, so you’re free to create powerful results - no After
-            Effects qualifications needed.</span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col__two">
-      <div class="usecase__one">
-        <div class="usecase__first card card--dark usecase--ease">
-          <div class="card__header">
-            <div class="card__info">
-              <span class="card__title">E-Commerce Animation</span>
-              <span class="card__sub">Edited 6 hours ago</span>
+      <div class="col__two">
+        <div class="usecase__one">
+          <div class="usecase__first card card--dark usecase--ease">
+            <div class="card__header">
+              <div class="card__info">
+                <span class="card__title">E-Commerce Animation</span>
+                <span class="card__sub">Edited 6 hours ago</span>
+              </div>
+            </div>
+            <div class="sample_container">
+              <lottie-interactive
+                path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
+                interaction="click"
+                style="cursor: pointer; width: 100%"
+              ></lottie-interactive>
             </div>
           </div>
-          <div class="sample_container">
-            <lottie-interactive
-              path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
-              interaction="click"
-              style="cursor: pointer; width: 100%"
-            ></lottie-interactive>
-          </div>
         </div>
-      </div>
-      <div class="usecase__two">
-        <div class="usecase__first card card--dark usecase--ease">
-          <div class="card__header">
-            <div class="card__info">
-              <span class="card__title">E-Commerce Animation</span>
-              <span class="card__sub">Edited 6 hours ago</span>
+        <div class="usecase__two">
+          <div class="usecase__first card card--dark usecase--ease">
+            <div class="card__header">
+              <div class="card__info">
+                <span class="card__title">E-Commerce Animation</span>
+                <span class="card__sub">Edited 6 hours ago</span>
+              </div>
             </div>
-          </div>
-          <div class="sample_container">
-            <lottie-interactive
-              path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
-              interaction="switch"
-              style="cursor: pointer; width: 100%"
-            ></lottie-interactive>
+            <div class="sample_container">
+              <lottie-interactive
+                path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
+                interaction="switch"
+                style="cursor: pointer; width: 100%"
+              ></lottie-interactive>
+            </div>
           </div>
         </div>
       </div>
@@ -95,6 +106,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.panel {
+  background: linear-gradient(
+      61.31deg,
+      rgba(254, 184, 42, 0) -58.21%,
+      rgba(238, 49, 131, 0.8) 72.74%,
+      rgba(124, 113, 253, 0) 105.16%
+    ),
+    linear-gradient(
+      243.29deg,
+      rgba(254, 184, 42, 0) -7.96%,
+      rgba(238, 49, 131, 0.8) 35.93%,
+      rgba(124, 113, 253, 0) 68.85%
+    );
+  // border: 16px solid rgba(43, 43, 43, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: 40px;
+  z-index: 2;
+  position: relative;
+  .container-coming-soon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    .coming-soon {
+      font-size: 300px;
+      position: absolute;
+      z-index: -1;
+      color: rgba(255, 255, 255, 0.05);
+      font-weight: bold;
+      margin-left: -64px;
+    }
+  }
+}
 .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -107,11 +154,11 @@ export default {
   grid-template-areas:
     "col__one"
     "col__two";
-  padding-inline: var(--step-4);
-  padding-block: var(--step-0);
+  padding: var(--step-0);
   height: max-content;
   color: var(--primary);
-  margin-inline: auto;
+  border-radius: inherit;
+  border: 16px solid rgba(43, 43, 43, 0.8);
 
   .card {
     justify-content: center;
@@ -120,7 +167,8 @@ export default {
     }
 
     &--dark {
-      border: none !important;
+      // border: none !important;
+      backdrop-filter: blur(16px) !important;
     }
   }
 
@@ -152,11 +200,11 @@ export default {
         gap: var(--step--4);
         align-items: center;
         height: max-content;
-        color: var(--teal);
+        color: white;
 
         .arrow {
           display: flex;
-          stroke: var(--teal);
+          stroke: white;
         }
       }
     }
@@ -195,6 +243,7 @@ export default {
   .card {
     height: max-content !important;
     transition: all 75ms ease;
+    backdrop-filter: blur(8px);
 
     .sample_container {
       button {
@@ -204,7 +253,7 @@ export default {
         width: 100%;
         height: fit-content;
         background-color: rgba(43 43 43 / 0.8);
-        color: var(--teal);
+        color: white;
         padding-inline: var(--step-1);
         padding-block: var(--step--3);
         border-radius: var(--step-0);
@@ -218,7 +267,7 @@ export default {
     &:focus-visible,
     &:hover {
       .card__header {
-        color: var(--teal) !important;
+        color: white !important;
       }
 
       .sample__action {
@@ -231,10 +280,12 @@ export default {
 }
 .usecase__one {
   align-items: flex-start;
+  margin-top: -75px;
 }
 
 .usecase__two {
   grid-area: usecase__two;
+  margin-bottom: -75px;
 }
 
 @media (min-width: 980px) {
@@ -278,7 +329,7 @@ export default {
           line-height: var(--step-0);
         }
         button {
-          color: var(--teal);
+          color: white;
         }
       }
 
@@ -313,7 +364,7 @@ export default {
           width: 100%;
           height: fit-content;
           background-color: rgba(43 43 43 / 0.8);
-          color: var(--teal);
+          color: white;
           padding-inline: var(--step-1);
           padding-block: var(--step--3);
           border-radius: var(--step-0);
@@ -327,7 +378,7 @@ export default {
       &:focus-visible,
       &:hover {
         .card__header {
-          color: var(--teal) !important;
+          color: white !important;
         }
 
         .sample__action {
@@ -392,7 +443,7 @@ export default {
           line-height: var(--step-0);
         }
         button {
-          color: var(--teal);
+          color: white;
         }
       }
 

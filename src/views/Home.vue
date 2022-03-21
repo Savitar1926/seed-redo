@@ -8,11 +8,11 @@ import Hero from "@/sections/Hero.vue";
 import RevUsecases from "@/sections/RevUsecases.vue";
 import Starters from "@/sections/Starters.vue";
 import Simple from "@/sections/SimpleForEveryone.vue";
-import FurtherTogether from "@/sections/FurtherTogether.vue";
+import RevFurtherTogether from "@/sections/RevFurtherTogether.vue";
 import MakeInteractive from "@/sections/MakeInteractive.vue";
 import ExportEverywhere from "@/sections/ExportEverywhere.vue";
 import SupportedDevice from "@/sections/SupportedDevice.vue";
-import Testimonials from "@/sections/Testimonials.vue";
+// import Testimonials from "@/sections/Testimonials.vue";
 import MeetLottie from "@/sections/MeetLottie.vue";
 import Footer from "@/sections/Footer.vue";
 
@@ -34,11 +34,11 @@ export default {
     RevUsecases,
     Simple,
     Starters,
-    FurtherTogether,
+    RevFurtherTogether,
     MakeInteractive,
     ExportEverywhere,
     SupportedDevice,
-    Testimonials,
+    // Testimonials,
     MeetLottie,
     Footer,
   },
@@ -151,18 +151,13 @@ export default {
       <section class="section__light">
         <section class="section__hero">
           <Hero />
-          <!-- <CenterAnimation
-            classx="animate-lead"
-            style="z-index: 2; align-self: center"
-          /> -->
           <div
-            class="center-animation"
+            class="center-animation card card--light card--shadow"
             style="
               z-index: 2;
               align-self: center;
               height: 608px;
               width: 1084px;
-              background: red;
               border-radius: 16px;
             "
           >
@@ -201,13 +196,12 @@ export default {
         id="sectionFurther"
         style="position: relative"
       >
-        <FurtherTogether />
-        <MakeInteractive />
+        <RevFurtherTogether />
+        <MakeInteractive style="margin-inline: 96px" />
         <ExportEverywhere />
         <SupportedDevice />
-        <Testimonials />
+        <!-- <Testimonials /> -->
         <img src="@/assets/Stars.svg" class="bg__stars" alt="" />
-        <img src="@/assets/Mountains (2).svg" class="bg__mountains" alt="" />
         <img src="@/assets/Background.svg" class="bg__gradient" />
         <img src="@/assets/dark-bg.svg" class="bg__gradient" />
       </section>
@@ -282,13 +276,7 @@ main {
     }
 
     &__further {
-      background: linear-gradient(
-        180deg,
-        rgb(32, 32, 32) 30%,
-        #103136 50%,
-        var(--dark) 80%,
-        #233c43 100%
-      );
+      background: var(--dark);
       display: flex;
       flex-direction: column;
       height: max-content;
