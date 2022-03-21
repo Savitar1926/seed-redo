@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 import Navigation from "@/components/Navigation.vue";
 import Hero from "@/sections/Hero.vue";
-// import CenterAnimation from "@/sections/CenterAnimation.vue";
+import CenterAnimation from "@/sections/CenterAnimation.vue";
 // import Usecases from "@/sections/Usecases.vue";
 import RevUsecases from "@/sections/RevUsecases.vue";
 import Starters from "@/sections/Starters.vue";
@@ -29,7 +29,7 @@ export default {
     LottieAnimation,
     Navigation,
     Hero,
-    // CenterAnimation,
+    CenterAnimation,
     // Usecases,
     RevUsecases,
     Simple,
@@ -151,23 +151,10 @@ export default {
       <section class="section__light">
         <section class="section__hero">
           <Hero />
-          <!-- <CenterAnimation
+          <CenterAnimation
             classx="animate-lead"
             style="z-index: 2; align-self: center"
-          /> -->
-          <div
-            class="center-animation"
-            style="
-              z-index: 2;
-              align-self: center;
-              height: 608px;
-              width: 1084px;
-              background: red;
-              border-radius: 16px;
-            "
-          >
-            hello World
-          </div>
+          />
         </section>
         <section class="section__usecases">
           <div style="position: relative">
@@ -178,7 +165,6 @@ export default {
               style="position: absolute; top: 0; left: 0; z-index: 1"
             />
           </div>
-          <Starters />
         </section>
         <lottie-animation
           ref="anim"
@@ -192,6 +178,9 @@ export default {
           :loop="true"
           class="bg__pattern limter animate-lead"
         />
+      </section>
+      <section class="section__starters">
+        <Starters />
       </section>
       <section class="section__simple" id="sectionSimple">
         <Simple />
@@ -209,7 +198,6 @@ export default {
         <img src="@/assets/Stars.svg" class="bg__stars" alt="" />
         <img src="@/assets/Mountains (2).svg" class="bg__mountains" alt="" />
         <img src="@/assets/Background.svg" class="bg__gradient" />
-        <img src="@/assets/dark-bg.svg" class="bg__gradient" />
       </section>
       <section class="section__meet-lottie" id="sectionWhite">
         <MeetLottie />
@@ -242,13 +230,12 @@ main {
   .section {
     display: flex;
     flex-direction: column;
-    gap: 96px;
-    background: var(--primary);
+    gap: var(--step-7);
 
     &__light {
       display: flex;
       flex-direction: column;
-      gap: 96px;
+      gap: var(--step-7);
       background: var(--primary);
     }
 
@@ -270,15 +257,11 @@ main {
       }
     }
     &__usecases {
-      background: var(--primary);
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+      background: linear-gradient(180deg, #eeeff3 0%, #ffffff 100%);
     }
-
-    &__simple {
-      background: var(--primary);
+    &__starters {
+      background: var(white);
     }
 
     &__further {
@@ -329,6 +312,7 @@ main {
     &__gradient {
       position: absolute;
       top: 0;
+      transform: scale(1.5);
       z-index: 1;
       width: 100%;
     }

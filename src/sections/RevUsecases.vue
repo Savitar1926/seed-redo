@@ -10,22 +10,22 @@
               <icon name="arrow" class="arrow" />
             </button>
           </div>
-          <div class="usecase-hero card card--light"></div>
+          <div class="usecase-hero card card--shadow"></div>
         </div>
       </div>
     </div>
     <div class="section section_right">
       <div class="container">
         <div class="col-1">
-          <div class="usecase-phone card card--light"></div>
+          <div class="usecase-phone card card--shadow"></div>
         </div>
         <div class="col-2">
           <div class="container-cases">
-            <div class="usecase-loading_1 card card--light"></div>
-            <div class="usecase-loading_2 card card--light"></div>
+            <div class="usecase-loading_1 card card--shadow"></div>
+            <div class="usecase-loading_2 card card--shadow"></div>
           </div>
-          <div class="usecase-headphones card card--light"></div>
-          <div class="usecase-notification card card--light"></div>
+          <div class="usecase-headphones card card--shadow"></div>
+          <div class="usecase-notification card card--shadow"></div>
         </div>
       </div>
     </div>
@@ -48,6 +48,11 @@ export default {
   display: flex;
   gap: 32px;
   margin-inline: auto;
+
+  .card {
+    background: rgba(240, 242, 248, 0.9);
+    backdrop-filter: blur(16px);
+  }
 
   .section {
     &_left {
@@ -126,7 +131,6 @@ export default {
 
       .usecase-phone {
         grid-area: usecase-phone;
-        background: hotpink;
       }
 
       .col-2 {
@@ -154,21 +158,17 @@ export default {
 
       .usecase-loading_1 {
         grid-area: usecase-loading_1;
-        background: hotpink;
       }
 
       .usecase-loading_2 {
         grid-area: usecase-loading_2;
-        background: hotpink;
       }
 
       .usecase-headphones {
         grid-area: usecase-headphones;
-        background: hotpink;
       }
 
       .usecase-notification {
-        background: hotpink;
         grid-area: usecase-notification;
       }
     }
