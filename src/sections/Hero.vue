@@ -155,7 +155,7 @@ main {
       right: 0;
       left: 0;
       bottom: 0;
-      border-radius: inherit;
+      border-radius: calc(var(--step-0) - 2px);
     }
     &__beta {
       background-image: linear-gradient(

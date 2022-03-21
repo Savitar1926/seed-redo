@@ -4,7 +4,8 @@ import LottieAnimation from "lottie-web-vue";
 import Navigation from "@/components/Navigation.vue";
 import Hero from "@/sections/Hero.vue";
 import CenterAnimation from "@/sections/CenterAnimation.vue";
-import Usecases from "@/sections/Usecases.vue";
+// import Usecases from "@/sections/Usecases.vue";
+import RevUsecases from "@/sections/RevUsecases.vue";
 import Starters from "@/sections/Starters.vue";
 import Simple from "@/sections/SimpleForEveryone.vue";
 import FurtherTogether from "@/sections/FurtherTogether.vue";
@@ -29,7 +30,8 @@ export default {
     Navigation,
     Hero,
     CenterAnimation,
-    Usecases,
+    // Usecases,
+    RevUsecases,
     Simple,
     Starters,
     FurtherTogether,
@@ -153,10 +155,25 @@ export default {
             classx="animate-lead"
             style="z-index: 2; align-self: center"
           />
+          <div style="position: relative">
+            <RevUsecases style="z-index: 2; position: relative" />
+            <img
+              src="@/assets/usecase-bg.svg"
+              alt=""
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                margin-top: -100px;
+                transform: scale(1.5);
+              "
+            />
+          </div>
         </section>
-        <section class="section__usecases">
+        <!-- <section class="section__usecases">
           <Usecases />
-        </section>
+        </section> -->
         <lottie-animation
           ref="anim"
           :animationData="require('@/assets/cursor-movement.json')"
