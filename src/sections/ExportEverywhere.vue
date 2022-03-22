@@ -77,8 +77,12 @@ export default {
   },
   methods: {
     change(color) {
-      const windowShadow = document.querySelectorAll(".wing-central-bottom-bg path");
-      const second = document.querySelectorAll(".testAnim .wing-central-bottom-bg path");
+      const windowShadow = document.querySelectorAll(
+        ".wing-central-bottom-bg path"
+      );
+      const second = document.querySelectorAll(
+        ".testAnim .wing-central-bottom-bg path"
+      );
       this.color = color;
       console.log(second);
       windowShadow.forEach((path) => {
@@ -107,9 +111,9 @@ export default {
     <div class="section__title">
       <h1>Export everywhere</h1>
       <span>
-        Make dynamic changes to your animation assets on the fly and have it updated
-        across every version of the asset throughout your product stack with our live-link
-        feature.</span
+        With our Live link feature, make dynamic changes to your animation
+        assets on the fly and have it updated across every instance of it
+        throughout your products... no developer hand-off needed.</span
       >
     </div>
     <div class="export-section">
@@ -190,7 +194,9 @@ export default {
 
     span {
       line-height: var(--step-0);
-      width: clamp(80%, 50vw, 50%);
+      width: 80%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     button {

@@ -2,32 +2,27 @@
   <div class="main_testimonials position-lift limiter">
     <div class="container">
       <div class="col__one">
-        <h1>Take a look at what our experts have to say</h1>
+        <h1>Placeholder</h1>
       </div>
       <div class="col__two">
-        <div class="card card--dark">
+        <div class="card card--shadow">
           <div class="profile__container">
             <div class="profile">
-              <div class="profile__image">
-                <div
-                  style="
-                    background: var(--teal);
-                    height: 4.5rem;
-                    width: 4.5rem;
-                    border-radius: 1.5rem;
-                  "
-                />
-              </div>
+              <div class="profile__image"><div /></div>
               <div class="profile__info">
-                <h2>John Doe</h2>
+                <h2>Florian Bölter</h2>
                 <span>SVP of Design</span>
               </div>
             </div>
             <div class="testimonials">
               <span
-                >Lottielab allow us to make animations a stronger part of our design
-                process by enabling us to manage all assets alongside our UI Designs on
-                Figma.</span
+                >Having used LottieLab for the past few weeks, I’ve been taken
+                aback by its potential, particularly when it comes to mixing up
+                design workflows. Being able to simply, easily and cost
+                efficiently create production-ready animation asset is a real
+                game-changer. From everything I've seen so far, I really believe
+                LottieLab has the potential to become the next must-learn tool
+                for product and UI designers.</span
               >
             </div>
           </div>
@@ -43,10 +38,10 @@ export default {};
 
 <style lang="scss" scoped>
 .main_testimonials {
-  color: var(--primary);
-  padding-inline: var(--step-4);
-  padding-block: var(--step-0);
+  color: var(--dark);
+  padding: var(--step-4);
   margin: 0 auto;
+  background: var(--primary);
 
   .container {
     display: grid;
@@ -66,9 +61,10 @@ export default {};
   .col__one {
     grid-area: col__one;
     display: flex;
+    align-items: center;
     h1 {
       font-size: var(--step-2);
-      color: var(--teal);
+      color: #7c71fd;
       width: 70%;
     }
   }
@@ -90,14 +86,21 @@ export default {};
         gap: var(--step-0);
         margin-bottom: 3rem;
         &__image {
-          > div {
-            transform: rotate(45deg);
-          }
+          background: #7c71fd;
+          height: 6.5rem;
+          width: 6.5rem;
+          border-radius: 5rem;
         }
 
         &__info {
           h2 {
-            color: var(--teal);
+            color: #7c71fd;
+            font-size: var(--step--1);
+            font-weight: var(--semi-bold);
+          }
+          span {
+            color: #7c71fd;
+            font-size: var(--step--1);
           }
         }
       }

@@ -1,16 +1,16 @@
 <template>
   <div class="starters limiter">
     <div class="container position-lift">
-      <div class="anim anim__first card card--dark">
-        <h2>iOS</h2>
+      <div class="anim anim__first card card--dark card--shadow-dark">
+        <h2 style="color: #7c71fd">iOS</h2>
         <span>Compatible with iPhone, iPad, Apple Watch</span>
       </div>
-      <div class="anim anim__sec card card--dark">
-        <h2>Android</h2>
+      <div class="anim anim__sec card card--dark card--shadow-dark">
+        <h2 style="color: #ee3183">Android</h2>
         <span>Operates in Phone, Tablet, Smartwatch</span>
       </div>
-      <div class="anim anim__third card card--dark">
-        <h2>Web</h2>
+      <div class="anim anim__third card card--dark card--shadow-dark">
+        <h2 style="color: #ffb92a">Web</h2>
         <span>Runs everywhere in the web</span>
       </div>
     </div>
@@ -29,8 +29,9 @@ export default {
 }
 
 .card {
+  height: 250px !important;
   &--dark {
-    background: rgb(20, 38, 42, 0.5) !important;
+    // background: rgb(20, 38, 42, 0.5) !important;
     border: none !important;
     backdrop-filter: blur(16px);
   }
@@ -48,12 +49,11 @@ export default {
     "anim__first"
     "anim__sec"
     "anim__third";
-  // transform: scale(0.88);
   padding-inline: var(--step-4);
   padding-block: var(--step-0);
 }
 .anim {
-  height: max-content;
+  height: 250px;
 }
 
 .anim__first {
@@ -86,10 +86,6 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas: "anim__first anim__sec anim__third";
-  }
-
-  .anim {
-    height: 100%;
   }
 }
 </style>

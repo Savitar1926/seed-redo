@@ -7,9 +7,9 @@
           <h1 style="color: var(--teal)" id="title-highlight">together</h1>
         </h1>
         <span>
-          Collaborate on files together and break out of the After Effects silo. Keep
-          designers, developers and product managers on the same page. No more emailing
-          folders or sharing files on G-Drive.</span
+          Collaborate on files together and break out of the After Effects silo.
+          Keep designers, developers and product managers on the same page. No
+          more emailing folders or sharing files on G-Drive.</span
         >
         <button class="full">
           Get Started

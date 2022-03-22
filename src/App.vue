@@ -116,9 +116,9 @@ export default {
     }
 
     &--shadow-dark {
-      box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
-      -webkit-box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
-      -moz-box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
+      box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+      -webkit-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+      -moz-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
     }
 
     &--light {

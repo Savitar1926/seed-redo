@@ -12,7 +12,7 @@ import RevFurtherTogether from "@/sections/RevFurtherTogether.vue";
 import MakeInteractive from "@/sections/MakeInteractive.vue";
 import ExportEverywhere from "@/sections/ExportEverywhere.vue";
 import SupportedDevice from "@/sections/SupportedDevice.vue";
-// import Testimonials from "@/sections/Testimonials.vue";
+import Testimonials from "@/sections/Testimonials.vue";
 import MeetLottie from "@/sections/MeetLottie.vue";
 import Footer from "@/sections/Footer.vue";
 
@@ -38,7 +38,7 @@ export default {
     MakeInteractive,
     ExportEverywhere,
     SupportedDevice,
-    // Testimonials,
+    Testimonials,
     MeetLottie,
     Footer,
   },
@@ -212,14 +212,14 @@ export default {
           class="bg__gradient"
         />
       </section>
-      <section class="section__meet-lottie" id="sectionWhite">
-        <MeetLottie />
-        <MeetLottie />
-        <MeetLottie />
-      </section>
-      <section class="section__footer">
-        <Footer />
-      </section>
+    </section>
+    <section class="section__meet-lottie" id="sectionWhite">
+      <Testimonials />
+      <MeetLottie />
+      <MeetLottie />
+    </section>
+    <section class="section__footer">
+      <Footer />
     </section>
   </main>
 </template>
@@ -291,7 +291,8 @@ main {
       height: max-content;
       gap: var(--step-7);
       overflow: hidden;
-      padding-block: var(--step-7);
+      padding-top: var(--step-5);
+      padding-bottom: var(--step-4);
       position: relative;
     }
     &__make-interactive {

@@ -3,7 +3,7 @@
     <div class="section section-left">
       <div class="section__title">
         <h1>
-          Go further, <br />
+          Go further,
           <h1 id="title-highlight">together</h1>
         </h1>
         <span>
@@ -152,11 +152,13 @@ export default {
         gap: 16px;
 
         details {
+          transition: all 120ms ease-in-out;
           border-radius: var(--step--2);
           &:hover {
-            box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
-            -webkit-box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
-            -moz-box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
+            box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+            -webkit-box-shadow: 8.28684px 24.8605px 33.1474px
+              rgba(31, 31, 31, 0.5);
+            -moz-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
           }
           &:active {
             transform: scale(0.96);
@@ -170,7 +172,6 @@ export default {
             padding: var(--step--2);
             list-style: none;
             cursor: pointer;
-            // transition: all 75ms ease-out;
             background: rgba(0, 0, 0, 0.25);
             border-radius: var(--step--2);
           }
@@ -183,6 +184,10 @@ export default {
         }
 
         details[open] {
+          box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+          -webkit-box-shadow: 8.28684px 24.8605px 33.1474px
+            rgba(31, 31, 31, 0.5);
+          -moz-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
           summary {
             color: white;
             background: rgba(0, 0, 0, 0.8);
@@ -206,6 +211,7 @@ export default {
         backdrop-filter: blur(16px);
         border-radius: var(--step-0);
         margin-right: -400px;
+        box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
       }
     }
   }

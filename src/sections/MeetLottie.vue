@@ -3,37 +3,38 @@
     <div class="container">
       <div class="col__one">
         <div class="section__title">
-          <h1>Meet Lottie</h1>
-          <h2>The new standard for motion design</h2>
+          <h1>The Lottie format</h1>
+          <h2 style="color: #007a88">The new standard for motion design</h2>
           <span>
             Lottie is an open-source animation file format that is lighweight,
-            high-quality, dynamic and modiefied in real time. Lottie is now used to engage
-            consumers and increase conversions by top 500 apps on the App Store.</span
+            high-quality, dynamic and modiefied in real time. Lottie is now used
+            to engage consumers and increase conversions by top 500 apps on the
+            App Store.</span
           >
           <button class="full">Learn more</button>
         </div>
       </div>
       <div class="col__two">
-        <div class="usecase__first card card--light usecase--ease">
+        <div class="usecase__first card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <!-- <lottie-animation
+            <lottie-animation
               :animationData="require('@/assets/Pattern_6down.json')"
               :loop="true"
               class="profile__animation"
-            /> -->
+            />
             <div>
               <h3>351 kB</h3>
               <span>GIF</span>
             </div>
           </div>
         </div>
-        <div class="usecase__first card card--light usecase--ease">
+        <div class="usecase__first card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <!-- <lottie-animation
+            <lottie-animation
               :animationData="require('@/assets/Pattern_6down.json')"
               :loop="true"
               class="profile__animation"
-            /> -->
+            />
             <h3 style="color: var(--teal)">61 kB</h3>
             <span style="color: var(--teal)">Lottie</span>
           </div>
@@ -44,14 +45,14 @@
 </template>
 
 <script>
-// import LottieAnimation from "lottie-web-vue";
+import LottieAnimation from "lottie-web-vue";
 
 export default {
   data() {
     return {};
   },
   components: {
-    // LottieAnimation,
+    LottieAnimation,
   },
 };
 </script>
@@ -60,8 +61,8 @@ export default {
 .meet-lottie {
   color: var(--primary);
   margin: auto;
-  padding-inline: var(--step-4);
-  padding-block: var(--step-0);
+
+  padding: var(--step-4);
   // height: 100%;
 
   .container {
@@ -107,7 +108,7 @@ export default {
   .col__two {
     grid-area: col__two;
     display: flex;
-    gap: 32;
+    gap: var(--step-0);
 
     div {
       display: flex;
