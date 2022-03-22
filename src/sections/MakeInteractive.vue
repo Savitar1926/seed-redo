@@ -1,9 +1,6 @@
 <template>
   <div class="panel limiter">
     <div class="container position-lift">
-      <div class="container-coming-soon">
-        <div class="coming-soon">Coming Soon</div>
-      </div>
       <div class="col__one">
         <div class="section__title">
           <div class="section__title">
@@ -75,6 +72,9 @@
           </div>
         </div>
       </div>
+      <div class="container-coming-soon">
+        <div class="coming-soon">Coming Soon</div>
+      </div>
     </div>
   </div>
 </template>
@@ -131,6 +131,9 @@ export default {
       color: rgba(255, 255, 255, 0.05);
       font-weight: bold;
       margin-left: -64px;
+      line-height: 0.8;
+      bottom: 0;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -150,7 +153,7 @@ export default {
   height: max-content;
   color: var(--primary);
   border-radius: inherit;
-  border: 16px solid rgba(43, 43, 43, 0.8);
+  border: 8px solid rgba(43, 43, 43, 0.8);
 
   .card {
     justify-content: center;

@@ -142,17 +142,20 @@ export default {
   .card {
     background: rgba(240, 242, 248, 0.9);
     backdrop-filter: blur(16px);
+    padding: 16px !important;
   }
   .usecase-header {
     display: flex;
     gap: 16px;
     align-items: center;
     .usecase-title {
-      color: red;
+      color: var(--blue);
+
       font-weight: var(--semi-bold);
     }
     .usecase-filesize {
-      color: red;
+      color: var(--blue);
+
       font-size: var(--step--5);
     }
     .usecase-title-container {
@@ -170,8 +173,8 @@ export default {
   .usecase-lottie {
     height: 100%;
     width: 100%;
-    background: red;
     border-radius: var(--step-0);
+    background: white;
   }
 
   .section {
@@ -268,7 +271,7 @@ export default {
 
       .container-cases {
         display: grid;
-        grid-template-columns: 295px 296px;
+        grid-template-columns: 232px 296px;
         grid-template-rows: 1fr;
         gap: 0px 32px;
         grid-auto-flow: row;

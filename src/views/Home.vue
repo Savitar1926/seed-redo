@@ -120,7 +120,9 @@ export default {
         colorLinks.forEach((link) => {
           link.style.color = "var(--dark)";
         });
-        titleHighlight.style.letterSpacing = "var(--step--5)";
+        titleHighlight.style.letterSpacing = "var(--step-0)";
+        titleHighlight.style.color = "white";
+
         return;
       }
       nav.style.background = "rgba(43 43 43 / 0.8)";
@@ -128,6 +130,7 @@ export default {
       nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
       mobileIcon.style.color = "var(--primary)";
       titleHighlight.style.letterSpacing = "0rem";
+      titleHighlight.style.color = "var(--teal)";
       colorLinks.forEach((link) => {
         link.style.color = "var(--primary)";
       });

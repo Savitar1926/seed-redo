@@ -4,7 +4,7 @@
       <div class="section__title">
         <h1>
           Go further, <br />
-          <h1 style="color: var(--teal)" id="title-highlight">together</h1>
+          <h1 id="title-highlight">together</h1>
         </h1>
         <span>
           Collaborate on files together and break out of the After Effects silo.
@@ -121,7 +121,7 @@ export default {
         color: var(--primary);
 
         #title-highlight {
-          transition: all 300ms ease-in-out;
+          transition: all 580ms ease;
           .spaced {
             letter-spacing: 0rem !important;
           }
@@ -153,8 +153,6 @@ export default {
 
         details {
           border-radius: var(--step--2);
-
-          transition: all 200ms ease-out;
           &:hover {
             box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
             -webkit-box-shadow: 0px 16px 32px 8px rgba(43, 43, 43, 0.5);
