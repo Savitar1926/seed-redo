@@ -112,7 +112,7 @@ export default {
 
   .section {
     &-left {
-      width: 50%;
+      width: 65%;
       padding-left: var(--step-4);
       display: flex;
       flex-direction: column;
@@ -150,6 +150,7 @@ export default {
         justify-content: center;
         max-width: 80%;
         min-width: 360px;
+        width: 360px;
         gap: 16px;
 
         details {
