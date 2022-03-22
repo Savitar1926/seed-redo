@@ -28,6 +28,17 @@
           </div>
         </div>
       </div>
+      <img
+        src="@/assets/quote-bg.svg"
+        style="
+          transform: scale(1.1);
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        "
+      />
     </div>
   </div>
 </template>
@@ -42,7 +53,7 @@ export default {};
   padding: var(--step-4);
   margin: 0 auto;
   background: var(--primary);
-
+  overflow: hidden;
   .container {
     display: grid;
     grid-template-columns: 1fr;

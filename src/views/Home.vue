@@ -14,6 +14,7 @@ import ExportEverywhere from "@/sections/ExportEverywhere.vue";
 import SupportedDevice from "@/sections/SupportedDevice.vue";
 import Testimonials from "@/sections/Testimonials.vue";
 import MeetLottie from "@/sections/MeetLottie.vue";
+import StartNow from "@/sections/RevStartNow.vue";
 import Footer from "@/sections/Footer.vue";
 
 export default {
@@ -40,6 +41,7 @@ export default {
     SupportedDevice,
     Testimonials,
     MeetLottie,
+    StartNow,
     Footer,
   },
   created() {
@@ -130,7 +132,7 @@ export default {
       nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
       mobileIcon.style.color = "var(--primary)";
       titleHighlight.style.letterSpacing = "0rem";
-      titleHighlight.style.color = "var(--teal)";
+      titleHighlight.style.color = "#ffb92a";
       colorLinks.forEach((link) => {
         link.style.color = "var(--primary)";
       });
@@ -216,7 +218,7 @@ export default {
     <section class="section__meet-lottie" id="sectionWhite">
       <Testimonials />
       <MeetLottie />
-      <MeetLottie />
+      <StartNow />
     </section>
     <section class="section__footer">
       <Footer />
@@ -328,7 +330,7 @@ main {
     }
     &__gradient {
       position: absolute;
-      top: 0;
+      inset: 0;
       z-index: 1;
       width: 100%;
     }

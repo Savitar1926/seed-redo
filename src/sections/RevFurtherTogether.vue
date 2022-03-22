@@ -1,5 +1,5 @@
 <template>
-  <div class="further-together">
+  <div class="further-together limiter">
     <div class="section section-left">
       <div class="section__title">
         <h1>
@@ -108,6 +108,7 @@ export default {
   display: flex;
   gap: 80px;
   z-index: 2;
+  margin: auto;
 
   .section {
     &-left {
@@ -133,11 +134,11 @@ export default {
           gap: var(--step--4);
           align-items: center;
           height: max-content;
-          color: var(--teal);
+          color: #ffb92a;
 
           .arrow {
             display: flex;
-            stroke: var(--teal);
+            stroke: #ffb92a;
           }
         }
       }
