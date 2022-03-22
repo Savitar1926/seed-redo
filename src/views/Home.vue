@@ -203,8 +203,10 @@ export default {
       >
         <RevFurtherTogether />
         <MakeInteractive class="section__make-interactive" />
-        <ExportEverywhere />
-        <SupportedDevice />
+        <div>
+          <ExportEverywhere />
+          <SupportedDevice />
+        </div>
         <!-- <Testimonials /> -->
         <img src="@/assets/Stars.svg" class="bg__stars" alt="" />
         <img src="@/assets/Background.svg" class="bg__gradient" />

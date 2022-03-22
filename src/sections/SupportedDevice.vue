@@ -50,7 +50,6 @@ export default {
     "anim__sec"
     "anim__third";
   padding-inline: var(--step-4);
-  padding-block: var(--step-0);
 }
 .anim {
   height: 250px;

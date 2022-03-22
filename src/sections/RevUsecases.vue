@@ -15,12 +15,8 @@
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
-                <span class="usecase-wrap usecase-title">
-                  HellHellHellHellHellHellHellHellHello
-                </span>
-                <span class="usecase-wrap usecase-filesize">
-                  HellHellHellHellHellHellHellHellHello
-                </span>
+                <span class="usecase-wrap usecase-title"> Hero Animation </span>
+                <span class="usecase-wrap usecase-filesize"> 33 KB </span>
               </div>
             </div>
             <div class="usecase-lottie"></div>
@@ -38,11 +34,9 @@
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  HellHellHellHellHellHellHellHellHello
+                  Onboarding Animation
                 </span>
-                <span class="usecase-wrap usecase-filesize">
-                  HellHellHellHellHellHellHellHellHello
-                </span>
+                <span class="usecase-wrap usecase-filesize"> 14 KB </span>
               </div>
             </div>
             <div class="usecase-lottie"></div>
@@ -57,11 +51,9 @@
                 <icon name="edit" class="arrow" />
                 <div class="usecase-title-container">
                   <span class="usecase-wrap usecase-title">
-                    HellHellHellHellHellHellHellHellHello
+                    Loading Animation
                   </span>
-                  <span class="usecase-wrap usecase-filesize">
-                    HellHellHellHellHellHellHellHellHello
-                  </span>
+                  <span class="usecase-wrap usecase-filesize"> 32 KB </span>
                 </div>
               </div>
               <div class="usecase-lottie"></div>
@@ -73,11 +65,9 @@
                 <icon name="edit" class="arrow" />
                 <div class="usecase-title-container">
                   <span class="usecase-wrap usecase-title">
-                    HellHellHellHellHellHellHellHellHello
+                    Loading Animation
                   </span>
-                  <span class="usecase-wrap usecase-filesize">
-                    HellHellHellHellHellHellHellHellHello
-                  </span>
+                  <span class="usecase-wrap usecase-filesize"> 48 KB </span>
                 </div>
               </div>
               <div class="usecase-lottie"></div>
@@ -90,11 +80,9 @@
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  HellHellHellHellHellHellHellHellHello
+                  Product Animation
                 </span>
-                <span class="usecase-wrap usecase-filesize">
-                  HellHellHellHellHellHellHellHellHello
-                </span>
+                <span class="usecase-wrap usecase-filesize"> 64 KB </span>
               </div>
             </div>
             <div class="usecase-lottie"></div>
@@ -106,11 +94,9 @@
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  HellHellHellHellHellHellHellHellHello
+                  Notification Animation
                 </span>
-                <span class="usecase-wrap usecase-filesize">
-                  HellHellHellHellHellHellHellHellHello
-                </span>
+                <span class="usecase-wrap usecase-filesize"> 24 KB </span>
               </div>
             </div>
             <div class="usecase-lottie"></div>
@@ -163,10 +149,10 @@ export default {
       flex-direction: column;
 
       .usecase-wrap {
-        overflow: hidden;
+        // overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 50%;
+        // white-space: nowrap;
+        width: inherit;
       }
     }
   }

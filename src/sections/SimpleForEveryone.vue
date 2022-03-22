@@ -44,13 +44,16 @@
             <div class="role__designer card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-vue-player
-                    :src="`https://assets7.lottiefiles.com/private_files/lf30_tvnnnk4i.json`"
+                  <lottie-animation
+                    :animationData="
+                      require('@/assets/santaclause-profile.json')
+                    "
+                    :loop="true"
                     class="profile__animation"
                   />
                 </div>
                 <div class="profile__details">
-                  <h2>Designers</h2>
+                  <h2 style="color: #7c71fd">Designers</h2>
                   <span
                     >withLottieLab Edit illustrations and micro-interactions
                     without needing to disturb a designer.</span
@@ -61,13 +64,16 @@
             <div class="role__developer card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-vue-player
-                    :src="`https://assets7.lottiefiles.com/private_files/lf30_tvnnnk4i.json`"
+                  <lottie-animation
+                    :animationData="
+                      require('@/assets/santaclause-profile.json')
+                    "
+                    :loop="true"
                     class="profile__animation"
                   />
                 </div>
                 <div class="profile__details">
-                  <h2>Designers</h2>
+                  <h2 style="color: #f14378">Developers</h2>
                   <span
                     >withLottieLab Edit illustrations and micro-interactions
                     without needing to disturb a designer.</span
@@ -78,13 +84,16 @@
             <div class="role__project-manager card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-vue-player
-                    :src="`https://assets7.lottiefiles.com/private_files/lf30_tvnnnk4i.json`"
+                  <lottie-animation
+                    :animationData="
+                      require('@/assets/santaclause-profile.json')
+                    "
+                    :loop="true"
                     class="profile__animation"
                   />
                 </div>
                 <div class="profile__details">
-                  <h2>Designers</h2>
+                  <h2 style="color: #ffba2b">Animators</h2>
                   <span
                     >withLottieLab Edit illustrations and micro-interactions
                     without needing to disturb a designer.</span
@@ -101,20 +110,16 @@
 
 <script>
 import icon from "@/assets/Icons.vue";
-// import LottieAnimation from "lottie-web-vue";
+import LottieAnimation from "lottie-web-vue";
 
 export default {
   name: "SimpleForEveryone",
   data() {
-    return {
-      controller: null,
-      tween: null,
-      scene: null,
-    };
+    return {};
   },
   components: {
     icon,
-    // LottieAnimation,
+    LottieAnimation,
   },
 };
 </script>
@@ -241,21 +246,21 @@ export default {
       .role__project-manager {
         grid-area: role__project-manager;
         .profile__container {
-          background: var(--teal);
+          // background: var(--teal);
         }
       }
 
       .role__developer {
         grid-area: role__developer;
         .profile__container {
-          background: var(--purple);
+          // background: var(--purple);
         }
       }
 
       .role__designer {
         grid-area: role__designer;
         .profile__container {
-          background: var(--blue);
+          // background: var(--blue);
         }
       }
       .role__container {

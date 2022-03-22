@@ -35,11 +35,24 @@
               :loop="true"
               class="profile__animation"
             />
-            <h3 style="color: var(--teal)">61 kB</h3>
-            <span style="color: var(--teal)">Lottie</span>
+            <h3 style="color: #00bcae">61 kB</h3>
+            <span style="color: #00bcae">Lottie</span>
           </div>
         </div>
       </div>
+      <img
+        src="@/assets/meetlottie-image.svg"
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: -1;
+          margin-top: -2rem;
+          margin-right: -2rem;
+          width: 600px;
+          height: auto;
+        "
+      />
     </div>
   </div>
 </template>
@@ -61,7 +74,7 @@ export default {
 .meet-lottie {
   color: var(--primary);
   margin: auto;
-
+  overflow: hidden;
   padding: var(--step-4);
   // height: 100%;
 
@@ -87,7 +100,7 @@ export default {
     gap: var(--step--1);
     .section__title {
       h1 {
-        color: var(--teal);
+        color: #00bcae;
       }
       h2 {
         width: 90%;
@@ -100,7 +113,7 @@ export default {
         line-height: var(--step-0);
       }
       button {
-        color: var(--teal);
+        color: #00bcae;
       }
     }
   }

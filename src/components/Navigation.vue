@@ -139,42 +139,6 @@ export default {
     justify-content: end;
     gap: var(--step--3);
 
-    a {
-      &:not(:first-child):before,
-      &:not(:first-child):after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 0;
-      }
-      &:before {
-        transition: width 0s ease, background 0.4s ease;
-        left: 0;
-        right: 0;
-        bottom: 6px;
-      }
-      &:after {
-        right: 2.2%;
-        bottom: 6px;
-        background: var(--teal);
-        transition: width 0.4s ease;
-      }
-
-      &:hover {
-        &:before {
-          width: 97.8%;
-          background: var(--teal);
-          transition: width 0.4s ease;
-        }
-        &:after {
-          width: 97.8%;
-          background: 0 0;
-          transition: all 0s ease;
-        }
-      }
-    }
-
     .logo {
       color: var(--dark);
     }
@@ -193,42 +157,6 @@ export default {
       &:hover {
         background: var(--dark) !important;
         color: var(--teal) !important;
-      }
-    }
-
-    a {
-      &:not(:last-child):before,
-      &:not(:last-child):after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 0;
-      }
-      &:before {
-        transition: width 0s ease, background 0.4s ease;
-        left: 0;
-        right: 0;
-        bottom: 6px;
-      }
-      &:after {
-        right: 2.2%;
-        bottom: 6px;
-        background: var(--teal);
-        transition: width 0.4s ease;
-      }
-
-      &:hover {
-        &:before {
-          width: 97.8%;
-          background: var(--teal);
-          transition: width 0.4s ease;
-        }
-        &:after {
-          width: 97.8%;
-          background: 0 0;
-          transition: all 0s ease;
-        }
       }
     }
   }
