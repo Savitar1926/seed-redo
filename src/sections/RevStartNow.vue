@@ -128,12 +128,7 @@ export default {
         border-radius: calc(var(--step-0) - 2px);
       }
       &__beta {
-        background-image: linear-gradient(
-          79.84deg,
-          #7a6ffb -1%,
-          #ff5467 88%,
-          #fdbe04 132%
-        );
+        background: rgba(255, 255, 255, 0.25);
         color: #ffffff;
 
         &:hover {

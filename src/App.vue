@@ -92,11 +92,14 @@ export default {
     button {
       display: flex;
       font-weight: var(--semi-bold);
-      font-size: var(--step-0);
+      font-size: var(--step-1);
       line-height: var(--step-0);
       border: none;
       background: none;
       text-align: start;
+    }
+    h2 {
+      font-size: var(--step-1);
     }
   }
   .card {

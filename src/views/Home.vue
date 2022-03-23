@@ -10,6 +10,7 @@ import Starters from "@/sections/Starters.vue";
 import Simple from "@/sections/SimpleForEveryone.vue";
 import RevFurtherTogether from "@/sections/RevFurtherTogether.vue";
 import MakeInteractive from "@/sections/MakeInteractive.vue";
+// import RevMakeInteractive from "@/sections/RevMakeInteractive.vue";
 import ExportEverywhere from "@/sections/ExportEverywhere.vue";
 import SupportedDevice from "@/sections/SupportedDevice.vue";
 import Testimonials from "@/sections/Testimonials.vue";
@@ -37,6 +38,7 @@ export default {
     Starters,
     RevFurtherTogether,
     MakeInteractive,
+    // RevMakeInteractive,
     ExportEverywhere,
     SupportedDevice,
     Testimonials,
@@ -203,6 +205,7 @@ export default {
       >
         <RevFurtherTogether />
         <MakeInteractive class="section__make-interactive" />
+        <!-- <RevMakeInteractive class="section__make-interactive" /> -->
         <div>
           <ExportEverywhere />
           <SupportedDevice />

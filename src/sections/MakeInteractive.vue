@@ -6,9 +6,12 @@
           <div class="section__title">
             <h1>Make it interactive</h1>
             <span>
-              New to product animations or know your way around - no
-              worries.</span
+              <strong>Coming soon.</strong>
+              Collaborate on files together and break out of the After Effects
+              silo. Keep designers, developers and product managers on the same
+              page. No more emailing folders or sharing files on G-Drive.</span
             >
+            <h2>Coming soon</h2>
           </div>
         </div>
         <div class="card__one card__interactive">
@@ -38,7 +41,7 @@
       </div>
       <div class="col__two">
         <div class="usecase__one">
-          <div class="usecase__first card card--dark usecase--ease">
+          <div class="usecase__first card card--shadow-dark usecase--ease">
             <div class="card__header">
               <div class="card__info">
                 <span class="card__title">E-Commerce Animation</span>
@@ -55,7 +58,7 @@
           </div>
         </div>
         <div class="usecase__two">
-          <div class="usecase__first card card--dark usecase--ease">
+          <div class="usecase__first card card--shadow-dark usecase--ease">
             <div class="card__header">
               <div class="card__info">
                 <span class="card__title">E-Commerce Animation</span>
@@ -153,7 +156,7 @@ export default {
   height: max-content;
   color: var(--primary);
   border-radius: inherit;
-  border: 8px solid rgba(43, 43, 43, 0.8);
+  // border: 8px solid rgba(43, 43, 43, 0.8);
 
   .card {
     justify-content: center;
@@ -179,7 +182,7 @@ export default {
       "card__two card__two";
     grid-area: col__one;
     height: 100%;
-    align-items: end;
+    align-items: start;
 
     .card {
       height: max-content !important;
@@ -229,6 +232,7 @@ export default {
   .card {
     height: max-content !important;
     transition: all 75ms ease;
+    background: rgba(43, 43, 43) !important;
     backdrop-filter: blur(8px);
 
     .sample_container {
@@ -301,7 +305,7 @@ export default {
     .col__one {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr fit-content(100%);
       gap: 32px 32px;
       grid-auto-flow: row;
       grid-template-areas:
@@ -415,7 +419,7 @@ export default {
     .col__one {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr fit-content(100%);
       gap: 32px 32px;
       grid-auto-flow: row;
       grid-template-areas:
