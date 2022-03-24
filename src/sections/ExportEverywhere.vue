@@ -37,7 +37,6 @@ export default {
       newArray.push(color);
     });
     const remove = newArray.splice("08");
-    console.log(remove);
     remove.forEach((color) => {
       color.remove();
     });

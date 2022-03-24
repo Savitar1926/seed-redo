@@ -117,6 +117,7 @@ export default {
       display: flex;
       flex-direction: column;
       gap: 32px;
+      padding-bottom: var(--step-0);
 
       .section__title {
         color: var(--primary);
@@ -206,7 +207,7 @@ export default {
     }
 
     &-right {
-      padding-top: 130px;
+      align-self: flex-end;
       .lottie-container {
         border: rgba(43, 43, 43, 0.5) solid 14px;
         background: rgba(43, 43, 43, 0.8);
