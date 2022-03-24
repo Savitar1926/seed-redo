@@ -156,7 +156,7 @@ export default {
     <Navigation class="navigation" id="navigation" />
     <section class="section" v-show="!contentInside">
       <section class="section__light">
-        <section class="section__hero">
+        <section class="section__hero" style="display">
           <Hero />
           <div
             class="center-animation card card--light card--shadow"
@@ -288,6 +288,7 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      gap: var(--step-0);
     }
     &__center {
       height: min-content;
