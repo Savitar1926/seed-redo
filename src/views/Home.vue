@@ -192,10 +192,10 @@ export default {
               alt=""
               style="
                 position: absolute;
-                top: 0;
-                left: 0;
+                bottom: 0;
                 z-index: 1;
-                width: 100%;
+                width: 110 %;
+                transform: scale(1.2);
               "
             />
           </div>
@@ -234,8 +234,14 @@ export default {
         <img src="@/assets/Background.svg" class="bg__gradient" />
         <img
           src="@/assets/dark-bg.svg"
-          style="transform: scale(1)"
-          class="bg__gradient"
+          style="
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            margin-inline: auto;
+            margin-top: -5rem;
+          "
         />
       </section>
     </section>
