@@ -135,12 +135,12 @@ export default {
     gap: 16px;
     align-items: center;
     .usecase-title {
-      color: var(--blue);
+      color: #7c71fd;
 
       font-weight: var(--semi-bold);
     }
     .usecase-filesize {
-      color: var(--blue);
+      color: #7c71fd;
 
       font-size: var(--step--5);
     }
@@ -198,11 +198,11 @@ export default {
             gap: var(--step--4);
             align-items: center;
             height: max-content;
-            color: var(--blue);
+            color: #7c71fd;
 
             .arrow {
               display: flex;
-              stroke: var(--blue);
+              stroke: #7c71fd;
             }
           }
         }

@@ -57,9 +57,9 @@ export default {
       present.remove();
     });
     colorContainer.forEach((container) => {
-      container.style.borderRadius = "var(--step--2) var(--step--2) 0 0";
+      // container.style.borderRadius = "var(--step--1) var(--step--1) 0 0";
       container.style.width = "240px";
-      container.style.height = "146px";
+      // container.style.height = "146px";
       container.style.overflow = "hidden";
     });
   },
@@ -68,11 +68,8 @@ export default {
       const windowShadow = document.querySelectorAll(
         ".wing-central-bottom-bg path"
       );
-      const second = document.querySelectorAll(
-        ".testAnim .wing-central-bottom-bg path"
-      );
+
       this.color = color;
-      console.log(second);
       windowShadow.forEach((path) => {
         path.setAttribute("fill", this.color);
       });
@@ -116,7 +113,7 @@ export default {
           <div>
             <div
               class="card card--shadow-dark color-panel"
-              style="padding: 8px; border-radius: 34px"
+              style="padding: 4px; border-radius: 20px"
             >
               <color-panel v-model="color" @change="change"></color-panel>
             </div>
@@ -206,7 +203,7 @@ export default {
   .export-section {
     display: flex;
     flex-direction: column;
-    gap: var(--step-4);
+    gap: var(--step-6);
     align-items: center;
     .main-animation {
       width: 80%;
@@ -242,7 +239,7 @@ export default {
         );
       }
       .one-colorpanel {
-        border-radius: var(--step-0);
+        border-radius: var(--step--3);
         background: #222222;
         backdrop-filter: blur(16px);
         width: 100%;

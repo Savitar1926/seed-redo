@@ -95,13 +95,13 @@ export default {};
     flex-wrap: wrap;
 
     span {
-      background: var(--blue-hover);
+      background: rgba(124, 113, 253, 0.1);
       font-size: var(--step--4);
       line-height: var(--step--2);
       padding: 16px 12px;
       border-radius: var(--step--3);
       font-weight: var(--normal);
-      color: var(--blue);
+      color: #7c71fd;
       width: max-content;
     }
 
