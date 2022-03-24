@@ -1,5 +1,7 @@
 <script>
-import LottieAnimation from "lottie-web-vue";
+// import LottieAnimation from "lottie-web-vue";
+import icon from "@/assets/Icons.vue";
+
 export default {
   name: "ExportEverywhere",
   data() {
@@ -11,7 +13,10 @@ export default {
       windownWidth: null,
     };
   },
-  components: { LottieAnimation },
+  components: {
+    // LottieAnimation,
+    icon,
+  },
   created() {
     window.addEventListener("resize", this.checkScreen);
   },
@@ -31,24 +36,8 @@ export default {
     colorList.forEach((color) => {
       newArray.push(color);
     });
-
-    const remove = newArray.splice(
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32,
-      33
-    );
+    const remove = newArray.splice("08");
+    console.log(remove);
     remove.forEach((color) => {
       color.remove();
     });
@@ -62,17 +51,17 @@ export default {
       color.style.justifyContent = "space-evenly";
     });
     colorSlider.forEach((slider) => {
-      slider.style.gap = "8px";
+      slider.style.gap = "24px";
       slider.style.width = "100%";
     });
     colorPresent.forEach((present) => {
       present.remove();
     });
     colorContainer.forEach((container) => {
-      container.style.borderRadius = " var(--step--5) var(--step--5) 0 0 ";
-      container.style.width = "100%";
-      container.style.height = "12rem";
-      container.style.overflow = "hidden)";
+      container.style.borderRadius = "16px";
+      container.style.width = "240px";
+      container.style.height = "146px";
+      container.style.overflow = "hidden";
     });
   },
   methods: {
@@ -118,25 +107,37 @@ export default {
     </div>
     <div class="export-section">
       <div class="main-animation">
-        <lottie-animation
-          ref="anim"
+        <!-- <lottie-animation
           :animationData="require('@/assets/Still Rocket Orange.json')"
           :loop="true"
-        />
+        /> -->
+        <img src="@/assets/rocket.svg" style="height: fit-content" />
         <div class="export__actions">
           <span>Try changing the colours</span>
           <div>
-            <color-panel v-model="color" @change="change"></color-panel>
-            <button class="update-button">Update Colours</button>
+            <div
+              class="card card--shadow-dark color-panel"
+              style="padding: 8px; border-radius: 34px"
+            >
+              <color-panel v-model="color" @change="change"></color-panel>
+            </div>
+            <button class="update-button">
+              <icon name="update" style="display: flex; align-self: center" />
+              Update Colours
+            </button>
           </div>
         </div>
       </div>
-      <lottie-animation
+      <!-- <lottie-animation
         v-show="!mobile"
-        ref="anim"
         :animationData="require('@/assets/devicesSupported.json')"
         :loop="true"
         class="testAnim"
+      /> -->
+      <img
+        v-show="!mobile"
+        src="@/assets/Devices.svg"
+        style="inset: 0; z-index: -2"
       />
     </div>
     <div class="carousel-mobile" v-show="mobile">
@@ -232,12 +233,23 @@ export default {
         justify-content: center;
         align-items: center;
       }
+
+      .color-panel {
+        background-image: linear-gradient(
+          79.84deg,
+          rgb(122, 111, 251, 0.5) -1%,
+          rgb(255, 84, 103, 0.5) 88%,
+          rgb(253, 190, 4, 0.5) 100%
+        );
+      }
       .one-colorpanel {
         border-radius: var(--step-0);
-        background: rgb(20, 38, 42, 0.5);
-        border: rgb(20, 38, 42, 0.8) solid 14px;
+        background: #222222;
         backdrop-filter: blur(16px);
+        width: 100%;
+        padding: 16px;
       }
+
       .update-button {
         display: flex;
         font-size: var(--step--3);
@@ -245,10 +257,17 @@ export default {
         border-radius: var(--step--2);
         background: none;
         width: 100%;
-        background: var(--teal);
+        background: linear-gradient(
+          79.84deg,
+          #7a6ffb -1.31%,
+          #ff5467 85.47%,
+          #fdbe04 131.99%
+        );
         padding-block: var(--step--5);
-        color: rgb(20, 38, 42);
+        color: var(--primary);
         justify-content: center;
+        align-items: center;
+        gap: var(--step--1);
       }
     }
   }

@@ -1,82 +1,85 @@
 <template>
-  <div class="panel limiter">
-    <div class="container position-lift">
-      <div class="col__one">
-        <div class="section__title">
+  <div class="limiter" style="padding-inline: var(--step-4); margin: auto">
+    <div class="panel">
+      <div class="container position-lift">
+        <div class="col__one">
           <div class="section__title">
-            <h1>Make it interactive</h1>
-            <span>
-              <strong>Coming soon.</strong>
-              Collaborate on files together and break out of the After Effects
-              silo. Keep designers, developers and product managers on the same
-              page. No more emailing folders or sharing files on G-Drive.</span
+            <div class="section__title">
+              <h1>Make it interactive</h1>
+              <span>
+                <strong>Coming soon.</strong>
+                Collaborate on files together and break out of the After Effects
+                silo. Keep designers, developers and product managers on the
+                same page. No more emailing folders or sharing files on
+                G-Drive.</span
+              >
+              <h2>Coming soon</h2>
+            </div>
+          </div>
+          <div class="card__one card__interactive">
+            <div
+              class="card box box__ditch"
+              style="background: rgba(0, 0, 0, 0.2)"
             >
-            <h2>Coming soon</h2>
+              <h2>State based animations</h2>
+              <span
+                >We keep it simple, so you’re free to create powerful results -
+                no After Effects qualifications needed.</span
+              >
+            </div>
+          </div>
+          <div class="card__two card__interactive">
+            <div
+              class="card box box__ditch"
+              style="background: rgba(0, 0, 0, 0.2)"
+            >
+              <h2>State based animations</h2>
+              <span
+                >We keep it simple, so you’re free to create powerful results -
+                no After Effects qualifications needed.</span
+              >
+            </div>
           </div>
         </div>
-        <div class="card__one card__interactive">
-          <div
-            class="card box box__ditch"
-            style="background: rgba(0, 0, 0, 0.2)"
-          >
-            <h2>State based animations</h2>
-            <span
-              >We keep it simple, so you’re free to create powerful results - no
-              After Effects qualifications needed.</span
-            >
-          </div>
-        </div>
-        <div class="card__two card__interactive">
-          <div
-            class="card box box__ditch"
-            style="background: rgba(0, 0, 0, 0.2)"
-          >
-            <h2>State based animations</h2>
-            <span
-              >We keep it simple, so you’re free to create powerful results - no
-              After Effects qualifications needed.</span
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col__two">
-        <div class="usecase__one">
-          <div class="usecase__first card card--shadow-dark usecase--ease">
-            <div class="card__header">
-              <div class="card__info">
-                <span class="card__title">E-Commerce Animation</span>
-                <span class="card__sub">Edited 6 hours ago</span>
+        <div class="col__two">
+          <div class="usecase__one">
+            <div class="usecase__first card card--shadow-dark usecase--ease">
+              <div class="card__header">
+                <div class="card__info">
+                  <span class="card__title">E-Commerce Animation</span>
+                  <span class="card__sub">Edited 6 hours ago</span>
+                </div>
+              </div>
+              <div class="sample_container">
+                <lottie-interactive
+                  path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
+                  interaction="click"
+                  style="cursor: pointer; width: 100%"
+                ></lottie-interactive>
               </div>
             </div>
-            <div class="sample_container">
-              <lottie-interactive
-                path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
-                interaction="click"
-                style="cursor: pointer; width: 100%"
-              ></lottie-interactive>
-            </div>
           </div>
-        </div>
-        <div class="usecase__two">
-          <div class="usecase__first card card--shadow-dark usecase--ease">
-            <div class="card__header">
-              <div class="card__info">
-                <span class="card__title">E-Commerce Animation</span>
-                <span class="card__sub">Edited 6 hours ago</span>
+          <div class="usecase__two">
+            <div class="usecase__first card card--shadow-dark usecase--ease">
+              <div class="card__header">
+                <div class="card__info">
+                  <span class="card__title">E-Commerce Animation</span>
+                  <span class="card__sub">Edited 6 hours ago</span>
+                </div>
+              </div>
+              <div class="sample_container">
+                <lottie-interactive
+                  path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
+                  interaction="switch"
+                  style="cursor: pointer; width: 100%"
+                ></lottie-interactive>
               </div>
             </div>
-            <div class="sample_container">
-              <lottie-interactive
-                path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
-                interaction="switch"
-                style="cursor: pointer; width: 100%"
-              ></lottie-interactive>
-            </div>
           </div>
         </div>
-      </div>
-      <div class="container-coming-soon">
-        <div class="coming-soon">Coming Soon</div>
+        <div class="container-coming-soon">
+          <div class="coming-soon">Coming Soon</div>
+        </div>
       </div>
     </div>
   </div>
@@ -119,6 +122,7 @@ export default {
   z-index: 2;
   position: relative;
   margin-inline: auto;
+
   .container-coming-soon {
     position: absolute;
     top: 0;

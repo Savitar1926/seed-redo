@@ -13,10 +13,10 @@
       <div class="col__two">
         <img
           src="@/assets/startnow-image.svg"
-          style="position: absolute; bottom: 0; right: 0; z-index: 1"
+          style="position: absolute; left: 0; z-index: 1"
         />
       </div>
-      <img
+      <!-- <img
         src="@/assets/startnow-bg.svg"
         style="
           transform: scale(2);
@@ -26,7 +26,7 @@
           height: 100%;
           z-index: -2;
         "
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -47,8 +47,7 @@ export default {
   padding-block: var(--step-6);
   padding-inline: var(--step-4);
   // margin: 0 auto;
-  background: var(--primary);
-  overflow: hidden;
+  margin-inline: auto;
 
   .container {
     display: grid;
@@ -126,10 +125,12 @@ export default {
         left: 0;
         bottom: 0;
         border-radius: calc(var(--step-0) - 2px);
+        backdrop-filter: blur(16px);
       }
       &__beta {
         background: rgba(255, 255, 255, 0.25);
         color: #ffffff;
+        backdrop-filter: blur(16px);
 
         &:hover {
           -webkit-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
@@ -142,6 +143,7 @@ export default {
 
   .col__two {
     grid-area: col__two;
+    position: relative;
   }
 }
 @media (min-width: 980px) {

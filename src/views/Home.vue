@@ -177,7 +177,13 @@ export default {
             <img
               src="@/assets/usecase-bg.svg"
               alt=""
-              style="position: absolute; top: 0; left: 0; z-index: 1"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+              "
             />
           </div>
           <Starters />
@@ -220,10 +226,26 @@ export default {
         />
       </section>
     </section>
-    <section class="section__meet-lottie" id="sectionWhite">
-      <Testimonials />
-      <MeetLottie />
-      <StartNow />
+    <section id="sectionWhite">
+      <div style="background: var(--primary)">
+        <Testimonials />
+      </div>
+      <div style="background: white">
+        <MeetLottie />
+      </div>
+      <div style="position: relative; overflow: hidden">
+        <StartNow style="position: relative; z-index: 3" />
+        <img
+          src="@/assets/startnow-bg.svg"
+          style="
+            position: absolute;
+            inset: 0;
+            width: 100vw;
+            height: 100%;
+            z-index: 2;
+          "
+        />
+      </div>
     </section>
     <section class="section__footer">
       <Footer />
@@ -302,11 +324,9 @@ main {
       padding-bottom: var(--step-4);
       position: relative;
     }
-    &__make-interactive {
-      margin-inline: var(--step-4);
-    }
+
     &__meet-lottie {
-      background: white;
+      background: var(--primary);
       z-index: 0;
     }
 

@@ -51,9 +51,10 @@ export default {};
 .main_testimonials {
   color: var(--dark);
   padding: var(--step-4);
-  margin: 0 auto;
   background: var(--primary);
   overflow: hidden;
+  margin: 0 auto;
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
