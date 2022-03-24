@@ -4,7 +4,7 @@
       <div class="section__title">
         <h1>
           Go further,
-          <h1 id="title-highlight">together</h1>
+          <h1 id="title-highlight">together.</h1>
         </h1>
         <span>
           Collaborate on files together and break out of the After Effects silo.
