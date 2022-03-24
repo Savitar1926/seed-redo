@@ -45,6 +45,7 @@ export default {
       style="padding-top: clamp(8.84rem, calc(2.34rem + 9.12vw), 4.17rem)"
     >
       <lottie-animation
+        class="animate-lead"
         style="transform: scale(0.88); height: 100%; margin-bottom: -2rem"
         :animationData="require('@/assets/hero-text.json')"
         :loop="true"
@@ -55,7 +56,7 @@ export default {
           <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
-      <div class="button">
+      <div class="button animate-lead">
         <button class="button__beta animate-lead">Get early access</button>
       </div>
     </div>
@@ -73,7 +74,7 @@ main {
   padding-block: var(--step-0);
   justify-content: center;
   text-align: center;
-  overflow-x: hidden;
+  overflow-y: hidden;
   margin-inline: auto;
 
   @media (max-height: 593px) {

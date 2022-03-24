@@ -55,6 +55,79 @@ export default {
     document.querySelectorAll(".stroke path").forEach((path) => {
       path.setAttribute("stroke", "#E1E4F0");
     });
+    const el = document.querySelector(".usecase-parent");
+    const usecases = document.querySelectorAll(".usecase-test");
+
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        console.log(entry.boundingClientRect.top);
+        if (entry.isIntersecting) {
+          console.log("Enter");
+          gsap.from(usecases, {
+            y: 200,
+            opacity: 0,
+            stagger: {
+              // wrap advanced options in an object
+              from: "center",
+              grid: "auto",
+              ease: "power2.inOut",
+              amount: 0.09,
+            },
+          });
+          return;
+        }
+        // if (entry.boundingClientRect.top > 0) {
+        //   gsap.from(usecases, {
+        //     scale: 0,
+        //     opacity: 0,
+        //     stagger: {
+        //       grid: "auto",
+        //       from: "start",
+        //       amount: 0.5,
+        //     },
+        //   });
+        //   console.log("Above");
+        // }
+      },
+      {
+        // root: null,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(el);
+    gsap.from(".animate-title", {
+      y: 200,
+      duration: 2,
+    });
+    gsap.from(".animate-title-2", {
+      opacity: 0,
+      duration: 1,
+    });
+    gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
+    gsap.from(
+      ".links",
+      {
+        duration: 0.2,
+        scale: 0.5,
+        opacity: 0,
+        ease: "power1.inOut",
+        stagger: {
+          grid: "auto",
+          from: "start",
+          amount: 0.2,
+        },
+      },
+      "<+=20%"
+    );
+    gsap.from(
+      ".animate-nav",
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      "<+=20%"
+    );
   },
   methods: {
     loopComplete() {
@@ -159,7 +232,7 @@ export default {
         <section class="section__hero" style="display">
           <Hero />
           <div
-            class="container-center-animation"
+            class="container-center-animation animate-lead"
             style="
               z-index: 2;
               align-self: center;
