@@ -50,11 +50,58 @@ export default {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.changeColour, false)
     );
+    window.scrollTo(0, 0);
   },
   mounted() {
+    // window.scrollTo(0, 0);
+    // const zoomElement = document.querySelector(".zoom");
+    // let zoom = 1;
+    // const ZOOM_SPEED = 0.001;
+    // zoomElement.style.transition = `transform 300ms ease `;
+    // zoomElement.style.transformOrigin = `bottom `;
+    // zoomElement.style.transform = `scale(1)`;
+
+    // document.addEventListener("scroll", function (e) {
+    //   console.log("window" + window.scrollY);
+    //   console.log(e.deltaY);
+    //   if (window.pageYOffset <= 1000) {
+    //     if (e > 0) {
+    //       zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
+    //       zoomElement.style.transform = `translateZ(${(zoom +=
+    //         ZOOM_SPEED * 1.28)})`;
+    //     } else if (window.pageYOffset == 0) {
+    //       zoomElement.style.transform = `scale(1)`;
+    //     } else {
+    //       zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+    //       zoomElement.style.transform = `translateZ(${(zoom -= ZOOM_SPEED)})`;
+    //     }
+    //   }
+    // });
+
+    function zoom(event) {
+      if (window.pageYOffset <= 1000) {
+        event.preventDefault();
+
+        scale += event.deltaY * 0.001;
+
+        // Restrict scale
+        scale = Math.min(Math.max(1, scale), 1.5);
+
+        // Apply scale transform
+        element.style.transform = `scale(${scale})`;
+        element.style.transformOrigin = `bottom`;
+        element.style.transition = `transform 500ms ease`;
+      }
+    }
+
+    let scale = 1;
+    const element = document.querySelector(".zoom");
+    document.body.onwheel = zoom;
+
     document.querySelectorAll(".stroke path").forEach((path) => {
       path.setAttribute("stroke", "#E1E4F0");
     });
+
     const el = document.querySelector(".usecase-parent");
     const usecases = document.querySelectorAll(".usecase-test");
 
@@ -232,7 +279,7 @@ export default {
         <section class="section__hero" style="display">
           <Hero />
           <div
-            class="container-center-animation animate-lead"
+            class="zoom container-center-animation animate-lead limiter"
             style="
               z-index: 2;
               align-self: center;
@@ -252,9 +299,7 @@ export default {
                 border-radius: 16px;
                 padding-inline: var(--step-4);
               "
-            >
-              hello World
-            </div>
+            ></div>
           </div>
         </section>
         <section class="section__usecases">
