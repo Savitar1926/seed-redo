@@ -90,13 +90,15 @@ export default {};
     }
 
     .profile__container {
-      padding-block: var(--step-2);
+      padding-block: var(--step-0);
+      display: flex;
+      flex-direction: column;
+      gap: var(--step--2);
 
       .profile {
         display: flex;
         flex-direction: column;
-        gap: var(--step-0);
-        margin-bottom: 3rem;
+        gap: var(--step--2);
         &__image {
           background: #7c71fd;
           height: 6.5rem;

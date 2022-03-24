@@ -246,21 +246,24 @@ export default {
       .role__project-manager {
         grid-area: role__project-manager;
         .profile__container {
-          // background: var(--teal);
+          background: #f7f8fa;
+          border: #e1e4f0 solid 4px;
         }
       }
 
       .role__developer {
         grid-area: role__developer;
         .profile__container {
-          // background: var(--purple);
+          background: #f7f8fa;
+          border: #e1e4f0 solid 4px;
         }
       }
 
       .role__designer {
         grid-area: role__designer;
         .profile__container {
-          // background: var(--blue);
+          background: #f7f8fa;
+          border: #e1e4f0 solid 4px;
         }
       }
       .role__container {

@@ -159,16 +159,29 @@ export default {
         <section class="section__hero" style="display">
           <Hero />
           <div
-            class="center-animation card card--light card--shadow"
+            class="container-center-animation"
             style="
               z-index: 2;
               align-self: center;
               height: 608px;
-              width: 1084px;
+              width: 100%;
               border-radius: 16px;
+              padding-inline: var(--step-4);
             "
           >
-            hello World
+            <div
+              class="center-animation card card--light card--shadow"
+              style="
+                z-index: 2;
+                align-self: center;
+                height: 608px;
+                width: 100%;
+                border-radius: 16px;
+                padding-inline: var(--step-4);
+              "
+            >
+              hello World
+            </div>
           </div>
         </section>
         <section class="section__usecases">
@@ -300,6 +313,7 @@ main {
         margin-top: 10rem;
         width: 100%;
         z-index: 1;
+        padding-inline: var(--step-4);
       }
     }
     &__usecases {

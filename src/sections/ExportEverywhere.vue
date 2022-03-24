@@ -57,7 +57,7 @@ export default {
       present.remove();
     });
     colorContainer.forEach((container) => {
-      container.style.borderRadius = "16px";
+      container.style.borderRadius = "var(--step--2) var(--step--2) 0 0";
       container.style.width = "240px";
       container.style.height = "146px";
       container.style.overflow = "hidden";
@@ -246,7 +246,14 @@ export default {
         background: #222222;
         backdrop-filter: blur(16px);
         width: 100%;
-        padding: 16px;
+      }
+      .one-color-control .one-opacity {
+        height: 12px;
+        width: 101% !important;
+        border-radius: 3px;
+        box-shadow: 0 0 1px 0 rgb(0 0 0 / 20%);
+        position: relative;
+        z-index: 0;
       }
 
       .update-button {
