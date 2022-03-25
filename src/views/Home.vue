@@ -78,25 +78,49 @@ export default {
     //   }
     // });
 
-    function zoom(event) {
-      if (window.pageYOffset <= 1000) {
-        event.preventDefault();
+    // function zoom(event) {
+    //   console.log(window.scrollY);
+    //   if (window.pageYOffset <= 1000) {
+    //     event.preventDefault();
 
-        scale += event.deltaY * 0.001;
+    //     // scale += event.deltaY * 0.001;
+    //     var scrollTop = window.scrollY;
+
+    //     let scaleAmt = 1.0 + scrollTop / 10;
+
+    //     // Restrict scale
+    //     scaleAmt = Math.min(Math.max(1, scaleAmt), 1.5);
+
+    //     // Apply scale transform
+    //     element.style.transform = `scale(${scaleAmt})`;
+    //     element.style.transformOrigin = `bottom`;
+    //     element.style.transition = `transform 500ms ease`;
+    //   }
+    // }
+
+    // let scale = 1;
+    const element = document.querySelector(".zoom");
+    // document.body.onwheel = zoom;
+
+    window.onscroll = function (e) {
+      if (window.pageYOffset <= 1000) {
+        e.preventDefault();
+
+        // scale += event.deltaY * 0.001;
+        var scrollTop = document.documentElement.scrollTop;
+
+        let scaleAmt = 1.0 + scrollTop / (10 * 100);
 
         // Restrict scale
-        scale = Math.min(Math.max(1, scale), 1.5);
+        scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
 
         // Apply scale transform
-        element.style.transform = `scale(${scale})`;
+        element.style.transform = `scale(${scaleAmt})`;
         element.style.transformOrigin = `bottom`;
         element.style.transition = `transform 500ms ease`;
+        console.log("scale: " + scaleAmt);
       }
-    }
-
-    let scale = 1;
-    const element = document.querySelector(".zoom");
-    document.body.onwheel = zoom;
+    };
 
     document.querySelectorAll(".stroke path").forEach((path) => {
       path.setAttribute("stroke", "#E1E4F0");
