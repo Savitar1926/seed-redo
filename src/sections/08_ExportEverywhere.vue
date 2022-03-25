@@ -1,5 +1,4 @@
 <script>
-// import LottieAnimation from "lottie-web-vue";
 import icon from "@/assets/Icons.vue";
 
 export default {
@@ -7,14 +6,12 @@ export default {
   data() {
     return {
       color: "#ffff",
-      profileMenu: null,
       mobile: null,
       mobileNav: null,
-      windownWidth: null,
+      windowWidth: null,
     };
   },
   components: {
-    // LottieAnimation,
     icon,
   },
   created() {
@@ -25,58 +22,21 @@ export default {
   },
   mounted() {
     this.checkScreen();
-    const colorValue = document.querySelectorAll(".one-color-value");
-    const colorContainer = document.querySelectorAll(".one-colors");
-    const colorPresent = document.querySelectorAll(".one-color-present");
-    const colorSlider = document.querySelectorAll(".one-color-slider");
-    const colorSwatches = document.querySelectorAll(".one-color-stash");
-    const colorToggle = document.querySelectorAll(".one-color-toggle");
-    const colorList = document.querySelectorAll("ul li");
-    let newArray = [];
-    colorList.forEach((color) => {
-      newArray.push(color);
-    });
-    const remove = newArray.splice("08");
-    remove.forEach((color) => {
-      color.remove();
-    });
-    colorValue.forEach((color) => {
-      color.remove();
-    });
-    colorToggle.forEach((toggle) => {
-      toggle.remove();
-    });
-    colorSwatches.forEach((color) => {
-      color.style.justifyContent = "space-evenly";
-    });
-    colorSlider.forEach((slider) => {
-      slider.style.gap = "24px";
-      slider.style.width = "100%";
-    });
-    colorPresent.forEach((present) => {
-      present.remove();
-    });
-    colorContainer.forEach((container) => {
-      // container.style.borderRadius = "var(--step--1) var(--step--1) 0 0";
-      container.style.width = "240px";
-      // container.style.height = "146px";
-      container.style.overflow = "hidden";
-    });
+    this.colorPanel();
   },
   methods: {
     change(color) {
       const windowShadow = document.querySelectorAll(
         ".wing-central-bottom-bg path"
       );
-
       this.color = color;
       windowShadow.forEach((path) => {
         path.setAttribute("fill", this.color);
       });
     },
     checkScreen() {
-      this.windownWidth = window.innerWidth;
-      if (this.windownWidth <= 950) {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 950) {
         this.mobile = true;
         return;
       }
@@ -86,6 +46,43 @@ export default {
     },
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
+    },
+    colorPanel() {
+      const colorValue = document.querySelectorAll(".one-color-value");
+      const colorContainer = document.querySelectorAll(".one-colors");
+      const colorPresent = document.querySelectorAll(".one-color-present");
+      const colorSlider = document.querySelectorAll(".one-color-slider");
+      const colorSwatches = document.querySelectorAll(".one-color-stash");
+      const colorToggle = document.querySelectorAll(".one-color-toggle");
+      const colorList = document.querySelectorAll("ul li");
+      let newArray = [];
+      colorList.forEach((color) => {
+        newArray.push(color);
+      });
+      const remove = newArray.splice("08");
+      remove.forEach((color) => {
+        color.remove();
+      });
+      colorValue.forEach((color) => {
+        color.remove();
+      });
+      colorToggle.forEach((toggle) => {
+        toggle.remove();
+      });
+      colorSwatches.forEach((color) => {
+        color.style.justifyContent = "space-evenly";
+      });
+      colorSlider.forEach((slider) => {
+        slider.style.gap = "24px";
+        slider.style.width = "100%";
+      });
+      colorPresent.forEach((present) => {
+        present.remove();
+      });
+      colorContainer.forEach((container) => {
+        container.style.width = "240px";
+        container.style.overflow = "hidden";
+      });
     },
   },
 };
@@ -103,37 +100,24 @@ export default {
     </div>
     <div class="export-section">
       <div class="main-animation">
-        <!-- <lottie-animation
-          :animationData="require('@/assets/Still Rocket Orange.json')"
-          :loop="true"
-        /> -->
-        <img src="@/assets/rocket.svg" style="height: fit-content" />
+        <img class="placeholder-rocket" src="@/assets/rocket.svg" />
         <div class="export__actions">
           <span>Try changing the colours</span>
           <div>
-            <div
-              class="card card--shadow-dark color-panel"
-              style="padding: 4px; border-radius: 20px"
-            >
+            <div class="card card--shadow-dark color-panel">
               <color-panel v-model="color" @change="change"></color-panel>
             </div>
             <button class="update-button">
-              <icon name="update" style="display: flex; align-self: center" />
+              <icon class="update-icon" name="update" />
               Update Colours
             </button>
           </div>
         </div>
       </div>
-      <!-- <lottie-animation
-        v-show="!mobile"
-        :animationData="require('@/assets/devicesSupported.json')"
-        :loop="true"
-        class="testAnim"
-      /> -->
       <img
+        class="placeholder-devices"
         v-show="!mobile"
         src="@/assets/Devices.svg"
-        style="inset: 0; z-index: -2"
       />
     </div>
     <div class="carousel-mobile" v-show="mobile">
@@ -207,6 +191,9 @@ export default {
     align-items: center;
     .main-animation {
       width: 80%;
+      .placeholder-rocket {
+        height: fit-content;
+      }
       .sample {
         transform: scale(1.045);
       }
@@ -218,6 +205,11 @@ export default {
       justify-content: center;
       align-items: center;
       gap: var(--step-2);
+
+      .placeholder-devices {
+        inset: 0;
+        z-index: -2;
+      }
       span {
         font-size: var(--step--1);
         font-family: var(--architects_daughter);
@@ -237,6 +229,8 @@ export default {
           rgb(255, 84, 103, 0.5) 88%,
           rgb(253, 190, 4, 0.5) 100%
         );
+        padding: 4px !important;
+        border-radius: 20px !important;
       }
       .one-colorpanel {
         border-radius: var(--step--3);
@@ -271,6 +265,11 @@ export default {
         justify-content: center;
         align-items: center;
         gap: var(--step--1);
+
+        .update-icon {
+          display: flex;
+          align-self: center;
+        }
       }
     }
   }

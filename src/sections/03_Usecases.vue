@@ -112,6 +112,7 @@
 import icon from "@/assets/Icons.vue";
 
 export default {
+  name: "Usecases",
   components: {
     icon,
   },

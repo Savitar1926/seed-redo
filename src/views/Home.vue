@@ -1,16 +1,19 @@
 <script scoped>
+// Plugins
 import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
+// Components
 import Navigation from "@/components/Navigation.vue";
-import Hero from "@/sections/Hero.vue";
-import RevCenterAnimation from "@/sections/RevCenterAnimation.vue";
-import RevUsecases from "@/sections/RevUsecases.vue";
-import Starters from "@/sections/Starters.vue";
-import Simple from "@/sections/SimpleForEveryone.vue";
-import RevFurtherTogether from "@/sections/RevFurtherTogether.vue";
-import MakeInteractive from "@/sections/MakeInteractive.vue";
-import ExportEverywhere from "@/sections/ExportEverywhere.vue";
-import SupportedDevice from "@/sections/SupportedDevice.vue";
+// Sections
+import Hero from "@/sections/01_Hero.vue";
+import RevCenterAnimation from "@/sections/02_CenterAnimation.vue";
+import RevUsecases from "@/sections/03_Usecases.vue";
+import Starters from "@/sections/04_Starters.vue";
+import Simple from "@/sections/05_SimpleForEveryone.vue";
+import RevFurtherTogether from "@/sections/06_FurtherTogether.vue";
+import MakeInteractive from "@/sections/07_MakeInteractive.vue";
+import ExportEverywhere from "@/sections/08_ExportEverywhere.vue";
+import SupportedDevice from "@/sections/09_SupportedDevice.vue";
 import Testimonials from "@/sections/Testimonials.vue";
 import MeetLottie from "@/sections/MeetLottie.vue";
 import StartNow from "@/sections/RevStartNow.vue";
@@ -19,11 +22,7 @@ import Footer from "@/sections/Footer.vue";
 export default {
   name: "Home",
   data() {
-    return {
-      visible: false,
-      contentInside: false,
-      cover: true,
-    };
+    return {};
   },
   components: {
     LottieAnimation,
@@ -186,7 +185,7 @@ export default {
 <template>
   <main class="home">
     <Navigation class="navigation" id="navigation" />
-    <section class="section" v-show="!contentInside">
+    <section class="section">
       <section class="section__light gap-light">
         <section class="section__hero">
           <Hero />

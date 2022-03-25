@@ -40,7 +40,9 @@
     <div class="section section-right">
       <div class="lottie-container">
         <lottie-animation
-          :animationData="require('@/assets/test-animation.json')"
+          :animationData="
+            require('@/assets/05_furtherTogether/test-animation.json')
+          "
           :loop="true"
         />
       </div>

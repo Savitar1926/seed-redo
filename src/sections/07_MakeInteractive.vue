@@ -17,10 +17,7 @@
             </div>
           </div>
           <div class="card__one card__interactive">
-            <div
-              class="card box box__ditch"
-              style="background: rgba(0, 0, 0, 0.2)"
-            >
+            <div class="card box box__ditch">
               <h2>State based animations</h2>
               <span
                 >We keep it simple, so you’re free to create powerful results -
@@ -29,10 +26,7 @@
             </div>
           </div>
           <div class="card__two card__interactive">
-            <div
-              class="card box box__ditch"
-              style="background: rgba(0, 0, 0, 0.2)"
-            >
+            <div class="card box box__ditch">
               <h2>State based animations</h2>
               <span
                 >We keep it simple, so you’re free to create powerful results -
@@ -52,9 +46,9 @@
               </div>
               <div class="sample_container">
                 <lottie-interactive
+                  class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="click"
-                  style="cursor: pointer; width: 100%"
                 ></lottie-interactive>
               </div>
             </div>
@@ -69,9 +63,9 @@
               </div>
               <div class="sample_container">
                 <lottie-interactive
+                  class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="switch"
-                  style="cursor: pointer; width: 100%"
                 ></lottie-interactive>
               </div>
             </div>
@@ -90,11 +84,7 @@ import { LottieInteractive } from "lottie-interactive";
 export default {
   name: "SimpleForEveryone",
   data() {
-    return {
-      controller: null,
-      tween: null,
-      scene: null,
-    };
+    return {};
   },
   components: {
     LottieInteractive,
@@ -116,7 +106,6 @@ export default {
       rgba(238, 49, 131, 0.5) 35.93%,
       rgba(124, 113, 253, 0) 68.85%
     );
-  // border: 16px solid rgba(43, 43, 43, 0.8);
   backdrop-filter: blur(16px);
   border-radius: 40px;
   z-index: 2;
@@ -160,7 +149,6 @@ export default {
   height: max-content;
   color: var(--primary);
   border-radius: inherit;
-  // border: 8px solid rgba(43, 43, 43, 0.8);
 
   .card {
     justify-content: center;
@@ -169,7 +157,6 @@ export default {
     }
 
     &--dark {
-      // border: none !important;
       backdrop-filter: blur(16px) !important;
     }
   }
@@ -211,6 +198,9 @@ export default {
     }
 
     .card__interactive {
+      .box__ditch {
+        background: rgba(0, 0, 0, 0.5);
+      }
       h2 {
         font-size: var(--step--1);
       }
@@ -240,6 +230,10 @@ export default {
     backdrop-filter: blur(8px);
 
     .sample_container {
+      .interactive-lottie {
+        cursor: pointer;
+        width: 100%;
+      }
       button {
         display: flex;
         justify-content: center;

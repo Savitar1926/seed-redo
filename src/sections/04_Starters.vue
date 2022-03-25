@@ -43,7 +43,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Starters",
+};
 </script>
 
 <style lang="scss" scoped>
