@@ -171,9 +171,6 @@ export default {
           "card__fun";
         grid-area: section__cards;
       }
-      // .card {
-      //   padding: var(--step-2) !important;
-      // }
       .box {
         display: flex;
         justify-content: center;

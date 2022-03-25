@@ -89,31 +89,33 @@ export default {
     },
     scaleUI() {
       const element = document.querySelector(".zoom");
+      const heroelement = document.querySelector(".hero");
       window.onscroll = function (scroll) {
-        if (window.pageYOffset <= 1000) {
+        let scrollTop = document.documentElement.scrollTop;
+        let scaleAmt = 1.0 + scrollTop / (10 * 100);
+        let scaleDown = 1.0 - scrollTop / (10 * 100);
+        if (scaleAmt < 1.5) {
           scroll.preventDefault();
-
-          let scrollTop = document.documentElement.scrollTop;
-
-          let scaleAmt = 1.0 + scrollTop / (10 * 100);
-
           // Restrict scale
           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
           element.style.transition = `transform 500ms ease`;
           element.style.transform = `scale(${scaleAmt})`;
+          heroelement.style.transformOrigin = `bottom`;
+          heroelement.style.transition = `transform 500ms ease`;
+          heroelement.style.transform = `scale(${scaleDown})`;
         }
       };
     },
     usecaseIntersection() {
       // Usecase Intersection Observer
-      const el = document.querySelector(".usecase-parent");
+      const usecaseParent = document.querySelector(".usecase-parent");
       const usecases = document.querySelectorAll(".usecase-animate");
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
+            console.log(entry);
             console.log("Enter");
             gsap.from(usecases, {
               y: 200,
@@ -127,12 +129,17 @@ export default {
             });
             return;
           }
+          if (entry.boundingClientRect.top > 0) {
+            console.log("BELOW"); // do things if below
+          } else {
+            console.log("ABOVE"); // do things if above
+          }
         },
         {
           threshold: 0,
         }
       );
-      observer.observe(el);
+      observer.observe(usecaseParent);
     },
     changeStrokeLottieHero() {
       document.querySelectorAll(".stroke path").forEach((path) => {
@@ -165,7 +172,6 @@ export default {
         });
         titleHighlight.style.letterSpacing = "var(--step-0)";
         titleHighlight.style.color = "white";
-
         return;
       }
       nav.style.background = "rgba(43 43 43 / 0.8)";
