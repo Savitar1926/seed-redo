@@ -195,7 +195,7 @@ export default {
         <section class="section__usecases">
           <div class="usecases-home">
             <RevUsecases class="usecase-component" />
-            <img src="@/assets/usecase-bg.svg" class="usecase-bg" />
+            <img src="@/assets/03_usecases/usecase-bg.svg" class="usecase-bg" />
           </div>
           <Starters />
         </section>
@@ -223,7 +223,7 @@ export default {
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <img src="@/assets/Stars.svg" class="bg__stars" />
+        <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
         <img src="@/assets/Background.svg" class="bg__gradient" />
         <img src="@/assets/dark-bg.svg" class="bg__dark" />
       </section>
@@ -239,7 +239,10 @@ export default {
       </div>
       <div class="section__get-started">
         <StartNow class="getstarted-component" />
-        <img class="getstarted-bg" src="@/assets/startnow-bg.svg" style="" />
+        <img
+          class="getstarted-bg"
+          src="@/assets/10_getStarted/startnow-bg.svg"
+        />
       </div>
     </section>
 
