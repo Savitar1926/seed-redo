@@ -3,14 +3,14 @@
     <div class="section section_left">
       <div class="container">
         <div class="col-1-left">
-          <div class="section-title section__title usecase-test">
+          <div class="section-title section__title usecase-animate">
             <h1>Animations for all scenarios</h1>
             <button class="full">
               Get Started with Templates
               <icon name="arrow" class="arrow" />
             </button>
           </div>
-          <div class="usecase-hero usecase-test card card--shadow">
+          <div class="usecase-hero usecase-animate card card--shadow">
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -28,7 +28,7 @@
     <div class="section section_right">
       <div class="container">
         <div class="col-1">
-          <div class="usecase-phone usecase-test card card--shadow">
+          <div class="usecase-phone usecase-animate card card--shadow">
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -45,7 +45,7 @@
         </div>
         <div class="col-2">
           <div class="container-cases">
-            <div class="usecase-loading_1 usecase-test card card--shadow">
+            <div class="usecase-loading_1 usecase-animate card card--shadow">
               <!-- Usecase Content  -->
               <div class="usecase-header">
                 <icon name="edit" class="arrow" />
@@ -59,7 +59,7 @@
               <div class="usecase-lottie"></div>
               <!-- Usecase Content  -->
             </div>
-            <div class="usecase-loading_2 usecase-test card card--shadow">
+            <div class="usecase-loading_2 usecase-animate card card--shadow">
               <!-- Usecase Content  -->
               <div class="usecase-header">
                 <icon name="edit" class="arrow" />
@@ -74,7 +74,7 @@
               <!-- Usecase Content  -->
             </div>
           </div>
-          <div class="usecase-headphones usecase-test card card--shadow">
+          <div class="usecase-headphones usecase-animate card card--shadow">
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -88,7 +88,7 @@
             <div class="usecase-lottie"></div>
             <!-- Usecase Content  -->
           </div>
-          <div class="usecase-notification usecase-test card card--shadow">
+          <div class="usecase-notification usecase-animate card card--shadow">
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />

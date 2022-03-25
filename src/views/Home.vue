@@ -3,14 +3,12 @@ import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 import Navigation from "@/components/Navigation.vue";
 import Hero from "@/sections/Hero.vue";
-// import CenterAnimation from "@/sections/CenterAnimation.vue";
-// import Usecases from "@/sections/Usecases.vue";
+import RevCenterAnimation from "@/sections/RevCenterAnimation.vue";
 import RevUsecases from "@/sections/RevUsecases.vue";
 import Starters from "@/sections/Starters.vue";
 import Simple from "@/sections/SimpleForEveryone.vue";
 import RevFurtherTogether from "@/sections/RevFurtherTogether.vue";
 import MakeInteractive from "@/sections/MakeInteractive.vue";
-// import RevMakeInteractive from "@/sections/RevMakeInteractive.vue";
 import ExportEverywhere from "@/sections/ExportEverywhere.vue";
 import SupportedDevice from "@/sections/SupportedDevice.vue";
 import Testimonials from "@/sections/Testimonials.vue";
@@ -31,14 +29,12 @@ export default {
     LottieAnimation,
     Navigation,
     Hero,
-    // CenterAnimation,
-    // Usecases,
+    RevCenterAnimation,
     RevUsecases,
     Simple,
     Starters,
     RevFurtherTogether,
     MakeInteractive,
-    // RevMakeInteractive,
     ExportEverywhere,
     SupportedDevice,
     Testimonials,
@@ -48,165 +44,17 @@ export default {
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.changeColour, false)
+      window.addEventListener(evt, this.changeColourNavbar, false)
     );
-    window.scrollTo(0, 0);
   },
   mounted() {
-    // window.scrollTo(0, 0);
-    // const zoomElement = document.querySelector(".zoom");
-    // let zoom = 1;
-    // const ZOOM_SPEED = 0.001;
-    // zoomElement.style.transition = `transform 300ms ease `;
-    // zoomElement.style.transformOrigin = `bottom `;
-    // zoomElement.style.transform = `scale(1)`;
-
-    // document.addEventListener("scroll", function (e) {
-    //   console.log("window" + window.scrollY);
-    //   console.log(e.deltaY);
-    //   if (window.pageYOffset <= 1000) {
-    //     if (e > 0) {
-    //       zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
-    //       zoomElement.style.transform = `translateZ(${(zoom +=
-    //         ZOOM_SPEED * 1.28)})`;
-    //     } else if (window.pageYOffset == 0) {
-    //       zoomElement.style.transform = `scale(1)`;
-    //     } else {
-    //       zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
-    //       zoomElement.style.transform = `translateZ(${(zoom -= ZOOM_SPEED)})`;
-    //     }
-    //   }
-    // });
-
-    // function zoom(event) {
-    //   console.log(window.scrollY);
-    //   if (window.pageYOffset <= 1000) {
-    //     event.preventDefault();
-
-    //     // scale += event.deltaY * 0.001;
-    //     var scrollTop = window.scrollY;
-
-    //     let scaleAmt = 1.0 + scrollTop / 10;
-
-    //     // Restrict scale
-    //     scaleAmt = Math.min(Math.max(1, scaleAmt), 1.5);
-
-    //     // Apply scale transform
-    //     element.style.transform = `scale(${scaleAmt})`;
-    //     element.style.transformOrigin = `bottom`;
-    //     element.style.transition = `transform 500ms ease`;
-    //   }
-    // }
-
-    // let scale = 1;
-    const element = document.querySelector(".zoom");
-    // document.body.onwheel = zoom;
-
-    window.onscroll = function (e) {
-      if (window.pageYOffset <= 1000) {
-        e.preventDefault();
-
-        // scale += event.deltaY * 0.001;
-        var scrollTop = document.documentElement.scrollTop;
-
-        let scaleAmt = 1.0 + scrollTop / (10 * 100);
-
-        // Restrict scale
-        scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-
-        // Apply scale transform
-        element.style.transform = `scale(${scaleAmt})`;
-        element.style.transformOrigin = `bottom`;
-        element.style.transition = `transform 500ms ease`;
-        console.log("scale: " + scaleAmt);
-      }
-    };
-
-    document.querySelectorAll(".stroke path").forEach((path) => {
-      path.setAttribute("stroke", "#E1E4F0");
-    });
-
-    const el = document.querySelector(".usecase-parent");
-    const usecases = document.querySelectorAll(".usecase-test");
-
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        console.log(entry.boundingClientRect.top);
-        if (entry.isIntersecting) {
-          console.log("Enter");
-          gsap.from(usecases, {
-            y: 200,
-            opacity: 0,
-            stagger: {
-              // wrap advanced options in an object
-              from: "center",
-              grid: "auto",
-              ease: "power2.inOut",
-              amount: 0.09,
-            },
-          });
-          return;
-        }
-        // if (entry.boundingClientRect.top > 0) {
-        //   gsap.from(usecases, {
-        //     scale: 0,
-        //     opacity: 0,
-        //     stagger: {
-        //       grid: "auto",
-        //       from: "start",
-        //       amount: 0.5,
-        //     },
-        //   });
-        //   console.log("Above");
-        // }
-      },
-      {
-        // root: null,
-        threshold: 0,
-      }
-    );
-
-    observer.observe(el);
-    gsap.from(".animate-title", {
-      y: 200,
-      duration: 2,
-    });
-    gsap.from(".animate-title-2", {
-      opacity: 0,
-      duration: 1,
-    });
-    gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
-    gsap.from(
-      ".links",
-      {
-        duration: 0.2,
-        scale: 0.5,
-        opacity: 0,
-        ease: "power1.inOut",
-        stagger: {
-          grid: "auto",
-          from: "start",
-          amount: 0.2,
-        },
-      },
-      "<+=20%"
-    );
-    gsap.from(
-      ".animate-nav",
-      {
-        opacity: 0,
-        duration: 0.5,
-      },
-      "<+=20%"
-    );
+    this.animateHeroSection();
+    this.changeStrokeLottieHero();
+    this.usecaseIntersection();
+    this.scaleUI();
   },
   methods: {
-    loopComplete() {
-      gsap.to(".on-mounted", {
-        y: -1500,
-        duration: 2,
-        ease: "expo.out",
-      });
+    animateHeroSection() {
       gsap.from(".animate-title", {
         y: 200,
         duration: 2,
@@ -239,12 +87,60 @@ export default {
         },
         "<+=20%"
       );
-      setTimeout(() => {
-        this.cover = false;
-      }, 2500);
-      this.contentInside = true;
     },
-    changeColour() {
+    scaleUI() {
+      const element = document.querySelector(".zoom");
+      window.onscroll = function (scroll) {
+        if (window.pageYOffset <= 1000) {
+          scroll.preventDefault();
+
+          let scrollTop = document.documentElement.scrollTop;
+
+          let scaleAmt = 1.0 + scrollTop / (10 * 100);
+
+          // Restrict scale
+          scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
+
+          // Apply scale transform
+          element.style.transformOrigin = `bottom`;
+          element.style.transition = `transform 500ms ease`;
+          element.style.transform = `scale(${scaleAmt})`;
+        }
+      };
+    },
+    usecaseIntersection() {
+      // Usecase Intersection Observer
+      const el = document.querySelector(".usecase-parent");
+      const usecases = document.querySelectorAll(".usecase-animate");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            console.log("Enter");
+            gsap.from(usecases, {
+              y: 200,
+              opacity: 0,
+              stagger: {
+                from: "center",
+                grid: "auto",
+                ease: "power2.inOut",
+                amount: 0.09,
+              },
+            });
+            return;
+          }
+        },
+        {
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    changeStrokeLottieHero() {
+      document.querySelectorAll(".stroke path").forEach((path) => {
+        path.setAttribute("stroke", "#E1E4F0");
+      });
+    },
+    changeColourNavbar() {
       const darkSection = document.querySelector("#sectionFurther");
       const titleHighlight = document.querySelector("#title-highlight");
       const nav = document.querySelector("#nav_bg");
@@ -289,125 +185,65 @@ export default {
 
 <template>
   <main class="home">
-    <!-- <div v-if="cover" class="on-mounted">
-      <lottie-animation
-        v-if="cover"
-        :animationData="require('@/assets/Logo (1) 2.json')"
-        :loop="1"
-        @loopComplete="loopComplete"
-      />
-    </div> -->
     <Navigation class="navigation" id="navigation" />
     <section class="section" v-show="!contentInside">
-      <section class="section__light">
-        <section class="section__hero" style="display">
+      <section class="section__light gap-light">
+        <section class="section__hero">
           <Hero />
-          <div
-            class="zoom container-center-animation animate-lead limiter"
-            style="
-              z-index: 2;
-              align-self: center;
-              height: 608px;
-              width: 100%;
-              border-radius: 16px;
-              padding-inline: var(--step-4);
-            "
-          >
-            <div
-              class="center-animation card card--light card--shadow"
-              style="
-                z-index: 2;
-                align-self: center;
-                height: 608px;
-                width: 100%;
-                border-radius: 16px;
-                padding-inline: var(--step-4);
-              "
-            ></div>
-          </div>
+          <RevCenterAnimation />
         </section>
         <section class="section__usecases">
-          <div style="position: relative">
-            <RevUsecases style="z-index: 2; position: relative" />
-            <img
-              src="@/assets/usecase-bg.svg"
-              alt=""
-              style="
-                position: absolute;
-                bottom: 0;
-                z-index: 1;
-                width: 110 %;
-                transform: scale(1.2);
-              "
-            />
+          <div class="usecases-home">
+            <RevUsecases class="usecase-component" />
+            <img src="@/assets/usecase-bg.svg" class="usecase-bg" />
           </div>
           <Starters />
         </section>
         <lottie-animation
-          ref="anim"
+          class="cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
-          class="cursor_movement animate-lead"
         />
         <lottie-animation
-          ref="anim"
+          class="bg__pattern limter animate-lead"
           :animationData="require('@/assets/Pattern_6.json')"
           :loop="true"
-          class="bg__pattern limter animate-lead"
         />
       </section>
-      <section class="section__simple" id="sectionSimple">
+      <section class="section__simple">
         <Simple />
       </section>
-      <section
-        class="section__further"
-        id="sectionFurther"
-        style="position: relative"
-      >
+
+      <!-- Further Togther, Make Interactive, Export Everywhere, Supported Devices -->
+
+      <section class="section__further" id="sectionFurther">
         <RevFurtherTogether />
         <MakeInteractive class="section__make-interactive" />
-        <!-- <RevMakeInteractive class="section__make-interactive" /> -->
-        <div>
+        <div class="section__export-everywhere">
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <!-- <Testimonials /> -->
-        <img src="@/assets/Stars.svg" class="bg__stars" alt="" />
+        <img src="@/assets/Stars.svg" class="bg__stars" />
         <img src="@/assets/Background.svg" class="bg__gradient" />
-        <img
-          src="@/assets/dark-bg.svg"
-          style="
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            z-index: 1;
-            margin-inline: auto;
-            margin-top: -5rem;
-          "
-        />
+        <img src="@/assets/dark-bg.svg" class="bg__dark" />
       </section>
     </section>
-    <section id="sectionWhite">
-      <div style="background: var(--primary)">
+
+    <!--  Testiomonials, What's Lottie, Get Started -->
+    <section class="section__light">
+      <div class="section__testimonials">
         <Testimonials />
       </div>
-      <div style="background: white">
+      <div class="section__meet-lottie">
         <MeetLottie />
       </div>
-      <div style="position: relative; overflow: hidden">
-        <StartNow style="position: relative; z-index: 3" />
-        <img
-          src="@/assets/startnow-bg.svg"
-          style="
-            position: absolute;
-            inset: 0;
-            width: 100vw;
-            height: 100%;
-            z-index: 2;
-          "
-        />
+      <div class="section__get-started">
+        <StartNow class="getstarted-component" />
+        <img class="getstarted-bg" src="@/assets/startnow-bg.svg" style="" />
       </div>
     </section>
+
+    <!-- Foooter -->
     <section class="section__footer">
       <Footer />
     </section>
@@ -422,16 +258,8 @@ main {
     position: fixed;
     z-index: 9999;
   }
-  .on-mounted {
-    height: 101vh;
-    width: 100%;
-    background: var(--dark);
-    z-index: 10000;
-    position: absolute;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-  }
+
+  // Sections
   .section {
     display: flex;
     flex-direction: column;
@@ -441,8 +269,11 @@ main {
     &__light {
       display: flex;
       flex-direction: column;
-      gap: 96px;
       background: var(--primary);
+
+      .gap-light {
+        gap: 96px;
+      }
     }
 
     &__hero {
@@ -451,25 +282,28 @@ main {
       justify-content: center;
       gap: var(--step-0);
     }
-    &__center {
-      height: min-content;
-      background: var(--primary);
-      display: flex;
-      justify-content: center;
-
-      .center-animation {
-        margin-top: 10rem;
-        width: 100%;
-        z-index: 1;
-        padding-inline: var(--step-4);
-      }
-    }
     &__usecases {
       background: var(--primary);
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 40px;
+
+      .usecases-home {
+        position: relative;
+
+        .usecase-component {
+          position: relative;
+          z-index: 2;
+        }
+        .usecase-bg {
+          position: absolute;
+          bottom: 0;
+          z-index: 1;
+          width: 110%;
+          transform: scale(1.2);
+        }
+      }
     }
 
     &__simple {
@@ -488,9 +322,27 @@ main {
       position: relative;
     }
 
-    &__meet-lottie {
+    &__testimonials {
       background: var(--primary);
-      z-index: 0;
+    }
+    &__meet-lottie {
+      background: white;
+    }
+    &__get-started {
+      position: relative;
+      overflow: hidden;
+
+      .getstarted-component {
+        position: relative;
+        z-index: 3;
+      }
+      .getstarted-bg {
+        position: absolute;
+        inset: 0;
+        width: 100vw;
+        height: 100%;
+        z-index: 2;
+      }
     }
 
     &__footer {
@@ -498,6 +350,8 @@ main {
       background: var(--dark);
     }
   }
+
+  // Backgrounds SVGs, Images
 
   .bg {
     &__stars {
@@ -522,7 +376,15 @@ main {
       z-index: 1;
       width: 100%;
     }
-
+    &__dark {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      margin-inline: auto;
+      margin-top: -5rem;
+    }
+    // Lottie Pattern
     &__pattern {
       width: max-content;
       width: 100%;
@@ -534,6 +396,7 @@ main {
     }
   }
 
+  // Lottie Cursor Movement
   .cursor_movement {
     padding: 0;
     width: 100%;
@@ -544,30 +407,6 @@ main {
     z-index: 2;
     transform: scale(0.8);
     transform-origin: bottom;
-  }
-
-  .darkSection {
-    width: max-content;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    margin-top: -10em;
-    pointer-events: none;
-    transform: scale(1.25);
-  }
-
-  @media (min-width: 980px) {
-    .section {
-      &__center {
-        margin-bottom: -5rem;
-      }
-    }
-
-    .darkSection {
-      transform: scale(8);
-    }
   }
 }
 </style>
