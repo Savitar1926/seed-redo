@@ -15,12 +15,11 @@
         </div>
       </div>
       <div class="col__two">
-        <div class="usecase__first card card--light card--shadow usecase--ease">
+        <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
             <lottie-animation
-              :animationData="require('@/assets/Pattern_6down.json')"
+              :animationData="require('@/assets/Pattern_6.json')"
               :loop="true"
-              class="profile__animation"
             />
             <div>
               <h3>351 kB</h3>
@@ -28,12 +27,11 @@
             </div>
           </div>
         </div>
-        <div class="usecase__first card card--light card--shadow usecase--ease">
+        <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
             <lottie-animation
-              :animationData="require('@/assets/Pattern_6down.json')"
+              :animationData="require('@/assets/Pattern_6.json')"
               :loop="true"
-              class="profile__animation"
             />
             <h3 style="color: #00bcae">61 kB</h3>
             <span style="color: #00bcae">Lottie</span>
@@ -41,7 +39,7 @@
         </div>
       </div>
       <img
-        src="@/assets/meetlottie-image.svg"
+        src="@/assets/09_meetLottie/meetlottie-image.svg"
         style="
           position: absolute;
           top: 0;

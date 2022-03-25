@@ -29,22 +29,17 @@
         </div>
       </div>
       <img
-        src="@/assets/quote-bg.svg"
-        style="
-          transform: scale(1.1);
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        "
+        class="testimonials-bg"
+        src="@/assets/08_testimonials/quote-bg.svg"
       />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Testimonials",
+};
 </script>
 
 <style lang="scss" scoped>
@@ -54,6 +49,15 @@ export default {};
   background: var(--primary);
   overflow: hidden;
   margin: 0 auto;
+
+  .testimonials-bg {
+    transform: scale(1.1);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
   .container {
     display: grid;

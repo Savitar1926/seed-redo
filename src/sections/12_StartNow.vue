@@ -1,10 +1,10 @@
 <template>
-  <div class="main_testimonials position-lift limiter">
+  <div class="main_startnow position-lift limiter">
     <div class="container">
       <div class="col__one">
         <h1>Supercharge your animation workflow</h1>
         <div class="button">
-          <button class="button__beta animate-lead">
+          <button class="button__early-access animate-lead">
             Get early access
             <icon name="arrow" class="arrow" />
           </button>
@@ -12,21 +12,10 @@
       </div>
       <div class="col__two">
         <img
-          src="@/assets/startnow-image.svg"
-          style="position: absolute; left: 0; z-index: 1"
+          class="starnow-image"
+          src="@/assets/10_getStarted/startnow-image.svg"
         />
       </div>
-      <!-- <img
-        src="@/assets/startnow-bg.svg"
-        style="
-          transform: scale(2);
-          position: absolute;
-          inset: 0;
-          width: 100vw;
-          height: 100%;
-          z-index: -2;
-        "
-      /> -->
     </div>
   </div>
 </template>
@@ -35,6 +24,7 @@
 import icon from "@/assets/Icons.vue";
 
 export default {
+  name: "StartNow",
   components: {
     icon,
   },
@@ -42,11 +32,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main_testimonials {
+.main_startnow {
   color: var(--dark);
   padding-block: var(--step-6);
   padding-inline: var(--step-4);
-  // margin: 0 auto;
   margin-inline: auto;
 
   .container {
@@ -127,7 +116,7 @@ export default {
         border-radius: calc(var(--step-0) - 2px);
         backdrop-filter: blur(16px);
       }
-      &__beta {
+      &__early-access {
         background: rgba(255, 255, 255, 0.25);
         color: #ffffff;
         backdrop-filter: blur(16px);
@@ -144,10 +133,16 @@ export default {
   .col__two {
     grid-area: col__two;
     position: relative;
+
+    .starnow-image {
+      position: absolute;
+      left: 0;
+      z-index: 1;
+    }
   }
 }
 @media (min-width: 980px) {
-  .main_testimonials {
+  .main_startnow {
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;

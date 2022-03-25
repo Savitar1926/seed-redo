@@ -14,9 +14,9 @@ import RevFurtherTogether from "@/sections/06_FurtherTogether.vue";
 import MakeInteractive from "@/sections/07_MakeInteractive.vue";
 import ExportEverywhere from "@/sections/08_ExportEverywhere.vue";
 import SupportedDevice from "@/sections/09_SupportedDevice.vue";
-import Testimonials from "@/sections/Testimonials.vue";
-import MeetLottie from "@/sections/MeetLottie.vue";
-import StartNow from "@/sections/RevStartNow.vue";
+import Testimonials from "@/sections/10_Testimonials.vue";
+import MeetLottie from "@/sections/11_MeetLottie.vue";
+import StartNow from "@/sections/12_StartNow.vue";
 import Footer from "@/sections/Footer.vue";
 
 export default {

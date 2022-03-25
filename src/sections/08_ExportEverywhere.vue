@@ -117,7 +117,7 @@ export default {
       <img
         class="placeholder-devices"
         v-show="!mobile"
-        src="@/assets/Devices.svg"
+        src="@/assets/07_exportEverywhere/Devices.svg"
       />
     </div>
     <div class="carousel-mobile" v-show="mobile">

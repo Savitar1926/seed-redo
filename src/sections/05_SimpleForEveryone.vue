@@ -46,7 +46,7 @@
                 <div class="profile__container">
                   <lottie-animation
                     :animationData="
-                      require('@/assets/santaclause-profile.json')
+                      require('@/assets/04_simple/santaclause-profile.json')
                     "
                     :loop="true"
                     class="profile__animation"
@@ -66,7 +66,7 @@
                 <div class="profile__container">
                   <lottie-animation
                     :animationData="
-                      require('@/assets/santaclause-profile.json')
+                      require('@/assets/04_simple/santaclause-profile.json')
                     "
                     :loop="true"
                     class="profile__animation"
@@ -86,7 +86,7 @@
                 <div class="profile__container">
                   <lottie-animation
                     :animationData="
-                      require('@/assets/santaclause-profile.json')
+                      require('@/assets/04_simple/santaclause-profile.json')
                     "
                     :loop="true"
                     class="profile__animation"

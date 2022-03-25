@@ -2,12 +2,11 @@
 import icon from "@/assets/Icons.vue";
 
 export default {
-  name: "StartUsing",
+  name: "Footer",
   data() {
     return {};
   },
   components: {
-    // LottieAnimation,
     icon,
   },
   mounted() {},
@@ -66,7 +65,6 @@ export default {
 <style lang="scss" scoped>
 .footer {
   color: var(--primary);
-  // transform: scale(0.88);
   padding-inline: var(--step-4);
   padding-block: var(--step-6);
   display: flex;
