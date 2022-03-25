@@ -2,12 +2,16 @@
 import LottieAnimation from "lottie-web-vue";
 
 export default {
+  name: "Hero",
   data() {
     return {
       mobile: null,
       mobileNav: null,
       windownWidth: null,
     };
+  },
+  mounted() {
+    this.checkScreen();
   },
   created() {
     window.addEventListener("resize", this.checkScreen);
@@ -33,21 +37,14 @@ export default {
       this.mobileNav = !this.mobileNav;
     },
   },
-  mounted() {
-    this.checkScreen();
-  },
 };
 </script>
 <template>
-  <main class="hero limiter position-lift" id="parent_hero">
-    <div
-      class="hero position-lift"
-      style="padding-top: clamp(8.84rem, calc(2.34rem + 9.12vw), 4.17rem)"
-    >
+  <main class="hero limiter position-lift">
+    <div class="hero position-lift">
       <lottie-animation
-        class="animate-lead"
-        style="transform: scale(0.88); height: 100%; margin-bottom: -2rem"
-        :animationData="require('@/assets/hero-text.json')"
+        class="text-animation animate-lead"
+        :animationData="require('@/assets/01_hero/hero-text.json')"
         :loop="true"
       />
       <div class="hero__lead animate-lead">
@@ -76,16 +73,20 @@ main {
   text-align: center;
   overflow-y: hidden;
   margin-inline: auto;
+  height: 80vh;
 
-  @media (max-height: 593px) {
-    margin-top: 10em;
-  }
   .hero {
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 48px;
     width: 100%;
+
+    .text-animation {
+      transform: scale(0.88);
+      height: 100%;
+      margin-bottom: -2rem;
+    }
 
     h1 {
       font-size: var(--step-2);
@@ -172,14 +173,6 @@ main {
         -moz-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
         box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
       }
-    }
-  }
-}
-@media (min-width: 980px) {
-  main {
-    .button {
-      display: flex;
-      flex-direction: row;
     }
   }
 }

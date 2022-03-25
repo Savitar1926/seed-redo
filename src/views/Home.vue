@@ -262,6 +262,9 @@ main {
     z-index: 9999;
   }
 
+  .gap-light {
+    gap: 96px;
+  }
   // Sections
   .section {
     display: flex;
@@ -273,10 +276,6 @@ main {
       display: flex;
       flex-direction: column;
       background: var(--primary);
-
-      .gap-light {
-        gap: 96px;
-      }
     }
 
     &__hero {
