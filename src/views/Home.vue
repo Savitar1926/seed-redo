@@ -90,21 +90,26 @@ export default {
     scaleUI() {
       const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
+      const cursorelement = document.querySelector(".cursor_movement");
       window.onscroll = function (scroll) {
         let scrollTop = document.documentElement.scrollTop;
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
-        let scaleDown = 1.0 - scrollTop / (10 * 100);
+        let scaleDown = 1.0 - scrollTop / (10 * 70);
+        let cursorDown = 1.0 - scrollTop / (10 * 150);
         if (scaleAmt < 1.5) {
           scroll.preventDefault();
           // Restrict scale
           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
-          element.style.transition = `transform 500ms ease`;
+          element.style.transition = `transform 100ms ease`;
           element.style.transform = `scale(${scaleAmt})`;
           heroelement.style.transformOrigin = `bottom`;
-          heroelement.style.transition = `transform 500ms ease`;
-          heroelement.style.transform = `scale(${scaleDown})`;
+          heroelement.style.transition = `transform 100ms ease`;
+          heroelement.style.transform = `scale(${scaleDown}) translateY(${
+            -scaleDown * 10
+          }px)`;
+          cursorelement.style.transform = `scale(${cursorDown}) `;
         }
       };
     },
@@ -400,6 +405,7 @@ main {
       margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;
+      overflow: hidden;
     }
   }
 
@@ -412,7 +418,6 @@ main {
     left: 0;
     pointer-events: none;
     z-index: 2;
-    transform: scale(0.8);
     transform-origin: bottom;
   }
 }
