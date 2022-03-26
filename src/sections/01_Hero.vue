@@ -74,7 +74,7 @@ main {
   overflow-y: hidden;
   margin-inline: auto;
   height: 95vh;
-  margin-bottom: -132px;
+  margin-bottom: -80px;
 
   .hero {
     align-items: center;

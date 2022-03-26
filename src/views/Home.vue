@@ -51,6 +51,9 @@ export default {
     this.changeStrokeLottieHero();
     this.usecaseIntersection();
     this.scaleUI();
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
   },
   methods: {
     animateHeroSection() {
@@ -91,19 +94,26 @@ export default {
       const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
+      const centerlottieelement = document.querySelector(".center-lottie");
+
       window.onscroll = function (scroll) {
         let scrollTop = document.documentElement.scrollTop;
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
         let scaleDown = 1.0 - scrollTop / (10 * 70);
         let cursorDown = 1.0 - scrollTop / (10 * 150);
+        let scaleLottie = 2.0 - scrollTop / (10 * 20);
         if (scaleAmt < 1.5) {
           scroll.preventDefault();
           // Restrict scale
           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
+          scaleLottie = Math.min(Math.max(1, scaleLottie), 2);
+          console.log(scaleLottie);
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
           element.style.transition = `transform 100ms ease`;
           element.style.transform = `scale(${scaleAmt})`;
+          centerlottieelement.style.transition = `transform 300ms ease`;
+          centerlottieelement.style.transform = `scale(${scaleLottie})`;
           heroelement.style.transformOrigin = `bottom`;
           heroelement.style.transition = `transform 100ms ease`;
           heroelement.style.transform = `scale(${scaleDown}) translateY(${
