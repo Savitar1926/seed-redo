@@ -38,7 +38,6 @@ export default {
     -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0.32);
     border: solid white 8px;
     > .center-lottie {
-      background: hotpink;
       width: 100%;
       height: 100%;
       display: flex;
@@ -46,8 +45,11 @@ export default {
       justify-content: center;
       border-radius: var(--step-0);
       transform: scale(2);
+      aspect-ratio: 16 / 9;
 
       > img {
+        width: 1080px;
+        height: 1920px;
         object-fit: contain;
       }
     }

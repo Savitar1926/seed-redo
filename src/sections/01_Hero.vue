@@ -53,7 +53,7 @@ export default {
           <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
-      <div class="button">
+      <div class="button animate-lead">
         <button class="button__early-access animate-lead">
           Get early access
         </button>
