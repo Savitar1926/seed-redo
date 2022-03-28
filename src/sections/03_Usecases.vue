@@ -122,9 +122,11 @@ export default {
 <style lang="scss" scoped>
 .usecase-parent {
   height: 100%;
-  display: flex;
   gap: 32px;
+  display: flex;
+  flex-direction: column;
   margin-inline: auto;
+  padding-inline: var(--step-4);
 
   .card {
     background: rgba(240, 242, 248, 0.9);
@@ -166,25 +168,20 @@ export default {
 
   .section {
     &_left {
-      width: 50%;
-      padding-left: var(--step-4);
-
       .container {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 710px;
-        gap: 0px 0px;
+        grid-template-rows: auto;
+        gap: 32px;
         grid-auto-flow: row;
-        grid-template-areas:
-          "."
-          "col-1-left";
+        grid-template-areas: "col-1-left";
         height: 100%;
       }
 
       .col-1-left {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 544px;
+        grid-template-rows: 1fr 1fr;
         gap: 32px 32px;
         grid-auto-flow: row;
         grid-template-areas:
@@ -214,11 +211,9 @@ export default {
       }
     }
     &_right {
-      width: 50%;
-
       .container {
         display: grid;
-        grid-template-columns: 288px 1.2fr;
+        grid-template-columns: 1fr;
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
         gap: 32px 32px;
@@ -228,14 +223,11 @@ export default {
 
       .col-1 {
         display: grid;
-        grid-template-columns: 288px;
-        grid-template-rows: 1fr 710px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
         gap: 0px 32px;
         grid-auto-flow: row;
-        grid-template-areas:
-          "."
-          "usecase-phone";
-        grid-area: 1 / 1 / 2 / 2;
+        grid-template-areas: "usecase-phone";
         align-content: end;
       }
 
@@ -245,24 +237,24 @@ export default {
 
       .col-2 {
         display: grid;
-        grid-template-columns: 323px 1fr;
-        grid-template-rows: 330px 295px 252px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         gap: 32px 32px;
         grid-auto-flow: row;
         grid-template-areas:
-          "usecase-headphones ."
-          "container-cases ."
-          "usecase-notification .";
-        grid-area: 1 / 2 / 2 / 3;
+          "usecase-headphones"
+          "container-cases"
+          "usecase-notification";
       }
 
       .container-cases {
         display: grid;
-        grid-template-columns: 232px 296px;
-        grid-template-rows: 1fr;
-        gap: 0px 32px;
-        grid-auto-flow: row;
-        grid-template-areas: "usecase-loading_1 usecase-loading_2";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 32px;
+        grid-template-areas:
+          "usecase-loading_1"
+          "usecase-loading_2";
         grid-area: container-cases;
       }
 
@@ -280,6 +272,149 @@ export default {
 
       .usecase-notification {
         grid-area: usecase-notification;
+      }
+    }
+  }
+}
+
+@media (min-width: 980px) {
+  .usecase-parent {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-inline: auto;
+
+    .card {
+      background: rgba(240, 242, 248, 0.9);
+      backdrop-filter: blur(16px);
+      padding: 16px !important;
+    }
+    .usecase-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      .usecase-title {
+        color: #7c71fd;
+
+        font-weight: var(--semi-bold);
+      }
+      .usecase-filesize {
+        color: #7c71fd;
+
+        font-size: var(--step--5);
+      }
+      .usecase-title-container {
+        display: flex;
+        flex-direction: column;
+
+        .usecase-wrap {
+          // overflow: hidden;
+          text-overflow: ellipsis;
+          // white-space: nowrap;
+          width: inherit;
+        }
+      }
+    }
+    .usecase-lottie {
+      height: 100%;
+      width: 100%;
+      border-radius: var(--step-0);
+      background: white;
+    }
+
+    .section {
+      &_left {
+        width: 50%;
+
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 710px;
+          gap: 0px 0px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "."
+            "col-1-left";
+          height: 100%;
+        }
+
+        .col-1-left {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 544px;
+          gap: 32px 32px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "section-title"
+            "usecase-hero";
+          align-content: end;
+          grid-area: col-1-left;
+
+          .section-title {
+            grid-area: section-title;
+            button {
+              gap: var(--step--4);
+              align-items: center;
+              height: max-content;
+              color: #7c71fd;
+
+              .arrow {
+                display: flex;
+                stroke: #7c71fd;
+              }
+            }
+          }
+        }
+      }
+      &_right {
+        width: 50%;
+
+        .container {
+          display: grid;
+          grid-template-columns: 288px 1.2fr;
+          grid-auto-columns: 1fr;
+          grid-auto-rows: 1fr;
+          gap: 32px 32px;
+          grid-auto-flow: row;
+          height: 100%;
+        }
+
+        .col-1 {
+          display: grid;
+          grid-template-columns: 288px;
+          grid-template-rows: 1fr 710px;
+          gap: 0px 32px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "."
+            "usecase-phone";
+          grid-area: 1 / 1 / 2 / 2;
+          align-content: end;
+        }
+
+        .col-2 {
+          display: grid;
+          grid-template-columns: 323px 1fr;
+          grid-template-rows: 330px 295px 252px;
+          gap: 32px 32px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "usecase-headphones ."
+            "container-cases ."
+            "usecase-notification .";
+          grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .container-cases {
+          display: grid;
+          grid-template-columns: 232px 296px;
+          grid-template-rows: 1fr;
+          gap: 0px 32px;
+          grid-auto-flow: row;
+          grid-template-areas: "usecase-loading_1 usecase-loading_2";
+          grid-area: container-cases;
+        }
       }
     }
   }

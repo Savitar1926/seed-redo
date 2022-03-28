@@ -117,7 +117,12 @@ export default {
         backdrop-filter: blur(16px);
       }
       &__early-access {
-        background: rgba(255, 255, 255, 0.25);
+        background-image: linear-gradient(
+          79.84deg,
+          rgb(122, 111, 251, 1) -1%,
+          rgb(255, 84, 103, 1) 88%,
+          rgb(253, 190, 4, 1) 100%
+        );
         color: #ffffff;
         backdrop-filter: blur(16px);
 

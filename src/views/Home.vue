@@ -107,7 +107,6 @@ export default {
           // Restrict scale
           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
           scaleLottie = Math.min(Math.max(1, scaleLottie), 2);
-          console.log(scaleLottie);
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
           element.style.transition = `transform 100ms ease`;
@@ -130,8 +129,6 @@ export default {
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            console.log(entry);
-            console.log("Enter");
             gsap.from(usecases, {
               y: 200,
               opacity: 0,

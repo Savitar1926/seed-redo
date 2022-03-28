@@ -53,8 +53,10 @@ export default {
           <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
-      <div class="button animate-lead">
-        <button class="button__beta animate-lead">Get early access</button>
+      <div class="button">
+        <button class="button__early-access animate-lead">
+          Get early access
+        </button>
       </div>
     </div>
   </main>
@@ -124,6 +126,7 @@ main {
     padding: 4px;
     transition: all 200ms ease-out;
     border-radius: var(--step--1);
+    width: fit-content;
 
     &:hover,
     &:focus-visible {
@@ -141,6 +144,14 @@ main {
       padding-block: var(--step--3);
       padding-inline: var(--step-1);
       transform: none !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--step--2);
+      .arrow {
+        display: flex;
+        stroke: white;
+      }
     }
 
     &:after {
@@ -159,15 +170,17 @@ main {
       left: 0;
       bottom: 0;
       border-radius: calc(var(--step-0) - 2px);
+      backdrop-filter: blur(16px);
     }
-    &__beta {
+    &__early-access {
       background-image: linear-gradient(
         79.84deg,
-        #7a6ffb -1%,
-        #ff5467 88%,
-        #fdbe04 132%
+        rgb(122, 111, 251, 1) -1%,
+        rgb(255, 84, 103, 1) 88%,
+        rgb(253, 190, 4, 1) 100%
       );
       color: #ffffff;
+      backdrop-filter: blur(16px);
 
       &:hover {
         -webkit-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
