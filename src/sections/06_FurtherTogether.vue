@@ -151,9 +151,9 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 80%;
-        min-width: 360px;
-        width: 360px;
+        // max-width: 80%;
+        // min-width: 360px;
+        // width: 360px;
         gap: 16px;
 
         details {
