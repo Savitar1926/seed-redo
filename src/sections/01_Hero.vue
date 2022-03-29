@@ -201,4 +201,9 @@ main {
     height: 95vh;
   }
 }
+@media (max-height: 545px) {
+  main {
+    margin-top: var(--step-7);
+  }
+}
 </style>

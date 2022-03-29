@@ -8,7 +8,10 @@
         <div class="card card--shadow">
           <div class="profile__container">
             <div class="profile">
-              <div class="profile__image"><div /></div>
+              <div class="profile__image">
+                <img src="@/assets/08_testimonials/FlorianBolter-UIgrad.jpeg" />
+                <div />
+              </div>
               <div class="profile__info">
                 <h2>Florian Bölter</h2>
                 <span>SVP of Design</span>
@@ -104,10 +107,14 @@ export default {
         flex-direction: column;
         gap: var(--step--2);
         &__image {
-          background: #7c71fd;
           height: 6.5rem;
           width: 6.5rem;
           border-radius: 5rem;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
         }
 
         &__info {

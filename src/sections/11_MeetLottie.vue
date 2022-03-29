@@ -63,7 +63,6 @@ export default {
   data() {
     return {
       mobile: null,
-      mobileNav: null,
       windownWidth: null,
     };
   },
@@ -156,7 +155,7 @@ export default {
       flex-direction: column;
       align-items: center;
       h3 {
-        font-size: var(--step-2);
+        font-size: var(--step-0);
       }
       span {
         font-weight: var(--medium);
