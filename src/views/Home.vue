@@ -56,13 +56,14 @@ export default {
     window.addEventListener("resize", this.checkScreen);
   },
   mounted() {
-    this.animateHeroSection();
-    this.changeStrokeLottieHero();
-    this.usecaseIntersection();
-    this.scaleUI();
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
+    this.checkScreen;
+    this.animateHeroSection();
+    this.changeStrokeLottieHero();
+    this.scaleUI();
+    this.usecaseIntersection();
   },
   methods: {
     checkScreen() {
@@ -144,37 +145,37 @@ export default {
         }
       };
     },
-    usecaseIntersection() {
-      // Usecase Intersection Observer
-      const usecaseParent = document.querySelector(".usecase-parent");
-      const usecases = document.querySelectorAll(".usecase-animate");
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            gsap.from(usecases, {
-              y: 200,
-              opacity: 0,
-              stagger: {
-                from: "center",
-                grid: "auto",
-                ease: "power2.inOut",
-                amount: 0.09,
-              },
-            });
-            return;
-          }
-          if (entry.boundingClientRect.top > 0) {
-            console.log("BELOW"); // do things if below
-          } else {
-            console.log("ABOVE"); // do things if above
-          }
-        },
-        {
-          threshold: 0,
-        }
-      );
-      observer.observe(usecaseParent);
-    },
+    // usecaseIntersection() {
+    //   // Usecase Intersection Observer
+    //   const usecaseParent = document.querySelector(".usecase-parent");
+    //   const usecases = document.querySelectorAll(".usecase-animate");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       if (entry.isIntersecting) {
+    //         gsap.from(usecases, {
+    //           y: 200,
+    //           opacity: 0,
+    //           stagger: {
+    //             from: "center",
+    //             grid: "auto",
+    //             ease: "power2.inOut",
+    //             amount: 0.09,
+    //           },
+    //         });
+    //         return;
+    //       }
+    //       if (entry.boundingClientRect.top > 0) {
+    //         console.log("BELOW"); // do things if below
+    //       } else {
+    //         console.log("ABOVE"); // do things if above
+    //       }
+    //     },
+    //     {
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(usecaseParent);
+    // },
     changeStrokeLottieHero() {
       document.querySelectorAll(".stroke path").forEach((path) => {
         path.setAttribute("stroke", "#E1E4F0");
@@ -438,7 +439,7 @@ main {
       width: max-content;
       width: 100%;
       position: absolute;
-      inset: 0 0 auto;
+      top: 0;
       // margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;

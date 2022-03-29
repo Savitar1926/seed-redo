@@ -81,7 +81,7 @@ main {
   text-align: center;
   overflow-y: hidden;
   margin-inline: auto;
-  height: 95vh;
+  height: 85vh;
   margin-bottom: -80px;
 
   .hero {
@@ -193,6 +193,12 @@ main {
         box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
       }
     }
+  }
+}
+
+@media (min-width: 980px) {
+  main {
+    height: 95vh;
   }
 }
 </style>

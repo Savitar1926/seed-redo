@@ -139,12 +139,10 @@ export default {
     align-items: center;
     .usecase-title {
       color: #7c71fd;
-
       font-weight: var(--semi-bold);
     }
     .usecase-filesize {
       color: #7c71fd;
-
       font-size: var(--step--5);
     }
     .usecase-title-container {
@@ -286,6 +284,7 @@ export default {
     flex-direction: row;
     gap: var(--step-0);
     margin-inline: auto;
+    padding-inline: 0rem;
 
     .card {
       background: rgba(240, 242, 248, 0.9);
@@ -298,7 +297,6 @@ export default {
       align-items: center;
       .usecase-title {
         color: #7c71fd;
-
         font-weight: var(--semi-bold);
       }
       .usecase-filesize {
@@ -328,6 +326,7 @@ export default {
     .section {
       &_left {
         width: 50%;
+        padding-left: var(--step-4);
 
         .container {
           display: grid;
@@ -410,12 +409,17 @@ export default {
 
         .container-cases {
           display: grid;
-          grid-template-columns: 2var (--step-0) 296px;
+          grid-template-columns: 232px 296px;
           grid-template-rows: 1fr;
           gap: 0px var(--step-0);
           grid-auto-flow: row;
           grid-template-areas: "usecase-loading_1 usecase-loading_2";
           grid-area: container-cases;
+        }
+
+        .usecase-loading_1 {
+          grid-area: usecase-loading_1;
+          margin-bottom: none;
         }
       }
     }
