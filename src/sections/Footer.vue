@@ -68,7 +68,7 @@ export default {
   padding-inline: var(--step-4);
   padding-block: var(--step-6);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: var(--step-0);
   justify-content: space-between;
   margin: auto;
@@ -101,6 +101,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: var(--step--2);
+    flex-wrap: wrap;
   }
 
   & > div > div {
@@ -116,7 +117,55 @@ export default {
 }
 @media (min-width: 980px) {
   .footer {
-    align-items: flex-start;
+    color: var(--primary);
+    padding-inline: var(--step-4);
+    padding-block: var(--step-6);
+    display: flex;
+    flex-direction: row;
+    gap: var(--step-0);
+    justify-content: space-between;
+    margin: auto;
+
+    .header-link {
+      font-size: var(--step--1);
+      font-weight: var(--semi-bold);
+      color: var(--primary);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: var(--step-4);
+      text-align: start;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--step--1);
+        align-items: flex-start;
+        a:not(:first-child) {
+          color: white;
+          font-size: var(--step--4);
+        }
+      }
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--step--2);
+    }
+
+    & > div > div {
+      display: flex;
+      align-items: center;
+      // gap: var(--step-0);
+
+      .logo {
+        color: var(--dark);
+        width: var(--step-2);
+      }
+    }
   }
 }
 </style>

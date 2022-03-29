@@ -39,6 +39,7 @@
         </div>
       </div>
       <img
+        v-show="!mobile"
         src="@/assets/09_meetLottie/meetlottie-image.svg"
         style="
           position: absolute;
@@ -60,10 +61,35 @@ import LottieAnimation from "lottie-web-vue";
 
 export default {
   data() {
-    return {};
+    return {
+      mobile: null,
+      mobileNav: null,
+      windownWidth: null,
+    };
   },
   components: {
     LottieAnimation,
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+  },
+  destroyed() {
+    window.addEventListener("resize", this.checkScreen);
+  },
+  methods: {
+    checkScreen() {
+      this.windownWidth = window.innerWidth;
+      if (this.windownWidth <= 950) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
   },
 };
 </script>
@@ -79,7 +105,7 @@ export default {
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: auto;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     gap: 32px 32px;
@@ -120,6 +146,7 @@ export default {
     grid-area: col__two;
     display: flex;
     gap: var(--step-0);
+    height: fit-content;
 
     div {
       display: flex;

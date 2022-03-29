@@ -22,7 +22,10 @@ import Footer from "@/sections/Footer.vue";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      mobile: null,
+      windownWidth: null,
+    };
   },
   components: {
     LottieAnimation,
@@ -45,6 +48,12 @@ export default {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.changeColourNavbar, false)
     );
+    ["scroll", "resize"].forEach((evt) =>
+      window.addEventListener(evt, this.checkScreen, false)
+    );
+  },
+  destroyed() {
+    window.addEventListener("resize", this.checkScreen);
   },
   mounted() {
     this.animateHeroSection();
@@ -56,6 +65,19 @@ export default {
     };
   },
   methods: {
+    checkScreen() {
+      this.windownWidth = window.innerWidth;
+      if (this.windownWidth <= 950) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
     animateHeroSection() {
       gsap.from(".animate-title", {
         y: 200,
@@ -182,7 +204,7 @@ export default {
         colorLinks.forEach((link) => {
           link.style.color = "var(--dark)";
         });
-        titleHighlight.style.letterSpacing = "var(--step-0)";
+        titleHighlight.style.letterSpacing = "var(--step--2)";
         titleHighlight.style.color = "white";
         return;
       }
@@ -217,6 +239,7 @@ export default {
           <Starters />
         </section>
         <lottie-animation
+          v-show="!mobile"
           class="cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"

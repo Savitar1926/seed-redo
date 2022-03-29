@@ -62,7 +62,7 @@ export default {
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     gap: 32px 32px;

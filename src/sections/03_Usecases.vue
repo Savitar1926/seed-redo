@@ -6,7 +6,7 @@
           <div class="section-title section__title usecase-animate">
             <h1>Animations for all scenarios</h1>
             <button class="full">
-              Get Started with Templates
+              Start with Templates
               <icon name="arrow" class="arrow" />
             </button>
           </div>
@@ -122,7 +122,7 @@ export default {
 <style lang="scss" scoped>
 .usecase-parent {
   height: 100%;
-  gap: 32px;
+  gap: var(--step-0);
   display: flex;
   flex-direction: column;
   margin-inline: auto;
@@ -172,7 +172,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 32px;
+        gap: var(--step-0);
         grid-auto-flow: row;
         grid-template-areas: "col-1-left";
         height: 100%;
@@ -182,7 +182,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0);
         grid-auto-flow: row;
         grid-template-areas:
           "section-title"
@@ -216,7 +216,7 @@ export default {
         grid-template-columns: 1fr;
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0) var(--step-0);
         grid-auto-flow: row;
         height: 100%;
       }
@@ -225,7 +225,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        gap: 0px 32px;
+        gap: 0px var(--step-0);
         grid-auto-flow: row;
         grid-template-areas: "usecase-phone";
         align-content: end;
@@ -239,7 +239,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0) var(--step-0);
         grid-auto-flow: row;
         grid-template-areas:
           "usecase-headphones"
@@ -252,7 +252,7 @@ export default {
       //   display: grid;
       //   grid-template-columns: 1fr;
       //   grid-template-rows: 1fr 1fr;
-      //   gap: 32px;
+      //   gap: var(--step-0);
       //   grid-template-areas:
       //     "usecase-loading_1"
       //     "usecase-loading_2";
@@ -284,7 +284,7 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: row;
-    gap: 32px;
+    gap: var(--step-0);
     margin-inline: auto;
 
     .card {
@@ -345,7 +345,7 @@ export default {
           display: grid;
           grid-template-columns: 1fr;
           grid-template-rows: 1fr 544px;
-          gap: 32px 32px;
+          gap: var(--step-0) var(--step-0);
           grid-auto-flow: row;
           grid-template-areas:
             "section-title"
@@ -377,7 +377,7 @@ export default {
           grid-template-columns: 288px 1.2fr;
           grid-auto-columns: 1fr;
           grid-auto-rows: 1fr;
-          gap: 32px 32px;
+          gap: var(--step-0) var(--step-0);
           grid-auto-flow: row;
           height: 100%;
         }
@@ -386,7 +386,7 @@ export default {
           display: grid;
           grid-template-columns: 288px;
           grid-template-rows: 1fr 710px;
-          gap: 0px 32px;
+          gap: 0px var(--step-0);
           grid-auto-flow: row;
           grid-template-areas:
             "."
@@ -399,7 +399,7 @@ export default {
           display: grid;
           grid-template-columns: 323px 1fr;
           grid-template-rows: 330px 295px 252px;
-          gap: 32px 32px;
+          gap: var(--step-0) var(--step-0);
           grid-auto-flow: row;
           grid-template-areas:
             "usecase-headphones ."
@@ -410,9 +410,9 @@ export default {
 
         .container-cases {
           display: grid;
-          grid-template-columns: 232px 296px;
+          grid-template-columns: 2var (--step-0) 296px;
           grid-template-rows: 1fr;
-          gap: 0px 32px;
+          gap: 0px var(--step-0);
           grid-auto-flow: row;
           grid-template-areas: "usecase-loading_1 usecase-loading_2";
           grid-area: container-cases;

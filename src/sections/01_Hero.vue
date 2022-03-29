@@ -43,20 +43,24 @@ export default {
   <main class="hero limiter position-lift">
     <div class="hero position-lift">
       <lottie-animation
+        v-show="!mobile"
         class="text-animation animate-lead"
         :animationData="require('@/assets/01_hero/hero-text.json')"
         :loop="true"
       />
+      <h1 v-show="mobile">Create animations for your websites faster.</h1>
       <div class="hero__lead animate-lead">
         <p>
           Bring your websites and apps to life with the <br />
           <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
-      <div class="button animate-lead">
-        <button class="button__early-access animate-lead">
-          Get early access
-        </button>
+      <div class="animate-lead">
+        <div class="button">
+          <button class="button__early-access animate-lead">
+            Get early access
+          </button>
+        </div>
       </div>
     </div>
   </main>
@@ -92,9 +96,8 @@ main {
     }
 
     h1 {
-      font-size: var(--step-2);
-      line-height: var(--step-4);
-      width: 80%;
+      font-size: var(--step-1);
+      line-height: var(--step-2);
     }
     &--highlight {
       background: linear-gradient(
@@ -112,7 +115,7 @@ main {
     &__lead {
       width: clamp(18.75rem, 12.41rem + 31.71vw, 35rem);
       font-weight: var(--normal);
-      font-size: clamp(0.5rem, calc(0.21rem + 1.46vw), 1.25rem);
+      font-size: var(--step--3);
       line-height: var(--step-0);
       color: #5c617c;
     }
