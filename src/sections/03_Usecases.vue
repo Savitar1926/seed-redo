@@ -238,28 +238,30 @@ export default {
       .col-2 {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         gap: 32px 32px;
         grid-auto-flow: row;
         grid-template-areas:
           "usecase-headphones"
-          "container-cases"
+          "usecase-loading_1"
+          "usecase-loading_2"
           "usecase-notification";
       }
 
-      .container-cases {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 32px;
-        grid-template-areas:
-          "usecase-loading_1"
-          "usecase-loading_2";
-        grid-area: container-cases;
-      }
+      // .container-cases {
+      //   display: grid;
+      //   grid-template-columns: 1fr;
+      //   grid-template-rows: 1fr 1fr;
+      //   gap: 32px;
+      //   grid-template-areas:
+      //     "usecase-loading_1"
+      //     "usecase-loading_2";
+      //   grid-area: container-cases;
+      // }
 
       .usecase-loading_1 {
         grid-area: usecase-loading_1;
+        margin-bottom: var(--step-0);
       }
 
       .usecase-loading_2 {

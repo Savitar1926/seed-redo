@@ -266,17 +266,17 @@ export default {
     }
   }
 }
-.usecase__one {
-  align-items: flex-start;
-  margin-top: -75px;
-}
-
-.usecase__two {
-  grid-area: usecase__two;
-  margin-bottom: -75px;
-}
 
 @media (min-width: 980px) {
+  .usecase__one {
+    align-items: flex-start;
+    margin-top: -75px;
+  }
+
+  .usecase__two {
+    grid-area: usecase__two;
+    margin-bottom: -75px;
+  }
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;

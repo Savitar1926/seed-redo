@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="footer position-lift">
+  <div class="footer position-lift limiter">
     <div>
       <div>
         <router-link to="/"> <icon name="logo" class="logo" /></router-link>
@@ -71,6 +71,7 @@ export default {
   flex-direction: row;
   gap: var(--step-0);
   justify-content: space-between;
+  margin: auto;
 
   .header-link {
     font-size: var(--step--1);
