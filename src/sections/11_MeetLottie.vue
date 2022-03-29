@@ -70,6 +70,9 @@ export default {
   components: {
     LottieAnimation,
   },
+  mounted() {
+    this.checkScreen;
+  },
   created() {
     window.addEventListener("resize", this.checkScreen);
   },

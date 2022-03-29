@@ -234,7 +234,11 @@ export default {
         <section class="section__usecases">
           <div class="usecases-home">
             <RevUsecases class="usecase-component" />
-            <img src="@/assets/03_usecases/usecase-bg.svg" class="usecase-bg" />
+            <img
+              v-show="!mobile"
+              src="@/assets/03_usecases/usecase-bg.svg"
+              class="usecase-bg"
+            />
           </div>
           <Starters />
         </section>
@@ -264,8 +268,9 @@ export default {
           <SupportedDevice />
         </div>
         <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
+
         <img src="@/assets/Background.svg" class="bg__gradient" />
-        <img src="@/assets/dark-bg.svg" class="bg__dark" />
+        <img v-show="!mobile" src="@/assets/dark-bg.svg" class="bg__dark" />
       </section>
     </section>
 
@@ -434,7 +439,7 @@ main {
       width: 100%;
       position: absolute;
       inset: 0 0 auto;
-      margin-top: -30.25rem;
+      // margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;
       overflow: hidden;

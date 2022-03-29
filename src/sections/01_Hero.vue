@@ -48,7 +48,9 @@ export default {
         :animationData="require('@/assets/01_hero/hero-text.json')"
         :loop="true"
       />
-      <h1 v-show="mobile">Create animations for your websites faster.</h1>
+      <h1 class="animate-lead" v-show="mobile">
+        Create animations for your websites faster.
+      </h1>
       <div class="hero__lead animate-lead">
         <p>
           Bring your websites and apps to life with the <br />
