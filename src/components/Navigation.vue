@@ -98,13 +98,13 @@ export default {
 <style lang="scss" scoped>
 .nav {
   --navigation: clamp(4.49rem, 1.08rem + 7.05vw, 6.1rem);
-  -webkit-backdrop-filter: blur(16px);
+  // -webkit-backdrop-filter: blur(16px);
   align-content: center;
-  backdrop-filter: blur(16px);
+  // backdrop-filter: blur(16px);
   display: flex;
   justify-content: center;
   height: var(--navigation);
-  transition: all 150ms linear;
+  transition: background 150ms linear;
   width: 100vw;
   background: rgba(238, 239, 243, 0.2);
   box-shadow: -11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02);

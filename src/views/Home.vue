@@ -63,7 +63,7 @@ export default {
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUI();
-    this.usecaseIntersection();
+    // this.usecaseIntersection();
   },
   methods: {
     checkScreen() {
@@ -118,6 +118,7 @@ export default {
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
       const centerlottieelement = document.querySelector(".center-lottie");
+      const nav = document.querySelector("#nav_bg");
 
       window.onscroll = function (scroll) {
         let scrollTop = document.documentElement.scrollTop;
@@ -144,6 +145,27 @@ export default {
           cursorelement.style.transform = `scale(${cursorDown}) `;
         }
       };
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            nav.style.backdropFilter = "blur(16px)";
+            console.log("intersected");
+            return;
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            nav.style.backdropFilter = "blur(0px)";
+            console.log("BELOW"); // do things if below
+          } else {
+            nav.style.backdropFilter = "blur(16px)";
+            console.log("ABOVE"); // do things if above
+          }
+        },
+        {
+          threshold: 0.65,
+        }
+      );
+      observer.observe(centerlottieelement);
     },
     // usecaseIntersection() {
     //   // Usecase Intersection Observer
@@ -176,6 +198,7 @@ export default {
     //   );
     //   observer.observe(usecaseParent);
     // },
+
     changeStrokeLottieHero() {
       document.querySelectorAll(".stroke path").forEach((path) => {
         path.setAttribute("stroke", "#E1E4F0");
