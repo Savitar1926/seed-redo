@@ -75,6 +75,7 @@ export default {
   color: var(--dark);
   min-height: 100vh;
   transition: all 200ms ease-out;
+  overflow: hidden;
 
   .section__title {
     display: flex;
@@ -185,6 +186,40 @@ button {
 .position-lift {
   position: relative;
   z-index: 2;
+}
+
+@-webkit-keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media (min-width: 1200px) {
