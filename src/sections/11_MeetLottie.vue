@@ -42,6 +42,7 @@
         </div>
       </div>
       <img
+        loading="lazy"
         v-show="!mobile"
         src="@/assets/09_meetLottie/meetlottie-image.svg"
         style="

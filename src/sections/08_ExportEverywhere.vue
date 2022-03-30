@@ -90,6 +90,7 @@ export default {
         </div>
       </div>
       <img
+        loading="lazy"
         class="placeholder-devices"
         v-show="!mobile"
         src="@/assets/07_exportEverywhere/Devices.svg"

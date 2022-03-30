@@ -9,6 +9,7 @@ export default {
     <div class="center-animation">
       <div class="center-lottie">
         <img
+          loading="lazy"
           src="https://i.pinimg.com/originals/44/d3/cb/44d3cb171c571b949242bb57603bc88f.png"
           alt=""
         />

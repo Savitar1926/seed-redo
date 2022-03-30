@@ -32,6 +32,7 @@
         </div>
       </div>
       <img
+        loading="lazy"
         class="testimonials-bg"
         src="@/assets/08_testimonials/quote-bg.svg"
       />

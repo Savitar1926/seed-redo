@@ -19,7 +19,17 @@
                 <span class="usecase-wrap usecase-filesize"> 33 KB </span>
               </div>
             </div>
-            <div class="usecase-lottie"></div>
+            <div
+              class="usecase-lottie"
+              style="overflow: hidden; position: relative"
+            >
+              <div style="width: 100%; height: 100%">
+                <lottie-animation
+                  :animationData="require('@/assets/Pattern_6.json')"
+                  :loop="true"
+                />
+              </div>
+            </div>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -39,7 +49,17 @@
                 <span class="usecase-wrap usecase-filesize"> 14 KB </span>
               </div>
             </div>
-            <div class="usecase-lottie"></div>
+            <div
+              class="usecase-lottie"
+              style="overflow: hidden; position: relative"
+            >
+              <div style="width: 100%; height: 100%">
+                <lottie-animation
+                  :animationData="require('@/assets/Pattern_6.json')"
+                  :loop="true"
+                />
+              </div>
+            </div>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -56,7 +76,22 @@
                   <span class="usecase-wrap usecase-filesize"> 32 KB </span>
                 </div>
               </div>
-              <div class="usecase-lottie"></div>
+              <div
+                class="usecase-lottie"
+                style="
+                  overflow: hidden;
+                  position: relative;
+                  height: fit-content;
+                "
+              >
+                <div style="width: 100%">
+                  <lottie-animation
+                    style="width: 200px; height: 180px"
+                    :animationData="require('@/assets/Pattern_6.json')"
+                    :loop="true"
+                  />
+                </div>
+              </div>
               <!-- Usecase Content  -->
             </div>
             <div class="usecase-loading_2 usecase-animate card card--shadow">
@@ -70,7 +105,18 @@
                   <span class="usecase-wrap usecase-filesize"> 48 KB </span>
                 </div>
               </div>
-              <div class="usecase-lottie"></div>
+              <div
+                class="usecase-lottie"
+                style="overflow: hidden; position: relative"
+              >
+                <div style="width: 100%; height: 100%">
+                  <lottie-animation
+                    style="width: 200px; height: 180px"
+                    :animationData="require('@/assets/Pattern_6.json')"
+                    :loop="true"
+                  />
+                </div>
+              </div>
               <!-- Usecase Content  -->
             </div>
           </div>
@@ -85,7 +131,17 @@
                 <span class="usecase-wrap usecase-filesize"> 64 KB </span>
               </div>
             </div>
-            <div class="usecase-lottie"></div>
+            <div
+              class="usecase-lottie"
+              style="overflow: hidden; position: relative"
+            >
+              <div style="width: 100%; height: 100%">
+                <lottie-animation
+                  :animationData="require('@/assets/Pattern_6.json')"
+                  :loop="true"
+                />
+              </div>
+            </div>
             <!-- Usecase Content  -->
           </div>
           <div class="usecase-notification usecase-animate card card--shadow">
@@ -99,7 +155,17 @@
                 <span class="usecase-wrap usecase-filesize"> 24 KB </span>
               </div>
             </div>
-            <div class="usecase-lottie"></div>
+            <div
+              class="usecase-lottie"
+              style="overflow: hidden; position: relative"
+            >
+              <div style="width: 100%; height: 100%">
+                <lottie-animation
+                  :animationData="require('@/assets/Pattern_6.json')"
+                  :loop="true"
+                />
+              </div>
+            </div>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -110,10 +176,12 @@
 
 <script>
 import icon from "@/assets/Icons.vue";
+import LottieAnimation from "lottie-web-vue";
 
 export default {
   name: "Usecases",
   components: {
+    LottieAnimation,
     icon,
   },
 };
@@ -132,6 +200,7 @@ export default {
     background: rgba(240, 242, 248, 0.9);
     backdrop-filter: blur(16px);
     padding: 16px !important;
+    height: fit-content !important;
   }
   .usecase-header {
     display: flex;
@@ -177,7 +246,7 @@ export default {
       .col-1-left {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto;
         gap: var(--step-0);
         grid-auto-flow: row;
         grid-template-areas:
@@ -211,7 +280,6 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-columns: 1fr;
-        grid-auto-rows: 1fr;
         gap: var(--step-0) var(--step-0);
         grid-auto-flow: row;
         height: 100%;
@@ -234,7 +302,7 @@ export default {
       .col-2 {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
         gap: var(--step-0) var(--step-0);
         grid-auto-flow: row;
         grid-template-areas:
@@ -288,6 +356,7 @@ export default {
       background: rgba(240, 242, 248, 0.9);
       backdrop-filter: blur(16px);
       padding: 16px !important;
+      height: 100% !important;
     }
     .usecase-header {
       display: flex;
@@ -402,22 +471,28 @@ export default {
             "usecase-headphones ."
             "container-cases ."
             "usecase-notification .";
-          grid-area: 1 / 2 / 2 / 3;
         }
 
         .container-cases {
           display: grid;
           grid-template-columns: 232px 296px;
-          grid-template-rows: 1fr;
+          grid-template-rows: auto;
           gap: 0px var(--step-0);
           grid-auto-flow: row;
           grid-template-areas: "usecase-loading_1 usecase-loading_2";
           grid-area: container-cases;
+
+          .card:first-child {
+            background: rgba(240, 242, 248, 0.9);
+            backdrop-filter: blur(16px);
+            padding: 16px !important;
+            height: fit-content !important;
+          }
         }
 
         .usecase-loading_1 {
           grid-area: usecase-loading_1;
-          margin-bottom: none;
+          margin-bottom: 0rem;
         }
       }
     }

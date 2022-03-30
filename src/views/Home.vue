@@ -259,6 +259,7 @@ export default {
           <div class="usecases-home">
             <RevUsecases class="usecase-component" />
             <img
+              loading="lazy"
               v-show="!mobile"
               src="@/assets/03_usecases/usecase-bg.svg"
               class="usecase-bg"
@@ -291,10 +292,23 @@ export default {
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
+        <img
+          loading="lazy"
+          src="@/assets/07_exportEverywhere/Stars.svg"
+          class="bg__stars"
+        />
 
-        <img src="@/assets/Background.svg" class="bg__gradient" />
-        <img v-show="!mobile" src="@/assets/dark-bg.svg" class="bg__dark" />
+        <img
+          src="@/assets/Background.svg"
+          class="bg__gradient"
+          loading="lazy"
+        />
+        <img
+          loading="lazy"
+          v-show="!mobile"
+          src="@/assets/dark-bg.svg"
+          class="bg__dark"
+        />
       </section>
     </section>
 
@@ -309,6 +323,7 @@ export default {
       <div class="section__get-started">
         <StartNow class="getstarted-component" />
         <img
+          loading="lazy"
           class="getstarted-bg"
           src="@/assets/10_getStarted/startnow-bg.svg"
         />
