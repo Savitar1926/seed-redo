@@ -275,7 +275,7 @@ export default {
         />
         <lottie-animation
           class="bg__pattern limter animate-lead"
-          :animationData="require('@/assets/Pattern_6.json')"
+          :animationData="require('@/assets/Pattern_6_a.json')"
           :loop="true"
         />
       </section>
