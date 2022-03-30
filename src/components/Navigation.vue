@@ -47,9 +47,10 @@ export default {
     <nav id="nav_bg" class="nav animate-nav">
       <div class="nav__section limiter">
         <div class="nav__home">
-          <router-link to="/" class="links">
-            <icon name="logo" class="logo"
-          /></router-link>
+          <router-link to="/" class="links logo-container" data-link>
+            <icon name="logo" class="logo" />
+            Lottielab
+          </router-link>
           <router-link
             to="/"
             class="links links-spaced"
@@ -139,8 +140,16 @@ export default {
     justify-content: end;
     gap: var(--step--3);
 
+    .logo-container {
+      display: flex;
+      gap: var(--step--4);
+      align-items: center;
+      font-weight: var(--semi-bold);
+    }
+
     .logo {
       color: var(--dark);
+      transform: scale(0.8);
     }
   }
 

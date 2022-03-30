@@ -62,8 +62,7 @@ export default {
     this.checkScreen;
     this.animateHeroSection();
     this.changeStrokeLottieHero();
-    this.scaleUI();
-    // this.usecaseIntersection();
+    this.scaleUINavbarBlur();
   },
   methods: {
     checkScreen() {
@@ -113,14 +112,18 @@ export default {
         "<+=20%"
       );
     },
-    scaleUI() {
+    scaleUINavbarBlur() {
       const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
       const centerlottieelement = document.querySelector(".center-lottie");
+      const bodyRect = document.body.getBoundingClientRect();
+      const centerRect = centerlottieelement.getBoundingClientRect();
       const nav = document.querySelector("#nav_bg");
+      const navChangeTop = centerRect.top - bodyRect.top;
 
       window.onscroll = function (scroll) {
+        console.log(window.scrollY);
         let scrollTop = document.documentElement.scrollTop;
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
         let scaleDown = 1.0 - scrollTop / (10 * 70);
@@ -144,60 +147,14 @@ export default {
           }px)`;
           cursorelement.style.transform = `scale(${cursorDown}) `;
         }
-      };
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            nav.style.backdropFilter = "blur(16px)";
-            console.log("intersected");
-            return;
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            nav.style.backdropFilter = "blur(0px)";
-            console.log("BELOW"); // do things if below
-          } else {
-            nav.style.backdropFilter = "blur(16px)";
-            console.log("ABOVE"); // do things if above
-          }
-        },
-        {
-          threshold: 0.65,
+        // Navbar Blur
+        if (navChangeTop - 200 <= window.scrollY) {
+          nav.style.backdropFilter = "blur(16px)";
+        } else {
+          nav.style.backdropFilter = "blur(0px)";
         }
-      );
-      observer.observe(centerlottieelement);
+      };
     },
-    // usecaseIntersection() {
-    //   // Usecase Intersection Observer
-    //   const usecaseParent = document.querySelector(".usecase-parent");
-    //   const usecases = document.querySelectorAll(".usecase-animate");
-    //   const observer = new window.IntersectionObserver(
-    //     ([entry]) => {
-    //       if (entry.isIntersecting) {
-    //         gsap.from(usecases, {
-    //           y: 200,
-    //           opacity: 0,
-    //           stagger: {
-    //             from: "center",
-    //             grid: "auto",
-    //             ease: "power2.inOut",
-    //             amount: 0.09,
-    //           },
-    //         });
-    //         return;
-    //       }
-    //       if (entry.boundingClientRect.top > 0) {
-    //         console.log("BELOW"); // do things if below
-    //       } else {
-    //         console.log("ABOVE"); // do things if above
-    //       }
-    //     },
-    //     {
-    //       threshold: 0,
-    //     }
-    //   );
-    //   observer.observe(usecaseParent);
-    // },
 
     changeStrokeLottieHero() {
       document.querySelectorAll(".stroke path").forEach((path) => {
