@@ -11,7 +11,10 @@
             to engage consumers and increase conversions by top 500 apps on the
             App Store.</span
           >
-          <button class="full">Learn more</button>
+          <button class="full">
+            Learn more
+            <icon name="arrow" class="arrow" />
+          </button>
         </div>
       </div>
       <div class="col__two">
@@ -58,6 +61,7 @@
 
 <script>
 import LottieAnimation from "lottie-web-vue";
+import icon from "@/assets/Icons.vue";
 
 export default {
   data() {
@@ -68,6 +72,7 @@ export default {
   },
   components: {
     LottieAnimation,
+    icon,
   },
   mounted() {
     this.checkScreen;
@@ -139,7 +144,15 @@ export default {
         line-height: var(--step-0);
       }
       button {
+        gap: var(--step--4);
+        align-items: center;
+        height: max-content;
         color: #00bcae;
+
+        .arrow {
+          display: flex;
+          stroke: #00bcae;
+        }
       }
     }
   }

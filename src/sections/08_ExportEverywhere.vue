@@ -25,61 +25,36 @@ export default {
     this.colorPanel();
   },
   methods: {
+    qs(selector, parent = document) {
+      return parent.querySelector(selector);
+    },
+    qsa(selector, parent = document) {
+      return parent.querySelectorAll(selector);
+    },
     change(color) {
-      const windowShadow = document.querySelectorAll(
-        ".wing-central-bottom-bg path"
-      );
       this.color = color;
-      windowShadow.forEach((path) => {
+      this.qsa(".wing-central-bottom-bg path").forEach((path) => {
         path.setAttribute("fill", this.color);
       });
     },
     checkScreen() {
       this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 950) {
-        this.mobile = true;
-        return;
-      }
+      if (this.windowWidth <= 950) return (this.mobile = true);
       this.mobile = false;
-      this.mobileNav = false;
-      return;
-    },
-    toggleMobileNav() {
-      this.mobileNav = !this.mobileNav;
     },
     colorPanel() {
-      const colorValue = document.querySelectorAll(".one-color-value");
-      const colorContainer = document.querySelectorAll(".one-colors");
-      const colorPresent = document.querySelectorAll(".one-color-present");
-      const colorSlider = document.querySelectorAll(".one-color-slider");
-      const colorSwatches = document.querySelectorAll(".one-color-stash");
-      const colorToggle = document.querySelectorAll(".one-color-toggle");
-      const colorList = document.querySelectorAll("ul li");
-      let newArray = [];
-      colorList.forEach((color) => {
-        newArray.push(color);
-      });
-      const remove = newArray.splice("08");
-      remove.forEach((color) => {
-        color.remove();
-      });
-      colorValue.forEach((color) => {
-        color.remove();
-      });
-      colorToggle.forEach((toggle) => {
-        toggle.remove();
-      });
-      colorSwatches.forEach((color) => {
-        color.style.justifyContent = "space-evenly";
-      });
-      colorSlider.forEach((slider) => {
+      [...this.qsa("ul li")].splice(13, 23).forEach((color) => color.remove());
+      this.qsa(".one-color-value").forEach((color) => color.remove());
+      this.qsa(".one-color-toggle").forEach((toggle) => toggle.remove());
+      this.qsa(".one-color-present").forEach((present) => present.remove());
+      this.qsa(".one-color-stash").forEach(
+        (color) => (color.style.justifyContent = "space-evenly")
+      );
+      this.qsa(".one-color-slider").forEach((slider) => {
         slider.style.gap = "24px";
         slider.style.width = "100%";
       });
-      colorPresent.forEach((present) => {
-        present.remove();
-      });
-      colorContainer.forEach((container) => {
+      this.qsa(".one-colors").forEach((container) => {
         container.style.width = "240px";
         container.style.overflow = "hidden";
       });
@@ -125,7 +100,7 @@ export default {
       <carousel
         :per-page="1"
         :mouse-drag="true"
-        paginationActiveColor="#20ddae"
+        paginationActiveColor="rgb(238, 49, 131)"
         :touchDrag="true"
         :autoplay="true"
         :loop="true"
