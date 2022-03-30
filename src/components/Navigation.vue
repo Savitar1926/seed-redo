@@ -44,8 +44,8 @@ export default {
 
 <template>
   <header>
-    <nav id="nav_bg" class="nav animate-nav">
-      <div class="nav__section limiter">
+    <nav class="nav animate-nav">
+      <div id="nav_bg" class="nav__section limiter">
         <div class="nav__home">
           <router-link to="/" class="links logo-container" data-link>
             <icon name="logo" class="logo" />
@@ -104,11 +104,10 @@ export default {
   // backdrop-filter: blur(16px);
   display: flex;
   justify-content: center;
-  height: var(--navigation);
-  transition: background 150ms linear;
+  // height: var(--navigation);
   width: 100vw;
-  background: rgba(238, 239, 243, 0.2);
-  box-shadow: -11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02);
+  border-radius: var(--step--5);
+  padding: var(--step--4);
 
   .highlight {
     background: linear-gradient(
@@ -124,12 +123,20 @@ export default {
     -webkit-background-clip: text;
   }
 
+  #nav__bg {
+    border-radius: var(--step--5);
+  }
+
   &__section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-inline: var(--step-1);
     width: 100%;
+    background: rgba(238, 239, 243, 0.2);
+    box-shadow: -11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02);
+    padding-inline: var(--step--3);
+    border-radius: var(--step--5);
   }
   &__home {
     width: max-content;
@@ -140,16 +147,28 @@ export default {
     justify-content: end;
     gap: var(--step--3);
 
+    a {
+      &:hover {
+        opacity: 0.1;
+        background: rgb(225, 228, 240, 0.5);
+      }
+    }
+    a:first-child {
+      &:hover {
+        opacity: 0.1;
+        background: none;
+      }
+    }
+
     .logo-container {
       display: flex;
       gap: var(--step--4);
       align-items: center;
       font-weight: var(--semi-bold);
-    }
-
-    .logo {
-      color: var(--dark);
-      transform: scale(0.8);
+      .logo {
+        color: var(--dark);
+        transform: scale(0.8);
+      }
     }
   }
 
@@ -158,13 +177,20 @@ export default {
     display: flex;
     justify-content: end;
     gap: var(--step-0);
+    transition: color 50ms ease;
+
+    a {
+      &:hover {
+        opacity: 0.1;
+        background: rgb(225, 228, 240, 0.5);
+      }
+    }
 
     a:last-child {
       background: var(--dark);
       color: var(--primary) !important;
 
       &:hover {
-        background: var(--dark) !important;
         color: var(--teal) !important;
       }
     }
