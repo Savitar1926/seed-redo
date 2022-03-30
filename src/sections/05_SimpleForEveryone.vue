@@ -54,9 +54,9 @@
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #7c71fd">Designers</h2>
-                  <span
-                    >withLottieLab Edit illustrations and micro-interactions
-                    without needing to disturb a designer.</span
+                  <span>
+                    Edit illustrations and micro-interactions without needing to
+                    disturb a designer.</span
                   >
                 </div>
               </div>
@@ -74,9 +74,9 @@
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #f14378">Developers</h2>
-                  <span
-                    >withLottieLab Edit illustrations and micro-interactions
-                    without needing to disturb a designer.</span
+                  <span>
+                    Edit illustrations and micro-interactions without needing to
+                    disturb a designer.</span
                   >
                 </div>
               </div>
@@ -94,9 +94,9 @@
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #ffba2b">Animators</h2>
-                  <span
-                    >withLottieLab Edit illustrations and micro-interactions
-                    without needing to disturb a designer.</span
+                  <span>
+                    Edit illustrations and micro-interactions without needing to
+                    disturb a designer.</span
                   >
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default {
         }
         span {
           font-size: var(--step--4);
-          line-height: var(--step-0);
+          line-height: var(--step--1);
         }
         &__ditch {
           grid-area: card__ditch;
@@ -293,7 +293,7 @@ export default {
           }
           span {
             font-size: var(--step--4);
-            line-height: var(--step--2);
+            line-height: var(--step--1);
           }
         }
       }
@@ -354,7 +354,7 @@ export default {
       }
 
       .scroll {
-        width: 50%;
+        width: 40%;
 
         .container {
           display: grid;

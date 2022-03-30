@@ -59,7 +59,7 @@ export default {
   grid-template-rows: 1fr 1fr 0.35fr;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
-  gap: 32px 32px;
+  gap: var(--step-0);
   grid-auto-flow: row;
   justify-items: stretch;
   grid-template-areas:
@@ -93,15 +93,15 @@ export default {
   }
   .chips {
     display: flex;
-    gap: var(--step--1);
+    gap: var(--step--3);
     flex-wrap: wrap;
 
     span {
       background: rgba(124, 113, 253, 0.1);
       font-size: var(--step--4);
       line-height: var(--step--2);
-      padding: 16px 12px;
-      border-radius: var(--step--3);
+      padding: var(--step--5) var(--step--4);
+      border-radius: var(--step--5);
       font-weight: var(--normal);
       color: #7c71fd;
       width: max-content;

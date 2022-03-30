@@ -42,7 +42,6 @@
         </div>
       </div>
       <img
-        loading="lazy"
         v-show="!mobile"
         src="@/assets/09_meetLottie/meetlottie-image.svg"
         style="
@@ -92,11 +91,7 @@ export default {
         return;
       }
       this.mobile = false;
-      this.mobileNav = false;
       return;
-    },
-    toggleMobileNav() {
-      this.mobileNav = !this.mobileNav;
     },
   },
 };

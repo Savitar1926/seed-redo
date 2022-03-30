@@ -164,9 +164,9 @@ main {
       height: inherit;
       background-image: linear-gradient(
         79.84deg,
-        rgb(122, 111, 251, 0.5) -1%,
-        rgb(255, 84, 103, 0.5) 88%,
-        rgb(253, 190, 4, 0.5) 100%
+        rgb(122, 111, 251, 0.8) -1%,
+        rgb(255, 84, 103, 0.8) 88%,
+        rgb(253, 190, 4, 0.8) 100%
       );
       position: absolute;
       z-index: -1;
@@ -176,21 +176,30 @@ main {
       bottom: 0;
       border-radius: calc(var(--step-0) - 2px);
       backdrop-filter: blur(16px);
+
+      :hover {
+        filter: blur(16px);
+      }
     }
     &__early-access {
-      background-image: linear-gradient(
-        79.84deg,
-        rgb(122, 111, 251, 1) -1%,
-        rgb(255, 84, 103, 1) 88%,
-        rgb(253, 190, 4, 1) 100%
+      background: linear-gradient(
+        80deg,
+        #7a6ffb -1%,
+        #ff5467 88%,
+        #fdbe04 100%
       );
-      color: #ffffff;
-      backdrop-filter: blur(16px);
+      background-size: 110% 110%;
 
+      -webkit-animation: pulseGradient 6s ease infinite;
+      -moz-animation: pulseGradient 6s ease infinite;
+      animation: pulseGradient 6s ease infinite;
+      color: #ffffff;
+
+      backdrop-filter: blur(16px);
       &:hover {
-        -webkit-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
-        -moz-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
-        box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
+        box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+        -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+        -moz-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
       }
     }
   }

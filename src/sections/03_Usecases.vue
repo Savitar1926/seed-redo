@@ -25,7 +25,8 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  :animationData="require('@/assets/Pattern_6.json')"
+                  style="height: 100%"
+                  :animationData="require('@/assets/New Lottie.json')"
                   :loop="true"
                 />
               </div>
@@ -55,7 +56,8 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  :animationData="require('@/assets/Pattern_6.json')"
+                  style="height: 100%"
+                  :animationData="require('@/assets/Phone.json')"
                   :loop="true"
                 />
               </div>
@@ -86,8 +88,8 @@
               >
                 <div style="width: 100%">
                   <lottie-animation
-                    style="width: 200px; height: 180px"
-                    :animationData="require('@/assets/Pattern_6.json')"
+                    style="width: 100%"
+                    :animationData="require('@/assets/Loading.json')"
                     :loop="true"
                   />
                 </div>
@@ -111,8 +113,8 @@
               >
                 <div style="width: 100%; height: 100%">
                   <lottie-animation
-                    style="width: 200px; height: 180px"
-                    :animationData="require('@/assets/Pattern_6.json')"
+                    style="height: 100%"
+                    :animationData="require('@/assets/Loading_2.json')"
                     :loop="true"
                   />
                 </div>
@@ -137,7 +139,8 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  :animationData="require('@/assets/Pattern_6.json')"
+                  style="height: 100%"
+                  :animationData="require('@/assets/Product.json')"
                   :loop="true"
                 />
               </div>
@@ -161,7 +164,8 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  :animationData="require('@/assets/Pattern_6.json')"
+                  style="height: 100%"
+                  :animationData="require('@/assets/Notifications.json')"
                   :loop="true"
                 />
               </div>

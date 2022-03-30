@@ -71,9 +71,9 @@
             </div>
           </div>
         </div>
-        <div class="container-coming-soon">
+        <!-- <div class="container-coming-soon">
           <div class="coming-soon">Coming Soon</div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -111,7 +111,10 @@ export default {
   z-index: 2;
   position: relative;
   margin-inline: auto;
-
+  background-size: 150% 110%;
+  -webkit-animation: pulseGradient 6s ease infinite;
+  -moz-animation: pulseGradient 6s ease infinite;
+  animation: pulseGradient 6s ease infinite;
   .container-coming-soon {
     position: absolute;
     top: 0;
@@ -206,7 +209,7 @@ export default {
       }
       span {
         font-size: var(--step--4);
-        line-height: var(--step-0);
+        line-height: var(--step--1);
       }
     }
   }

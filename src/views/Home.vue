@@ -275,7 +275,7 @@ export default {
         />
         <lottie-animation
           class="bg__pattern limter animate-lead"
-          :animationData="require('@/assets/Pattern_6_a.json')"
+          :animationData="require('@/assets/Pattern_6_b.json')"
           :loop="true"
         />
       </section>
@@ -475,9 +475,10 @@ main {
     // Lottie Pattern
     &__pattern {
       width: max-content;
-      width: 100%;
+      width: 100vw;
       position: absolute;
       top: 0;
+      right: 0;
       // margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;
