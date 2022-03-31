@@ -163,7 +163,7 @@ main {
       content: "";
       height: inherit;
       background-image: linear-gradient(
-        79.84deg,
+        80deg,
         rgb(122, 111, 251, 0.8) -1%,
         rgb(255, 84, 103, 0.8) 88%,
         rgb(253, 190, 4, 0.8) 100%

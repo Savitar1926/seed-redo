@@ -5,7 +5,10 @@
         <div class="col__one">
           <div class="section__title">
             <div class="section__title">
-              <h1>Make it interactive</h1>
+              <h1>
+                Make it <br />
+                interactive
+              </h1>
               <span>
                 <strong>Coming soon.</strong>
                 Collaborate on files together and break out of the After Effects

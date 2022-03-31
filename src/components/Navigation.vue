@@ -191,7 +191,7 @@ export default {
       color: var(--primary) !important;
 
       &:hover {
-        color: var(--teal) !important;
+        color: #ffb92a !important;
       }
     }
   }

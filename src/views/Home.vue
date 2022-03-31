@@ -65,6 +65,12 @@ export default {
     this.scaleUINavbarBlur();
   },
   methods: {
+    qs(selector, parent = document) {
+      return parent.querySelector(selector);
+    },
+    qsa(selector, parent = document) {
+      return parent.querySelectorAll(selector);
+    },
     checkScreen() {
       this.windownWidth = window.innerWidth;
       if (this.windownWidth <= 950) {
@@ -122,9 +128,13 @@ export default {
       const nav = document.querySelector("#nav_bg");
       const navChangeTop = centerRect.top - bodyRect.top;
 
+      // On Scroll the Lottie Editor UI container scales up;
+      // while in reverse the Editor UI lottie scales down revealing the Whoel UI
+
       window.onscroll = function (scroll) {
-        console.log(window.scrollY);
-        let scrollTop = document.documentElement.scrollTop;
+        const scrollTop = document.documentElement.scrollTop;
+
+        //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
         let scaleDown = 1.0 - scrollTop / (10 * 70);
         let cursorDown = 1.0 - scrollTop / (10 * 110);
@@ -179,8 +189,7 @@ export default {
         window.scrollY >= sectionChangeBottom - 80
       ) {
         nav.style.background = "rgba(238, 239, 243, 0.2)";
-        nav.style.boxShadow =
-          "-11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02)";
+        nav.style.boxShadow = "-12px 12px 60px rgba(92, 97, 124, 0.02)";
         mobileIcon.style.color = "var(--dark)";
         colorLinks.forEach((link) => {
           link.style.color = "var(--dark)";
@@ -260,12 +269,12 @@ export default {
           class="bg__gradient"
           loading="lazy"
         />
-        <img
+        <!-- <img
           loading="lazy"
           v-show="!mobile"
           src="@/assets/dark-bg.svg"
           class="bg__dark"
-        />
+        /> -->
       </section>
     </section>
 
@@ -345,6 +354,11 @@ main {
           z-index: 1;
           width: 110%;
           transform: scale(1.2);
+          opacity: 1;
+
+          @media (min-width: 1840px) {
+            opacity: 0;
+          }
         }
       }
     }
@@ -439,7 +453,6 @@ main {
       // margin-top: -30.25rem;
       z-index: 0;
       pointer-events: none;
-      overflow: hidden;
     }
   }
 

@@ -21,14 +21,20 @@
           </div>
           <div class="section__cards">
             <div class="card card--light card--shadow box box__ditch">
-              <h2>Ditch the learning curve</h2>
+              <h2>
+                Ditch the <br />
+                learning curve
+              </h2>
               <span
                 >We keep it simple, so you’re free to create powerful results -
                 no After Effects qualifications needed.</span
               >
             </div>
             <div class="card card--light card--shadow box box__fun">
-              <h2>Have fun in the browser</h2>
+              <h2>
+                Have fun in <br />
+                the browser
+              </h2>
               <span
                 >With an entirely web-based editor and workflow, access your
                 work from any device and forget downloading large apps and
