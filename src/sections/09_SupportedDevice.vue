@@ -31,7 +31,6 @@ export default {
 .card {
   height: 250px !important;
   &--dark {
-    // background: rgb(20, 38, 42, 0.5) !important;
     border: none !important;
     backdrop-filter: blur(16px);
   }

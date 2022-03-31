@@ -66,9 +66,7 @@ export default {
     "anim__first"
     "anim__sec"
     "anim__third";
-  // transform: scale(0.88);
   padding-inline: var(--step-4);
-  // padding-block: var(--step-4);
 }
 .anim {
   height: max-content;
@@ -97,24 +95,24 @@ export default {
     flex-wrap: wrap;
 
     span {
-      background: rgba(124, 113, 253, 0.1);
+      background: var(--purple-light); // purple-light
       font-size: var(--step--4);
       line-height: var(--step--2);
       padding: var(--step--5) var(--step--4);
       border-radius: var(--step--5);
       font-weight: var(--normal);
-      color: #7c71fd;
+      color: var(--purple); // purple
       width: max-content;
     }
 
     .more {
-      color: var(--dark-sub);
+      color: var(--dark-sub); // dark-sub
       background: none;
     }
   }
   span {
     font-size: var(--step--1);
-    color: var(--purple);
+    color: var(--purple); // purple
     font-weight: var(--semi-bold);
   }
 }

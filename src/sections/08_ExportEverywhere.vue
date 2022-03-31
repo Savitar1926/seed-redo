@@ -51,7 +51,7 @@ export default {
         (color) => (color.style.justifyContent = "space-evenly")
       );
       this.qsa(".one-color-slider").forEach((slider) => {
-        slider.style.gap = "24px";
+        slider.style.gap = "var(--step--1)";
         slider.style.width = "100%";
       });
       this.qsa(".one-colors").forEach((container) => {
@@ -132,7 +132,7 @@ export default {
   flex-direction: column;
   gap: var(--step-2);
   color: var(--primary);
-  text-align: center;
+  text-align: start;
   padding-inline: var(--step-4);
   padding-block: var(--step-0);
 
@@ -146,18 +146,14 @@ export default {
   .section__title {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: var(--step-0);
 
     span {
       line-height: var(--step-0);
-      width: 80%;
+      width: 100%;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
-    }
-
-    button {
-      color: var(--teal);
     }
   }
   .export-section {
@@ -200,7 +196,7 @@ export default {
 
       .color-panel {
         background-image: linear-gradient(
-          79.84deg,
+          80deg,
           rgb(122, 111, 251, 0.5) -1%,
           rgb(255, 84, 103, 0.5) 88%,
           rgb(253, 190, 4, 0.5) 100%
@@ -231,10 +227,10 @@ export default {
         background: none;
         width: 100%;
         background: linear-gradient(
-          79.84deg,
-          #7a6ffb -1.31%,
-          #ff5467 85.47%,
-          #fdbe04 131.99%
+          80deg,
+          #7a6ffb -1%,
+          #ff5467 88%,
+          #fdbe04 132%
         );
         padding-block: var(--step--5);
         color: var(--primary);
@@ -253,6 +249,14 @@ export default {
 
 @media (min-width: 980px) {
   .export-everywhere {
+    text-align: center;
+    .section__title {
+      align-items: center;
+
+      span {
+        width: 80%;
+      }
+    }
     .export-section {
       .main-animation {
         display: flex;

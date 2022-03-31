@@ -75,7 +75,7 @@ export default {
     icon,
   },
   mounted() {
-    this.checkScreen;
+    this.checkScreen();
   },
   created() {
     window.addEventListener("resize", this.checkScreen);
@@ -103,7 +103,6 @@ export default {
   margin: auto;
   overflow: hidden;
   padding: var(--step-4);
-  // height: 100%;
 
   .container {
     display: grid;
@@ -111,7 +110,7 @@ export default {
     grid-template-rows: auto;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: 32px 32px;
+    gap: var(--step-0);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas:
@@ -136,7 +135,7 @@ export default {
       }
       span {
         color: var(--dark);
-        width: 80%;
+        width: 100%;
         line-height: var(--step-0);
       }
       button {
@@ -175,13 +174,18 @@ export default {
 }
 @media (min-width: 980px) {
   .meet-lottie {
+    .section__title {
+      span {
+        width: 80%;
+      }
+    }
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
-      gap: 32px 32px;
+      gap: var(--step-0);
       grid-auto-flow: row;
       justify-items: stretch;
       grid-template-areas: "col__one col__two";

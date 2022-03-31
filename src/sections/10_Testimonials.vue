@@ -69,7 +69,7 @@ export default {
     grid-template-rows: auto 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: 32px 32px;
+    gap: var(--step-0);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas:
@@ -84,7 +84,7 @@ export default {
     align-items: center;
     h1 {
       font-size: var(--step-2);
-      color: #7c71fd;
+      color: var(--purple); // purple
       width: 70%;
     }
   }
@@ -120,12 +120,12 @@ export default {
 
         &__info {
           h2 {
-            color: #7c71fd;
+            color: var(--purple); // purple
             font-size: var(--step--1);
             font-weight: var(--semi-bold);
           }
           span {
-            color: #7c71fd;
+            color: var(--purple); // purple
             font-size: var(--step--1);
           }
         }
@@ -145,7 +145,7 @@ export default {
       grid-template-rows: 1fr;
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
-      gap: 32px 32px;
+      gap: var(--step-0);
       grid-auto-flow: row;
       justify-items: stretch;
       grid-template-areas: "col__one col__two";

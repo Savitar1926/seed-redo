@@ -201,21 +201,21 @@ export default {
   padding-inline: var(--step-4);
 
   .card {
-    background: rgba(240, 242, 248, 0.9);
+    background: rgba(240, 242, 248, 0.9); // card transparent
     backdrop-filter: blur(16px);
     padding: 16px !important;
     height: fit-content !important;
   }
   .usecase-header {
     display: flex;
-    gap: 16px;
+    gap: var(--step--2);
     align-items: center;
     .usecase-title {
-      color: #7c71fd;
+      color: var(--purple); // purple
       font-weight: var(--semi-bold);
     }
     .usecase-filesize {
-      color: #7c71fd;
+      color: var(--purple); // purple
       font-size: var(--step--5);
     }
     .usecase-title-container {
@@ -232,7 +232,7 @@ export default {
     height: 100%;
     width: 100%;
     border-radius: var(--step-0);
-    background: white;
+    background: white; // white
   }
 
   .section {
@@ -265,11 +265,11 @@ export default {
             gap: var(--step--4);
             align-items: center;
             height: max-content;
-            color: #7c71fd;
+            color: var(--purple); // purple
 
             .arrow {
               display: flex;
-              stroke: #7c71fd;
+              stroke: var(--purple); // purple
             }
           }
         }
@@ -316,17 +316,6 @@ export default {
           "usecase-notification";
       }
 
-      // .container-cases {
-      //   display: grid;
-      //   grid-template-columns: 1fr;
-      //   grid-template-rows: 1fr 1fr;
-      //   gap: var(--step-0);
-      //   grid-template-areas:
-      //     "usecase-loading_1"
-      //     "usecase-loading_2";
-      //   grid-area: container-cases;
-      // }
-
       .usecase-loading_1 {
         grid-area: usecase-loading_1;
         margin-bottom: var(--step-0);
@@ -357,41 +346,10 @@ export default {
     padding-inline: 0rem;
 
     .card {
-      background: rgba(240, 242, 248, 0.9);
+      background: rgba(240, 242, 248, 0.9); // card transparent
       backdrop-filter: blur(16px);
       padding: 16px !important;
       height: 100% !important;
-    }
-    .usecase-header {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      .usecase-title {
-        color: #7c71fd;
-        font-weight: var(--semi-bold);
-      }
-      .usecase-filesize {
-        color: #7c71fd;
-
-        font-size: var(--step--5);
-      }
-      .usecase-title-container {
-        display: flex;
-        flex-direction: column;
-
-        .usecase-wrap {
-          // overflow: hidden;
-          text-overflow: ellipsis;
-          // white-space: nowrap;
-          width: inherit;
-        }
-      }
-    }
-    .usecase-lottie {
-      height: 100%;
-      width: 100%;
-      border-radius: var(--step-0);
-      background: white;
     }
 
     .section {
@@ -429,11 +387,11 @@ export default {
               gap: var(--step--4);
               align-items: center;
               height: max-content;
-              color: #7c71fd;
+              color: var(--purple); // purple
 
               .arrow {
                 display: flex;
-                stroke: #7c71fd;
+                stroke: var(--purple); // purple
               }
             }
           }
@@ -487,7 +445,7 @@ export default {
           grid-area: container-cases;
 
           .card:first-child {
-            background: rgba(240, 242, 248, 0.9);
+            background: rgba(240, 242, 248, 0.9); // card transparent
             backdrop-filter: blur(16px);
             padding: 16px !important;
             height: fit-content !important;

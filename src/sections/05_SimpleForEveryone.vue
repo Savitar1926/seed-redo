@@ -138,9 +138,8 @@ export default {
   .wrapper {
     display: flex;
     flex-direction: column;
-    // transform: scale(0.88);
     padding-inline: var(--step-4);
-    padding-block: var(--step-0);
+    padding-block: var(--step--3);
     margin: auto;
     gap: var(--step-1);
     .title {
@@ -154,7 +153,7 @@ export default {
         grid-template-rows: min-content;
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0);
         grid-auto-flow: row;
         justify-items: stretch;
         grid-template-areas:
@@ -170,7 +169,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0);
         grid-auto-flow: row;
         grid-template-areas:
           "card__ditch"
@@ -210,7 +209,7 @@ export default {
             gap: var(--step--4);
             align-items: center;
             height: max-content;
-            color: var(--purple);
+            color: var(--purple); // purple
 
             .arrow {
               display: flex;
@@ -233,15 +232,13 @@ export default {
         grid-template-rows: 1fr 1fr 1fr;
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
-        gap: 32px 32px;
+        gap: var(--step-0);
         grid-auto-flow: row;
         justify-items: stretch;
         grid-template-areas:
           "role__designer"
           "role__developer"
           "role__project-manager";
-        // height: 100%;
-        // width: 84%;
         margin-inline: auto;
         justify-content: center;
       }
@@ -249,7 +246,7 @@ export default {
       .role__project-manager {
         grid-area: role__project-manager;
         .profile__container {
-          background: #f7f8fa;
+          background: #f7f8fa; // role container
           border: #e1e4f0 solid 4px;
         }
       }
@@ -257,7 +254,7 @@ export default {
       .role__developer {
         grid-area: role__developer;
         .profile__container {
-          background: #f7f8fa;
+          background: #f7f8fa; // role container
           border: #e1e4f0 solid 4px;
         }
       }
@@ -265,7 +262,7 @@ export default {
       .role__designer {
         grid-area: role__designer;
         .profile__container {
-          background: #f7f8fa;
+          background: #f7f8fa; // role container
           border: #e1e4f0 solid 4px;
         }
       }
@@ -311,7 +308,6 @@ export default {
   .simple-for-everyone {
     margin: 0 auto;
     padding: 0;
-    // height: 100vh;
     display: flex;
     justify-content: center;
 
@@ -319,7 +315,7 @@ export default {
       display: flex;
       flex-direction: row;
       margin: auto;
-      gap: 108px;
+      gap: var(--step-7);
 
       .title {
         display: flex;
@@ -349,7 +345,7 @@ export default {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 1fr 1fr 1fr;
-          gap: 0px 32px;
+          gap: 0px var(--step-0);
           grid-auto-flow: row;
           grid-template-areas:
             "card__ditch card__fun"

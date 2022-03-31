@@ -82,44 +82,31 @@ main {
   overflow-y: hidden;
   margin-inline: auto;
   height: 85vh;
-  margin-bottom: -80px;
+  margin-bottom: calc(-1 * var(--step-5));
 
   .hero {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: var(--step-1);
     width: 100%;
 
     .text-animation {
       transform: scale(0.88);
       height: 100%;
-      margin-bottom: -2rem;
+      margin-bottom: calc(-1 * var(--step--1));
     }
 
     h1 {
       font-size: var(--step-1);
       line-height: var(--step-2);
     }
-    &--highlight {
-      background: linear-gradient(
-        150deg,
-        var(--teal) 0%,
-        rgba(98, 122, 246, 1) 100%
-      );
-      background-size: 200%;
-      right: 0;
-      left: 100%;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    }
     &__lead {
       width: clamp(18.75rem, 12.41rem + 31.71vw, 35rem);
       font-weight: var(--normal);
       font-size: var(--step--3);
       line-height: var(--step-0);
-      color: #5c617c;
+      color: #5c617c; // grey
     }
   }
 
@@ -182,18 +169,21 @@ main {
       }
     }
     &__early-access {
+      // purple
+      // pink
+      // yellow
       background: linear-gradient(
         80deg,
-        #7a6ffb -1%,
-        #ff5467 88%,
-        #fdbe04 100%
+        var(--purple) -1%,
+        var(--pink) 88%,
+        var(--yellow) 100%
       );
       background-size: 110% 110%;
 
       -webkit-animation: pulseGradient 6s ease infinite;
       -moz-animation: pulseGradient 6s ease infinite;
       animation: pulseGradient 6s ease infinite;
-      color: #ffffff;
+      color: #ffffff; // white
 
       backdrop-filter: blur(16px);
       &:hover {

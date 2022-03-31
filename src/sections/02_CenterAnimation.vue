@@ -28,11 +28,11 @@ export default {
   padding-inline: var(--step-4);
 
   .center-animation {
-    background-color: white;
+    background-color: white; // white
     height: 100%;
     width: 100%;
     border-radius: var(--step-0);
-    color: white;
+    color: white; // white
     overflow: hidden;
     box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
     -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);

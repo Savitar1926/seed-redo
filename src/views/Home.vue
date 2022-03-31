@@ -313,13 +313,13 @@ main {
   }
 
   .gap-light {
-    gap: 96px;
+    gap: var(--step-5);
   }
   // Sections
   .section {
     display: flex;
     flex-direction: column;
-    gap: 96px;
+    gap: var(--step-5);
     background: var(--primary);
 
     &__light {
@@ -339,7 +339,7 @@ main {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: var(--step-1);
 
       .usecases-home {
         position: relative;
@@ -353,7 +353,6 @@ main {
           bottom: 0;
           z-index: 1;
           width: 110%;
-          transform: scale(1.2);
           opacity: 1;
 
           @media (min-width: 1840px) {
@@ -372,7 +371,7 @@ main {
       display: flex;
       flex-direction: column;
       height: max-content;
-      gap: var(--step-7);
+      gap: var(--step-5);
       overflow: hidden;
       padding-top: var(--step-5);
       padding-bottom: var(--step-4);

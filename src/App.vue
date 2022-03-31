@@ -53,12 +53,13 @@ export default {
   --primary: #f0f2f8;
   --dark: #2b2b2b;
   --dark-sub: #9195ad;
-  --dark-blue: #00d3ec;
-  --blue: #607ef4;
-  --teal: #20ddae;
-  --purple: #a160f1;
-  --blue-hover: #f3f5fd;
   --details: #9b9b9b;
+
+  // New Colours
+  --purple: #7c71fd;
+  --purple-light: rgba(124, 113, 253, 0.1);
+  --pink: #ff5467;
+  --yellow: #fdbe04;
 
   // Stroke Colour
   --light-stroke: #e1e4f0;

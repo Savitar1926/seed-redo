@@ -74,9 +74,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="container-coming-soon">
-          <div class="coming-soon">Coming Soon</div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -98,19 +95,19 @@ export default {
 <style lang="scss" scoped>
 .panel {
   background: linear-gradient(
-      61.31deg,
-      rgba(254, 184, 42, 0.5) -58.21%,
-      rgba(238, 49, 131, 0.5) 72.74%,
-      rgba(124, 113, 253, 0) 105.16%
+      60deg,
+      rgba(254, 184, 42, 0.5) -58%,
+      rgba(238, 49, 131, 0.5) 72%,
+      rgba(124, 113, 253, 0) 104%
     ),
     linear-gradient(
-      243.29deg,
-      rgba(254, 184, 42, 0) -7.96%,
-      rgba(238, 49, 131, 0.5) 35.93%,
-      rgba(124, 113, 253, 0) 68.85%
+      242deg,
+      rgba(254, 184, 42, 0) -8%,
+      rgba(238, 49, 131, 0.5) 36%,
+      rgba(124, 113, 253, 0) 68%
     );
   backdrop-filter: blur(16px);
-  border-radius: 40px;
+  border-radius: var(--step-1);
   z-index: 2;
   position: relative;
   margin-inline: auto;
@@ -118,26 +115,6 @@ export default {
   -webkit-animation: pulseGradient 6s ease infinite;
   -moz-animation: pulseGradient 6s ease infinite;
   animation: pulseGradient 6s ease infinite;
-  .container-coming-soon {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    .coming-soon {
-      font-size: 300px;
-      position: absolute;
-      z-index: -1;
-      color: rgba(255, 255, 255, 0.05);
-      font-weight: bold;
-      margin-left: -64px;
-      line-height: 0.8;
-      bottom: 0;
-      margin-bottom: 2rem;
-    }
-  }
 }
 .container {
   display: grid;
@@ -145,7 +122,7 @@ export default {
   grid-template-rows: max-content;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
-  gap: 32px 32px;
+  gap: var(--step-0) var(--step-0);
   grid-auto-flow: row;
   justify-items: stretch;
   grid-template-areas:
@@ -171,7 +148,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content;
-    gap: 32px 32px;
+    gap: var(--step-0) var(--step-0);
     grid-auto-flow: row;
     grid-template-areas:
       "section__title section__title"
@@ -222,7 +199,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content;
-  gap: 32px;
+  gap: var(--step-0);
   grid-auto-flow: row;
   grid-template-areas:
     "usecase__one"
@@ -247,7 +224,7 @@ export default {
         width: 100%;
         height: fit-content;
         background-color: rgba(43 43 43 / 0.8);
-        color: white;
+        color: white; // white
         padding-inline: var(--step-1);
         padding-block: var(--step--3);
         border-radius: var(--step-0);
@@ -289,7 +266,7 @@ export default {
     grid-template-rows: 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: 32px 32px;
+    gap: var(--step-0) var(--step-0);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas: "col__one col__two";
@@ -310,7 +287,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr fit-content(100%);
-      gap: 32px 32px;
+      gap: var(--step-0) var(--step-0);
       grid-auto-flow: row;
       grid-template-areas:
         "section__title section__title"
@@ -341,7 +318,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 32px;
+    gap: var(--step-0);
     grid-auto-flow: row;
     grid-template-areas: "usecase__one usecase__two";
     grid-area: col__two;
@@ -403,7 +380,7 @@ export default {
     grid-template-rows: 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: 32px 32px;
+    gap: var(--step-0) var(--step-0);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas: "col__one col__two";
@@ -424,7 +401,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr fit-content(100%);
-      gap: 32px 32px;
+      gap: var(--step-0) var(--step-0);
       grid-auto-flow: row;
       grid-template-areas:
         "section__title section__title"

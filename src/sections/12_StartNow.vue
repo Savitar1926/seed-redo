@@ -44,7 +44,7 @@ export default {
     grid-template-rows: 0.5fr 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: 32px 32px;
+    gap: var(--step-0);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas:
@@ -60,7 +60,7 @@ export default {
     gap: var(--step-0);
     h1 {
       font-size: var(--step-2);
-      color: white;
+      color: white; // white
     }
     .button {
       display: flex;
@@ -102,7 +102,7 @@ export default {
         content: "";
         height: inherit;
         background-image: linear-gradient(
-          79.84deg,
+          80deg,
           rgb(122, 111, 251, 0.5) -1%,
           rgb(255, 84, 103, 0.5) 88%,
           rgb(253, 190, 4, 0.5) 100%
@@ -117,19 +117,22 @@ export default {
         backdrop-filter: blur(16px);
       }
       &__early-access {
+        // purple
+        // pink
+        // yellow
         background-image: linear-gradient(
-          79.84deg,
-          rgb(122, 111, 251, 1) -1%,
-          rgb(255, 84, 103, 1) 88%,
-          rgb(253, 190, 4, 1) 100%
+          80deg,
+          var(--purple) -1%,
+          var(--pink) 88%,
+          var(--yellow) 100%
         );
         color: #ffffff;
         backdrop-filter: blur(16px);
 
         &:hover {
-          -webkit-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
-          -moz-box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
-          box-shadow: 3px 1px 15px 0px rgb(48, 165, 173, 0.25);
+          box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+          -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+          -moz-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
         }
       }
     }
@@ -154,7 +157,7 @@ export default {
       grid-template-rows: 1fr;
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
-      gap: 32px 32px;
+      gap: var(--step-0);
       grid-auto-flow: row;
       justify-items: stretch;
       grid-template-areas: "col__one col__two";
