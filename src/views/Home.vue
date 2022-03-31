@@ -224,12 +224,12 @@ export default {
         <section class="section__usecases">
           <div class="usecases-home">
             <RevUsecases class="usecase-component" />
-            <img
+            <!-- <img
               loading="lazy"
               v-show="!mobile"
               src="@/assets/03_usecases/usecase-bg.svg"
               class="usecase-bg"
-            />
+            /> -->
           </div>
           <Starters />
         </section>
