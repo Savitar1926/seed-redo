@@ -1,47 +1,30 @@
 <script>
 import icon from "@/assets/Icons.vue";
+import checkScreen from "@/mixins/checkScreen";
+import elementSelector from "@/mixins/elementSelector";
 
 export default {
   name: "ExportEverywhere",
   data() {
     return {
       color: "#ffff",
-      mobile: null,
-      mobileNav: null,
-      windowWidth: null,
     };
   },
+  mixins: [checkScreen, elementSelector],
   components: {
     icon,
   },
-  created() {
-    window.addEventListener("resize", this.checkScreen);
-  },
-  destroyed() {
-    window.addEventListener("resize", this.checkScreen);
-  },
   mounted() {
-    this.checkScreen();
     this.colorPanel();
   },
   methods: {
-    qs(selector, parent = document) {
-      return parent.querySelector(selector);
-    },
-    qsa(selector, parent = document) {
-      return parent.querySelectorAll(selector);
-    },
     change(color) {
       this.color = color;
       this.qsa(".wing-central-bottom-bg path").forEach((path) => {
         path.setAttribute("fill", this.color);
       });
     },
-    checkScreen() {
-      this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 950) return (this.mobile = true);
-      this.mobile = false;
-    },
+
     colorPanel() {
       [...this.qsa("ul li")].splice(13, 23).forEach((color) => color.remove());
       this.qsa(".one-color-value").forEach((color) => color.remove());

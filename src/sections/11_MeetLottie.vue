@@ -62,37 +62,16 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
 import icon from "@/assets/Icons.vue";
+import checkScreen from "@/mixins/checkScreen";
 
 export default {
   data() {
-    return {
-      mobile: null,
-      windownWidth: null,
-    };
+    return {};
   },
+  mixins: [checkScreen],
   components: {
     LottieAnimation,
     icon,
-  },
-  mounted() {
-    this.checkScreen();
-  },
-  created() {
-    window.addEventListener("resize", this.checkScreen);
-  },
-  destroyed() {
-    window.addEventListener("resize", this.checkScreen);
-  },
-  methods: {
-    checkScreen() {
-      this.windownWidth = window.innerWidth;
-      if (this.windownWidth <= 950) {
-        this.mobile = true;
-        return;
-      }
-      this.mobile = false;
-      return;
-    },
   },
 };
 </script>

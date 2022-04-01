@@ -54,6 +54,7 @@
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
 import { gsap } from "gsap";
+import elementSelector from "@/mixins/elementSelector";
 
 export default {
   name: "FurtherTogether",
@@ -62,16 +63,16 @@ export default {
       collabOpen: true,
     };
   },
+  mixins: [elementSelector],
   components: {
     icon,
     LottieAnimation,
   },
   mounted() {
-    const details = document.querySelectorAll("details");
-    details.forEach((targetDetail) => {
+    [...this.qsa("details")].forEach((targetDetail) => {
       targetDetail.addEventListener("click", (event) => {
         if (targetDetail.hasAttribute("open")) return event.preventDefault();
-        details.forEach((detail) => {
+        [...this.qsa("details")].forEach((detail) => {
           if (detail !== targetDetail) return detail.removeAttribute("open");
         });
         const prevLottie = targetDetail.getAttribute("data-lottie");

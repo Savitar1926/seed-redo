@@ -1,40 +1,22 @@
 <script>
 import icon from "@/assets/Icons.vue";
+import checkScreen from "@/mixins/checkScreen";
 
 export default {
   name: "NavBar",
   data() {
     return {
-      profileMenu: null,
-      mobile: null,
       mobileNav: null,
-      windownWidth: null,
     };
   },
+  mixins: [checkScreen],
   components: {
     icon,
   },
   mounted() {
-    this.checkScreen();
     document.querySelector("svg").style.fill = "none";
   },
-  created() {
-    window.addEventListener("resize", this.checkScreen);
-  },
-  destroyed() {
-    window.addEventListener("resize", this.checkScreen);
-  },
   methods: {
-    checkScreen() {
-      this.windownWidth = window.innerWidth;
-      if (this.windownWidth <= 950) {
-        this.mobile = true;
-        return;
-      }
-      this.mobile = false;
-      this.mobileNav = false;
-      return;
-    },
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
     },
@@ -99,12 +81,9 @@ export default {
 <style lang="scss" scoped>
 .nav {
   --navigation: clamp(4.49rem, 1.08rem + 7.05vw, 6.1rem);
-  // -webkit-backdrop-filter: blur(16px);
   align-content: center;
-  // backdrop-filter: blur(16px);
   display: flex;
   justify-content: center;
-  // height: var(--navigation);
   width: 100vw;
   border-radius: var(--step--5);
   padding: var(--step--4);
@@ -134,7 +113,7 @@ export default {
     margin-inline: var(--step-1);
     width: 100%;
     background: rgba(238, 239, 243, 0.2);
-    box-shadow: -11.8101px 11.8101px 59.0507px rgba(92, 97, 124, 0.02);
+    box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
     padding-inline: var(--step--3);
     border-radius: var(--step--5);
   }

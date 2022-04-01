@@ -19,14 +19,16 @@ import MeetLottie from "@/sections/11_MeetLottie.vue";
 import StartNow from "@/sections/12_StartNow.vue";
 import Footer from "@/sections/Footer.vue";
 
+//Mixins
+import checkScreen from "@/mixins/checkScreen";
+import elementSelector from "@/mixins/elementSelector";
+
 export default {
   name: "Home",
   data() {
-    return {
-      mobile: null,
-      windownWidth: null,
-    };
+    return {};
   },
+  mixins: [checkScreen, elementSelector],
   components: {
     LottieAnimation,
     Navigation,
@@ -48,42 +50,16 @@ export default {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.changeColourNavbar, false)
     );
-    ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.checkScreen, false)
-    );
-  },
-  destroyed() {
-    window.addEventListener("resize", this.checkScreen);
   },
   mounted() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    this.checkScreen;
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
   },
   methods: {
-    qs(selector, parent = document) {
-      return parent.querySelector(selector);
-    },
-    qsa(selector, parent = document) {
-      return parent.querySelectorAll(selector);
-    },
-    checkScreen() {
-      this.windownWidth = window.innerWidth;
-      if (this.windownWidth <= 950) {
-        this.mobile = true;
-        return;
-      }
-      this.mobile = false;
-      this.mobileNav = false;
-      return;
-    },
-    toggleMobileNav() {
-      this.mobileNav = !this.mobileNav;
-    },
     animateHeroSection() {
       gsap.from(".animate-title", {
         y: 200,
@@ -224,12 +200,6 @@ export default {
         <section class="section__usecases">
           <div class="usecases-home">
             <RevUsecases class="usecase-component" />
-            <!-- <img
-              loading="lazy"
-              v-show="!mobile"
-              src="@/assets/03_usecases/usecase-bg.svg"
-              class="usecase-bg"
-            /> -->
           </div>
           <Starters />
         </section>
@@ -269,12 +239,6 @@ export default {
           class="bg__gradient"
           loading="lazy"
         />
-        <!-- <img
-          loading="lazy"
-          v-show="!mobile"
-          src="@/assets/dark-bg.svg"
-          class="bg__dark"
-        /> -->
       </section>
     </section>
 

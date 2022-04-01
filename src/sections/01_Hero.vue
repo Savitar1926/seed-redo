@@ -1,41 +1,15 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
+import checkScreen from "@/mixins/checkScreen";
 
 export default {
   name: "Hero",
   data() {
-    return {
-      mobile: null,
-      mobileNav: null,
-      windownWidth: null,
-    };
+    return {};
   },
-  mounted() {
-    this.checkScreen();
-  },
-  created() {
-    window.addEventListener("resize", this.checkScreen);
-  },
-  destroyed() {
-    window.addEventListener("resize", this.checkScreen);
-  },
+  mixins: [checkScreen],
   components: {
     LottieAnimation,
-  },
-  methods: {
-    checkScreen() {
-      this.windownWidth = window.innerWidth;
-      if (this.windownWidth <= 950) {
-        this.mobile = true;
-        return;
-      }
-      this.mobile = false;
-      this.mobileNav = false;
-      return;
-    },
-    toggleMobileNav() {
-      this.mobileNav = !this.mobileNav;
-    },
   },
 };
 </script>
