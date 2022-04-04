@@ -9,18 +9,25 @@ export default {
   components: {
     icon,
   },
-  mounted() {},
 };
 </script>
 
 <template>
   <div class="footer position-lift limiter">
-    <div>
+    <div class="first-section">
       <div>
         <router-link to="/"> <icon name="logo" class="logo" /></router-link>
         <router-link class="header-link" to="/" id="nav_link"
           >LottieLab</router-link
         >
+      </div>
+      <div class="hiring">We are also hiring!</div>
+      <div class="socials">
+        <router-link to="/"> <icon name="twitter" class="logo" /></router-link>
+        <router-link to="/">
+          <icon name="instagram" class="logo"
+        /></router-link>
+        <router-link to="/"> <icon name="discord" class="logo" /></router-link>
       </div>
       <span style="color: #585858"
         >© 2022 LottieLab Ltd. <br />
@@ -98,7 +105,6 @@ export default {
   }
 
   & > div {
-    display: flex;
     flex-direction: column;
     gap: var(--step--2);
     flex-wrap: wrap;
@@ -107,7 +113,6 @@ export default {
   & > div > div {
     display: flex;
     align-items: center;
-    // gap: var(--step-0);
 
     .logo {
       color: var(--dark);

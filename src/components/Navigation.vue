@@ -13,9 +13,6 @@ export default {
   components: {
     icon,
   },
-  mounted() {
-    document.querySelector("svg").style.fill = "none";
-  },
   methods: {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;

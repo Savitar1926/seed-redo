@@ -115,11 +115,14 @@ export default {
         let scaleDown = 1.0 - scrollTop / (10 * 70);
         let cursorDown = 1.0 - scrollTop / (10 * 110);
         let scaleLottie = 2.0 - scrollTop / (10 * 20);
+
+        // Conditions when passed the center lottie animation
+
         if (scaleAmt < 1.5) {
           scroll.preventDefault();
           // Restrict scale
           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-          scaleLottie = Math.min(Math.max(1, scaleLottie), 2);
+          scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
           element.style.transition = `transform 100ms ease`;
@@ -142,6 +145,7 @@ export default {
       };
     },
 
+    // Change path stroke when mounted
     changeStrokeLottieHero() {
       document.querySelectorAll(".stroke path").forEach((path) => {
         path.setAttribute("stroke", "#E1E4F0");
@@ -228,21 +232,13 @@ export default {
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <img
-          loading="lazy"
-          src="@/assets/07_exportEverywhere/Stars.svg"
-          class="bg__stars"
-        />
-
-        <img
-          src="@/assets/Background.svg"
-          class="bg__gradient"
-          loading="lazy"
-        />
+        <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
+        <img src="@/assets/Background.svg" class="bg__gradient" />
       </section>
     </section>
 
     <!--  Testiomonials, What's Lottie, Get Started -->
+
     <section class="section__light">
       <div class="section__testimonials">
         <Testimonials />
