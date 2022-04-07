@@ -1,14 +1,14 @@
-# landing-page
+# Seed Launch Landing Page
 <div id="top"></div>
 
 ## About The Project
 Revamped landing page under development.
 
+- [x] Update on Branding
 - [x] Design from Figma implemented
-- [ ] Update on Branding
 - [ ] Update assets from Branding
 
-* [DEMO](https://landing-page-iqu.pages.dev/)
+* [DEMO](https://lottielab-seed.netlify.app/)
 
 ## Project setup
 ```
