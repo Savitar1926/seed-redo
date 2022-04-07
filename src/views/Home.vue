@@ -392,7 +392,7 @@ main {
       top: 0;
       z-index: 1;
       width: 100%;
-      transform: scale(1.5);
+      // transform: scale(1.5);
     }
     &__dark {
       position: absolute;
