@@ -8,7 +8,7 @@ Revamped landing page under development.
 - [x] Design from Figma implemented
 - [ ] Update assets from Branding
 
-* [DEMO](https://lottielab-seed.netlify.app/)
+
 
 ## Project setup
 ```
