@@ -194,7 +194,7 @@ export default {
 
 <template>
   <main class="home">
-    <Navigation class="navigation" id="navigation" />
+    <Navigation class="navigation" />
     <section class="section">
       <section class="section__light gap-light">
         <section class="section__hero">
