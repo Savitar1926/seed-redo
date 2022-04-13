@@ -50,6 +50,9 @@ export default {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.changeColourNavbar, false)
     );
+    ["scroll", "resize"].forEach((evt) =>
+      window.addEventListener(evt, this.scaleUINavbarBlur, false)
+    );
   },
   mounted() {
     window.onbeforeunload = function () {
@@ -61,14 +64,6 @@ export default {
   },
   methods: {
     animateHeroSection() {
-      gsap.from(".animate-title", {
-        y: 200,
-        duration: 2,
-      });
-      gsap.from(".animate-title-2", {
-        opacity: 0,
-        duration: 1,
-      });
       gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
       gsap.from(
         ".links",

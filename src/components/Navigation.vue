@@ -120,7 +120,7 @@ export default {
     align-items: center;
     width: max-content;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap: var(--step--3);
 
     a {
@@ -151,7 +151,7 @@ export default {
   &__routes {
     width: max-content;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap: var(--step-0);
     transition: color 50ms ease;
 

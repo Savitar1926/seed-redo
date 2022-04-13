@@ -115,7 +115,7 @@ export default {
   flex-direction: column;
   gap: var(--step-2);
   color: var(--primary);
-  text-align: start;
+  text-align: flex-start;
   padding-inline: var(--step-4);
   padding-block: var(--step-0);
 
@@ -129,7 +129,7 @@ export default {
   .section__title {
     width: 100%;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: var(--step-0);
 
     span {
