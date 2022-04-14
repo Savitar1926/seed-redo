@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 // Components
 import Navigation from "@/components/Navigation.vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
+
 // Sections
 import Hero from "@/sections/01_Hero.vue";
 import RevCenterAnimation from "@/sections/02_CenterAnimation.vue";
@@ -26,12 +28,19 @@ import elementSelector from "@/mixins/elementSelector";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      // Intersection Hero
+      passIntersectingHero: false,
+    };
   },
   mixins: [checkScreen, elementSelector],
   components: {
+    // Plugin
     LottieAnimation,
+    // Components
     Navigation,
+    IntersectionObserver,
+    // Sections
     Hero,
     RevCenterAnimation,
     RevUsecases,
@@ -61,8 +70,40 @@ export default {
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
+    this.newIntersection();
   },
   methods: {
+    // new Intersection
+    newIntersection() {
+      const el = document.querySelector("#pass-hero");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            // pause animation
+            this.$refs.pattern.pause();
+            this.$refs.cursor.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.pattern.play();
+            this.$refs.cursor.play();
+          } else {
+            // pause animation
+            this.$refs.pattern.pause();
+            this.$refs.cursor.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
+
     animateHeroSection() {
       gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
       gsap.from(
@@ -193,6 +234,7 @@ export default {
     <section class="section">
       <section class="section__light gap-light">
         <section class="section__hero">
+          <!--  Play Hero animation -->
           <Hero />
           <RevCenterAnimation />
         </section>
@@ -201,14 +243,20 @@ export default {
             <RevUsecases class="usecase-component" />
           </div>
           <Starters />
+          <!--  Pause Hero animation -->
+          <intersection-observer id="pass-hero" />
         </section>
         <lottie-animation
+          :auto-play="false"
           v-show="!mobile"
+          ref="cursor"
           class="cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
         />
         <lottie-animation
+          :auto-play="false"
+          ref="pattern"
           class="bg__pattern limter animate-lead"
           :animationData="require('@/assets/Pattern_6_b.json')"
           :loop="true"

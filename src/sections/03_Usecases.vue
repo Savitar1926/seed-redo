@@ -25,9 +25,11 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                  ref="hero"
                   style="height: 100%"
                   :animationData="require('@/assets/New Lottie.json')"
                   :loop="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -56,9 +58,11 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                  ref="onboarding"
                   style="height: 100%"
                   :animationData="require('@/assets/Phone.json')"
                   :loop="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -88,9 +92,11 @@
               >
                 <div style="width: 100%">
                   <lottie-animation
+                    ref="loadingOne"
                     style="width: 100%"
                     :animationData="require('@/assets/Loading.json')"
                     :loop="true"
+                    :auto-play="false"
                   />
                 </div>
               </div>
@@ -113,9 +119,11 @@
               >
                 <div style="width: 100%; height: 100%">
                   <lottie-animation
+                    ref="loadingTwo"
                     style="height: 100%"
                     :animationData="require('@/assets/Loading_2.json')"
                     :loop="true"
+                    :auto-play="false"
                   />
                 </div>
               </div>
@@ -139,9 +147,11 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                  ref="product"
                   style="height: 100%"
                   :animationData="require('@/assets/Product.json')"
                   :loop="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -164,9 +174,11 @@
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                  ref="notification"
                   style="height: 100%"
                   :animationData="require('@/assets/Notifications.json')"
                   :loop="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -174,6 +186,10 @@
           </div>
         </div>
       </div>
+      <intersection-observer
+        style="position: aboslute; bottom: -50rem"
+        id="pass-usecases"
+      />
     </div>
   </div>
 </template>
@@ -181,12 +197,65 @@
 <script>
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
   name: "Usecases",
+  data() {
+    return {
+      passIntersectingUsecases: false,
+    };
+  },
   components: {
     LottieAnimation,
+    IntersectionObserver,
     icon,
+  },
+  mounted() {
+    this.usecaseIntersection();
+  },
+  methods: {
+    usecaseIntersection() {
+      const el = document.querySelector("#pass-usecases");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.hero.pause();
+            this.$refs.onboarding.pause();
+            this.$refs.loadingOne.pause();
+            this.$refs.loadingTwo.pause();
+            this.$refs.product.pause();
+            this.$refs.notification.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.hero.play();
+            this.$refs.onboarding.play();
+            this.$refs.loadingOne.play();
+            this.$refs.loadingTwo.play();
+            this.$refs.product.play();
+            this.$refs.notification.play();
+          } else {
+            // pause animation
+            this.$refs.hero.pause();
+            this.$refs.onboarding.pause();
+            this.$refs.loadingOne.pause();
+            this.$refs.loadingTwo.pause();
+            this.$refs.product.pause();
+            this.$refs.notification.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
   },
 };
 </script>

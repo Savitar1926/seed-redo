@@ -86,7 +86,7 @@ export default {
         :mouse-drag="true"
         paginationActiveColor="rgb(238, 49, 131)"
         :touchDrag="true"
-        :autoplay="true"
+        :auto-play="true"
         :loop="true"
       >
         <slide class="slide">

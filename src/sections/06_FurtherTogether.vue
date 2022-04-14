@@ -8,8 +8,8 @@
         </h1>
         <span>
           Collaborate on files together and break out of the After Effects silo.
-          Keep designers, developers and product managers on the same page. No
-          more emailing folders or sharing files on G-Drive.</span
+          Keep furtherTogether, developers and product managers on the same
+          page. No more emailing folders or sharing files on G-Drive.</span
         >
         <button class="full">
           Get Started
@@ -40,6 +40,8 @@
     <div class="section section-right">
       <div class="lottie-container">
         <lottie-animation
+          ref="furtherTogether"
+          :auto-play="false"
           :animationData="
             require('@/assets/05_furtherTogether/test-animation.json')
           "
@@ -47,6 +49,10 @@
         />
       </div>
     </div>
+    <intersection-observer
+      id="pass-further"
+      style="position: absolute; bottom: -20rem"
+    />
   </div>
 </template>
 
@@ -55,6 +61,7 @@ import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
 import { gsap } from "gsap";
 import elementSelector from "@/mixins/elementSelector";
+import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
   name: "FurtherTogether",
@@ -67,8 +74,10 @@ export default {
   components: {
     icon,
     LottieAnimation,
+    IntersectionObserver,
   },
   mounted() {
+    this.centerIntersection();
     [...this.qsa("details")].forEach((targetDetail) => {
       targetDetail.addEventListener("click", (event) => {
         if (targetDetail.hasAttribute("open")) return event.preventDefault();
@@ -103,6 +112,34 @@ export default {
       });
     });
   },
+  methods: {
+    centerIntersection() {
+      const el = document.querySelector("#pass-further");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.furtherTogether.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.furtherTogether.play();
+          } else {
+            // pause animation
+            this.$refs.furtherTogether.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
+  },
 };
 </script>
 
@@ -113,6 +150,7 @@ export default {
   z-index: 2;
   margin: auto;
   flex-direction: column-reverse;
+  position: relative;
 
   .section {
     &-left {

@@ -56,6 +56,8 @@
                     "
                     :loop="true"
                     class="profile__animation"
+                    :auto-play="false"
+                    ref="designers"
                   />
                 </div>
                 <div class="profile__details">
@@ -76,6 +78,8 @@
                     "
                     :loop="true"
                     class="profile__animation"
+                    :auto-play="false"
+                    ref="developers"
                   />
                 </div>
                 <div class="profile__details">
@@ -96,6 +100,8 @@
                     "
                     :loop="true"
                     class="profile__animation"
+                    :auto-play="false"
+                    ref="animators"
                   />
                 </div>
                 <div class="profile__details">
@@ -109,6 +115,10 @@
             </div>
           </div>
         </div>
+        <intersection-observer
+          id="pass-simple"
+          style="position: absolute; bottom: -20rem"
+        />
       </div>
     </section>
   </div>
@@ -117,6 +127,7 @@
 <script>
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
   name: "SimpleForEveryone",
@@ -126,6 +137,44 @@ export default {
   components: {
     icon,
     LottieAnimation,
+    IntersectionObserver,
+  },
+  mounted() {
+    this.centerIntersection();
+  },
+  methods: {
+    centerIntersection() {
+      const el = document.querySelector("#pass-simple");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.designers.pause();
+            this.$refs.developers.pause();
+            this.$refs.animators.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.designers.play();
+            this.$refs.developers.play();
+            this.$refs.animators.play();
+          } else {
+            // pause animation
+            this.$refs.designers.pause();
+            this.$refs.developers.pause();
+            this.$refs.animators.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
   },
 };
 </script>

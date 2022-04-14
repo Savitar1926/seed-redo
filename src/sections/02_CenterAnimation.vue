@@ -1,10 +1,46 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
   name: "CenterAnimation",
+  data() {
+    return {};
+  },
   components: {
     LottieAnimation,
+    IntersectionObserver,
+  },
+  mounted() {
+    this.centerIntersection();
+  },
+  methods: {
+    centerIntersection() {
+      const el = document.querySelector("#pass-center");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.centerAnimation.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.centerAnimation.play();
+          } else {
+            // pause animation
+            this.$refs.centerAnimation.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
   },
 };
 </script>
@@ -12,18 +48,19 @@ export default {
   <div class="zoom container-center-animation animate-lead limiter" style="">
     <div class="center-animation">
       <div class="center-lottie">
-        <!-- <img
-          loading="lazy"
-          src="https://i.pinimg.com/originals/44/d3/cb/44d3cb171c571b949242bb57603bc88f.png"
-          alt=""
-        /> -->
         <lottie-animation
+          ref="centerAnimation"
+          :auto-play="false"
           class="lottie_animation"
           :animationData="require('@/assets/center-animation.json')"
           :loop="true"
         />
       </div>
     </div>
+    <intersection-observer
+      id="pass-center"
+      style="position: absolute; bottom: -20rem"
+    />
   </div>
 </template>
 

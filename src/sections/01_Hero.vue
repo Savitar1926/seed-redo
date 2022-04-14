@@ -1,15 +1,55 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
+
 import checkScreen from "@/mixins/checkScreen";
 
 export default {
   name: "Hero",
   data() {
-    return {};
+    return {
+      passIntersectingText: false,
+    };
   },
   mixins: [checkScreen],
   components: {
     LottieAnimation,
+    IntersectionObserver,
+  },
+  mounted() {
+    this.heroTextIntersection();
+  },
+  methods: {
+    heroTextIntersection() {
+      const el = document.querySelector("#pass-heroText");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+
+          if (entry.isIntersecting) {
+            this.$refs.textAnimation.play();
+          }
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.textAnimation.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.textAnimation.play();
+          } else {
+            // pause animation
+            this.$refs.textAnimation.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
   },
 };
 </script>
@@ -17,10 +57,12 @@ export default {
   <main class="hero limiter position-lift">
     <div class="hero position-lift">
       <lottie-animation
+        ref="textAnimation"
         v-show="!mobile"
         class="text-animation animate-lead"
         :animationData="require('@/assets/01_hero/hero-text.json')"
         :loop="true"
+        :auto-play="false"
       />
       <h1 class="animate-lead" v-show="mobile">
         Create animations for your websites faster.
@@ -39,6 +81,10 @@ export default {
         </div>
       </div>
     </div>
+    <intersection-observer
+      style="position: absolute; bottom: -0.5rem"
+      id="pass-heroText"
+    />
   </main>
 </template>
 
