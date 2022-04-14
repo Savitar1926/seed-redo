@@ -52,7 +52,7 @@ export default {
           ref="centerAnimation"
           :auto-play="false"
           class="lottie_animation"
-          :animationData="require('@/assets/center-animation.json')"
+          :animationData="require('@/assets/center-anim.json')"
           :loop="true"
         />
       </div>

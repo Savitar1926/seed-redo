@@ -70,11 +70,11 @@ export default {
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
-    this.newIntersection();
+    this.heroIntersection();
   },
   methods: {
     // new Intersection
-    newIntersection() {
+    heroIntersection() {
       const el = document.querySelector("#pass-hero");
 
       const observer = new window.IntersectionObserver(
