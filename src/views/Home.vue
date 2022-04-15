@@ -71,6 +71,7 @@ export default {
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
     this.heroIntersection();
+    this.getStartedIntersection();
   },
   methods: {
     // new Intersection
@@ -93,6 +94,30 @@ export default {
             // pause animation
             this.$refs.pattern.pause();
             this.$refs.cursor.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
+    getStartedIntersection() {
+      const el = document.querySelector("#pass-startnow");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          // play animation
+          if (entry.isIntersecting) this.$refs.getstarted.play();
+          // pause animation
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            this.$refs.getstarted.pause();
+          } else {
+            // play animation
+            this.$refs.getstarted.play();
           }
         },
         {
@@ -290,11 +315,22 @@ export default {
         <MeetLottie />
       </div>
       <div class="section__get-started">
+        <intersection-observer id="pass-startnow" />
+
         <StartNow class="getstarted-component" />
         <img
+          v-show="mobile"
           loading="lazy"
           class="getstarted-bg"
           src="@/assets/10_getStarted/startnow-bg.svg"
+        />
+        <lottie-animation
+          :auto-play="false"
+          v-show="!mobile"
+          ref="getstarted"
+          class="getstarted-bg"
+          :animationData="require('@/assets/12_startNow/UI Share.json')"
+          :loop="true"
         />
       </div>
     </section>
@@ -401,6 +437,7 @@ main {
         width: 100vw;
         height: 100%;
         z-index: 2;
+        transform: scale(2);
       }
     }
 
