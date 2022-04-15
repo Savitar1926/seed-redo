@@ -60,7 +60,9 @@ export default {
         ref="textAnimation"
         v-show="!mobile"
         class="text-animation animate-lead"
-        :animationData="require('@/assets/01_hero/hero-text.json')"
+        :animationData="
+          require('@/assets/01_hero/Text Hero Image Gradient.json')
+        "
         :loop="true"
         :auto-play="false"
       />
@@ -112,9 +114,9 @@ main {
     width: 100%;
 
     .text-animation {
-      transform: scale(0.88);
+      transform: scale(1.25);
       height: 100%;
-      margin-bottom: calc(-1 * var(--step--1));
+      // margin-bottom: calc(-1 * var(--step--1));
     }
 
     h1 {
