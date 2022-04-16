@@ -120,12 +120,7 @@ export default {
         // purple
         // pink
         // yellow
-        background-image: linear-gradient(
-          80deg,
-          var(--purple) -1%,
-          var(--pink) 88%,
-          var(--yellow) 100%
-        );
+        background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         backdrop-filter: blur(16px);
 
