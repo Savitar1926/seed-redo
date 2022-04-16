@@ -61,7 +61,7 @@ export default {
         v-show="!mobile"
         class="text-animation animate-lead"
         :animationData="
-          require('@/assets/01_hero/Text Hero Image Gradient.json')
+          require('@/assets/01_hero/Text Hero Jump Optimize Image Gradient.json')
         "
         :loop="true"
         :auto-play="false"
