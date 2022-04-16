@@ -117,18 +117,9 @@ export default {
         backdrop-filter: blur(16px);
       }
       &__early-access {
-        // purple
-        // pink
-        // yellow
         background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         backdrop-filter: blur(16px);
-
-        &:hover {
-          box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
-          -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
-          -moz-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
-        }
       }
     }
   }
