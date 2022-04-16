@@ -80,7 +80,6 @@ export default {
       />
     </div>
     <div class="carousel-mobile" v-show="mobile">
-      Check other devices >
       <carousel
         :per-page="1"
         :mouse-drag="true"

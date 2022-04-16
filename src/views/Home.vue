@@ -434,7 +434,6 @@ main {
       .getstarted-bg {
         position: absolute;
         inset: 0;
-        width: 100vw;
         height: 100%;
         z-index: 2;
         transform: scale(1.3);

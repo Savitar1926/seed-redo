@@ -75,10 +75,12 @@ export default {
       &:hover,
       &:focus-visible {
         transform: scale(0.96);
+        backdrop-filter: blur(16px);
       }
 
       &:active {
         transform: scale(0.85);
+        backdrop-filter: blur(16px);
       }
 
       button {
@@ -119,7 +121,6 @@ export default {
       &__early-access {
         background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
-        backdrop-filter: blur(16px);
       }
     }
   }
