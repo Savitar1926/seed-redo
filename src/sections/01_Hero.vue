@@ -104,7 +104,7 @@ main {
   overflow-y: hidden;
   margin-inline: auto;
   height: 85vh;
-  margin-bottom: calc(-1 * var(--step-5));
+  margin-bottom: calc(-1 * var(--step-7));
 
   .hero {
     align-items: center;
@@ -114,7 +114,6 @@ main {
     width: 100%;
 
     .text-animation {
-      transform: scale(1.25);
       height: 100%;
       // margin-bottom: calc(-1 * var(--step--1));
     }
