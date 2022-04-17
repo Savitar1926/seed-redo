@@ -186,15 +186,15 @@ export default {
           scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
           // Apply scale transform
           element.style.transformOrigin = `bottom`;
-          element.style.transition = `transform 1000ms ease`;
+          element.style.transition = `transform 500ms ease`;
           element.style.transform = `scale(${scaleAmt})`;
           centerlottieelement.style.transform = `scale(${scaleLottie})`;
-          centerlottieelement.style.transition = `transform 1000ms ease`;
+          centerlottieelement.style.transition = `transform 500ms ease`;
           heroelement.style.transformOrigin = `bottom`;
           heroelement.style.transform = `scale(${scaleDown}) translateY(${
             -scaleDown * 10
           }px)`;
-          heroelement.style.transition = `transform 1000ms ease`;
+          heroelement.style.transition = `transform 500ms ease`;
           cursorelement.style.transform = `scale(${cursorDown}) `;
         }
         // Navbar Blur
