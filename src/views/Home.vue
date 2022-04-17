@@ -329,7 +329,7 @@ export default {
           v-show="!mobile"
           ref="getstarted"
           class="getstarted-bg"
-          :animationData="require('@/assets/12_startNow/Stroke_bigger.json')"
+          :animationData="require('@/assets/12_startNow/Stroke_Scaled.json')"
           :loop="true"
         />
       </div>
@@ -436,7 +436,7 @@ main {
         inset: 0;
         height: 100%;
         z-index: 2;
-        transform: scale(1.3);
+        transform: scale(1.5);
       }
     }
 
