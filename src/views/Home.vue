@@ -58,16 +58,17 @@ export default {
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.changeColourNavbar(), false)
+      window.addEventListener(evt, this.changeColourNavbar, false)
     );
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.scaleUINavbarBlur(), false)
+      window.addEventListener(evt, this.scaleUINavbarBlur, false)
     );
   },
   mounted() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
+    this.changeColourNavbar();
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
@@ -235,13 +236,10 @@ export default {
       const nav = document.querySelector("#nav_bg");
       const colorLinks = document.querySelectorAll("[data-link]");
       const mobileIcon = document.querySelector(".nav__mobile");
-
       const bodyRect = document.body.getBoundingClientRect();
       const darkRect = darkSection.getBoundingClientRect();
-
       const sectionChangeTop = darkRect.top - bodyRect.top;
       const sectionChangeBottom = darkRect.bottom - bodyRect.top;
-
       if (
         sectionChangeTop - 80 >= window.scrollY ||
         window.scrollY >= sectionChangeBottom - 80
@@ -255,16 +253,17 @@ export default {
         titleHighlight.style.letterSpacing = "var(--step--2)";
         titleHighlight.style.color = "white";
         return;
+      } else {
+        nav.style.background = "rgba(43 43 43 / 0.8)";
+        nav.style.color = "var(--primary)";
+        nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
+        mobileIcon.style.color = "var(--primary)";
+        titleHighlight.style.letterSpacing = "0rem";
+        titleHighlight.style.color = "#ffb92a";
+        colorLinks.forEach((link) => {
+          link.style.color = "var(--primary)";
+        });
       }
-      nav.style.background = "rgba(43 43 43 / 0.8)";
-      nav.style.color = "var(--primary)";
-      nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
-      mobileIcon.style.color = "var(--primary)";
-      titleHighlight.style.letterSpacing = "0rem";
-      titleHighlight.style.color = "#ffb92a";
-      colorLinks.forEach((link) => {
-        link.style.color = "var(--primary)";
-      });
     },
   },
 };
