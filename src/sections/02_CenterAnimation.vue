@@ -76,6 +76,7 @@ export default {
     width: 100%;
     color: white; // white
     overflow: hidden;
+    border-radius: var(--step-0);
 
     > .center-lottie {
       width: 100%;
