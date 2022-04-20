@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 // Components
-import Navigation from "@/components/Navigation.vue";
+// import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
 // Sections
@@ -39,7 +39,6 @@ export default {
     // Plugin
     LottieAnimation,
     // Components
-    Navigation,
     IntersectionObserver,
     // Sections
     Hero,
@@ -58,9 +57,6 @@ export default {
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.changeColourNavbar, false)
-    );
-    ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.scaleUINavbarBlur, false)
     );
   },
@@ -68,7 +64,6 @@ export default {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    this.changeColourNavbar();
     this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
@@ -230,48 +225,13 @@ export default {
         path.setAttribute("stroke", "#E1E4F0");
       });
     },
-    changeColourNavbar() {
-      const darkSection = document.querySelector("#sectionFurther");
-      const titleHighlight = document.querySelector("#title-highlight");
-      const nav = document.querySelector("#nav_bg");
-      const colorLinks = document.querySelectorAll("[data-link]");
-      const mobileIcon = document.querySelector(".nav__mobile");
-      const bodyRect = document.body.getBoundingClientRect();
-      const darkRect = darkSection.getBoundingClientRect();
-      const sectionChangeTop = darkRect.top - bodyRect.top;
-      const sectionChangeBottom = darkRect.bottom - bodyRect.top;
-      if (
-        sectionChangeTop - 80 >= window.scrollY ||
-        window.scrollY >= sectionChangeBottom - 80
-      ) {
-        nav.style.background = "rgba(238, 239, 243, 0.2)";
-        nav.style.boxShadow = "-12px 12px 60px rgba(92, 97, 124, 0.02)";
-        mobileIcon.style.color = "var(--dark)";
-        colorLinks.forEach((link) => {
-          link.style.color = "var(--dark)";
-        });
-        titleHighlight.style.letterSpacing = "var(--step--2)";
-        titleHighlight.style.color = "white";
-        return;
-      } else {
-        nav.style.background = "rgba(43 43 43 / 0.8)";
-        nav.style.color = "var(--primary)";
-        nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
-        mobileIcon.style.color = "var(--primary)";
-        titleHighlight.style.letterSpacing = "0rem";
-        titleHighlight.style.color = "#ffb92a";
-        colorLinks.forEach((link) => {
-          link.style.color = "var(--primary)";
-        });
-      }
-    },
   },
 };
 </script>
 
 <template>
   <main class="home">
-    <Navigation class="navigation" />
+    <!-- <Navigation class="navigation" /> -->
     <section class="section">
       <section class="section__light gap-light">
         <section class="section__hero">
@@ -361,11 +321,11 @@ export default {
 <style lang="scss" scoped>
 main {
   overflow-x: hidden;
-  .navigation {
-    display: grid;
-    position: fixed;
-    z-index: 9999;
-  }
+  // .navigation {
+  //   display: grid;
+  //   position: fixed;
+  //   z-index: 9999;
+  // }
 
   .gap-light {
     gap: var(--step-5);

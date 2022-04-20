@@ -76,7 +76,7 @@ export default {
     width: 100%;
     color: white; // white
     overflow: hidden;
-    border-radius: var(--step-0);
+    border-radius: var(--step-2);
 
     > .center-lottie {
       width: 100%;
@@ -86,12 +86,6 @@ export default {
       justify-content: center;
       transform: scale(2);
       border-radius: var(--step-2);
-
-      .lottie_animation {
-        box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
-        -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
-        -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0.32);
-      }
     }
   }
 }

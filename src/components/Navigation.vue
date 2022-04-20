@@ -31,7 +31,7 @@ export default {
             Lottielab
           </router-link>
           <router-link
-            to="/"
+            to="/about"
             class="links links-spaced"
             v-show="!mobile"
             data-link
@@ -125,13 +125,11 @@ export default {
 
     a {
       &:hover {
-        opacity: 0.1;
         background: rgb(225, 228, 240, 0.5);
       }
     }
     a:first-child {
       &:hover {
-        opacity: 0.1;
         background: none;
       }
     }

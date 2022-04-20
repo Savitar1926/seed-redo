@@ -1,13 +1,107 @@
 <template>
   <div id="app">
+    <Navigation class="navigation" />
     <router-view />
   </div>
 </template>
 
 <script>
+import Navigation from "@/components/Navigation.vue";
+
 export default {
   data() {
     return {};
+  },
+  components: {
+    Navigation,
+  },
+  created() {
+    ["scroll", "resize"].forEach((evt) =>
+      window.addEventListener(evt, this.changeColourNavbar, false)
+    );
+  },
+  mounted() {
+    this.changeColourNavbar();
+  },
+  updated() {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+    this.changeColourNavbar;
+  },
+  methods: {
+    changeColourNavbar() {
+      if (this.$route.name == "Home") {
+        const darkSection = document.querySelector("#sectionFurther");
+        const titleHighlight = document.querySelector("#title-highlight");
+        const nav = document.querySelector("#nav_bg");
+        const colorLinks = document.querySelectorAll("[data-link]");
+        const mobileIcon = document.querySelector(".nav__mobile");
+        const bodyRect = document.body.getBoundingClientRect();
+        const darkRect = darkSection.getBoundingClientRect();
+        const sectionChangeTop = darkRect.top - bodyRect.top;
+        const sectionChangeBottom = darkRect.bottom - bodyRect.top;
+        if (
+          sectionChangeTop - 80 >= window.scrollY ||
+          window.scrollY >= sectionChangeBottom - 80
+        ) {
+          nav.style.background = "rgba(238, 239, 243, 0.2)";
+          nav.style.boxShadow = "-12px 12px 60px rgba(92, 97, 124, 0.02)";
+          mobileIcon.style.color = "var(--dark)";
+          colorLinks.forEach((link) => {
+            link.style.color = "var(--dark)";
+          });
+          titleHighlight.style.letterSpacing = "var(--step--2)";
+          titleHighlight.style.color = "white";
+          return;
+        } else {
+          nav.style.background = "rgba(43 43 43 / 0.8)";
+          nav.style.color = "var(--primary)";
+          nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
+          mobileIcon.style.color = "var(--primary)";
+          titleHighlight.style.letterSpacing = "0rem";
+          titleHighlight.style.color = "#ffb92a";
+          colorLinks.forEach((link) => {
+            link.style.color = "var(--primary)";
+          });
+        }
+      }
+      if (this.$route.name == "About") {
+        const darkSection = document.querySelector(".about");
+        const titleHighlight = document.querySelector("#title-highlight");
+        const nav = document.querySelector("#nav_bg");
+        const colorLinks = document.querySelectorAll("[data-link]");
+        const mobileIcon = document.querySelector(".nav__mobile");
+        const bodyRect = document.body.getBoundingClientRect();
+        const darkRect = darkSection.getBoundingClientRect();
+        const sectionChangeTop = darkRect.top - bodyRect.top;
+        const sectionChangeBottom = darkRect.bottom - bodyRect.top;
+        if (
+          sectionChangeTop - 80 >= window.scrollY ||
+          window.scrollY >= sectionChangeBottom - 80
+        ) {
+          nav.style.background = "rgba(238, 239, 243, 0.2)";
+          nav.style.boxShadow = "-12px 12px 60px rgba(92, 97, 124, 0.02)";
+          mobileIcon.style.color = "var(--dark)";
+          colorLinks.forEach((link) => {
+            link.style.color = "var(--dark)";
+          });
+          titleHighlight.style.letterSpacing = "var(--step--2)";
+          titleHighlight.style.color = "white";
+          return;
+        } else {
+          nav.style.background = "rgba(43 43 43 / 0.8)";
+          nav.style.color = "var(--primary)";
+          nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
+          mobileIcon.style.color = "var(--primary)";
+          titleHighlight.style.letterSpacing = "0rem";
+          titleHighlight.style.color = "#ffb92a";
+          colorLinks.forEach((link) => {
+            link.style.color = "var(--primary)";
+          });
+        }
+      }
+    },
   },
 };
 </script>
@@ -15,7 +109,11 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
-
+.navigation {
+  display: grid;
+  position: fixed;
+  z-index: 9999;
+}
 *,
 *::before,
 *::after {
@@ -76,7 +174,7 @@ export default {
   color: var(--dark);
   min-height: 100vh;
   transition: all 200ms ease-out;
-  overflow: hidden;
+  overflow-x: hidden;
 
   .section__title {
     display: flex;
