@@ -174,10 +174,10 @@ export default {
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
         // let scaleDown = 1.0 - scrollTop / (10 * 290);
-        let cursorDown = 1.0 - scrollTop / (10 * 110);
+        let cursorDown = 1.0 - scrollTop / (10 * 30);
         let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        cursorDown = Math.min(Math.max(0.5, scaleLottie), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
-        cursorelement.style.transition = `transform 500ms ease-in-out`;
 
         // Conditions when passed the center lottie animation
         if (300 <= 700 > scrollTop || scrollTop > 300) {
@@ -237,7 +237,7 @@ export default {
     <Navigation class="navigation" />
 
     <section class="section">
-      <section class="section__light gap-light">
+      <section class="section__light">
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
