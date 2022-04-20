@@ -17,6 +17,27 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/blogs',
+    name: 'Blogs',
+    beforeEnter() {
+    window.open('https://medium.com/lottielab').focus();
+    }
+  },
+  {
+    path: '/community',
+    name: 'Community',
+    beforeEnter() {
+    window.open('https://discord.com/invite/NDUBtvg95a').focus();
+    }
+  },
+  {
+    path: '/join-us',
+    name: 'JoinUs',
+    beforeEnter() {
+    window.open('https://lottielab.notion.site/Careers-b4f40799d8294be9ab1c910b881cf6ca').focus();
+    }
   }
 ]
 

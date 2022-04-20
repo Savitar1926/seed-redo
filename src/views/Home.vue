@@ -169,6 +169,7 @@ export default {
         this.windownWidth = window.innerWidth;
 
         const scrollTop = document.documentElement.scrollTop;
+        console.log(document.documentElement.scrollTop);
 
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
@@ -177,7 +178,7 @@ export default {
         let scaleLottie = 2.0 - scrollTop / (10 * 20);
 
         // Conditions when passed the center lottie animation
-
+        console.log("fired");
         if (this.windownWidth >= 950) {
           this.mobile = true;
           if (scaleAmt < 1.5) {
@@ -195,7 +196,7 @@ export default {
             heroelement.style.transform = `scale(${scaleDown}) translateY(${
               -scaleDown * 10
             }px)`;
-            heroelement.style.transition = `transform 500ms ease-in-out`;
+            heroelement.style.transition = `transform 1000ms ease-in-out`;
             cursorelement.style.transform = `scale(${cursorDown}) `;
           }
           // Navbar Blur

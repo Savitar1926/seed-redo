@@ -31,23 +31,24 @@ export default {
             Lottielab
           </router-link>
           <router-link
-            to="/about"
+            to="/join-us"
             class="links links-spaced"
             v-show="!mobile"
             data-link
             id="nav_link"
-            >About</router-link
+            >Join Us</router-link
           >
           <router-link
-            to="/"
+            to="/blogs"
             class="links links-spaced"
             v-show="!mobile"
             data-link
             id="nav_link"
-            >Blogs</router-link
           >
+            Blogs
+          </router-link>
           <router-link
-            to="/"
+            to="/community"
             class="links links-spaced"
             v-show="!mobile"
             data-link
