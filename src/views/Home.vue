@@ -173,38 +173,40 @@ export default {
 
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
-        let scaleDown = 1.0 - scrollTop / (10 * 70);
+        // let scaleDown = 1.0 - scrollTop / (10 * 290);
         let cursorDown = 1.0 - scrollTop / (10 * 110);
-        let scaleLottie = 2.0 - scrollTop / (10 * 20);
+        let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        cursorelement.style.transform = `scale(${cursorDown}) `;
+        cursorelement.style.transition = `transform 500ms ease-in-out`;
 
         // Conditions when passed the center lottie animation
-        if (this.windownWidth >= 950) {
-          this.mobile = true;
-          if (scaleAmt < 1.5) {
-            scroll.preventDefault();
-            // Restrict scale
-            scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-            scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
-            // Apply scale transform
-            element.style.transformOrigin = `bottom`;
-            element.style.transition = `transform 500ms ease-in-out`;
-            element.style.transform = `scale(${scaleAmt})`;
-            centerlottieelement.style.transform = `scale(${scaleLottie})`;
-            centerlottieelement.style.transition = `transform 500ms ease-in-out`;
-            heroelement.style.transformOrigin = `bottom`;
-            heroelement.style.transform = `scale(${scaleDown}) translateY(${
-              -scaleDown * 10
-            }px)`;
-            heroelement.style.transition = `transform 1000ms ease-in-out`;
-            cursorelement.style.transform = `scale(${cursorDown}) `;
-          }
-          // Navbar Blur
-          if (navChangeTop - 180 <= window.scrollY) {
-            nav.style.backdropFilter = "blur(16px)";
-          } else {
-            nav.style.backdropFilter = "blur(0px)";
+        if (300 <= 700 > scrollTop || scrollTop > 300) {
+          if (this.windownWidth >= 950) {
+            this.mobile = true;
+            if (scaleAmt < 1.5) {
+              scroll.preventDefault();
+              // Restrict scale
+              scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
+              scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
+              // Apply scale transform
+              element.style.transformOrigin = `bottom`;
+              element.style.transition = `transform 500ms ease-in-out`;
+              element.style.transform = `scale(${scaleAmt})`;
+              centerlottieelement.style.transform = `scale(${scaleLottie})`;
+              centerlottieelement.style.transition = `transform 500ms ease-in-out`;
+              heroelement.style.transformOrigin = `bottom`;
+              // heroelement.style.transform = `scale(${scaleDown}) translateY(${-scaleDown}px)`;
+              heroelement.style.transition = `transform 500ms ease-in-out`;
+            }
+            // Navbar Blur
+            if (navChangeTop - 180 <= window.scrollY) {
+              nav.style.backdropFilter = "blur(16px)";
+            } else {
+              nav.style.backdropFilter = "blur(0px)";
+            }
           }
         }
+
         if (this.windownWidth <= 950) {
           element.style.transform = `none`;
           centerlottieelement.style.transform = `scale(1)`;
