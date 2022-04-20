@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <Navigation class="navigation" />
+    <!-- <Navigation class="navigation" /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue";
+// import Navigation from "@/components/Navigation.vue";
 
 export default {
   data() {
     return {};
   },
   components: {
-    Navigation,
+    // Navigation,
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
@@ -109,11 +109,7 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
-.navigation {
-  display: grid;
-  position: fixed;
-  z-index: 9999;
-}
+
 *,
 *::before,
 *::after {
@@ -174,7 +170,6 @@ export default {
   color: var(--dark);
   min-height: 100vh;
   transition: all 200ms ease-out;
-  overflow-x: hidden;
 
   .section__title {
     display: flex;

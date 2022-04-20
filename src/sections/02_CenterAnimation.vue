@@ -69,14 +69,15 @@ export default {
   z-index: 2;
   align-self: center;
   border-radius: 16px;
-  padding-inline: var(--step-4);
+  overflow: hidden;
 
   .center-animation {
     height: 100%;
     width: 100%;
     color: white; // white
-    overflow: hidden;
     border-radius: var(--step-2);
+    overflow: hidden;
+    padding-inline: var(--step-2);
 
     > .center-lottie {
       width: 100%;
@@ -87,6 +88,12 @@ export default {
       transform: scale(2);
       border-radius: var(--step-2);
     }
+  }
+}
+
+@media (min-width: 980px) {
+  .container-center-animation {
+    margin-inline: var(--step-2);
   }
 }
 </style>

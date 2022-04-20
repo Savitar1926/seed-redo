@@ -229,7 +229,7 @@ export default {
         display: flex;
         justify-content: center;
         h2 {
-          font-size: var(--step--1);
+          font-size: var(--step--2);
         }
         span {
           font-size: var(--step--4);

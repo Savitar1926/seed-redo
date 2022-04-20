@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 // Components
-// import Navigation from "@/components/Navigation.vue";
+import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
 // Sections
@@ -39,6 +39,7 @@ export default {
     // Plugin
     LottieAnimation,
     // Components
+    Navigation,
     IntersectionObserver,
     // Sections
     Hero,
@@ -169,7 +170,6 @@ export default {
         this.windownWidth = window.innerWidth;
 
         const scrollTop = document.documentElement.scrollTop;
-        console.log(document.documentElement.scrollTop);
 
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
@@ -178,7 +178,6 @@ export default {
         let scaleLottie = 2.0 - scrollTop / (10 * 20);
 
         // Conditions when passed the center lottie animation
-        console.log("fired");
         if (this.windownWidth >= 950) {
           this.mobile = true;
           if (scaleAmt < 1.5) {
@@ -233,6 +232,8 @@ export default {
 <template>
   <main class="home">
     <!-- <Navigation class="navigation" /> -->
+    <Navigation class="navigation" />
+
     <section class="section">
       <section class="section__light gap-light">
         <section class="section__hero">
@@ -322,11 +323,11 @@ export default {
 <style lang="scss" scoped>
 main {
   overflow-x: hidden;
-  // .navigation {
-  //   display: grid;
-  //   position: fixed;
-  //   z-index: 9999;
-  // }
+  .navigation {
+    display: grid;
+    position: fixed;
+    z-index: 9999;
+  }
 
   .gap-light {
     gap: var(--step-5);
