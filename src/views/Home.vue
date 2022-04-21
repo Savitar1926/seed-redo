@@ -16,6 +16,7 @@ import RevFurtherTogether from "@/sections/06_FurtherTogether.vue";
 import MakeInteractive from "@/sections/07_MakeInteractive.vue";
 import ExportEverywhere from "@/sections/08_ExportEverywhere.vue";
 import SupportedDevice from "@/sections/09_SupportedDevice.vue";
+import Integrate from "@/sections/13_Integrate.vue";
 import Testimonials from "@/sections/10_Testimonials.vue";
 import MeetLottie from "@/sections/11_MeetLottie.vue";
 import StartNow from "@/sections/12_StartNow.vue";
@@ -51,6 +52,7 @@ export default {
     MakeInteractive,
     ExportEverywhere,
     SupportedDevice,
+    Integrate,
     Testimonials,
     MeetLottie,
     StartNow,
@@ -290,6 +292,7 @@ export default {
         <img src="@/assets/Background.svg" class="bg__gradient" />
       </section>
     </section>
+    <Integrate />
 
     <!--  Testiomonials, What's Lottie, Get Started -->
 
