@@ -2,7 +2,7 @@
   <div class="main_testimonials position-lift limiter">
     <div class="container">
       <div class="col__one">
-        <div>
+        <div class="section__title">
           <h1>Integrate your <br />existing workflow.</h1>
           <span>
             Import existing Lottie animations, or start from scratch. Use and
@@ -61,8 +61,14 @@ export default {
     grid-area: col__one;
     display: flex;
     flex-direction: column;
-    gap: var(--step-0);
     justify-content: center;
+
+    .section__title {
+      display: flex;
+      flex-direction: column;
+      gap: var(--step-0);
+      justify-content: center;
+    }
     h1 {
       font-size: var(--step-2);
       color: var(--primary); // purple
