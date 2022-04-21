@@ -48,16 +48,20 @@
                 </div>
               </div>
               <div class="sample_container">
-                <lottie-interactive
+                <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="click"
-                ></lottie-interactive>
+                ></lottie-interactive> -->
+                <img
+                  src="@/assets/ravie/Asset 1.svg"
+                  style="transform: scale(1.5)"
+                />
               </div>
             </div>
           </div>
           <div class="usecase__two">
-            <div class="usecase__first card card--shadow-dark usecase--ease">
+            <div class="usecase__first card-day usecase--ease">
               <div class="card__header">
                 <div class="card__info">
                   <span class="card__title">E-Commerce Animation</span>
@@ -65,11 +69,12 @@
                 </div>
               </div>
               <div class="sample_container">
-                <lottie-interactive
+                <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="switch"
-                ></lottie-interactive>
+                ></lottie-interactive> -->
+                <img src="@/assets/ravie/Asset 2.svg" />
               </div>
             </div>
           </div>
@@ -80,14 +85,14 @@
 </template>
 
 <script>
-import { LottieInteractive } from "lottie-interactive";
+// import { LottieInteractive } from "lottie-interactive";
 export default {
   name: "SimpleForEveryone",
   data() {
     return {};
   },
   components: {
-    LottieInteractive,
+    // LottieInteractive,
   },
 };
 </script>
@@ -141,6 +146,31 @@ export default {
 
     &--dark {
       backdrop-filter: blur(16px) !important;
+    }
+  }
+
+  .card-day {
+    backdrop-filter: blur(16px);
+    background: rgba(43, 43, 43);
+    display: flex;
+    flex-direction: column;
+    gap: var(--step--4);
+    width: 100%;
+    border-radius: var(--step-0);
+    transition: all 200ms ease-out;
+    box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+    -webkit-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+    -moz-box-shadow: 8.28684px 24.8605px 33.1474px rgba(31, 31, 31, 0.5);
+    overflow: hidden;
+
+    .card__header {
+      padding-inline: var(--step-0);
+      padding-top: var(--step-0);
+    }
+
+    img {
+      border-radius: 0 0 var(--step-0) var(--step-0);
+      transform: scale(1.05);
     }
   }
 
