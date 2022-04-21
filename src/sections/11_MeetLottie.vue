@@ -20,10 +20,12 @@
       <div class="col__two">
         <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <lottie-animation
+            <!-- <lottie-animation
               :animationData="require('@/assets/Pattern_6.json')"
               :loop="true"
-            />
+            /> -->
+            <img src="@/assets/ravie/Asset 3.svg" style="width: 100%" />
+
             <div>
               <h3>351 kB</h3>
               <span>GIF</span>
@@ -32,10 +34,11 @@
         </div>
         <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <lottie-animation
+            <!-- <lottie-animation
               :animationData="require('@/assets/Pattern_6.json')"
               :loop="true"
-            />
+            /> -->
+            <img src="@/assets/ravie/Asset 4.svg" style="width: 100%" />
             <h3 style="color: #00bcae">61 kB</h3>
             <span style="color: #00bcae">Lottie</span>
           </div>
@@ -60,7 +63,7 @@
 </template>
 
 <script>
-import LottieAnimation from "lottie-web-vue";
+// import LottieAnimation from "lottie-web-vue";
 import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
 
@@ -70,7 +73,7 @@ export default {
   },
   mixins: [checkScreen],
   components: {
-    LottieAnimation,
+    // LottieAnimation,
     icon,
   },
 };
