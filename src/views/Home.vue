@@ -173,39 +173,41 @@ export default {
 
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 100);
-        // let scaleDown = 1.0 - scrollTop / (10 * 290);
+        let scaleDown = 1.0 - scrollTop / (10 * 50);
         let cursorDown = 1.0 - scrollTop / (10 * 130);
         let scaleLottie = 2.0 - scrollTop / (10 * 35);
         cursorDown = Math.min(Math.max(0.6, scaleLottie), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
 
+        if (400 > scrollTop) {
+          heroelement.style.transformOrigin = `bottom`;
+          heroelement.style.transform = `scale(${scaleDown}) translateY(${-scaleDown}px)`;
+          heroelement.style.transition = `transform 100ms linear`;
+        }
         // Conditions when passed the center lottie animation
-        if (300 <= 700 > scrollTop || scrollTop > 300) {
-          if (this.windownWidth >= 950) {
-            this.mobile = true;
-            if (scaleAmt < 1.5) {
-              scroll.preventDefault();
-              // Restrict scale
-              scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-              scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
-              // Apply scale transform
-              element.style.transformOrigin = `bottom`;
-              element.style.transition = `transform 500ms ease-in-out`;
-              element.style.transform = `scale(${scaleAmt})`;
-              centerlottieelement.style.transform = `scale(${scaleLottie})`;
-              centerlottieelement.style.transition = `transform 500ms ease-in-out`;
-              heroelement.style.transformOrigin = `bottom`;
-              // heroelement.style.transform = `scale(${scaleDown}) translateY(${-scaleDown}px)`;
-              heroelement.style.transition = `transform 500ms ease-in-out`;
-            }
-            // Navbar Blur
-            if (navChangeTop - 180 <= window.scrollY) {
-              nav.style.backdropFilter = "blur(16px)";
-            } else {
-              nav.style.backdropFilter = "blur(0px)";
-            }
+        // if (300 <= 700 > scrollTop || scrollTop > 300) {
+        if (this.windownWidth >= 950) {
+          this.mobile = true;
+          if (scaleAmt < 1.5) {
+            scroll.preventDefault();
+            // Restrict scale
+            scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
+            scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
+            // Apply scale transform
+            element.style.transformOrigin = `bottom`;
+            element.style.transition = `transform 50ms linear`;
+            element.style.transform = `scale(${scaleAmt})`;
+            centerlottieelement.style.transform = `scale(${scaleLottie})`;
+            centerlottieelement.style.transition = `transform 50ms linear`;
           }
+          // Navbar Blur
+          if (navChangeTop - 180 <= window.scrollY) {
+            nav.style.backdropFilter = "blur(16px)";
+          } else {
+            nav.style.backdropFilter = "blur(0px)";
+          }
+          // }
         }
 
         if (this.windownWidth <= 950) {
@@ -238,7 +240,7 @@ export default {
     <Navigation class="navigation" />
 
     <section class="section">
-      <section class="section__light">
+      <section class="section__light gap-light">
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
@@ -252,6 +254,8 @@ export default {
           <!--  Pause Hero animation -->
           <intersection-observer id="pass-hero" />
         </section>
+
+        <!-- Cursor Animation -->
         <lottie-animation
           :auto-play="false"
           v-show="!mobile"
@@ -260,6 +264,7 @@ export default {
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
         />
+
         <lottie-animation
           :auto-play="false"
           ref="pattern"
@@ -331,9 +336,10 @@ main {
     position: fixed;
     z-index: 9999;
   }
-
-  .gap-light {
-    gap: var(--step-5);
+  @media (max-width: 980px) {
+    .gap-light {
+      gap: var(--step-5);
+    }
   }
   // Sections
   .section {
@@ -352,7 +358,7 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: var(--step-0);
+      gap: var(--step-4);
     }
     &__usecases {
       background: var(--primary);

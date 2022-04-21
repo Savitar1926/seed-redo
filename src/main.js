@@ -6,9 +6,6 @@ import { ColorPicker, ColorPanel } from 'one-colorpicker'
 import VueCarousel from 'vue-carousel';
 
 Vue.use(VueCarousel);
-
-
-
 Vue.use(LottieAnimation);
 Vue.use(ColorPanel)
 Vue.use(ColorPicker)
