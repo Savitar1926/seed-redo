@@ -249,40 +249,6 @@ button {
   z-index: 2;
 }
 
-@-webkit-keyframes pulseGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes pulseGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes pulseGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @media (min-width: 1200px) {
   .limiter {
     max-width: 1440px;
@@ -290,6 +256,9 @@ button {
   }
   .limiter-width {
     max-width: 1440px;
+  }
+  .limiter-height {
+    max-height: 890px;
   }
 }
 </style>

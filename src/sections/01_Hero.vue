@@ -201,9 +201,6 @@ main {
       );
       background-size: 110% 110%;
 
-      -webkit-animation: pulseGradient 6s ease infinite;
-      -moz-animation: pulseGradient 6s ease infinite;
-      animation: pulseGradient 6s ease infinite;
       color: #ffffff; // white
 
       backdrop-filter: blur(16px);

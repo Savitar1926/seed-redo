@@ -270,7 +270,7 @@ export default {
         <lottie-animation
           :auto-play="false"
           ref="pattern"
-          class="bg__pattern limter animate-lead"
+          class="bg__pattern limiter-height animate-lead"
           :animationData="require('@/assets/Pattern_6_b.json')"
           :loop="true"
         />
@@ -428,7 +428,7 @@ main {
         inset: 0;
         height: 100%;
         z-index: 2;
-        transform: scale(1.5);
+        transform: scale(2.5);
       }
     }
 

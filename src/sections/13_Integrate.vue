@@ -1,6 +1,6 @@
 <template>
-  <div class="main_testimonials position-lift limiter">
-    <div class="container">
+  <div class="main_testimonials position-lift">
+    <div class="container limiter">
       <div class="col__one">
         <div class="section__title">
           <h1>Integrate your <br />existing workflow.</h1>
@@ -40,7 +40,6 @@ export default {
     ),
     #2b2b2b;
   overflow: hidden;
-  margin: 0 auto;
 
   .container {
     display: grid;
@@ -55,6 +54,7 @@ export default {
       "col__one"
       "col__two";
     height: 100%;
+    margin: 0 auto;
   }
 
   .col__one {
@@ -83,6 +83,7 @@ export default {
     grid-area: col__two;
     display: flex;
     justify-content: center;
+    padding: var(--step-4);
 
     img {
       width: 100%;
