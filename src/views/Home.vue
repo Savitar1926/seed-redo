@@ -174,17 +174,20 @@ export default {
         const scrollTop = document.documentElement.scrollTop;
 
         //  Scroll Velocity Controllers
-        let scaleAmt = 1.0 + scrollTop / (10 * 100);
-        let scaleDown = 1.0 - scrollTop / (10 * 50);
-        let cursorDown = 1.0 - scrollTop / (10 * 130);
+        let scaleAmt = 1.0 + scrollTop / (10 * 280);
         let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        let scaleDown = 1.0 - scrollTop / (10 * 70);
+        let transUp = 1.0 - scrollTop / (10 * 50);
+        let cursorDown = 1.0 - scrollTop / (10 * 130);
         cursorDown = Math.min(Math.max(0.6, scaleLottie), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
 
+        console.log(transUp);
+
         if (400 > scrollTop) {
-          heroelement.style.transformOrigin = `bottom`;
-          heroelement.style.transform = `scale(${scaleDown}) translateY(${-scaleDown}px)`;
+          heroelement.style.transformOrigin = `top`;
+          heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
           heroelement.style.transition = `transform 100ms linear`;
         }
         // Conditions when passed the center lottie animation
@@ -201,7 +204,7 @@ export default {
             element.style.transition = `transform 50ms linear`;
             element.style.transform = `scale(${scaleAmt})`;
             centerlottieelement.style.transform = `scale(${scaleLottie})`;
-            centerlottieelement.style.transition = `transform 50ms linear`;
+            centerlottieelement.style.transition = `transform 100ms linear`;
           }
           // Navbar Blur
           if (navChangeTop - 180 <= window.scrollY) {
