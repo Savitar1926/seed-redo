@@ -292,7 +292,9 @@ export default {
         <img src="@/assets/Background.svg" class="bg__gradient" />
       </section>
     </section>
-    <Integrate />
+    <div id="sectionIntegrate">
+      <Integrate />
+    </div>
 
     <!--  Testiomonials, What's Lottie, Get Started -->
 
