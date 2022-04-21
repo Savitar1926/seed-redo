@@ -2,13 +2,14 @@
   <div class="main_testimonials position-lift limiter">
     <div class="container">
       <div class="col__one">
-        <h1>Integrate your <br />existing workflow.</h1>
-        <span>
-          <strong>Coming soon.</strong>
-          Collaborate on files together and break out of the After Effects silo.
-          Keep designers, developers and product managers on the same page. No
-          more emailing folders or sharing files on G-Drive.</span
-        >
+        <div>
+          <h1>Integrate your <br />existing workflow.</h1>
+          <span>
+            Import existing Lottie animations, or start from scratch. Use and
+            edit assets from the Lottie Files marketplace, After Effects,
+            Illustrator, Figma and more.</span
+          >
+        </div>
       </div>
       <div class="col__two">
         <img
@@ -78,7 +79,7 @@ export default {
     justify-content: center;
 
     img {
-      height: 416px;
+      width: 100%;
     }
   }
 }
