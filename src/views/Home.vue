@@ -1,6 +1,6 @@
 <script scoped>
 // Plugins
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import LottieAnimation from "lottie-web-vue";
 // Components
 import Navigation from "@/components/Navigation.vue";
@@ -67,7 +67,7 @@ export default {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    this.animateHeroSection();
+    // this.animateHeroSection();
     this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
     this.heroIntersection();
@@ -129,32 +129,32 @@ export default {
       observer.observe(el);
     },
 
-    animateHeroSection() {
-      gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
-      gsap.from(
-        ".links",
-        {
-          duration: 0.2,
-          scale: 0.5,
-          opacity: 0,
-          ease: "power1.inOut",
-          stagger: {
-            grid: "auto",
-            from: "start",
-            amount: 0.2,
-          },
-        },
-        "<+=20%"
-      );
-      gsap.from(
-        ".animate-nav",
-        {
-          opacity: 0,
-          duration: 0.5,
-        },
-        "<+=20%"
-      );
-    },
+    // animateHeroSection() {
+    //   gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
+    //   gsap.from(
+    //     ".links",
+    //     {
+    //       duration: 0.2,
+    //       scale: 0.5,
+    //       opacity: 0,
+    //       ease: "power1.inOut",
+    //       stagger: {
+    //         grid: "auto",
+    //         from: "start",
+    //         amount: 0.2,
+    //       },
+    //     },
+    //     "<+=20%"
+    //   );
+    //   gsap.from(
+    //     ".animate-nav",
+    //     {
+    //       opacity: 0,
+    //       duration: 0.5,
+    //     },
+    //     "<+=20%"
+    //   );
+    // },
     scaleUINavbarBlur() {
       const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
