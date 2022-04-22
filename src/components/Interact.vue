@@ -80,14 +80,7 @@ export default {
 svg {
   width: 100%;
 }
-.preloading {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-}
+
 .anim-preload-main {
   fill: var(--color-invert);
   stroke: var(--color-invert);

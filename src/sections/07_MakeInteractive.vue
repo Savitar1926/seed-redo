@@ -50,7 +50,7 @@
               <div class="sample_container">
                 <!-- <lottie-interactive
                   class="interactive-lottie"
-                  path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
+                  path="Interactive_Heart-Click_all-states.json"
                   interaction="click"
                 ></lottie-interactive> -->
                 <img
@@ -69,12 +69,16 @@
                 </div>
               </div>
               <div class="sample_container">
+                <div class="preloading">
+                  <div class="preloading-icon"></div>
+                </div>
+                <Interactive />
                 <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="switch"
                 ></lottie-interactive> -->
-                <img src="@/assets/ravie/Asset 2.svg" />
+                <!-- <img src="@/assets/ravie/Asset 2.svg" /> -->
               </div>
             </div>
           </div>
@@ -86,12 +90,18 @@
 
 <script>
 // import { LottieInteractive } from "lottie-interactive";
+import Interactive from "@/components/Interact.vue";
 export default {
   name: "SimpleForEveryone",
-  data() {
-    return {};
-  },
+  data: () => ({
+    speed: 1,
+    elt: {},
+    autoplay: true,
+    animData: null,
+  }),
+  mounted() {},
   components: {
+    Interactive,
     // LottieInteractive,
   },
 };

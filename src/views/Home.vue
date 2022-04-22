@@ -67,13 +67,15 @@ export default {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    // this.animateHeroSection();
-    this.changeStrokeLottieHero();
     this.scaleUINavbarBlur();
+    this.changeStrokeLottieHero();
     this.heroIntersection();
     this.getStartedIntersection();
   },
   methods: {
+    stop() {
+      this.$refs.cursor.destroy();
+    },
     // new Intersection
     heroIntersection() {
       const el = document.querySelector("#pass-hero");
@@ -83,17 +85,17 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             // pause animation
-            this.$refs.pattern.pause();
             this.$refs.cursor.pause();
+            this.$refs.pattern.pause();
           }
           if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
             // play animation
-            this.$refs.pattern.play();
             this.$refs.cursor.play();
+            this.$refs.pattern.play();
           } else {
             // pause animation
-            this.$refs.pattern.pause();
             this.$refs.cursor.pause();
+            this.$refs.pattern.pause();
           }
         },
         {
@@ -241,14 +243,6 @@ export default {
           ref="cursor"
           class="cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
-          :loop="true"
-        />
-
-        <lottie-animation
-          :auto-play="false"
-          ref="pattern"
-          class="bg__pattern limiter-height animate-lead"
-          :animationData="require('@/assets/Pattern_6_b.json')"
           :loop="true"
         />
       </section>
