@@ -68,9 +68,16 @@ export default {
             >Sign Up for Free</router-link
           >
         </ul>
-        <button v-show="mobile">
+        <button @click="toggleMobileNav" v-show="mobile">
           <icon name="menu" class="nav__mobile" id="nav_icon" />
         </button>
+        <transition name="mobile-nav">
+          <ul class="mobile-nav" v-show="mobileNav">
+            <router-link to="/join-us" class="link">Join Us</router-link>
+            <router-link to="/blogs" class="link"> Blogs </router-link>
+            <router-link to="/community" class="link">Community</router-link>
+          </ul>
+        </transition>
       </div>
     </nav>
   </header>
@@ -83,8 +90,8 @@ export default {
   display: flex;
   justify-content: center;
   width: 100vw;
-  border-radius: var(--step--5);
-  padding: var(--step--4);
+  // border-radius: var(--step--5);
+  // padding: var(--step--4);
 
   .highlight {
     background: linear-gradient(
@@ -108,12 +115,11 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-inline: var(--step-1);
     width: 100%;
     background: rgba(238, 239, 243, 0.2);
     box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
-    padding-inline: var(--step--3);
-    border-radius: var(--step--5);
+    padding-inline: var(--step-3);
+    // border-radius: var(--step--5);
   }
   &__home {
     width: max-content;
@@ -156,7 +162,6 @@ export default {
 
     a {
       &:hover {
-        opacity: 0.1;
         background: rgb(225, 228, 240, 0.5);
       }
     }
@@ -187,10 +192,40 @@ export default {
     color: var(--dark);
 
     @media (max-width: 500px) {
-      &:first-child {
+      .logo-container {
         padding-inline: 0rem;
       }
     }
+  }
+  .mobile-nav {
+    padding-block: var(--step-0);
+    width: 100%;
+    max-width: calc(250px - var(--step-0));
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    background: #2b2b2b;
+    padding-inline: var(--step--3);
+    top: 0;
+    left: 0;
+
+    a {
+      color: white;
+    }
+  }
+  .mobile-nav-enter-active,
+  .mobile-nav-leave-active {
+    transition: all 300ms ease-in-out;
+  }
+  .mobile-nav-enter {
+    transform: translateX(-250px);
+  }
+  .mobile-nav-enter-to {
+    transform: translateX(0);
+  }
+  .mobile-nav-leave-to {
+    transform: translateX(-250px);
   }
 }
 </style>

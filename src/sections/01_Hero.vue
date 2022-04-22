@@ -58,6 +58,7 @@ export default {
     <div class="hero position-lift">
       <lottie-animation
         ref="textAnimation"
+        aria-label="Create and ship animations for your products faster."
         v-show="!mobile"
         class="text-animation animate-lead"
         :animationData="
@@ -67,7 +68,7 @@ export default {
         :auto-play="false"
       />
       <h1 class="animate-lead" v-show="mobile">
-        Create animations for your websites faster.
+        Create and ship animations for your products faster.
       </h1>
       <div class="hero__lead animate-lead">
         <p>
