@@ -35,7 +35,7 @@ export default {
         const darkSection = document.querySelector("#sectionFurther");
         const integrateSection = document.querySelector("#sectionIntegrate");
         const titleHighlight = document.querySelector("#title-highlight");
-        const nav = document.querySelector("#nav_bg");
+        const nav = document.querySelector(".nav");
         const colorLinks = document.querySelectorAll("[data-link]");
         const mobileIcon = document.querySelector(".nav__mobile");
         const bodyRect = document.body.getBoundingClientRect();

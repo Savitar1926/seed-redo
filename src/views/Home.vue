@@ -129,32 +129,6 @@ export default {
       observer.observe(el);
     },
 
-    // animateHeroSection() {
-    //   gsap.from(".animate-lead", { y: 200, opacity: 0, duration: 1 }, "<+=80%");
-    //   gsap.from(
-    //     ".links",
-    //     {
-    //       duration: 0.2,
-    //       scale: 0.5,
-    //       opacity: 0,
-    //       ease: "power1.inOut",
-    //       stagger: {
-    //         grid: "auto",
-    //         from: "start",
-    //         amount: 0.2,
-    //       },
-    //     },
-    //     "<+=20%"
-    //   );
-    //   gsap.from(
-    //     ".animate-nav",
-    //     {
-    //       opacity: 0,
-    //       duration: 0.5,
-    //     },
-    //     "<+=20%"
-    //   );
-    // },
     scaleUINavbarBlur() {
       const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
@@ -162,7 +136,7 @@ export default {
       const centerlottieelement = document.querySelector(".center-lottie");
       const bodyRect = document.body.getBoundingClientRect();
       const centerRect = centerlottieelement.getBoundingClientRect();
-      const nav = document.querySelector("#nav_bg");
+      const nav = document.querySelector(".nav");
       const navChangeTop = centerRect.top - bodyRect.top;
 
       // On Scroll the Lottie Editor UI container scales up;

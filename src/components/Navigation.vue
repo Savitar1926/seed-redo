@@ -92,6 +92,8 @@ export default {
   width: 100vw;
   // border-radius: var(--step--5);
   // padding: var(--step--4);
+  background: rgba(238, 239, 243, 0.2);
+  box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
 
   .highlight {
     background: linear-gradient(
@@ -116,8 +118,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: rgba(238, 239, 243, 0.2);
-    box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
+
     padding-inline: var(--step-3);
     // border-radius: var(--step--5);
   }
@@ -179,7 +180,9 @@ export default {
   &__mobile {
     width: var(--step-0);
   }
-
+  .logo-container {
+    padding-inline: 0rem;
+  }
   a {
     font-size: 14px;
     font-weight: var(--medium);
@@ -190,12 +193,6 @@ export default {
     display: inline-block;
     position: relative;
     color: var(--dark);
-
-    @media (max-width: 500px) {
-      .logo-container {
-        padding-inline: 0rem;
-      }
-    }
   }
   .mobile-nav {
     padding-block: var(--step-0);
