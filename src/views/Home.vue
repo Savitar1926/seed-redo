@@ -240,10 +240,12 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <HeroScroll
-            class="hero-scroll"
-            style="border-radius: var(--step-0); overflow: hidden"
-          />
+          <div style="margin-inline: var(--step-4)">
+            <HeroScroll
+              class="hero-scroll"
+              style="border-radius: var(--step-0); overflow: hidden"
+            />
+          </div>
           <!-- <RevCenterAnimation /> -->
         </section>
         <section class="section__usecases">
