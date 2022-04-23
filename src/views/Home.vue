@@ -5,10 +5,11 @@ import LottieAnimation from "lottie-web-vue";
 // Components
 import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
+import HeroScroll from "@/components/HeroScroll.vue";
 
 // Sections
 import Hero from "@/sections/01_Hero.vue";
-import RevCenterAnimation from "@/sections/02_CenterAnimation.vue";
+// import RevCenterAnimation from "@/sections/02_CenterAnimation.vue";
 import RevUsecases from "@/sections/03_Usecases.vue";
 import Starters from "@/sections/04_Starters.vue";
 import Simple from "@/sections/05_SimpleForEveryone.vue";
@@ -37,6 +38,7 @@ export default {
   },
   mixins: [checkScreen, elementSelector],
   components: {
+    HeroScroll,
     // Plugin
     LottieAnimation,
     // Components
@@ -44,7 +46,7 @@ export default {
     IntersectionObserver,
     // Sections
     Hero,
-    RevCenterAnimation,
+    // RevCenterAnimation,
     RevUsecases,
     Simple,
     Starters,
@@ -132,14 +134,14 @@ export default {
     },
 
     scaleUINavbarBlur() {
-      const element = document.querySelector(".zoom");
+      // const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
-      const centerlottieelement = document.querySelector(".center-lottie");
-      const bodyRect = document.body.getBoundingClientRect();
-      const centerRect = centerlottieelement.getBoundingClientRect();
-      const nav = document.querySelector(".nav");
-      const navChangeTop = centerRect.top - bodyRect.top;
+      // const centerlottieelement = document.querySelector(".center-lottie");
+      // const bodyRect = document.body.getBoundingClientRect();
+      // const centerRect = centerlottieelement.getBoundingClientRect();
+      // const nav = document.querySelector(".nav");
+      // const navChangeTop = centerRect.top - bodyRect.top;
 
       // On Scroll the Lottie Editor UI container scales up;
       // while in reverse the Editor UI lottie scales down revealing the Whoel UI
@@ -148,7 +150,7 @@ export default {
         this.windownWidth = window.innerWidth;
 
         const scrollTop = document.documentElement.scrollTop;
-
+        console.log(scrollTop);
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 280);
         let scaleLottie = 2.0 - scrollTop / (10 * 35);
@@ -158,8 +160,6 @@ export default {
         cursorDown = Math.min(Math.max(0.6, scaleLottie), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
-
-        console.log(transUp);
 
         if (400 > scrollTop) {
           heroelement.style.transformOrigin = `top`;
@@ -176,31 +176,31 @@ export default {
             scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
             scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
             // Apply scale transform
-            element.style.transformOrigin = `bottom`;
-            element.style.transition = `transform 50ms linear`;
-            element.style.transform = `scale(${scaleAmt})`;
-            centerlottieelement.style.transform = `scale(${scaleLottie})`;
-            centerlottieelement.style.transition = `transform 100ms linear`;
+            // element.style.transformOrigin = `bottom`;
+            // element.style.transition = `transform 50ms linear`;
+            // element.style.transform = `scale(${scaleAmt})`;
+            // centerlottieelement.style.transform = `scale(${scaleLottie})`;
+            // centerlottieelement.style.transition = `transform 100ms linear`;
           }
           // Navbar Blur
-          if (navChangeTop - 180 <= window.scrollY) {
-            nav.style.backdropFilter = "blur(16px)";
-          } else {
-            nav.style.backdropFilter = "blur(0px)";
-          }
+          // if (navChangeTop - 180 <= window.scrollY) {
+          //   nav.style.backdropFilter = "blur(16px)";
+          // } else {
+          //   nav.style.backdropFilter = "blur(0px)";
+          // }
           // }
         }
 
         if (this.windownWidth <= 950) {
-          element.style.transform = `none`;
-          centerlottieelement.style.transform = `scale(1)`;
+          // element.style.transform = `none`;
+          // centerlottieelement.style.transform = `scale(1)`;
           heroelement.style.transform = `none`;
         }
       };
       if (this.windownWidth <= 950) {
-        centerlottieelement.style.transform = `scale(1)`;
-        element.style.transform = `none`;
-        centerlottieelement.style.transform = `scale(1)`;
+        // centerlottieelement.style.transform = `scale(1)`;
+        // element.style.transform = `none`;
+        // centerlottieelement.style.transform = `scale(1)`;
         heroelement.style.transform = `none`;
       }
     },
@@ -225,7 +225,8 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <RevCenterAnimation />
+          <HeroScroll style="border-radius: var(--step-0); overflow: hidden" />
+          <!-- <RevCenterAnimation /> -->
         </section>
         <section class="section__usecases">
           <div class="usecases-home">

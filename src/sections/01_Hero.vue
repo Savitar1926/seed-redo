@@ -61,9 +61,7 @@ export default {
         aria-label="Create and ship animations for your products faster."
         v-show="!mobile"
         class="text-animation animate-lead"
-        :animationData="
-          require('@/assets/01_hero/Text Hero Jump Optimize Image Gradient.json')
-        "
+        :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
         :auto-play="false"
       />

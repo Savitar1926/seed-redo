@@ -136,6 +136,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: var(--dark);
   min-height: 100vh;
+  // height: 1000vh;
   transition: all 200ms ease-out;
 
   .section__title {

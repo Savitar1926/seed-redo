@@ -1,6 +1,7 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
+// import HeroScroll from "@/components/HeroScroll.vue";
 
 export default {
   name: "CenterAnimation",
@@ -10,6 +11,7 @@ export default {
   components: {
     LottieAnimation,
     IntersectionObserver,
+    // HeroScroll,
   },
   mounted() {
     this.centerIntersection();
@@ -48,6 +50,7 @@ export default {
   <div class="zoom container-center-animation animate-lead limiter" style="">
     <div class="center-animation">
       <div class="center-lottie">
+        <!-- <HeroScroll /> -->
         <lottie-animation
           ref="centerAnimation"
           :auto-play="false"

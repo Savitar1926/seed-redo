@@ -1,7 +1,6 @@
 <template>
   <div id="HERO_PRODUCT_placement">
     <div id="lottie_HERO_PRODUCT" class="forceGPU"></div>
-    <button @click="change">Hello</button>
   </div>
 </template>
 
@@ -16,22 +15,16 @@ export default {
     autoplay: true,
     anim_HERO_PRODUCT: null,
     cont_HERO_PRODUCT: null,
-    heartActive: false,
-    num: "sun",
-    scrollLottie: null,
-    scrollPercent: 100,
   }),
   mounted() {
     this.elt = this.$el.children[0];
     this.anim_HERO_PRODUCT = this.buildAnimation();
     window.addEventListener("scroll", () => {
-      let value = 100 * window.scrollY;
+      let value = (100 * window.scrollY) / document.body.clientHeight;
       console.log(value);
-      value = Math.min(Math.max(0, value), 50);
-      this.anim_HERO_PRODUCT.goToAndStop((value / 100) * 6500);
-      if (value < 1) {
-        this.anim_HERO_PRODUCT.goToAndStop(1, false);
-      }
+      value = Math.min(Math.max(0, value), 60);
+      this.anim_HERO_PRODUCT.goToAndStop((value / 12) * 4000);
+
       if (window.scrollY == 0) {
         this.anim_HERO_PRODUCT.goToAndStop(0);
       }
