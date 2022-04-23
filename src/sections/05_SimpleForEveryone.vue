@@ -63,8 +63,9 @@
                 <div class="profile__details">
                   <h2 style="color: #7c71fd">Designers</h2>
                   <span>
-                    Edit illustrations and micro-interactions without needing to
-                    disturb a designer.</span
+                    Empowering designers to animate is our DNA - that’s why
+                    creating your first lottie animation on LottieLab will be a
+                    breeze.</span
                   >
                 </div>
               </div>
@@ -85,8 +86,9 @@
                 <div class="profile__details">
                   <h2 style="color: #f14378">Developers</h2>
                   <span>
-                    Edit illustrations and micro-interactions without needing to
-                    disturb a designer.</span
+                    Developers shouldn’t have to battle with Lotties, we make it
+                    easy to edit and publish performant lottie animation
+                    everywhere.</span
                   >
                 </div>
               </div>
@@ -107,8 +109,8 @@
                 <div class="profile__details">
                   <h2 style="color: #ffba2b">Animators</h2>
                   <span>
-                    Edit illustrations and micro-interactions without needing to
-                    disturb a designer.</span
+                    Superfast collaboration with designers and developers in a
+                    simple tool that works seamlessly with your AE files.</span
                   >
                 </div>
               </div>

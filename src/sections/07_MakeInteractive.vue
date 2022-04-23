@@ -7,30 +7,29 @@
             <div class="section__title">
               <h1>
                 Make it <br />
-                Test
+                interactive
               </h1>
               <span>
                 <strong>Coming soon.</strong>
-                Collaborate on files together and break out of the After Effects
-                silo. Keep designers, developers and product managers on the
-                same page. No more emailing folders or sharing files on
-                G-Drive.</span
+                Oh yeah, still experimental but we’re working on helping you
+                design the interactivity of your Lottie animations within the
+                editor, so developers simply hook user events in</span
               >
               <h2>Coming soon</h2>
             </div>
           </div>
           <div class="card__one card__interactive">
             <div class="card box box__ditch">
-              <h2>State based animations</h2>
+              <h2>Trigger playback from a frame</h2>
               <span
-                >We keep it simple, so you’re free to create powerful results -
-                no After Effects qualifications needed.</span
-              >
+                >Trigger animation playback from a specific frame based on user
+                event
+              </span>
             </div>
           </div>
           <div class="card__two card__interactive">
             <div class="card box box__ditch">
-              <h2>State based animations</h2>
+              <h2>Or Connect multiple lotties.</h2>
               <span
                 >We keep it simple, so you’re free to create powerful results -
                 no After Effects qualifications needed.</span
@@ -61,7 +60,8 @@
             </div>
           </div>
           <div class="usecase__two">
-            <div class="usecase__first card-day usecase--ease">
+            <Interactive style="transform: scale(1.5)" />
+            <!-- <div class="usecase__first card-day usecase--ease">
               <div class="card__header">
                 <div class="card__info">
                   <span class="card__title">E-Commerce Animation</span>
@@ -69,18 +69,14 @@
                 </div>
               </div>
               <div class="sample_container">
-                <div class="preloading">
-                  <div class="preloading-icon"></div>
-                </div>
-                <Interactive />
-                <!-- <lottie-interactive
+                <lottie-interactive
                   class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="switch"
-                ></lottie-interactive> -->
-                <!-- <img src="@/assets/ravie/Asset 2.svg" /> -->
-              </div>
-            </div>
+                ></lottie-interactive> 
+                <img src="@/assets/ravie/Asset 2.svg" /> 
+              </div> 
+            </div> -->
           </div>
         </div>
       </div>
@@ -225,7 +221,7 @@ export default {
         background: rgba(0, 0, 0, 0.5);
       }
       h2 {
-        font-size: var(--step--1);
+        font-size: var(--step--2);
       }
       span {
         font-size: var(--step--4);
