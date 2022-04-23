@@ -7,7 +7,7 @@
             <div class="section__title">
               <h1>
                 Make it <br />
-                interactive
+                Test
               </h1>
               <span>
                 <strong>Coming soon.</strong>
