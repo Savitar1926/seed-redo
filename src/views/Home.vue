@@ -164,10 +164,10 @@ export default {
         cursorelement.style.transition = `transform 300ms ease-in-out`;
         if (scrollTop > 900) {
           let translateLottie = scrollTop - 700 / 1.5;
-          translateLottie = Math.min(Math.max(0, translateLottie), 916);
+          translateLottie = Math.min(Math.max(0, translateLottie), 950);
           console.log("hi" + translateLottie);
           heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
-          heroscroll.style.transition = "transform 150ms linear";
+          heroscroll.style.transition = "transform 250ms linear";
           heroscroll.style.zIndex = "888";
         }
         if (900 > scrollTop) {
