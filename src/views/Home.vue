@@ -34,6 +34,7 @@ export default {
       windownWidth: null,
       // Intersection Hero
       passIntersectingHero: false,
+      downScreen: false,
     };
   },
   mixins: [checkScreen, elementSelector],
@@ -137,6 +138,7 @@ export default {
       // const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
+      const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
       // const centerlottieelement = document.querySelector(".center-lottie");
       // const bodyRect = document.body.getBoundingClientRect();
       // const centerRect = centerlottieelement.getBoundingClientRect();
@@ -150,17 +152,30 @@ export default {
         this.windownWidth = window.innerWidth;
 
         const scrollTop = document.documentElement.scrollTop;
-        console.log(scrollTop);
+        console.log("hello" + scrollTop);
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 280);
-        let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        // let scaleLottie = 2.0 - scrollTop / (10 * 35);
         let scaleDown = 1.0 - scrollTop / (10 * 70);
         let transUp = 1.0 - scrollTop / (10 * 50);
         let cursorDown = 1.0 - scrollTop / (10 * 130);
-        cursorDown = Math.min(Math.max(0.6, scaleLottie), 1);
+        cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
-
+        if (scrollTop > 900) {
+          let translateLottie = scrollTop - 700 / 1.5;
+          translateLottie = Math.min(Math.max(0, translateLottie), 916);
+          console.log("hi" + translateLottie);
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
+          heroscroll.style.transition = "transform 150ms linear";
+          heroscroll.style.zIndex = "888";
+        }
+        if (900 > scrollTop) {
+          heroscroll.style.transform = "translateX(0px)";
+        }
+        if (500 > scrollTop) {
+          heroscroll.style.transform = "translateY(0px) translateX(0px)";
+        }
         if (400 > scrollTop) {
           heroelement.style.transformOrigin = `top`;
           heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
@@ -174,7 +189,7 @@ export default {
             scroll.preventDefault();
             // Restrict scale
             scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-            scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
+            // scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
             // Apply scale transform
             // element.style.transformOrigin = `bottom`;
             // element.style.transition = `transform 50ms linear`;
@@ -225,7 +240,10 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <HeroScroll style="border-radius: var(--step-0); overflow: hidden" />
+          <HeroScroll
+            class="hero-scroll"
+            style="border-radius: var(--step-0); overflow: hidden"
+          />
           <!-- <RevCenterAnimation /> -->
         </section>
         <section class="section__usecases">
@@ -466,7 +484,7 @@ main {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 2;
+    z-index: 999;
     transform-origin: bottom;
   }
 }

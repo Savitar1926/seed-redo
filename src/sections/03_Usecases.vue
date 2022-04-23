@@ -370,6 +370,7 @@ export default {
 
       .usecase-phone {
         grid-area: usecase-phone;
+        opacity: 0;
       }
 
       .col-2 {
