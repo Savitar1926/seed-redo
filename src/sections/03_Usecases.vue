@@ -41,7 +41,10 @@
     <div class="section section_right">
       <div class="container">
         <div class="col-1">
-          <div class="usecase-phone usecase-animate card card--shadow">
+          <div
+            v-show="!mobile"
+            class="usecase-phone usecase-animate card card--shadow"
+          >
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -102,7 +105,10 @@
               </div>
               <!-- Usecase Content  -->
             </div>
-            <div class="usecase-loading_2 usecase-animate card card--shadow">
+            <div
+              v-show="!mobile"
+              class="usecase-loading_2 usecase-animate card card--shadow"
+            >
               <!-- Usecase Content  -->
               <div class="usecase-header">
                 <icon name="edit" class="arrow" />
@@ -130,7 +136,10 @@
               <!-- Usecase Content  -->
             </div>
           </div>
-          <div class="usecase-headphones usecase-animate card card--shadow">
+          <div
+            v-show="!mobile"
+            class="usecase-headphones usecase-animate card card--shadow"
+          >
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -198,6 +207,7 @@
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
+import checkScreen from "@/mixins/checkScreen";
 
 export default {
   name: "Usecases",
@@ -206,6 +216,7 @@ export default {
       passIntersectingUsecases: false,
     };
   },
+  mixins: [checkScreen],
   components: {
     LottieAnimation,
     IntersectionObserver,
