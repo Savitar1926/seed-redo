@@ -23,7 +23,7 @@ export default {
 
     window.addEventListener("scroll", () => {
       let scrollvalue = (100 * window.scrollY) / document.body.clientHeight;
-      let goToValue = (scrollvalue / 10) * 130;
+      let goToValue = (scrollvalue / 10) * 90;
       goToValue = Math.min(Math.max(0, goToValue), 121);
 
       this.anim_HERO_PRODUCT.goToAndStop(goToValue, true);

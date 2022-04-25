@@ -58,8 +58,8 @@
             </div>
           </div>
           <div class="usecase__two">
-            <Interactive style="transform: scale(1.3)" />
-            <!-- <div class="usecase__first card-day usecase--ease">
+            <!-- <Interactive style="transform: scale(1.3)" /> -->
+            <div class="usecase__first card-day usecase--ease">
               <div class="card__header">
                 <div class="card__info">
                   <span class="card__title">E-Commerce Animation</span>
@@ -67,14 +67,15 @@
                 </div>
               </div>
               <div class="sample_container">
-                <lottie-interactive
+                <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
                   interaction="switch"
-                ></lottie-interactive> 
-                <img src="@/assets/ravie/Asset 2.svg" /> 
-              </div> 
-            </div> -->
+                ></lottie-interactive> -->
+                <!-- <img src="@/assets/ravie/Asset 2.svg" /> -->
+                <Interactive2 />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -85,6 +86,7 @@
 <script>
 // import { LottieInteractive } from "lottie-interactive";
 import Interactive from "@/components/Interact.vue";
+import Interactive2 from "@/components/Interact_2.vue";
 export default {
   name: "SimpleForEveryone",
   data: () => ({
@@ -96,6 +98,7 @@ export default {
   mounted() {},
   components: {
     Interactive,
+    Interactive2,
     // LottieInteractive,
   },
 };

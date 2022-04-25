@@ -1,6 +1,9 @@
 <template>
   <div class="preloading">
-    <div style="margin-inline: auto" class="preloading-icon"></div>
+    <div
+      style="margin-inline: auto; transform: scale(1.05); transform-origin: top"
+      class="preloading-icon"
+    ></div>
   </div>
 </template>
 
@@ -73,9 +76,10 @@ svg {
 }
 .preloading-icon {
   width: 300px;
+  cursor: pointer;
 }
 
-#btn_Heart {
+#btn_LightDark {
   cursor: pointer;
 }
 </style>
