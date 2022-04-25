@@ -340,6 +340,7 @@ export default {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    border: solid 1px #e9ebf4;
 
     button {
       background: rgba(238, 239, 243, 0.2);
