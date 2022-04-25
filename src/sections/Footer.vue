@@ -59,7 +59,6 @@ export default {
         <router-link class="header-link" to="/" id="nav_link"
           >Company</router-link
         >
-        <a href="/">About Us</a>
         <a href="/">Join Us</a>
         <a href="/">Privacy Policy</a>
         <a href="/">Terms of Use</a>

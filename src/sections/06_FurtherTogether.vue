@@ -40,7 +40,7 @@
         </details>
       </div>
     </div>
-    <div class="section section-right">
+    <div class="section section-right right-panel">
       <div class="lottie-container">
         <lottie-animation
           ref="furtherTogether"
@@ -244,20 +244,49 @@ export default {
         }
       }
     }
-
-    &-right {
-      align-self: flex-end;
-      .lottie-container {
-        border: rgba(43, 43, 43, 0.5) solid 14px;
-        background: rgba(43, 43, 43, 0.8);
-        backdrop-filter: blur(16px);
-        border-radius: var(--step-0);
-        margin-right: -400px;
-        box-shadow: 8px 24px 32px rgba(31, 31, 31, 0.5);
-      }
+  }
+  .right-panel {
+    align-self: flex-end;
+    padding-inline: var(--step-4);
+    .lottie-container {
+      border: rgba(43, 43, 43, 0.5) solid 14px;
+      background: rgba(43, 43, 43, 0.8);
+      backdrop-filter: blur(16px);
+      border-radius: var(--step-0);
+      margin-right: 0px;
+      box-shadow: 8px 24px 32px rgba(31, 31, 31, 0.5);
     }
   }
 }
+// @media (min-width: 980px) {
+//   .further-together {
+//     display: flex;
+//     flex-direction: row;
+
+//     .section {
+//       &-left {
+//         width: 80%;
+//       }
+//       .sec__options {
+//         max-width: 80%;
+//         min-width: 360px;
+//         width: 360px;
+//       }
+//     }
+
+//     &-right {
+//       align-self: flex-end;
+//       .lottie-container {
+//         border: rgba(43, 43, 43, 0.5) solid 14px;
+//         background: rgba(43, 43, 43, 0.8);
+//         backdrop-filter: blur(16px);
+//         border-radius: var(--step-0);
+//         margin-right: -400px;
+//         box-shadow: 8px 24px 32px rgba(31, 31, 31, 0.5);
+//       }
+//     }
+//   }
+// }
 @media (min-width: 980px) {
   .further-together {
     display: flex;
@@ -266,23 +295,20 @@ export default {
     .section {
       &-left {
         width: 80%;
-      }
-      .sec__options {
-        max-width: 80%;
-        min-width: 360px;
-        width: 360px;
+        padding-bottom: var(--step-0);
+        .sec__options {
+          max-width: 80%;
+          min-width: 360px;
+          width: 360px;
+        }
       }
     }
-
-    &-right {
+    .right-panel {
       align-self: flex-end;
+      padding-inline: 0px;
+
       .lottie-container {
-        border: rgba(43, 43, 43, 0.5) solid 14px;
-        background: rgba(43, 43, 43, 0.8);
-        backdrop-filter: blur(16px);
-        border-radius: var(--step-0);
         margin-right: -400px;
-        box-shadow: 8px 24px 32px rgba(31, 31, 31, 0.5);
       }
     }
   }

@@ -358,6 +358,7 @@ export default {
     }
 
     &:hover {
+      border: solid 1px var(--purple);
       button {
         transform: translateY(calc(var(--step-2)) scale(1));
         &:hover,

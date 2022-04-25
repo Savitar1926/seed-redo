@@ -63,14 +63,14 @@ export default {
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.scaleUINavbarBlur())
+      window.addEventListener(evt, this.lottieScroll())
     );
   },
   mounted() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    this.scaleUINavbarBlur();
+    this.lottieScroll();
     this.changeStrokeLottieHero();
     this.heroIntersection();
     this.getStartedIntersection();
@@ -131,7 +131,7 @@ export default {
       observer.observe(el);
     },
 
-    scaleUINavbarBlur() {
+    lottieScroll() {
       // const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
@@ -161,7 +161,7 @@ export default {
 
         if (scrollTop > 900) {
           heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
-          heroscroll.style.transition = "transform 450ms linear";
+          heroscroll.style.transition = "transform 350ms linear";
           heroscroll.style.zIndex = "888";
         }
         if (900 > scrollTop) heroscroll.style.transform = "translateX(0px)";
