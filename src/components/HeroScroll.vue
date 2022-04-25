@@ -19,14 +19,24 @@ export default {
   mounted() {
     this.elt = this.$el.children[0];
     this.anim_HERO_PRODUCT = this.buildAnimation();
-    window.addEventListener("scroll", () => {
-      let value = (100 * window.scrollY) / document.body.clientHeight;
-      console.log(value);
-      this.anim_HERO_PRODUCT.goToAndStop((value / 12) * 4000);
+    // const scrollTop = window.scrollY;
 
-      if (window.scrollY == 0) {
-        this.anim_HERO_PRODUCT.goToAndStop(0);
-      }
+    window.addEventListener("scroll", () => {
+      let scrollvalue = (100 * window.scrollY) / document.body.clientHeight;
+      console.log(window.scrollY);
+      let goToValue = (scrollvalue / 10) * 130;
+      goToValue = Math.min(Math.max(0, goToValue), 121);
+      this.anim_HERO_PRODUCT.goToAndStop(goToValue, true);
+
+      //   if (window.scrollY < 804 && window.scrollY > 750) {
+      //     this.anim_HERO_PRODUCT.goToAndStop(goToValue);
+      //     console.log("here");
+      //   }
+      //   //   console.log(`got: ${goToValue}`);
+      //   //   console.log(`frame: ${this.anim_HERO_PRODUCT.currentRawFrame}`);
+      //   if (window.scrollY > 804) {
+      //     this.anim_HERO_PRODUCT.playSegments([[90, 121]], true);
+      //   }
     });
   },
   methods: {
