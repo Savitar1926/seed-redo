@@ -33,6 +33,7 @@
                 />
               </div>
             </div>
+            <button>Hello</button>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -136,10 +137,7 @@
               <!-- Usecase Content  -->
             </div>
           </div>
-          <div
-            v-show="!mobile"
-            class="usecase-headphones usecase-animate card card--shadow"
-          >
+          <div class="usecase-headphones usecase-animate card card--shadow">
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -166,7 +164,10 @@
             </div>
             <!-- Usecase Content  -->
           </div>
-          <div class="usecase-notification usecase-animate card card--shadow">
+          <div
+            v-show="!mobile"
+            class="usecase-notification usecase-animate card card--shadow"
+          >
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -392,9 +393,9 @@ export default {
         grid-auto-flow: row;
         grid-template-areas:
           "usecase-headphones"
-          "usecase-loading_1"
-          "usecase-loading_2"
-          "usecase-notification";
+          "usecase-loading_1";
+        // "usecase-loading_2";
+        // "usecase-notification";
       }
 
       .usecase-loading_1 {

@@ -63,7 +63,7 @@ export default {
   },
   created() {
     ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, this.scaleUINavbarBlur, false)
+      window.addEventListener(evt, this.scaleUINavbarBlur())
     );
   },
   mounted() {
@@ -76,9 +76,6 @@ export default {
     this.getStartedIntersection();
   },
   methods: {
-    stop() {
-      this.$refs.cursor.destroy();
-    },
     // new Intersection
     heroIntersection() {
       const el = document.querySelector("#pass-hero");
@@ -135,57 +132,55 @@ export default {
     },
 
     scaleUINavbarBlur() {
-      if (!this.mobile) {
-        // const element = document.querySelector(".zoom");
-        const heroelement = document.querySelector(".hero");
-        const cursorelement = document.querySelector(".cursor_movement");
-        const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
+      // const element = document.querySelector(".zoom");
+      const heroelement = document.querySelector(".hero");
+      const cursorelement = document.querySelector(".cursor_movement");
+      const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
 
-        // On Scroll the Lottie Editor UI container scales up;
-        // while in reverse the Editor UI lottie scales down revealing the Whoel UI
+      // On Scroll the Lottie Editor UI container scales up;
+      // while in reverse the Editor UI lottie scales down revealing the Whoel UI
 
-        window.onscroll = function (scroll) {
-          this.windownWidth = window.innerWidth;
+      window.onscroll = function (scroll) {
+        this.windownWidth = window.innerWidth;
 
-          const scrollTop = document.documentElement.scrollTop;
-          //  Scroll Velocity Controllers
-          let scaleAmt = 1.0 + scrollTop / (10 * 280);
-          // let scaleLottie = 2.0 - scrollTop / (10 * 35);
-          let scaleDown = 1.0 - scrollTop / (10 * 70);
-          let transUp = 1.0 - scrollTop / (10 * 50);
-          let cursorDown = 1.0 - scrollTop / (10 * 130);
-          cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
-          cursorelement.style.transform = `scale(${cursorDown}) `;
-          cursorelement.style.transition = `transform 300ms ease-in-out`;
-          scroll.preventDefault();
+        const scrollTop = document.documentElement.scrollTop;
+        //  Scroll Velocity Controllers
+        let scaleAmt = 1.0 + scrollTop / (10 * 280);
+        // let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        let scaleDown = 1.0 - scrollTop / (10 * 70);
+        let transUp = 1.0 - scrollTop / (10 * 50);
+        let cursorDown = 1.0 - scrollTop / (10 * 130);
+        cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
+        cursorelement.style.transform = `scale(${cursorDown}) `;
+        cursorelement.style.transition = `transform 300ms ease-in-out`;
+        scroll.preventDefault();
 
-          // Center lottie scroll to place
-          let translateLottie = scrollTop - 700 / 1.5;
-          translateLottie = Math.min(Math.max(0, translateLottie), 950);
+        // Center lottie scroll to place
+        let translateLottie = scrollTop - 700 / 1.5;
+        translateLottie = Math.min(Math.max(0, translateLottie), 950);
 
-          if (scrollTop > 900) {
-            heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
-            heroscroll.style.transition = "transform 450ms linear";
-            heroscroll.style.zIndex = "888";
+        if (scrollTop > 900) {
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
+          heroscroll.style.transition = "transform 450ms linear";
+          heroscroll.style.zIndex = "888";
+        }
+        if (900 > scrollTop) heroscroll.style.transform = "translateX(0px)";
+        if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
+
+        if (400 > scrollTop) {
+          heroelement.style.transformOrigin = `top`;
+          heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
+          heroelement.style.transition = `transform 100ms linear`;
+        }
+        // Conditions when passed the center lottie animation
+        if (this.windownWidth >= 950) {
+          this.mobile = true;
+          if (scaleAmt < 1.5) {
+            scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
           }
-          if (900 > scrollTop) heroscroll.style.transform = "translateX(0px)";
-          if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
-
-          if (400 > scrollTop) {
-            heroelement.style.transformOrigin = `top`;
-            heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
-            heroelement.style.transition = `transform 100ms linear`;
-          }
-          // Conditions when passed the center lottie animation
-          if (this.windownWidth >= 950) {
-            this.mobile = true;
-            if (scaleAmt < 1.5) {
-              scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-            }
-          }
-          if (this.windownWidth <= 950) heroelement.style.transform = `none`;
-        };
-      }
+        }
+        if (this.windownWidth <= 950) heroelement.style.transform = `none`;
+      };
     },
 
     // Change path stroke when mounted
@@ -210,8 +205,17 @@ export default {
           <Hero />
           <div style="margin-inline: var(--step-4)">
             <HeroScroll
+              v-show="!mobile"
               class="hero-scroll"
               style="border-radius: var(--step-0); overflow: hidden"
+            />
+            <lottie-animation
+              :auto-play="true"
+              v-show="mobile"
+              ref="getstarted"
+              class="getstarted-bg"
+              :animationData="require('@/assets/01_hero/Hero_Product.json')"
+              :loop="true"
             />
           </div>
           <!-- <RevCenterAnimation /> -->

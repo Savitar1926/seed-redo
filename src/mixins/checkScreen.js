@@ -6,6 +6,7 @@ export default {
     };
   },
   mounted() {
+    window.addEventListener("resize", this.checkScreen);
     this.checkScreen()
   },
   created() {
