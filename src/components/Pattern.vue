@@ -1,18 +1,31 @@
 <template>
-  <div id="HERO_PATTERN_rotate">
-    <div class="diamond_1"></div>
-    <div class="diamond_2"></div>
-    <div class="diamond_3"></div>
+  <div class="parent">
+    <div id="HERO_PATTERN_rotate" class="limiter">
+      <div class="diamond_1"></div>
+      <div class="diamond_2"></div>
+      <div class="diamond_3"></div>
+    </div>
   </div>
 </template>
 
+<script>
+export default {
+  components: {},
+};
+</script>
+
 <style lang="scss" scoped>
+.parent {
+  overflow-x: hidden;
+  position: relative;
+  height: 500vh;
+  width: 100vw;
+}
 #HERO_PATTERN_rotate {
-  width: 100%;
-  height: 100vw;
+  width: 50%;
   position: absolute;
-  transform: rotate(45deg);
-  overflow: hidden;
+  transform: rotate(45deg) translateX(125%);
+  margin-top: -50%;
 }
 
 .diamond_1 {

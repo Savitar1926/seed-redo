@@ -1,32 +1,31 @@
 <template>
-  <div style="overflow-x: hidden">
+  <div class="parent">
     <div id="HERO_PATTERN_rotate" class="limiter">
       <div class="diamond_1"></div>
       <div class="diamond_2"></div>
       <div class="diamond_3"></div>
-      <!-- <Pattern /> -->
     </div>
   </div>
 </template>
 
 <script>
-// import Pattern from "@/components/Pattern.vue";
 export default {
-  components: {
-    // Pattern,
-  },
+  components: {},
 };
 </script>
 
 <style lang="scss" scoped>
-.body {
+.parent {
   overflow-x: hidden;
+  position: relative;
+  height: 500vh;
+  width: 100vw;
 }
 #HERO_PATTERN_rotate {
-  height: 100vw;
+  width: 50%;
   position: absolute;
-  padding: var(--step-4);
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateX(125%);
+  margin-top: -50%;
 }
 
 .diamond_1 {
