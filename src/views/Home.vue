@@ -350,7 +350,7 @@ main {
 
         .usecase-component {
           position: relative;
-          z-index: 2;
+          z-index: 900;
         }
         .usecase-bg {
           position: absolute;

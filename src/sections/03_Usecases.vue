@@ -55,10 +55,19 @@
         <div class="col-1">
           <div
             v-show="!mobile"
-            class="usecase-phone usecase-animate card card--shadow"
+            class="
+              usecase-phone usecase-animate
+              card card--shadow
+              button-relative
+            "
           >
+            <button
+              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+            >
+              Open in Editor
+            </button>
             <!-- Usecase Content  -->
-            <!-- <div class="usecase-header">
+            <div class="usecase-header">
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
@@ -67,7 +76,7 @@
                 <span class="usecase-wrap usecase-filesize"> 14 KB </span>
               </div>
             </div>
-            <div
+            <!-- <div
               class="usecase-lottie"
               style="overflow: hidden; position: relative"
             >
@@ -80,7 +89,7 @@
                   :auto-play="false"
                 />
               </div>
-            </div> -->
+            </div>  -->
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -341,6 +350,7 @@ export default {
     overflow: hidden;
     cursor: pointer;
     border: solid 1px #e9ebf4;
+    z-index: 901;
 
     button {
       background: rgba(238, 239, 243, 0.2);
@@ -470,7 +480,8 @@ export default {
 
       .usecase-phone {
         grid-area: usecase-phone;
-        opacity: 0;
+        backdrop-filter: blur(0px) !important;
+        background: none !important;
       }
 
       .col-2 {
