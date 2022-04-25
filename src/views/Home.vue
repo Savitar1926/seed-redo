@@ -139,11 +139,6 @@ export default {
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
       const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
-      // const centerlottieelement = document.querySelector(".center-lottie");
-      // const bodyRect = document.body.getBoundingClientRect();
-      // const centerRect = centerlottieelement.getBoundingClientRect();
-      // const nav = document.querySelector(".nav");
-      // const navChangeTop = centerRect.top - bodyRect.top;
 
       // On Scroll the Lottie Editor UI container scales up;
       // while in reverse the Editor UI lottie scales down revealing the Whoel UI
@@ -152,7 +147,6 @@ export default {
         this.windownWidth = window.innerWidth;
 
         const scrollTop = document.documentElement.scrollTop;
-        console.log("hello" + scrollTop);
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 280);
         // let scaleLottie = 2.0 - scrollTop / (10 * 35);
@@ -162,62 +156,34 @@ export default {
         cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
+        scroll.preventDefault();
+
+        // Center lottie scroll to place
+        let translateLottie = scrollTop - 700 / 1.5;
+        translateLottie = Math.min(Math.max(0, translateLottie), 950);
+
         if (scrollTop > 900) {
-          let translateLottie = scrollTop - 700 / 1.5;
-          translateLottie = Math.min(Math.max(0, translateLottie), 950);
-          console.log("hi" + translateLottie);
           heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
-          heroscroll.style.transition = "transform 250ms linear";
+          heroscroll.style.transition = "transform 450ms linear";
           heroscroll.style.zIndex = "888";
         }
-        if (900 > scrollTop) {
-          heroscroll.style.transform = "translateX(0px)";
-        }
-        if (500 > scrollTop) {
-          heroscroll.style.transform = "translateY(0px) translateX(0px)";
-        }
+        if (900 > scrollTop) heroscroll.style.transform = "translateX(0px)";
+        if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
+
         if (400 > scrollTop) {
           heroelement.style.transformOrigin = `top`;
           heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
           heroelement.style.transition = `transform 100ms linear`;
         }
         // Conditions when passed the center lottie animation
-        // if (300 <= 700 > scrollTop || scrollTop > 300) {
         if (this.windownWidth >= 950) {
           this.mobile = true;
           if (scaleAmt < 1.5) {
-            scroll.preventDefault();
-            // Restrict scale
             scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-            // scaleLottie = Math.min(Math.max(0.85, scaleLottie), 2);
-            // Apply scale transform
-            // element.style.transformOrigin = `bottom`;
-            // element.style.transition = `transform 50ms linear`;
-            // element.style.transform = `scale(${scaleAmt})`;
-            // centerlottieelement.style.transform = `scale(${scaleLottie})`;
-            // centerlottieelement.style.transition = `transform 100ms linear`;
           }
-          // Navbar Blur
-          // if (navChangeTop - 180 <= window.scrollY) {
-          //   nav.style.backdropFilter = "blur(16px)";
-          // } else {
-          //   nav.style.backdropFilter = "blur(0px)";
-          // }
-          // }
         }
-
-        if (this.windownWidth <= 950) {
-          // element.style.transform = `none`;
-          // centerlottieelement.style.transform = `scale(1)`;
-          heroelement.style.transform = `none`;
-        }
+        if (this.windownWidth <= 950) heroelement.style.transform = `none`;
       };
-      if (this.windownWidth <= 950) {
-        // centerlottieelement.style.transform = `scale(1)`;
-        // element.style.transform = `none`;
-        // centerlottieelement.style.transform = `scale(1)`;
-        heroelement.style.transform = `none`;
-      }
     },
 
     // Change path stroke when mounted

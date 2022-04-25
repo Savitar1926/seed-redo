@@ -74,12 +74,13 @@ export default {
           <strong> simplest editor for lottie animations </strong>
         </p>
       </div>
-      <div class="animate-lead">
+      <div class="button-container">
         <div class="button">
           <button class="button__early-access animate-lead">
             Get early access
           </button>
         </div>
+        <span>In private beta</span>
       </div>
     </div>
     <intersection-observer
@@ -129,7 +130,16 @@ main {
       color: #5c617c; // grey
     }
   }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--step--3);
 
+    span {
+      color: #5c617c;
+      font-size: var(--step--4);
+    }
+  }
   .button {
     display: flex;
     flex-direction: column;

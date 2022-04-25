@@ -94,6 +94,7 @@ export default {
   // padding: var(--step--4);
   background: rgba(238, 239, 243, 0.2);
   box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
+  backdrop-filter: blur(16px);
 
   .highlight {
     background: linear-gradient(
