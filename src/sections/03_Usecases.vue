@@ -39,7 +39,12 @@
                 />
               </div>
             </div>
-            <button>Open in Editor</button>
+
+            <button
+              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+            >
+              Open in Editor
+            </button>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -118,7 +123,12 @@
                 </div>
               </div>
               <!-- Usecase Content  -->
-              <button>Open in Editor</button>
+
+              <button
+                onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+              >
+                Open in Editor
+              </button>
             </div>
             <div
               v-show="!mobile"
@@ -154,7 +164,12 @@
                 </div>
               </div>
               <!-- Usecase Content  -->
-              <button>Open in Editor</button>
+
+              <button
+                onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+              >
+                Open in Editor
+              </button>
             </div>
           </div>
           <div
@@ -189,7 +204,11 @@
               </div>
             </div>
             <!-- Usecase Content  -->
-            <button>Open in Editor</button>
+            <button
+              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+            >
+              Open in Editor
+            </button>
           </div>
           <div
             v-show="!mobile"
@@ -224,7 +243,11 @@
               </div>
             </div>
             <!-- Usecase Content  -->
-            <button>Open in Editor</button>
+            <button
+              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
+            >
+              Open in Editor
+            </button>
           </div>
         </div>
       </div>
@@ -330,8 +353,8 @@ export default {
       margin: calc(var(--step--4) * 1);
       border-radius: var(--step--4);
       transform: translateY(calc(var(--step-0) * 4)) scale(1);
-      color: var(--purple);
       border: solid 1px var(--purple);
+      color: var(--purple);
     }
 
     &:hover {

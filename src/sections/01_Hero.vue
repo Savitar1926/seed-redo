@@ -80,7 +80,7 @@ export default {
             Get early access
           </button>
         </div>
-        <span class="private-beta">In private beta</span>
+        <span class="private-beta"> 🔒 In private beta</span>
       </div>
     </div>
     <intersection-observer
