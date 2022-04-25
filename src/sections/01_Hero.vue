@@ -137,7 +137,7 @@ main {
     width: fit-content;
     color: #b1b3be;
     text-transform: uppercase;
-    font-size: var(--step--4);
+    font-size: var(--step--5);
     border-radius: var(--step--4);
   }
   .button-container {

@@ -18,7 +18,7 @@ export default {
 .parent {
   overflow-x: hidden;
   position: relative;
-  height: 500vh;
+  height: 300vh;
   width: 100vw;
 }
 #HERO_PATTERN_rotate {

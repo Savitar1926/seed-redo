@@ -15,24 +15,37 @@ export default {
 <template>
   <div class="footer position-lift limiter">
     <div class="first-section">
-      <div>
-        <router-link to="/"> <icon name="logo" class="logo" /></router-link>
-        <router-link class="header-link" to="/" id="nav_link"
-          >LottieLab</router-link
+      <div
+        class="upper-links"
+        style="
+          display: flex;
+          gap: var(--step--4);
+          flex-direction: column;
+          align-items: flex-start;
+        "
+      >
+        <div>
+          <router-link to="/"> <icon name="logo" class="logo" /></router-link>
+          <router-link class="header-link" to="/" id="nav_link"
+            >LottieLab</router-link
+          >
+        </div>
+        <div class="socials" style="display: flex">
+          <router-link to="/">
+            <icon name="twitter" class="logo"
+          /></router-link>
+          <router-link to="/">
+            <icon name="instagram" class="logo"
+          /></router-link>
+          <router-link to="/">
+            <icon name="discord" class="logo"
+          /></router-link>
+        </div>
+        <span style="color: #585858"
+          >© 2022 LottieLab Ltd. <br />
+          All rights reserved.</span
         >
       </div>
-      <div class="hiring">We are also hiring!</div>
-      <div class="socials">
-        <router-link to="/"> <icon name="twitter" class="logo" /></router-link>
-        <router-link to="/">
-          <icon name="instagram" class="logo"
-        /></router-link>
-        <router-link to="/"> <icon name="discord" class="logo" /></router-link>
-      </div>
-      <span style="color: #585858"
-        >© 2022 LottieLab Ltd. <br />
-        All rights reserved.</span
-      >
     </div>
     <div class="links">
       <div>
@@ -74,7 +87,7 @@ export default {
   padding-inline: var(--step-4);
   padding-block: var(--step-6);
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: var(--step-0);
   justify-content: space-between;
   margin: auto;

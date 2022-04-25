@@ -55,11 +55,7 @@
         <div class="col-1">
           <div
             v-show="!mobile"
-            class="
-              usecase-phone usecase-animate
-              card card--shadow
-              button-relative
-            "
+            class="usecase-phone usecase-animate card button-relative"
           >
             <button
               onclick="window.open('https://lottielab.io/users/sign_up').focus();"
@@ -349,7 +345,7 @@ export default {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    border: solid 1px #e9ebf4;
+    border: solid 1px #e9ebf400;
     z-index: 901;
 
     button {
@@ -363,9 +359,11 @@ export default {
       width: fit-content;
       margin: calc(var(--step--4) * 1);
       border-radius: var(--step--4);
-      transform: translateY(calc(var(--step-0) * 4)) scale(1);
       border: solid 1px var(--purple);
       color: var(--purple);
+      @media (min-width: 980px) {
+        transform: translateY(calc(var(--step-0) * 4)) scale(1);
+      }
     }
 
     &:hover {
