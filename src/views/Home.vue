@@ -376,7 +376,7 @@ main {
       display: flex;
       flex-direction: column;
       height: max-content;
-      gap: var(--step-5);
+      gap: calc(var(--step-5) + 5rem);
       overflow: hidden;
       padding-top: var(--step-5);
       padding-bottom: var(--step-4);

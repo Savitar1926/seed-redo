@@ -361,13 +361,21 @@ export default {
       border-radius: var(--step--4);
       border: solid 1px var(--purple);
       color: var(--purple);
+      box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+      -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+      -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0.32);
+
       @media (min-width: 980px) {
         transform: translateY(calc(var(--step-0) * 4)) scale(1);
       }
     }
 
     &:hover {
+      box-shadow: 4px 16px 32px rgba(207, 208, 235, 0);
+      -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0);
+      -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0);
       border: solid 1px var(--purple);
+
       button {
         transform: translateY(calc(var(--step-2)) scale(1));
         &:hover,
