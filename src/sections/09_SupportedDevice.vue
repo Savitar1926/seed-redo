@@ -12,6 +12,13 @@
       <div class="anim anim__third card card--dark card--shadow-dark">
         <h2 style="color: #ffb92a">Web</h2>
         <span>Runs everywhere in the web</span>
+        <div class="suported-lottie">
+          <img src="@/assets/react-icon.svg" alt="" />
+          <img src="@/assets/vue-icon.svg" alt="" />
+          <img src="@/assets/angular-icon.svg" alt="" />
+          <img src="@/assets/webflow-icon.svg" alt="" />
+          <img src="@/assets/elementor-icon.svg" alt="" />
+        </div>
       </div>
     </div>
   </div>
@@ -65,7 +72,11 @@ export default {
 .anim__third {
   grid-area: anim__third;
 }
-
+.suported-lottie {
+  display: flex;
+  gap: var(--step--2);
+  flex-wrap: wrap;
+}
 .anim {
   justify-content: center;
   h2 {

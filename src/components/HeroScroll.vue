@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import loading from "../assets/01_hero/Hero_Product.json";
+import hero from "../assets/01_hero/Hero_Product.json";
 import * as lottie from "lottie-web";
 export default {
-  name: "loadingicon",
+  name: "heroicon",
   data: () => ({
     speed: 1,
     elt: {},
@@ -23,9 +23,9 @@ export default {
 
     window.addEventListener("scroll", () => {
       let scrollvalue = (100 * window.scrollY) / document.body.clientHeight;
-      console.log(window.scrollY);
       let goToValue = (scrollvalue / 10) * 130;
       goToValue = Math.min(Math.max(0, goToValue), 121);
+
       this.anim_HERO_PRODUCT.goToAndStop(goToValue, true);
 
       //   if (window.scrollY < 804 && window.scrollY > 750) {
@@ -48,7 +48,7 @@ export default {
         loop: true,
         autoplay: false,
       };
-      anim_HERO_PRODUCT.animationData = loading;
+      anim_HERO_PRODUCT.animationData = hero;
       return lottie.loadAnimation(anim_HERO_PRODUCT);
     },
   },
@@ -74,27 +74,6 @@ body {
 
 #lottie_HERO_PRODUCT svg {
   border-radius: 3vw;
-}
-
-#lottie_HERO_PATTERN {
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: -50vh;
-  position: absolute;
-  z-index: -1;
-}
-
-#scroll_container {
-  width: 100vw;
-  height: 250vh;
-  position: absolute;
-  max-width: unset;
-  max-height: unset;
-  margin: unset;
-  padding: unset;
-  top: 0;
-  left: 0;
 }
 
 /* IF PLACING LOTTIE IN PARALLAX OR USING CSS TRANSFORMS */

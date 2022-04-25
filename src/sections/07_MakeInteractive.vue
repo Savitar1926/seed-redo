@@ -11,10 +11,10 @@
               </h1>
               <span>
                 <strong>Coming soon.</strong>
-                Oh yeah, still experimental but we’re working on helping you
-                design the interactivity of your Lottie animations within the
-                editor, so developers simply hook user events in</span
-              >
+                This is one of our favourite ongoing experiments - bringing the
+                power of interactive lottie animations into the hands of
+                designers, no coding experience necessary.
+              </span>
               <h2>Coming soon</h2>
             </div>
           </div>
@@ -39,28 +39,29 @@
         </div>
         <div class="col__two">
           <div class="usecase__one">
-            <div class="usecase__first card card--shadow-dark usecase--ease">
+            <Interactive style="transform: scale(1.3)" />
+            <!-- <div class="usecase__first card card--shadow-dark usecase--ease">
               <div class="card__header">
                 <div class="card__info">
                   <span class="card__title">E-Commerce Animation</span>
                   <span class="card__sub">Edited 6 hours ago</span>
                 </div>
               </div>
-              <div class="sample_container">
-                <!-- <lottie-interactive
+              <div class="sample_container"> -->
+            <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="Interactive_Heart-Click_all-states.json"
                   interaction="click"
                 ></lottie-interactive> -->
-                <img
+            <!-- <img
                   src="@/assets/ravie/Asset 1.svg"
                   style="transform: scale(1.5)"
-                />
-              </div>
-            </div>
+                /> -->
+            <!-- </div>
+            </div> -->
           </div>
           <div class="usecase__two">
-            <Interactive style="transform: scale(1.5)" />
+            <Interactive style="transform: scale(1.3)" />
             <!-- <div class="usecase__first card-day usecase--ease">
               <div class="card__header">
                 <div class="card__info">

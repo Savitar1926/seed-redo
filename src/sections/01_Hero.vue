@@ -56,6 +56,7 @@ export default {
 <template>
   <main class="hero limiter position-lift">
     <div class="hero position-lift">
+      <span class="private-beta">In private beta</span>
       <lottie-animation
         ref="textAnimation"
         aria-label="Create and ship animations for your products faster."
@@ -80,7 +81,6 @@ export default {
             Get early access
           </button>
         </div>
-        <span>In private beta</span>
       </div>
     </div>
     <intersection-observer
@@ -130,15 +130,22 @@ main {
       color: #5c617c; // grey
     }
   }
+  .private-beta {
+    background-color: #e9ebf4;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    width: fit-content;
+    color: #b1b3be;
+    text-transform: uppercase;
+    font-size: var(--step--4);
+    border-radius: var(--step--4);
+  }
   .button-container {
     display: flex;
     flex-direction: column;
     gap: var(--step--3);
-
-    span {
-      color: #5c617c;
-      font-size: var(--step--4);
-    }
+    align-items: center;
+    justify-content: center;
   }
   .button {
     display: flex;

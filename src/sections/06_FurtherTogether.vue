@@ -26,14 +26,17 @@
         </details>
         <details data-lottie="teamLottie">
           <summary>Keep your team on <br />the same page</summary>
-          <p>New to product animations or know your way around.</p>
+          <p>Share comments and get feedback on every element across time.</p>
         </details>
         <details data-lottie="sharedLottie">
           <summary>
             Have a shared<br />
             motion language.
           </summary>
-          <p>New to product animations or know your way around.</p>
+          <p>
+            Keep your lottie animations and shared components organised across
+            projects
+          </p>
         </details>
       </div>
     </div>
