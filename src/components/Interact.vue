@@ -1,6 +1,9 @@
 <template>
   <div class="preloading">
-    <div class="preloading-icon"></div>
+    <div
+      style="width: 210px; margin-inline: auto"
+      class="preloading-icon"
+    ></div>
   </div>
 </template>
 

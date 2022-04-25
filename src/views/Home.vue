@@ -199,6 +199,7 @@ export default {
     <Navigation class="navigation" />
 
     <section class="section">
+      <!-- <About /> -->
       <section class="section__light gap-light">
         <section class="section__hero">
           <!--  Play Hero animation -->

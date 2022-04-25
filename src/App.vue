@@ -173,7 +173,7 @@ export default {
     width: 100%;
     border-radius: var(--step-0);
     padding: var(--step-0);
-    transition: all 200ms ease-out;
+    transition: all 100ms linear;
 
     &--shadow {
       box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);

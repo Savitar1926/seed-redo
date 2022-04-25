@@ -39,26 +39,23 @@
         </div>
         <div class="col__two">
           <div class="usecase__one">
-            <Interactive style="transform: scale(1.3)" />
-            <!-- <div class="usecase__first card card--shadow-dark usecase--ease">
+            <div class="usecase__first card card--shadow-dark usecase--ease">
               <div class="card__header">
                 <div class="card__info">
                   <span class="card__title">E-Commerce Animation</span>
                   <span class="card__sub">Edited 6 hours ago</span>
                 </div>
               </div>
-              <div class="sample_container"> -->
-            <!-- <lottie-interactive
+              <div class="sample_container">
+                <Interactive style="transform: scale(1.5)" />
+                <!-- <lottie-interactive
                   class="interactive-lottie"
                   path="Interactive_Heart-Click_all-states.json"
                   interaction="click"
                 ></lottie-interactive> -->
-            <!-- <img
-                  src="@/assets/ravie/Asset 1.svg"
-                  style="transform: scale(1.5)"
-                /> -->
-            <!-- </div>
-            </div> -->
+                <!-- <img src="@/assets/ravie/Asset 1.svg" /> -->
+              </div>
+            </div>
           </div>
           <div class="usecase__two">
             <Interactive style="transform: scale(1.3)" />
