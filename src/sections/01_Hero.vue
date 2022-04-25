@@ -115,7 +115,7 @@ main {
 
     .text-animation {
       height: 100%;
-      // margin-bottom: calc(-1 * var(--step--1));
+      max-width: 970px;
     }
 
     h1 {
@@ -137,7 +137,7 @@ main {
     width: fit-content;
     color: #b1b3be;
     text-transform: uppercase;
-    font-size: var(--step--5);
+    font-size: calc(var(--step--5) - 1.56px);
     border-radius: var(--step--4);
   }
   .button-container {
