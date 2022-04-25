@@ -207,7 +207,11 @@ export default {
             <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
-              style="border-radius: var(--step-0); overflow: hidden"
+              style="
+                border-radius: var(--step-0);
+                overflow: hidden;
+                pointer-events: none;
+              "
             />
             <lottie-animation
               :auto-play="true"

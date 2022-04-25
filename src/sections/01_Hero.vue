@@ -56,7 +56,6 @@ export default {
 <template>
   <main class="hero limiter position-lift">
     <div class="hero position-lift">
-      <span class="private-beta">In private beta</span>
       <lottie-animation
         ref="textAnimation"
         aria-label="Create and ship animations for your products faster."
@@ -81,6 +80,7 @@ export default {
             Get early access
           </button>
         </div>
+        <span class="private-beta">In private beta</span>
       </div>
     </div>
     <intersection-observer

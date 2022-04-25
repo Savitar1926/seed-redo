@@ -10,7 +10,13 @@
               <icon name="arrow" class="arrow" />
             </button>
           </div>
-          <div class="usecase-hero usecase-animate card card--shadow">
+          <div
+            class="
+              usecase-hero usecase-animate
+              card card--shadow
+              button-relative
+            "
+          >
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -33,7 +39,7 @@
                 />
               </div>
             </div>
-            <button>Hello</button>
+            <button>Open in Editor</button>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -47,7 +53,7 @@
             class="usecase-phone usecase-animate card card--shadow"
           >
             <!-- Usecase Content  -->
-            <div class="usecase-header">
+            <!-- <div class="usecase-header">
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
@@ -69,13 +75,20 @@
                   :auto-play="false"
                 />
               </div>
-            </div>
+            </div> -->
             <!-- Usecase Content  -->
           </div>
         </div>
         <div class="col-2">
           <div class="container-cases">
-            <div class="usecase-loading_1 usecase-animate card card--shadow">
+            <div
+              class="
+                usecase-loading_1
+                usecase-animate
+                card card--shadow
+                button-relative
+              "
+            >
               <!-- Usecase Content  -->
               <div class="usecase-header">
                 <icon name="edit" class="arrow" />
@@ -105,10 +118,16 @@
                 </div>
               </div>
               <!-- Usecase Content  -->
+              <button>Open in Editor</button>
             </div>
             <div
               v-show="!mobile"
-              class="usecase-loading_2 usecase-animate card card--shadow"
+              class="
+                usecase-loading_2
+                usecase-animate
+                card card--shadow
+                button-relative
+              "
             >
               <!-- Usecase Content  -->
               <div class="usecase-header">
@@ -135,9 +154,16 @@
                 </div>
               </div>
               <!-- Usecase Content  -->
+              <button>Open in Editor</button>
             </div>
           </div>
-          <div class="usecase-headphones usecase-animate card card--shadow">
+          <div
+            class="
+              usecase-headphones usecase-animate
+              card card--shadow
+              button-relative
+            "
+          >
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -163,10 +189,15 @@
               </div>
             </div>
             <!-- Usecase Content  -->
+            <button>Open in Editor</button>
           </div>
           <div
             v-show="!mobile"
-            class="usecase-notification usecase-animate card card--shadow"
+            class="
+              usecase-notification usecase-animate
+              card card--shadow
+              button-relative
+            "
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -193,6 +224,7 @@
               </div>
             </div>
             <!-- Usecase Content  -->
+            <button>Open in Editor</button>
           </div>
         </div>
       </div>
@@ -236,7 +268,7 @@ export default {
           if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
             // pause animation
             this.$refs.hero.pause();
-            this.$refs.onboarding.pause();
+            // this.$refs.onboarding.pause();
             this.$refs.loadingOne.pause();
             this.$refs.loadingTwo.pause();
             this.$refs.product.pause();
@@ -245,7 +277,7 @@ export default {
           if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
             // play animation
             this.$refs.hero.play();
-            this.$refs.onboarding.play();
+            // this.$refs.onboarding.play();
             this.$refs.loadingOne.play();
             this.$refs.loadingTwo.play();
             this.$refs.product.play();
@@ -253,7 +285,7 @@ export default {
           } else {
             // pause animation
             this.$refs.hero.pause();
-            this.$refs.onboarding.pause();
+            // this.$refs.onboarding.pause();
             this.$refs.loadingOne.pause();
             this.$refs.loadingTwo.pause();
             this.$refs.product.pause();
@@ -281,6 +313,37 @@ export default {
   margin-inline: auto;
   padding-inline: var(--step-4);
 
+  .button-relative {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    button {
+      background: rgba(238, 239, 243, 0.2);
+      box-shadow: -12px 12px 59.0507px rgba(92, 97, 124, 0.02);
+      backdrop-filter: blur(16px);
+      padding-block: var(--step--4);
+      padding-inline: var(--step--2);
+      position: absolute;
+      bottom: 10px;
+      width: fit-content;
+      margin: calc(var(--step--4) * 1);
+      border-radius: var(--step--4);
+      transform: translateY(calc(var(--step-0) * 4)) scale(1);
+      color: var(--purple);
+      border: solid 1px var(--purple);
+    }
+
+    &:hover {
+      button {
+        transform: translateY(calc(var(--step-2)) scale(1));
+        &:hover,
+        &:focus-visible {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
   .card {
     background: rgba(240, 242, 248, 0.9); // card transparent
     backdrop-filter: blur(16px);
