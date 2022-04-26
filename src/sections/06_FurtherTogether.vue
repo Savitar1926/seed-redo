@@ -53,9 +53,7 @@
           v-show="this.comment"
           ref="furtherTogether"
           :auto-play="true"
-          :animationData="
-            require('@/assets/05_furtherTogether/test-animation.json')
-          "
+          :animationData="require('@/assets/05_furtherTogether/Comment.json')"
           :loop="true"
         />
         <lottie-animation
