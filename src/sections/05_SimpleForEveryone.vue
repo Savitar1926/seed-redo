@@ -49,7 +49,7 @@
           <div class="container">
             <div class="role__designer card card--shadow">
               <div class="role__container">
-                <!-- <div class="profile__container">
+                <div class="profile__container">
                   <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
@@ -59,7 +59,7 @@
                     :auto-play="false"
                     ref="designers"
                   />
-                </div> -->
+                </div>
                 <div class="profile__details">
                   <h2 style="color: #7c71fd">Designers</h2>
                   <span>
@@ -72,7 +72,7 @@
             </div>
             <div class="role__developer card card--shadow">
               <div class="role__container">
-                <!-- <div class="profile__container">
+                <div class="profile__container">
                   <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
@@ -82,7 +82,7 @@
                     :auto-play="false"
                     ref="developers"
                   />
-                </div> -->
+                </div>
                 <div class="profile__details">
                   <h2 style="color: #f14378">Developers</h2>
                   <span>
@@ -95,7 +95,7 @@
             </div>
             <div class="role__project-manager card card--shadow">
               <div class="role__container">
-                <!-- <div class="profile__container">
+                <div class="profile__container">
                   <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
@@ -105,7 +105,7 @@
                     :auto-play="false"
                     ref="animators"
                   />
-                </div> -->
+                </div>
                 <div class="profile__details">
                   <h2 style="color: #ffba2b">Animators</h2>
                   <span>
@@ -128,7 +128,7 @@
 
 <script>
 import icon from "@/assets/Icons.vue";
-// import LottieAnimation from "lottie-web-vue";
+import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
@@ -138,7 +138,7 @@ export default {
   },
   components: {
     icon,
-    // LottieAnimation,
+    LottieAnimation,
     IntersectionObserver,
   },
   mounted() {

@@ -32,8 +32,10 @@
               <div style="width: 100%; height: 100%">
                 <lottie-animation
                   ref="hero"
-                  style="height: 100%"
-                  :animationData="require('@/assets/New Lottie.json')"
+                  style="height: 100%; transform: scale(1.02)"
+                  :animationData="
+                    require('@/assets/03_usecases/banner lottie vectorizado.json')
+                  "
                   :loop="true"
                   :auto-play="false"
                 />
@@ -121,7 +123,7 @@
                   <lottie-animation
                     ref="loadingOne"
                     style="width: 100%"
-                    :animationData="require('@/assets/Loading.json')"
+                    :animationData="require('@/assets/03_usecases/load.json')"
                     :loop="true"
                     :auto-play="false"
                   />
@@ -156,13 +158,17 @@
               </div>
               <div
                 class="usecase-lottie"
-                style="overflow: hidden; position: relative"
+                style="
+                  overflow: hidden;
+                  position: relative;
+                  background: #191f58;
+                "
               >
                 <div style="width: 100%; height: 100%">
                   <lottie-animation
                     ref="loadingTwo"
                     style="height: 100%"
-                    :animationData="require('@/assets/Loading_2.json')"
+                    :animationData="require('@/assets/03_usecases/load_2.json')"
                     :loop="true"
                     :auto-play="false"
                   />
@@ -189,20 +195,20 @@
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  Product Animation
+                  Nayn Cat Animation
                 </span>
                 <span class="usecase-wrap usecase-filesize"> 64 KB </span>
               </div>
             </div>
             <div
               class="usecase-lottie"
-              style="overflow: hidden; position: relative"
+              style="overflow: hidden; position: relative; background: #45005e"
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
                   ref="product"
                   style="height: 100%"
-                  :animationData="require('@/assets/Product.json')"
+                  :animationData="require('@/assets/03_usecases/NyanCat.json')"
                   :loop="true"
                   :auto-play="false"
                 />
@@ -241,7 +247,7 @@
                 <lottie-animation
                   ref="notification"
                   style="height: 100%"
-                  :animationData="require('@/assets/Notifications.json')"
+                  :animationData="require('@/assets/03_usecases/preview.json')"
                   :loop="true"
                   :auto-play="false"
                 />
