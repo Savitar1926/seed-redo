@@ -43,11 +43,26 @@
     <div class="section section-right right-panel">
       <div class="lottie-container">
         <lottie-animation
+          v-show="this.collab"
           ref="furtherTogether"
-          :auto-play="false"
+          :auto-play="true"
+          :animationData="require('@/assets/05_furtherTogether/Collab.json')"
+          :loop="true"
+        />
+        <lottie-animation
+          v-show="this.comment"
+          ref="furtherTogether"
+          :auto-play="true"
           :animationData="
             require('@/assets/05_furtherTogether/test-animation.json')
           "
+          :loop="true"
+        />
+        <lottie-animation
+          v-show="this.dash"
+          ref="furtherTogether"
+          :auto-play="true"
+          :animationData="require('@/assets/05_furtherTogether/Collab.json')"
           :loop="true"
         />
       </div>
@@ -71,6 +86,9 @@ export default {
   data() {
     return {
       collabOpen: true,
+      collab: true,
+      comment: false,
+      dash: false,
     };
   },
   mixins: [elementSelector],
@@ -89,12 +107,15 @@ export default {
         });
         const prevLottie = targetDetail.getAttribute("data-lottie");
         if (prevLottie.match("collabLottie")) {
+          (this.collab = true),
+            (this.comment = false),
+            (this.dash = false),
+            console.log("collab");
           gsap.from(".lottie-container", {
             x: 1550,
             duration: 0.5,
             ease: "expo.out",
           });
-          console.log("collab");
         }
         if (prevLottie.match("teamLottie")) {
           gsap.from(".lottie-container", {
@@ -102,7 +123,10 @@ export default {
             duration: 0.5,
             ease: "expo.out",
           });
-          console.log("team");
+          (this.collab = false),
+            (this.comment = true),
+            (this.dash = false),
+            console.log("team");
         }
         if (prevLottie.match("sharedLottie")) {
           gsap.from(".lottie-container", {
@@ -110,7 +134,10 @@ export default {
             duration: 0.5,
             ease: "expo.out",
           });
-          console.log("shared");
+          (this.collab = false),
+            (this.comment = false),
+            (this.dash = true),
+            console.log("shared");
         }
       });
     });
