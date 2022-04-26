@@ -90,7 +90,7 @@ export default {
         const prevLottie = targetDetail.getAttribute("data-lottie");
         if (prevLottie.match("collabLottie")) {
           gsap.from(".lottie-container", {
-            x: 1500,
+            x: 1550,
             duration: 0.5,
             ease: "expo.out",
           });
@@ -98,7 +98,7 @@ export default {
         }
         if (prevLottie.match("teamLottie")) {
           gsap.from(".lottie-container", {
-            x: 1500,
+            x: 1550,
             duration: 0.5,
             ease: "expo.out",
           });
@@ -106,7 +106,7 @@ export default {
         }
         if (prevLottie.match("sharedLottie")) {
           gsap.from(".lottie-container", {
-            x: 1500,
+            x: 1550,
             duration: 0.5,
             ease: "expo.out",
           });
