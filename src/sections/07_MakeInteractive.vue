@@ -42,18 +42,23 @@
             <div class="usecase__first card card--shadow-dark usecase--ease">
               <div class="card__header">
                 <div class="card__info">
-                  <span class="card__title">E-Commerce Animation</span>
-                  <span class="card__sub">Edited 6 hours ago</span>
+                  <span class="card__title">Heart Button</span>
+                  <span
+                    class="card__sub"
+                    style="
+                      color: #5a5a5f;
+                      font-size: var(--step--4);
+                      background: #3c3a3a;
+                      border-radius: var(--step--5);
+                      padding-inline: var(--step--5);
+                      width: fit-content;
+                    "
+                    >On click</span
+                  >
                 </div>
               </div>
               <div class="sample_container">
                 <Interactive style="transform: scale(1.5)" />
-                <!-- <lottie-interactive
-                  class="interactive-lottie"
-                  path="Interactive_Heart-Click_all-states.json"
-                  interaction="click"
-                ></lottie-interactive> -->
-                <!-- <img src="@/assets/ravie/Asset 1.svg" /> -->
               </div>
             </div>
           </div>
@@ -62,17 +67,22 @@
             <div class="usecase__first card-day usecase--ease">
               <div class="card__header">
                 <div class="card__info">
-                  <span class="card__title">E-Commerce Animation</span>
-                  <span class="card__sub">Edited 6 hours ago</span>
+                  <span class="card__title">Day and Night</span>
+                  <span
+                    class="card__sub"
+                    style="
+                      color: #5a5a5f;
+                      font-size: var(--step--4);
+                      background: #3c3a3a;
+                      border-radius: var(--step--5);
+                      padding-inline: var(--step--5);
+                      width: fit-content;
+                    "
+                    >On mouse move</span
+                  >
                 </div>
               </div>
               <div class="sample_container">
-                <!-- <lottie-interactive
-                  class="interactive-lottie"
-                  path="https://assets4.lottiefiles.com/packages/lf20_wesmb2eu.json"
-                  interaction="switch"
-                ></lottie-interactive> -->
-                <!-- <img src="@/assets/ravie/Asset 2.svg" /> -->
                 <Interactive2 />
               </div>
             </div>

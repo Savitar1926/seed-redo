@@ -277,7 +277,7 @@ export default {
     padding-inline: var(--step-4);
     .lottie-container {
       border: rgba(43, 43, 43, 0.5) solid 14px;
-      background: rgba(43, 43, 43, 0.8);
+      background: rgba(34, 34, 34, 0.9);
       backdrop-filter: blur(16px);
       border-radius: var(--step-0);
       margin-right: 0px;

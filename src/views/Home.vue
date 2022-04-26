@@ -214,7 +214,6 @@ export default {
                 z-index: 10;
                 border-radius: var(--step-0);
                 overflow: hidden;
-                transform: scale(1.2);
                 pointer-events: none;
               "
             />
