@@ -20,27 +20,33 @@
       <div class="col__two">
         <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <!-- <lottie-animation
-              :animationData="require('@/assets/Pattern_6.json')"
+            <lottie-animation
+              :animationData="
+                require('@/assets/09_meetLottie/LottieFormat_Slow.json')
+              "
               :loop="true"
-            /> -->
-            <img src="@/assets/ravie/Asset 3.svg" style="width: 100%" />
+            />
+            <!-- <img src="@/assets/ravie/Asset 3.svg" style="width: 100%" /> -->
 
-            <div>
-              <h3>351 kB</h3>
+            <div style="padding-block: var(--step-0)">
+              <h3>2.81 MB</h3>
               <span>GIF</span>
             </div>
           </div>
         </div>
         <div class="card card--light card--shadow usecase--ease">
           <div class="sample_container">
-            <!-- <lottie-animation
-              :animationData="require('@/assets/Pattern_6.json')"
+            <lottie-animation
+              :animationData="
+                require('@/assets/09_meetLottie/LottieFormat_Fast.json')
+              "
               :loop="true"
-            /> -->
-            <img src="@/assets/ravie/Asset 4.svg" style="width: 100%" />
-            <h3 style="color: #00bcae">61 kB</h3>
-            <span style="color: #00bcae">Lottie</span>
+            />
+            <!-- <img src="@/assets/ravie/Asset 4.svg" style="width: 100%" /> -->
+            <h3 style="color: #00bcae">28 KB</h3>
+            <span style="color: #00bcae; padding-block: var(--step-0)"
+              >Lottie</span
+            >
           </div>
         </div>
       </div>
@@ -63,7 +69,7 @@
 </template>
 
 <script>
-// import LottieAnimation from "lottie-web-vue";
+import LottieAnimation from "lottie-web-vue";
 import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
 
@@ -73,7 +79,7 @@ export default {
   },
   mixins: [checkScreen],
   components: {
-    // LottieAnimation,
+    LottieAnimation,
     icon,
   },
 };
@@ -139,6 +145,9 @@ export default {
     display: flex;
     gap: var(--step-0);
     height: fit-content;
+    .card {
+      padding: 0 !important;
+    }
 
     div {
       display: flex;

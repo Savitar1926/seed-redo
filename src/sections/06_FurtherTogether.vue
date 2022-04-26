@@ -60,7 +60,7 @@
           v-show="this.dash"
           ref="furtherTogether"
           :auto-play="true"
-          :animationData="require('@/assets/05_furtherTogether/Collab.json')"
+          :animationData="require('@/assets/05_furtherTogether/Dash.json')"
           :loop="true"
         />
       </div>

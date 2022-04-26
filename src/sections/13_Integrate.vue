@@ -5,9 +5,10 @@
         <div class="section__title">
           <h1>Integrate your <br />existing workflow.</h1>
           <span>
-            Import existing Lottie animations, or start from scratch. Use and
-            edit assets from the Lottie Files marketplace, After Effects,
-            Illustrator, Figma and more.</span
+            Whether it’s your SVG assets in Figma, importing templates from
+            LottieFiles, moving lotties back and forth from After Effects or
+            getting stuff working on Webflow, we’ll help you get things in and
+            out of LottieLab smoothly..</span
           >
         </div>
       </div>

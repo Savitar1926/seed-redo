@@ -195,7 +195,7 @@
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  Nayn Cat Animation
+                  Nyan Cat Animation
                 </span>
                 <span class="usecase-wrap usecase-filesize"> 64 KB </span>
               </div>
