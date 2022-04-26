@@ -10,6 +10,8 @@
 <script>
 import loading from "../assets/Interactive_Light-Dark.json";
 import * as lottie from "lottie-web";
+import checkScreen from "@/mixins/checkScreen";
+
 export default {
   name: "loadingicon",
   data: () => ({
@@ -20,12 +22,16 @@ export default {
     dir: -1,
     btn_LightDark: null,
   }),
+  mixins: [checkScreen],
+
   mounted() {
     this.elt = this.$el.children[0];
     this.anim_LightDark = this.buildAnimation();
     // this.anim_LightDark.addEventListener("complete", this.isDone);
     this.btn_LightDark = document.getElementById("btn_LightDark");
-    this.startAnimation();
+
+    window.addEventListener("resize", this.deviceAnimation);
+    this.deviceAnimation();
   },
   methods: {
     buildAnimation() {
@@ -40,6 +46,13 @@ export default {
       anim_LightDark.animationData = loading;
       return lottie.loadAnimation(anim_LightDark);
     },
+    deviceAnimation() {
+      if (this.mobile) {
+        this.startAnimation();
+      } else {
+        this.startTracking();
+      }
+    },
     // Functions
     segment_Idle() {
       this.anim_LightDark.goToAndStop(0);
@@ -52,6 +65,21 @@ export default {
     startAnimation() {
       this.btn_LightDark.addEventListener("click", this.segment_Active);
       this.segment_Idle();
+    },
+    startTracking() {
+      document.addEventListener("mousemove", this.moveListener_LightDark);
+    },
+    moveListener_LightDark(trackSideways_LightDark) {
+      // add cursor tracker
+      const nextFrame_LightDark =
+        ((trackSideways_LightDark.clientX / window.innerWidth) *
+          this.anim_LightDark.totalFrames) /
+        2;
+      // link to Lottie playback
+      this.anim_LightDark.goToAndStop(nextFrame_LightDark, true);
+
+      // current frame number checker (frames 0-150 for this animation)
+      // console.log(nextFrame_LightDark)
     },
   },
 };
@@ -75,7 +103,7 @@ svg {
   stroke: transparent;
 }
 .preloading-icon {
-  width: 300px;
+  width: 100%;
   cursor: pointer;
 }
 
