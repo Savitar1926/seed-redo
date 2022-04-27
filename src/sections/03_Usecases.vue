@@ -124,10 +124,9 @@ export default {
     </div>
     <div class="section section_right">
       <div class="container">
-        <div class="col-1">
+        <div id="usecasephone" class="col-1">
           <div
             v-show="!mobile"
-            id="usecasephone"
             class="usecase-phone usecase-animate card button-relative"
           >
             <button
