@@ -138,6 +138,12 @@ export default {
       const heroelement = document.querySelector(".hero");
       const cursorelement = document.querySelector(".cursor_movement");
       const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
+      const element = document.querySelector("#usecasephone");
+      const bodyRect_usecase = document.body.getBoundingClientRect();
+      const elemRect = element.getBoundingClientRect();
+      let offset = elemRect.top - bodyRect_usecase.top;
+
+      // console.log(`Element is ${offset} vertical pixels from body`);
 
       // On Scroll the Lottie Editor UI container scales up;
       // while in reverse the Editor UI lottie scales down revealing the Whoel UI
@@ -153,6 +159,7 @@ export default {
         let transUp = 1.0 - scrollTop / (10 * 50);
         let cursorDown = 1.0 - scrollTop / (10 * 130);
         cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
+        transUp = Math.min(Math.max(0, transUp), offset);
         cursorelement.style.transform = `scale(${cursorDown}) `;
         cursorelement.style.transition = `transform 300ms ease-in-out`;
         scroll.preventDefault();
@@ -162,7 +169,7 @@ export default {
         translateLottie = Math.min(Math.max(0, translateLottie), 1000);
 
         if (scrollTop > 900) {
-          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.5) `;
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.2) `;
           heroscroll.style.transition = "transform 350ms linear";
           heroscroll.style.zIndex = "888";
         }

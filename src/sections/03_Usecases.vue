@@ -127,6 +127,7 @@ export default {
         <div class="col-1">
           <div
             v-show="!mobile"
+            id="usecasephone"
             class="usecase-phone usecase-animate card button-relative"
           >
             <button

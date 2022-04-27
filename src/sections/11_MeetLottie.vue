@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <img
+      <!-- <img
         v-show="!mobile"
         src="@/assets/09_meetLottie/meetlottie-image.svg"
         style="
@@ -63,7 +63,7 @@
           width: 600px;
           height: auto;
         "
-      />
+      /> -->
     </div>
   </div>
 </template>

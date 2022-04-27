@@ -2,7 +2,10 @@
   <div class="main_testimonials position-lift limiter">
     <div class="container">
       <div class="col__one">
-        <h1>Placeholder</h1>
+        <h1>
+          From our <br />
+          early users
+        </h1>
       </div>
       <div class="col__two">
         <div class="card card--shadow">
@@ -14,7 +17,7 @@
               </div>
               <div class="profile__info">
                 <h2>Florian Bölter</h2>
-                <span>SVP of Design</span>
+                <span>Product Designer at Heygo</span>
               </div>
             </div>
             <div class="testimonials">
@@ -23,9 +26,7 @@
                 aback by its potential, particularly when it comes to mixing up
                 design workflows. Being able to simply, easily and cost
                 efficiently create production-ready animation asset is a real
-                game-changer. From everything I've seen so far, I really believe
-                LottieLab has the potential to become the next must-learn tool
-                for product and UI designers.</span
+                game-changer.</span
               >
             </div>
           </div>

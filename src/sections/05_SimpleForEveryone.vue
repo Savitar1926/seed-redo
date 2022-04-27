@@ -50,7 +50,12 @@
             <div class="role__designer card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-animation
+                  <img
+                    src="@/assets/04_simple/1.png"
+                    class="profile__animation"
+                  />
+
+                  <!-- <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
                     "
@@ -58,7 +63,7 @@
                     class="profile__animation"
                     :auto-play="false"
                     ref="designers"
-                  />
+                  /> -->
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #7c71fd">Designers</h2>
@@ -73,7 +78,11 @@
             <div class="role__developer card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-animation
+                  <img
+                    src="@/assets/04_simple/2.png"
+                    class="profile__animation"
+                  />
+                  <!-- <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
                     "
@@ -81,7 +90,7 @@
                     class="profile__animation"
                     :auto-play="false"
                     ref="developers"
-                  />
+                  /> -->
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #f14378">Developers</h2>
@@ -96,7 +105,11 @@
             <div class="role__project-manager card card--shadow">
               <div class="role__container">
                 <div class="profile__container">
-                  <lottie-animation
+                  <img
+                    src="@/assets/04_simple/3.png"
+                    class="profile__animation"
+                  />
+                  <!-- <lottie-animation
                     :animationData="
                       require('@/assets/04_simple/santaclause-profile.json')
                     "
@@ -104,7 +117,7 @@
                     class="profile__animation"
                     :auto-play="false"
                     ref="animators"
-                  />
+                  /> -->
                 </div>
                 <div class="profile__details">
                   <h2 style="color: #ffba2b">Animators</h2>
@@ -128,7 +141,7 @@
 
 <script>
 import icon from "@/assets/Icons.vue";
-import LottieAnimation from "lottie-web-vue";
+// import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
 export default {
@@ -138,7 +151,7 @@ export default {
   },
   components: {
     icon,
-    LottieAnimation,
+    // LottieAnimation,
     IntersectionObserver,
   },
   mounted() {
@@ -330,6 +343,7 @@ export default {
           flex-wrap: wrap;
           border-radius: var(--step-0);
           .profile__animation {
+            width: 116px;
             margin: 0;
             padding: 0;
             aspect-ratio: 1 / 1;
