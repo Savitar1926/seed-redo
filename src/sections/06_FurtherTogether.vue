@@ -11,7 +11,10 @@
           Keep furtherTogether, developers and product managers on the same
           page. No more emailing folders or sharing files on G-Drive.</span
         >
-        <button class="full">
+        <button
+          onclick="window.open('https://lottielab.io/users/sign_up').focus()"
+          class="full"
+        >
           Get Started
           <icon name="arrow" class="arrow" />
         </button>

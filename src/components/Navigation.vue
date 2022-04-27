@@ -57,11 +57,15 @@ export default {
           >
         </div>
         <ul v-show="!mobile" class="nav__routes" data-link>
-          <router-link to="/" data-link id="nav_link" class="links links-spaced"
+          <router-link
+            to="/sign-in"
+            data-link
+            id="nav_link"
+            class="links links-spaced"
             >Sign In</router-link
           >
           <router-link
-            to="/"
+            to="/sign-up"
             data-link
             id="nav_link"
             class="sign-up links links-spaced"

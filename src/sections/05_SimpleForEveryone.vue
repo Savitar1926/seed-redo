@@ -13,7 +13,10 @@
                 New to product animations or know your <br />
                 way around - no worries.</span
               >
-              <button class="full">
+              <button
+                onclick="window.open('https://lottielab.io/users/sign_up').focus()"
+                class="full"
+              >
                 Get Started
                 <icon name="arrow" class="arrow" />
               </button>

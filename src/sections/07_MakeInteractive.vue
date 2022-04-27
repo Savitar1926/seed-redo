@@ -10,7 +10,6 @@
                 interactive
               </h1>
               <span>
-                <strong>Coming soon.</strong>
                 This is one of our favourite ongoing experiments - bringing the
                 power of interactive lottie animations into the hands of
                 designers, no coding experience necessary.

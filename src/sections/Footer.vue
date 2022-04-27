@@ -31,13 +31,13 @@ export default {
           >
         </div>
         <div class="socials" style="display: flex">
-          <router-link to="/">
+          <router-link to="/twitter">
             <icon name="twitter" class="logo"
           /></router-link>
-          <router-link to="/">
+          <router-link to="/instagram">
             <icon name="instagram" class="logo"
           /></router-link>
-          <router-link to="/">
+          <router-link to="/community">
             <icon name="discord" class="logo"
           /></router-link>
         </div>
@@ -63,16 +63,23 @@ export default {
         <router-link class="header-link" to="/" id="nav_link"
           >Resources</router-link
         >
-        <a href="/">Blog</a>
-        <a href="/">Join our Community</a>
-        <a href="/">Built with Lottielab</a>
-        <a href="/">What is Lottie?</a>
+        <a href="https://medium.com/lottielab" target="_blank">Blog</a>
+        <a href="https://discord.com/invite/NDUBtvg95a" target="_blank"
+          >Join our Community</a
+        >
+        <a href="https://airbnb.design/lottie/" target="_blank"
+          >What is Lottie?</a
+        >
       </div>
       <div>
         <router-link class="header-link" to="/" id="nav_link"
           >Company</router-link
         >
-        <a href="/">Join Us</a>
+        <a
+          href="https://lottielab.notion.site/Careers-b4f40799d8294be9ab1c910b881cf6ca"
+          target="_blank"
+          >Join Us</a
+        >
         <a href="/">Privacy Policy</a>
         <a href="/">Terms of Use</a>
         <a href="/">Contact Us</a>

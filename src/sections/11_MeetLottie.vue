@@ -11,7 +11,10 @@
             to engage consumers and increase conversions by top 500 apps on the
             App Store.</span
           >
-          <button class="full">
+          <button
+            onclick="window.open('https://airbnb.design/lottie/').focus()"
+            class="full"
+          >
             Learn more
             <icon name="arrow" class="arrow" />
           </button>

@@ -76,7 +76,10 @@ export default {
       </div>
       <div class="button-container">
         <div class="button">
-          <button class="button__early-access animate-lead">
+          <button
+            onclick="window.open('https://lottielab.io/users/sign_up').focus()"
+            class="button__early-access animate-lead"
+          >
             Get early access
           </button>
         </div>

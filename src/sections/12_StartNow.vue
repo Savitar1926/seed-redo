@@ -4,7 +4,10 @@
       <div class="col__one">
         <h1>Supercharge your animation workflow</h1>
         <div class="button">
-          <button class="button__early-access animate-lead">
+          <button
+            onclick="window.open('https://lottielab.io/users/sign_up').focus()"
+            class="button__early-access animate-lead"
+          >
             Get early access
             <icon name="arrow" class="arrow" />
           </button>
