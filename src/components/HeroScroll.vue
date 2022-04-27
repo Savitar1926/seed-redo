@@ -19,13 +19,10 @@ export default {
   mounted() {
     this.elt = this.$el.children[0];
     this.anim_HERO_PRODUCT = this.buildAnimation();
-    // const scrollTop = window.scrollY;
-
     window.addEventListener("scroll", () => {
-      let scrollvalue = (100 * window.scrollY) / document.body.clientHeight;
+      let scrollvalue = (80 * window.scrollY) / document.body.clientHeight;
       let goToValue = (scrollvalue / 10) * 90;
       goToValue = Math.min(Math.max(0, goToValue), 121);
-
       this.anim_HERO_PRODUCT.goToAndStop(goToValue, true);
 
       //   if (window.scrollY < 804 && window.scrollY > 750) {
