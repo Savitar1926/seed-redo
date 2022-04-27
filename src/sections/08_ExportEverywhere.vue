@@ -45,7 +45,9 @@ export default {
       });
     },
     updateAll() {
-      this.qs(".placeholder-devices").scrollIntoView();
+      this.qs(".placeholder-devices").scrollIntoView({
+        behavior: "smooth",
+      });
       this.qsa("#color_2").forEach((path) => {
         path.setAttribute("fill", this.color);
       });
