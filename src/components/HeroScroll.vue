@@ -20,7 +20,7 @@ export default {
     this.elt = this.$el.children[0];
     this.anim_HERO_PRODUCT = this.buildAnimation();
     window.addEventListener("scroll", () => {
-      let scrollvalue = (80 * window.scrollY) / document.body.clientHeight;
+      let scrollvalue = (90 * window.scrollY) / document.body.clientHeight;
       let goToValue = (scrollvalue / 10) * 90;
       goToValue = Math.min(Math.max(0, goToValue), 121);
       this.anim_HERO_PRODUCT.goToAndStop(goToValue, true);

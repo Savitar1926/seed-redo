@@ -2,6 +2,7 @@
 import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
 import elementSelector from "@/mixins/elementSelector";
+import LottieAnimation from "lottie-web-vue";
 
 export default {
   name: "ExportEverywhere",
@@ -13,6 +14,7 @@ export default {
   mixins: [checkScreen, elementSelector],
   components: {
     icon,
+    LottieAnimation,
   },
   mounted() {
     this.colorPanel();
@@ -20,7 +22,7 @@ export default {
   methods: {
     change(color) {
       this.color = color;
-      this.qsa(".wing-central-bottom-bg path").forEach((path) => {
+      this.qsa("#color").forEach((path) => {
         path.setAttribute("fill", this.color);
       });
     },
@@ -58,17 +60,23 @@ export default {
     </div>
     <div class="export-section">
       <div class="main-animation">
-        <img class="placeholder-rocket" src="@/assets/rocket.svg" />
+        <!-- <img class="placeholder-rocket" src="@/assets/rocket.svg" /> -->
+        <lottie-animation
+          :animationData="
+            require('@/assets/07_exportEverywhere/Export-Everywhere.json')
+          "
+          :loop="true"
+        />
         <div class="export__actions">
           <span>Try changing the colours</span>
           <div>
             <div class="card card--shadow-dark color-panel">
               <color-panel v-model="color" @change="change"></color-panel>
             </div>
-            <button class="update-button">
+            <!-- <button class="update-button">
               <icon class="update-icon" name="update" />
               Update Colours
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
