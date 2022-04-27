@@ -159,10 +159,10 @@ export default {
 
         // Center lottie scroll to place
         let translateLottie = scrollTop - 700 / 1.5;
-        translateLottie = Math.min(Math.max(0, translateLottie), 1090);
+        translateLottie = Math.min(Math.max(0, translateLottie), 1000);
 
         if (scrollTop > 900) {
-          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.5) `;
           heroscroll.style.transition = "transform 350ms linear";
           heroscroll.style.zIndex = "888";
         }
