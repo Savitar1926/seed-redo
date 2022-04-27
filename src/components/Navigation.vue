@@ -45,7 +45,7 @@ export default {
             data-link
             id="nav_link"
           >
-            Blogs
+            Blog
           </router-link>
           <router-link
             to="/community"
@@ -74,7 +74,7 @@ export default {
         <transition name="mobile-nav">
           <ul class="mobile-nav" v-show="mobileNav">
             <router-link to="/join-us" class="link">Join Us</router-link>
-            <router-link to="/blogs" class="link"> Blogs </router-link>
+            <router-link to="/blogs" class="link"> Blog </router-link>
             <router-link to="/community" class="link">Community</router-link>
           </ul>
         </transition>
