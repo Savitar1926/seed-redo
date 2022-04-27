@@ -45,8 +45,11 @@ export default {
       });
     },
     updateAll() {
-      this.qs(".placeholder-devices").scrollIntoView({
+      const element = this.qs(".placeholder-devices");
+
+      element.scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
       this.qsa("#color_2").forEach((path) => {
         path.setAttribute("fill", this.color);
