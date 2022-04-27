@@ -159,10 +159,10 @@ export default {
 
         // Center lottie scroll to place
         let translateLottie = scrollTop - 700 / 1.5;
-        translateLottie = Math.min(Math.max(0, translateLottie), 950);
+        translateLottie = Math.min(Math.max(0, translateLottie), 1090);
 
         if (scrollTop > 900) {
-          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px)`;
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
           heroscroll.style.transition = "transform 350ms linear";
           heroscroll.style.zIndex = "888";
         }
@@ -206,7 +206,7 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <div style="margin-inline: var(--step-4)">
+          <div>
             <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
@@ -350,7 +350,7 @@ main {
 
         .usecase-component {
           position: relative;
-          z-index: 900;
+          // z-index: 900;
         }
         .usecase-bg {
           position: absolute;

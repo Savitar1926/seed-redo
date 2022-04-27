@@ -1,11 +1,4 @@
-<template>
-  <div class="preloading">
-    <div
-      style="width: 210px; margin-inline: auto"
-      class="preloading-icon"
-    ></div>
-  </div>
-</template>
+
 
 <script>
 import loading from "../assets/Interactive_Heart-Click_all-states.json";
@@ -87,6 +80,15 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="preloading">
+    <div
+      style="width: 210px; margin-inline: auto"
+      class="preloading-icon"
+    ></div>
+  </div>
+</template>
 
 <style>
 svg {

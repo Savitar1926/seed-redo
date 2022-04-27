@@ -1,7 +1,6 @@
 <script>
 import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
-// import HeroScroll from "@/components/HeroScroll.vue";
 
 export default {
   name: "CenterAnimation",

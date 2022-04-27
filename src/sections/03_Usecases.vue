@@ -1,3 +1,73 @@
+  <script>
+import icon from "@/assets/Icons.vue";
+import LottieAnimation from "lottie-web-vue";
+import IntersectionObserver from "@/components/IntersectionObserver";
+import checkScreen from "@/mixins/checkScreen";
+
+export default {
+  name: "Usecases",
+  data() {
+    return {
+      passIntersectingUsecases: false,
+    };
+  },
+  mixins: [checkScreen],
+  components: {
+    LottieAnimation,
+    IntersectionObserver,
+    icon,
+  },
+  mounted() {
+    this.usecaseIntersection();
+  },
+  methods: {
+    usecaseIntersection() {
+      const el = document.querySelector("#pass-usecases");
+
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+            // pause animation
+            this.$refs.hero.pause();
+            // this.$refs.onboarding.pause();
+            this.$refs.loadingOne.pause();
+            this.$refs.loadingTwo.pause();
+            this.$refs.product.pause();
+            this.$refs.notification.pause();
+          }
+          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+            // play animation
+            this.$refs.hero.play();
+            // this.$refs.onboarding.play();
+            this.$refs.loadingOne.play();
+            this.$refs.loadingTwo.play();
+            this.$refs.product.play();
+            this.$refs.notification.play();
+          } else {
+            // pause animation
+            this.$refs.hero.pause();
+            // this.$refs.onboarding.pause();
+            this.$refs.loadingOne.pause();
+            this.$refs.loadingTwo.pause();
+            this.$refs.product.pause();
+            this.$refs.notification.pause();
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+    },
+  },
+};
+</script>
+
+
+
 <template>
   <div class="usecase-parent limiter-width">
     <div class="section section_left">
@@ -270,74 +340,6 @@
   </div>
 </template>
 
-<script>
-import icon from "@/assets/Icons.vue";
-import LottieAnimation from "lottie-web-vue";
-import IntersectionObserver from "@/components/IntersectionObserver";
-import checkScreen from "@/mixins/checkScreen";
-
-export default {
-  name: "Usecases",
-  data() {
-    return {
-      passIntersectingUsecases: false,
-    };
-  },
-  mixins: [checkScreen],
-  components: {
-    LottieAnimation,
-    IntersectionObserver,
-    icon,
-  },
-  mounted() {
-    this.usecaseIntersection();
-  },
-  methods: {
-    usecaseIntersection() {
-      const el = document.querySelector("#pass-usecases");
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          entry.boundingClientRect.top;
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.hero.play();
-            // this.$refs.onboarding.play();
-            this.$refs.loadingOne.play();
-            this.$refs.loadingTwo.play();
-            this.$refs.product.play();
-            this.$refs.notification.play();
-          } else {
-            // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
-          }
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-    },
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .usecase-parent {
   height: 100%;
@@ -352,7 +354,7 @@ export default {
     overflow: hidden;
     cursor: pointer;
     border: solid 1px #e9ebf400;
-    z-index: 901;
+    // z-index: 901;
 
     button {
       background: rgba(238, 239, 243, 0.2);
@@ -492,8 +494,11 @@ export default {
 
       .usecase-phone {
         grid-area: usecase-phone;
-        backdrop-filter: blur(0px) !important;
-        background: none !important;
+        // backdrop-filter: blur(0px) !important;
+        // background: none !important;
+        box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+        -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0.32);
+        -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0.32);
       }
 
       .col-2 {

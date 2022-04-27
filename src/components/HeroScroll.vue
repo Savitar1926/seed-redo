@@ -63,9 +63,10 @@ body {
 #HERO_PRODUCT_placement {
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 2080px;
   margin: 0px auto;
   border-radius: 3vw;
+  z-index: 999;
 }
 
 #lottie_HERO_PRODUCT {
