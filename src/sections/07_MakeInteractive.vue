@@ -9,12 +9,12 @@
                 Make it <br />
                 interactive
               </h1>
+              <h2>Coming soon</h2>
               <span>
                 This is one of our favourite ongoing experiments - bringing the
                 power of interactive lottie animations into the hands of
                 designers, no coding experience necessary.
               </span>
-              <h2>Coming soon</h2>
             </div>
           </div>
           <div class="card__one card__interactive">
