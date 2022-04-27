@@ -80,14 +80,18 @@ export default {
           </div>
         </div>
       </div>
-      <img
+      <lottie-animation
+        class="placeholder-devices"
+        :animationData="require('@/assets/07_exportEverywhere/Devices.json')"
+        :loop="true"
+      />
+      <!-- <img
         loading="lazy"
         class="placeholder-devices"
-        v-show="!mobile"
         src="@/assets/07_exportEverywhere/Devices.svg"
-      />
+      /> -->
     </div>
-    <div class="carousel-mobile" v-show="mobile">
+    <!-- <div class="carousel-mobile" v-show="mobile">
       <carousel
         :per-page="1"
         :mouse-drag="true"
@@ -112,7 +116,7 @@ export default {
           <h1>iOS</h1>
         </slide>
       </carousel>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -149,7 +153,7 @@ export default {
   .export-section {
     display: flex;
     flex-direction: column;
-    gap: var(--step-6);
+    gap: var(--step--2);
     align-items: center;
     .main-animation {
       width: 80%;

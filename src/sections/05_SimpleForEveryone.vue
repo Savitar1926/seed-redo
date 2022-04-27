@@ -338,12 +338,13 @@ export default {
 
         .profile__container {
           width: var(--step-7);
+
           height: fit-content;
           display: flex;
           flex-wrap: wrap;
           border-radius: var(--step-0);
           .profile__animation {
-            width: 116px;
+            width: 100%;
             margin: 0;
             padding: 0;
             aspect-ratio: 1 / 1;

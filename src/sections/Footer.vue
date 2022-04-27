@@ -48,7 +48,7 @@ export default {
       </div>
     </div>
     <div class="links">
-      <div>
+      <!-- <div>
         <router-link class="header-link" to="/" id="nav_link"
           >Usecases</router-link
         >
@@ -58,7 +58,7 @@ export default {
         <a href="/">Progression</a>
         <a href="/">Agencies</a>
         <a href="/">Templates</a>
-      </div>
+      </div> -->
       <div>
         <router-link class="header-link" to="/" id="nav_link"
           >Resources</router-link
