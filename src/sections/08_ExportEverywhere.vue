@@ -1,5 +1,5 @@
 <script>
-import icon from "@/assets/Icons.vue";
+// import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
 import elementSelector from "@/mixins/elementSelector";
 import LottieAnimation from "lottie-web-vue";
@@ -13,7 +13,7 @@ export default {
   },
   mixins: [checkScreen, elementSelector],
   components: {
-    icon,
+    // icon,
     LottieAnimation,
   },
   mounted() {
