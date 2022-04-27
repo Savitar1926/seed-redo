@@ -383,7 +383,7 @@ export default {
       box-shadow: 4px 16px 32px rgba(207, 208, 235, 0);
       -webkit-box-shadow: 4px 16px 32px rgba(207, 208, 235, 0);
       -moz-box-shadow: 34px 16px 32px rgba(207, 208, 235, 0);
-      border: solid 1px var(--purple);
+      // border: solid 1px var(--purple);
 
       button {
         transform: translateY(calc(var(--step-2)) scale(1));

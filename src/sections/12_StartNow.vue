@@ -13,7 +13,7 @@
       <div class="col__two">
         <img
           class="starnow-image"
-          src="@/assets/10_getStarted/startnow-image.svg"
+          src="@/assets/10_getStarted/startnow-updated.svg"
         />
       </div>
     </div>
