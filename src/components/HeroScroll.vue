@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import hero from "../assets/01_hero/Hero_Product (4).json";
+import hero from "../assets/01_hero/Hero_Product_v1.5.2.json";
 import * as lottie from "lottie-web";
 export default {
   name: "heroicon",
