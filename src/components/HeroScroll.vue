@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import hero from "../assets/01_hero/Hero_Product.json";
+import hero from "../assets/01_hero/Hero_Product (4).json";
 import * as lottie from "lottie-web";
 export default {
   name: "heroicon",
@@ -60,7 +60,7 @@ body {
 #HERO_PRODUCT_placement {
   position: relative;
   width: 100%;
-  max-width: 2190px;
+  max-width: 1810px;
   margin: 0px auto;
   border-radius: 3vw;
   z-index: 999;

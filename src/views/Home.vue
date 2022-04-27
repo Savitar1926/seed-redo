@@ -169,7 +169,7 @@ export default {
         translateLottie = Math.min(Math.max(0, translateLottie), 1000);
 
         if (scrollTop > 1100) {
-          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.2)`;
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
           heroscroll.style.transition = "transform 550ms linear";
           heroscroll.style.zIndex = "888";
         }
