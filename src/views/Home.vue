@@ -168,12 +168,12 @@ export default {
         let translateLottie = scrollTop - 700 / 1.5;
         translateLottie = Math.min(Math.max(0, translateLottie), 1000);
 
-        if (scrollTop > 900) {
-          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.2) `;
-          heroscroll.style.transition = "transform 350ms linear";
+        if (scrollTop > 1100) {
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) scale(1.2)`;
+          heroscroll.style.transition = "transform 550ms linear";
           heroscroll.style.zIndex = "888";
         }
-        if (900 > scrollTop) heroscroll.style.transform = "translateX(0px)";
+        if (1100 > scrollTop) heroscroll.style.transform = "translateX(0px)";
         if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
 
         if (400 > scrollTop) {

@@ -1,5 +1,5 @@
 <script>
-// import icon from "@/assets/Icons.vue";
+import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
 import elementSelector from "@/mixins/elementSelector";
 import LottieAnimation from "lottie-web-vue";
@@ -13,7 +13,7 @@ export default {
   },
   mixins: [checkScreen, elementSelector],
   components: {
-    // icon,
+    icon,
     LottieAnimation,
   },
   mounted() {
@@ -42,6 +42,12 @@ export default {
       this.qsa(".one-colors").forEach((container) => {
         container.style.width = "240px";
         container.style.overflow = "hidden";
+      });
+    },
+    updateAll() {
+      this.qs(".placeholder-devices").scrollIntoView();
+      this.qsa("#color_2").forEach((path) => {
+        path.setAttribute("fill", this.color);
       });
     },
   },
@@ -73,16 +79,16 @@ export default {
             <div class="card card--shadow-dark color-panel">
               <color-panel v-model="color" @change="change"></color-panel>
             </div>
-            <!-- <button class="update-button">
+            <button @click="updateAll()" class="update-button">
               <icon class="update-icon" name="update" />
               Update Colours
-            </button> -->
+            </button>
           </div>
         </div>
       </div>
       <lottie-animation
         class="placeholder-devices"
-        :animationData="require('@/assets/07_exportEverywhere/Devices.json')"
+        :animationData="require('@/assets/07_exportEverywhere/Devices_2.json')"
         :loop="true"
       />
       <!-- <img
