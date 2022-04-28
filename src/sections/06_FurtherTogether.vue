@@ -176,7 +176,7 @@ export default {
 <style lang="scss" scoped>
 .further-together {
   display: flex;
-  gap: var(--step-6);
+  gap: var(--step-7);
   z-index: 2;
   margin: auto;
   flex-direction: column-reverse;

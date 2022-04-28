@@ -92,7 +92,6 @@ export default {
         </div>
       </div>
       <lottie-animation
-        style="transform: scale(1.2)"
         class="placeholder-devices"
         :animationData="require('@/assets/07_exportEverywhere/Devices_2.json')"
         :loop="true"

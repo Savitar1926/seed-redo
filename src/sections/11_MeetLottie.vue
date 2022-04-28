@@ -45,10 +45,10 @@
               :loop="true"
             />
             <!-- <img src="@/assets/ravie/Asset 4.svg" style="width: 100%" /> -->
-            <h3 style="color: #00bcae">28 KB</h3>
-            <span style="color: #00bcae; padding-block: var(--step-0)"
-              >Lottie</span
-            >
+            <div style="padding-block: var(--step-0)">
+              <h3 style="color: #00bcae">28 KB</h3>
+              <span style="color: #00bcae">Lottie</span>
+            </div>
           </div>
         </div>
       </div>

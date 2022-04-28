@@ -55,15 +55,16 @@ export default {
     <div class="hero position-lift">
       <lottie-animation
         ref="textAnimation"
+        v-show="!mobile"
         aria-label="Create and ship animations for your products faster."
         class="text-animation animate-lead"
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
         :auto-play="true"
       />
-      <!-- <h1 class="animate-lead" v-show="mobile">
+      <h1 class="animate-lead" v-show="mobile">
         Create and ship animations for your products faster.
-      </h1> -->
+      </h1>
       <div class="hero__lead animate-lead">
         <p>
           Bring your websites and apps to life with the <br />
@@ -96,14 +97,14 @@ main {
   flex-direction: column;
   gap: var(--step-0);
   height: 100%;
-  padding-inline: var(--step-4);
+  // padding-inline: var(--step-0);
   padding-block: var(--step-0);
   justify-content: center;
   text-align: center;
   overflow-y: hidden;
   margin-inline: auto;
   height: 85vh;
-  margin-bottom: calc(-1 * var(--step-7));
+  margin-bottom: calc(-1.5 * var(--step-4));
 
   .hero {
     align-items: center;
@@ -115,12 +116,10 @@ main {
     .text-animation {
       height: 100%;
       max-width: 970px;
-      transform: scale(1.2);
     }
 
     h1 {
-      font-size: var(--step-1);
-      line-height: var(--step-2);
+      font-size: calc(var(--step-0) + 0.5rem);
     }
     &__lead {
       width: clamp(18.75rem, 12.41rem + 31.71vw, 35rem);
@@ -232,6 +231,11 @@ main {
 @media (min-width: 980px) {
   main {
     height: 95vh;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    margin-bottom: calc(-1.5 * var(--step-7));
   }
 }
 @media (max-height: 545px) {
