@@ -180,7 +180,6 @@ export default {
   margin: auto;
   flex-direction: column-reverse;
   position: relative;
-  gap: var(--step-4);
 
   .section {
     &-left {
@@ -188,6 +187,7 @@ export default {
       display: flex;
       flex-direction: column;
       gap: var(--step-0);
+      margin-top: var(--step-2);
       padding-bottom: var(--step-0);
 
       .section__title {
@@ -226,7 +226,6 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: var(--step--2);
 
         details {
           transition: all 120ms ease-in-out;
@@ -329,7 +328,9 @@ export default {
       &-left {
         width: 80%;
         padding-bottom: var(--step-0);
+        margin-top: 0;
         .sec__options {
+          gap: var(--step--2);
           max-width: 80%;
           min-width: 360px;
           width: 360px;
