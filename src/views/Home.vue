@@ -234,12 +234,11 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <div>
+          <div style="z-index: 10">
             <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
               style="
-                z-index: 10;
                 border-radius: var(--step-0);
                 overflow: hidden;
                 pointer-events: none;
@@ -505,11 +504,11 @@ main {
     transform-origin: bottom;
   }
 
-  @media (max-width: 550px) {
-    .bg__pattern {
-      transform-origin: top;
-      transform: scale(1.5);
-    }
-  }
+  // @media (max-width: 550px) {
+  //   .bg__pattern {
+  //     transform-origin: top;
+  //     transform: scale(1.5);
+  //   }
+  // }
 }
 </style>

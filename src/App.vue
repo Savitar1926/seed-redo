@@ -40,7 +40,7 @@ export default {
         const titleHighlight = document.querySelector("#title-highlight");
         const nav = document.querySelector(".nav");
         const colorLinks = document.querySelectorAll("[data-link]");
-        const mobileIcon = document.querySelector(".nav__mobile");
+        const mobileIcon = document.querySelectorAll(".nav__mobile");
         const bodyRect = document.body.getBoundingClientRect();
         const darkRect = darkSection.getBoundingClientRect();
         const integrateRect = integrateSection.getBoundingClientRect();
@@ -52,7 +52,9 @@ export default {
         ) {
           nav.style.background = "rgba(238, 239, 243, 0.2)";
           nav.style.boxShadow = "-12px 12px 60px rgba(92, 97, 124, 0.02)";
-          mobileIcon.style.color = "var(--dark)";
+          mobileIcon.forEach((nav) => {
+            nav.style.color = "var(--dark)";
+          });
           colorLinks.forEach((link) => {
             link.style.color = "var(--dark)";
           });
@@ -65,7 +67,9 @@ export default {
           nav.style.background = "rgba(43 43 43 / 0.8)";
           nav.style.color = "var(--primary)";
           nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
-          mobileIcon.style.color = "var(--primary)";
+          mobileIcon.forEach((nav) => {
+            nav.style.color = "var(--primary)";
+          });
           titleHighlight.style.letterSpacing = "0rem";
           titleHighlight.style.color = "#ffb92a";
           colorLinks.forEach((link) => {
