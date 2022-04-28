@@ -172,7 +172,7 @@ export default {
                   pointer-events: none;
                   padding: 12px;
                   margin-top: var(--step--4);
-                  color: #6770ad;
+                  color: #c6cee0;
                   font-size: var(--step--4);
                   text-align: center;
                   font-weight: bold;
