@@ -37,17 +37,17 @@ export default {
 <style lang="scss" scoped>
 .main_startnow {
   color: var(--dark);
-  padding-block: var(--step-6);
+  padding-top: var(--step-6);
   padding-inline: var(--step-4);
   margin-inline: auto;
 
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: 0.5fr max-content;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: var(--step-0);
+    gap: var(--step-4);
     grid-auto-flow: row;
     justify-items: stretch;
     grid-template-areas:
@@ -135,17 +135,16 @@ export default {
 
   .col__two {
     grid-area: col__two;
-    position: relative;
-
     .starnow-image {
-      position: absolute;
-      left: 0;
-      z-index: 1;
+      width: 100%;
+      transform: scale(1.2);
     }
   }
 }
 @media (min-width: 980px) {
   .main_startnow {
+    padding-block: var(--step-6);
+
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -161,6 +160,14 @@ export default {
 
     .col__two {
       grid-area: col__two;
+      position: relative;
+
+      .starnow-image {
+        width: unset;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+      }
     }
   }
 }
