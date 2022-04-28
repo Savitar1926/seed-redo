@@ -227,6 +227,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: var(--step--2);
 
         details {
           transition: all 120ms ease-in-out;
