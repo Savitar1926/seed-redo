@@ -63,7 +63,7 @@ export default {
         :auto-play="true"
       />
       <h1 class="animate-lead" v-show="mobile">
-        Create and ship animations for your products faster.
+        Create and ship animations to your products faster.
       </h1>
       <div class="hero__lead animate-lead">
         <p>
