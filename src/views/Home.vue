@@ -267,10 +267,11 @@ export default {
 
         <!-- Cursor Animation -->
         <lottie-animation
+          id="cursor"
           :auto-play="false"
           v-show="!mobile"
           ref="cursor"
-          class="cursor_movement animate-lead"
+          class="hidden cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
         />
@@ -335,6 +336,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.hidden {
+  display: none;
+}
 main {
   overflow-x: hidden;
   .navigation {
