@@ -1,4 +1,4 @@
-  <script>
+<script>
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
@@ -66,8 +66,6 @@ export default {
 };
 </script>
 
-
-
 <template>
   <div class="usecase-parent limiter-width">
     <div class="section section_left">
@@ -81,11 +79,7 @@ export default {
             </button>
           </div>
           <div
-            class="
-              usecase-hero usecase-animate
-              card card--shadow
-              button-relative
-            "
+            class="usecase-hero usecase-animate card card--shadow button-relative"
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -111,12 +105,6 @@ export default {
                 />
               </div>
             </div>
-
-            <button
-              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-            >
-              Open in Editor
-            </button>
             <!-- Usecase Content  -->
           </div>
         </div>
@@ -129,11 +117,6 @@ export default {
             v-show="!mobile"
             class="usecase-phone usecase-animate card button-relative"
           >
-            <button
-              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-            >
-              Open in Editor
-            </button>
             <!-- Usecase Content  -->
             <div class="usecase-header">
               <icon name="edit" class="arrow" />
@@ -164,12 +147,7 @@ export default {
         <div class="col-2">
           <div class="container-cases">
             <div
-              class="
-                usecase-loading_1
-                usecase-animate
-                card card--shadow
-                button-relative
-              "
+              class="usecase-loading_1 usecase-animate card card--shadow button-relative"
             >
               <!-- Usecase Content  -->
               <div class="usecase-header">
@@ -200,21 +178,10 @@ export default {
                 </div>
               </div>
               <!-- Usecase Content  -->
-
-              <button
-                onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-              >
-                Open in Editor
-              </button>
             </div>
             <div
               v-show="!mobile"
-              class="
-                usecase-loading_2
-                usecase-animate
-                card card--shadow
-                button-relative
-              "
+              class="usecase-loading_2 usecase-animate card card--shadow button-relative"
             >
               <!-- Usecase Content  -->
               <div class="usecase-header">
@@ -245,20 +212,10 @@ export default {
                 </div>
               </div>
               <!-- Usecase Content  -->
-
-              <button
-                onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-              >
-                Open in Editor
-              </button>
             </div>
           </div>
           <div
-            class="
-              usecase-headphones usecase-animate
-              card card--shadow
-              button-relative
-            "
+            class="usecase-headphones usecase-animate card card--shadow button-relative"
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -285,19 +242,10 @@ export default {
               </div>
             </div>
             <!-- Usecase Content  -->
-            <button
-              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-            >
-              Open in Editor
-            </button>
           </div>
           <div
             v-show="!mobile"
-            class="
-              usecase-notification usecase-animate
-              card card--shadow
-              button-relative
-            "
+            class="usecase-notification usecase-animate card card--shadow button-relative"
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -324,11 +272,6 @@ export default {
               </div>
             </div>
             <!-- Usecase Content  -->
-            <button
-              onclick="window.open('https://lottielab.io/users/sign_up').focus();"
-            >
-              Open in Editor
-            </button>
           </div>
         </div>
       </div>
