@@ -266,14 +266,14 @@ export default {
         </section>
 
         <!-- Cursor Animation -->
-        <lottie-animation
+        <!-- <lottie-animation
           :auto-play="false"
           v-show="!mobile"
           ref="cursor"
           class="cursor_movement animate-lead"
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
-        />
+        /> -->
         <Pattern2 class="bg__pattern" />
       </section>
       <section class="section__simple">
