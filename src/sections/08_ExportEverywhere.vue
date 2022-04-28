@@ -92,6 +92,7 @@ export default {
         </div>
       </div>
       <lottie-animation
+        style="transform: scale(1.2)"
         class="placeholder-devices"
         :animationData="require('@/assets/07_exportEverywhere/Devices_2.json')"
         :loop="true"
@@ -135,11 +136,12 @@ export default {
 .export-everywhere {
   display: flex;
   flex-direction: column;
-  gap: var(--step-2);
+  // gap: var(--step-2);
   color: var(--primary);
   text-align: flex-start;
   padding-inline: var(--step-4);
-  padding-block: var(--step-0);
+  padding-top: var(--step-0);
+  padding-bottom: var(--step-4);
 
   .slide {
     display: flex;
@@ -164,7 +166,7 @@ export default {
   .export-section {
     display: flex;
     flex-direction: column;
-    gap: var(--step--2);
+    gap: calc(var(--step-7) + 5rem);
     align-items: center;
     .main-animation {
       width: 80%;

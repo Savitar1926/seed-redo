@@ -33,6 +33,7 @@ export default {
   width: 100%;
   margin-inline: auto;
   color: var(--primary);
+  padding-block: var(--step-4);
 }
 
 .card {

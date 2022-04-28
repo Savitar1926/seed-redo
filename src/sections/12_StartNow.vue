@@ -60,7 +60,7 @@ export default {
     grid-area: col__one;
     display: flex;
     flex-direction: column;
-    gap: var(--step-0);
+    gap: var(--step-4);
     h1 {
       font-size: var(--step-2);
       color: white; // white

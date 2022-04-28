@@ -17,39 +17,36 @@ export default {
     IntersectionObserver,
   },
   mounted() {
-    this.heroTextIntersection();
+    // this.heroTextIntersection();
   },
   methods: {
-    heroTextIntersection() {
-      const el = document.querySelector("#pass-heroText");
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          entry.boundingClientRect.top;
-
-          if (entry.isIntersecting) {
-            this.$refs.textAnimation.play();
-          }
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.textAnimation.pause();
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.textAnimation.play();
-          } else {
-            // pause animation
-            this.$refs.textAnimation.pause();
-          }
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-    },
+    // heroTextIntersection() {
+    //   const el = document.querySelector("#pass-heroText");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.isIntersecting) {
+    //         this.$refs.textAnimation.play();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+    //         // pause animation
+    //         this.$refs.textAnimation.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         this.$refs.textAnimation.play();
+    //       } else {
+    //         // pause animation
+    //         this.$refs.textAnimation.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
   },
 };
 </script>
@@ -58,16 +55,15 @@ export default {
     <div class="hero position-lift">
       <lottie-animation
         ref="textAnimation"
-        v-show="!mobile"
         aria-label="Create and ship animations for your products faster."
         class="text-animation animate-lead"
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
-        :auto-play="false"
+        :auto-play="true"
       />
-      <h1 class="animate-lead" v-show="mobile">
+      <!-- <h1 class="animate-lead" v-show="mobile">
         Create and ship animations for your products faster.
-      </h1>
+      </h1> -->
       <div class="hero__lead animate-lead">
         <p>
           Bring your websites and apps to life with the <br />
@@ -119,6 +115,7 @@ main {
     .text-animation {
       height: 100%;
       max-width: 970px;
+      transform: scale(1.2);
     }
 
     h1 {
@@ -239,7 +236,7 @@ main {
 }
 @media (max-height: 545px) {
   main {
-    margin-top: var(--step-7);
+    margin-top: var(--step-1);
   }
 }
 </style>

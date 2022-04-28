@@ -86,7 +86,7 @@ export default {
     h1 {
       font-size: var(--step-3);
       color: var(--purple); // purple
-      width: 70%;
+      // width: 70%;
     }
   }
 

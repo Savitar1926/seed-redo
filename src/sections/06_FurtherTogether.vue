@@ -176,7 +176,7 @@ export default {
 <style lang="scss" scoped>
 .further-together {
   display: flex;
-  gap: var(--step-5);
+  gap: var(--step-6);
   z-index: 2;
   margin: auto;
   flex-direction: column-reverse;
@@ -282,7 +282,7 @@ export default {
     align-self: flex-end;
     padding-inline: var(--step-4);
     .lottie-container {
-      border: rgba(43, 43, 43, 0.5) solid 14px;
+      border: rgba(43, 43, 43, 0.5) solid calc(var(--step--5) - 0.2rem);
       background: rgba(34, 34, 34, 0.9);
       backdrop-filter: blur(16px);
       border-radius: var(--step-0);

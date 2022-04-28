@@ -185,8 +185,8 @@ export default {
         scroll.preventDefault();
 
         // Center lottie scroll to place
-        let translateLottie = scrollTop - 600 / 1.5;
-        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.75);
+        let translateLottie = scrollTop - 600 / 1.8;
+        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.65);
         console.log(translateLottie);
 
         if (scrollTop > 950) {
@@ -234,7 +234,7 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <div style="z-index: 10">
+          <div>
             <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
@@ -366,7 +366,7 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: var(--step-4);
+      // gap: var(--step-4);
     }
     &__usecases {
       background: var(--primary);
@@ -405,11 +405,15 @@ main {
       display: flex;
       flex-direction: column;
       height: max-content;
-      gap: calc(var(--step-5) + 5rem);
+      gap: var(--step-2);
       overflow: hidden;
       padding-top: var(--step-5);
       padding-bottom: var(--step-4);
       position: relative;
+
+      @media (min-width: 390px) {
+        gap: var(--step-7);
+      }
     }
 
     &__testimonials {
