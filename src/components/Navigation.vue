@@ -29,7 +29,7 @@ export default {
         <div class="nav__home">
           <router-link to="/" class="links logo-container" data-link>
             <icon name="logo" class="logo" />
-            Lottielab
+            <span v-show="!mobile"> Lottielab </span>
           </router-link>
           <router-link
             to="/join-us"
@@ -73,20 +73,37 @@ export default {
             >Sign Up for Free</router-link
           >
         </ul>
-        <button @click="toggleMobileNav" v-show="mobile">
-          <icon
-            v-show="!mobileNav"
-            name="menu"
-            class="nav__mobile"
-            id="nav_icon"
-          />
-          <icon
-            v-show="mobileNav"
-            name="close"
-            class="nav__mobile"
-            id="nav_icon"
-          />
-        </button>
+        <div
+          v-show="mobile"
+          style="
+            display: flex;
+            gap: var(--step-0);
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <router-link
+            to="/sign-up"
+            id="nav_link"
+            class="sign-up links links-spaced"
+            style="background: var(--dark); color: white"
+            >Sign Up
+          </router-link>
+          <button @click="toggleMobileNav">
+            <icon
+              v-show="!mobileNav"
+              name="menu"
+              class="nav__mobile"
+              id="nav_icon"
+            />
+            <icon
+              v-show="mobileNav"
+              name="close"
+              class="nav__mobile"
+              id="nav_icon"
+            />
+          </button>
+        </div>
         <transition name="mobile-nav">
           <ul class="mobile-nav" v-show="mobileNav">
             <router-link to="/join-us" class="link">Join Us</router-link>

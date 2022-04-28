@@ -98,8 +98,13 @@ export default {
         align-items: center;
         gap: var(--step--2);
         .arrow {
+          width: 40px !important;
           display: flex;
-          stroke: white;
+          stroke: white; // purple
+
+          svg {
+            width: 40px !important;
+          }
         }
       }
 

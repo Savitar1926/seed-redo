@@ -55,9 +55,9 @@ export default {
           mobileIcon.forEach((nav) => {
             nav.style.color = "var(--dark)";
           });
-          colorLinks.forEach((link) => {
-            link.style.color = "var(--dark)";
-          });
+          // colorLinks.forEach((link) => {
+          //   link.style.color = "var(--dark)";
+          // });
           if (!this.mobile) {
             titleHighlight.style.letterSpacing = "var(--step--2)";
           }

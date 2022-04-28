@@ -22,7 +22,7 @@ export default {
   width: 100vw;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 600px) {
   .parent {
     transform-origin: top;
     transform: scale(1.95);

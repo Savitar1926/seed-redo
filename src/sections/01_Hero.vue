@@ -97,8 +97,8 @@ main {
   flex-direction: column;
   gap: var(--step-0);
   height: 100%;
-  // padding-inline: var(--step-0);
-  padding-block: var(--step-0);
+  padding-inline: var(--step-2);
+  padding-block: var(--step-1);
   justify-content: center;
   text-align: center;
   overflow-y: hidden;
@@ -235,7 +235,7 @@ main {
 }
 @media (max-width: 600px) {
   main {
-    margin-bottom: calc(-1.5 * var(--step-7));
+    margin-bottom: calc(-1 * var(--step-7));
   }
 }
 @media (max-height: 545px) {
