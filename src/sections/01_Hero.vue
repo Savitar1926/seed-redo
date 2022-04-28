@@ -58,8 +58,8 @@ export default {
     <div class="hero position-lift">
       <lottie-animation
         ref="textAnimation"
-        aria-label="Create and ship animations for your products faster."
         v-show="!mobile"
+        aria-label="Create and ship animations for your products faster."
         class="text-animation animate-lead"
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"

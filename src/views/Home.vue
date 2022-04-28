@@ -234,7 +234,7 @@ export default {
         <section class="section__hero">
           <!--  Play Hero animation -->
           <Hero />
-          <div>
+          <div style="z-index: 10">
             <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
@@ -353,6 +353,8 @@ main {
     flex-direction: column;
     gap: var(--step-5);
     background: var(--primary);
+    position: relative;
+    overflow-x: hidden;
 
     &__light {
       display: flex;
@@ -497,6 +499,13 @@ main {
     pointer-events: none;
     z-index: 999;
     transform-origin: bottom;
+  }
+
+  @media (max-width: 550px) {
+    .bg__pattern {
+      transform-origin: top;
+      transform: scale(1.5);
+    }
   }
 }
 </style>

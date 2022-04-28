@@ -1,6 +1,7 @@
 <script>
 import icon from "@/assets/Icons.vue";
 import checkScreen from "@/mixins/checkScreen";
+// import { LottieInteractive } from "lottie-interactive";
 
 export default {
   name: "NavBar",
@@ -73,7 +74,18 @@ export default {
           >
         </ul>
         <button @click="toggleMobileNav" v-show="mobile">
-          <icon name="menu" class="nav__mobile" id="nav_icon" />
+          <icon
+            v-show="!mobileNav"
+            name="menu"
+            class="nav__mobile"
+            id="nav_icon"
+          />
+          <icon
+            v-show="mobileNav"
+            name="close"
+            class="nav__mobile"
+            id="nav_icon"
+          />
         </button>
         <transition name="mobile-nav">
           <ul class="mobile-nav" v-show="mobileNav">
