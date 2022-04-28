@@ -168,7 +168,7 @@ export default {
         left: 0;
         z-index: 1;
         margin-top: var(--step-1);
-        margin-left: var(--step-1);
+        margin-left: var(--step-6);
       }
     }
   }
