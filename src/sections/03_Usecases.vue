@@ -120,6 +120,7 @@ export default {
           <div
             v-show="!mobile"
             class="usecase-phone usecase-animate card button-relative"
+            style="overflow: hidden"
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -130,6 +131,48 @@ export default {
                 </span>
                 <span class="usecase-wrap usecase-filesize"> 14 KB </span>
               </div>
+            </div>
+
+            <div
+              style="
+                padding-top: 470px;
+                display: flex;
+                gap: var(--step--5);
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  width: 100%;
+                  background: #d8deeb;
+                  color: #d8deeb;
+                  border-radius: var(--step-0);
+                  pointer-events: none;
+                  display: inline-block;
+                  padding: 8px;
+                "
+              />
+              <div
+                style="
+                  width: 70%;
+                  background: #d8deeb;
+                  color: #d8deeb;
+                  border-radius: var(--step-0);
+                  pointer-events: none;
+                  padding: 8px;
+                "
+              />
+              <div
+                style="
+                  width: 50%;
+                  background: #d8deeb;
+                  color: #d8deeb;
+                  border-radius: var(--step--4);
+                  pointer-events: none;
+                  padding: 24px;
+                  margin-top: var(--step--1);
+                "
+              />
             </div>
             <!-- <div
               class="usecase-lottie"
