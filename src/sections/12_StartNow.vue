@@ -163,11 +163,12 @@ export default {
       position: relative;
 
       .starnow-image {
-        width: 960px !important;
+        width: unset;
         position: absolute;
         left: 0;
         z-index: 1;
-        margin-top: var(--step-0);
+        margin-top: var(--step-1);
+        margin-left: var(--step-1);
       }
     }
   }
