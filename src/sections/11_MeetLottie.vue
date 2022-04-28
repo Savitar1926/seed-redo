@@ -13,7 +13,6 @@
           >
           <button
             onclick="window.open('https://airbnb.design/lottie/').focus()"
-            class="full"
           >
             Learn more
             <icon name="arrow" class="arrow" />
@@ -136,8 +135,13 @@ export default {
         color: #00bcae;
 
         .arrow {
+          width: 40px !important;
           display: flex;
           stroke: #00bcae;
+
+          svg {
+            width: 40px !important;
+          }
         }
       }
     }

@@ -244,8 +244,13 @@ export default {
         gap: var(--step--1);
 
         .update-icon {
+          width: 15px !important;
           display: flex;
           align-self: center;
+
+          svg {
+            width: 15px !important;
+          }
         }
       }
     }

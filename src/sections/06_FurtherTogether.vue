@@ -13,7 +13,6 @@
         >
         <button
           onclick="window.open('https://lottielab.io/users/sign_up').focus()"
-          class="full"
         >
           Get Started
           <icon name="arrow" class="arrow" />
@@ -210,8 +209,14 @@ export default {
           color: var(--yellow); // yellow
 
           .arrow {
+            display: inline-block;
+            width: 40px !important;
             display: flex;
-            stroke: var(--yellow); // yellow
+            stroke: var(--yellow); // purple
+
+            svg {
+              width: 40px !important;
+            }
           }
         }
       }

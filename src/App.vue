@@ -245,10 +245,10 @@ button {
   }
 }
 
-.full {
-  width: max-content;
-  height: max-content;
-}
+// .full {
+//   width: max-content;
+//   height: max-content;
+// }
 
 .position-lift {
   position: relative;

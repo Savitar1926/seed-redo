@@ -73,7 +73,7 @@ export default {
         <div class="col-1-left">
           <div class="section-title section__title usecase-animate">
             <h1>Animations for all scenarios</h1>
-            <button class="full">
+            <button>
               Start with Templates
               <icon name="arrow" class="arrow" />
             </button>
@@ -438,13 +438,12 @@ export default {
             color: var(--purple); // purple
 
             .arrow {
-              display: inline-block;
-              width: 100% !important;
+              width: 40px !important;
               display: flex;
               stroke: var(--purple); // purple
 
               svg {
-                width: 37px !important;
+                width: 40px !important;
               }
             }
           }
@@ -572,12 +571,12 @@ export default {
 
               .arrow {
                 display: inline-block;
-                width: 100% !important;
+                width: 40px !important;
                 display: flex;
                 stroke: var(--purple); // purple
 
                 svg {
-                  width: 37px !important;
+                  width: 40px !important;
                 }
               }
             }
