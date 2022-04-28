@@ -53,7 +53,7 @@ export default {
   width: 62.5vw;
   height: 62.5vw;
   border-radius: 14.15vw;
-  border: clamp(0.03rem, calc(-0.03rem + 0.3vw), 0.19rem) solid #e1e4f0;
+  border: 2px solid #e1e4f0;
   left: 20vw;
   top: 20vw;
   -webkit-animation: anim_pattern_diamond_2 4s ease 350ms infinite;
@@ -67,7 +67,7 @@ export default {
   width: 24.86vw;
   height: 24.86vw;
   border-radius: 5.68vw;
-  border: clamp(0.03rem, calc(-0.03rem + 0.3vw), 0.19rem) solid #e1e4f0;
+  border: 2px solid #e1e4f0;
   left: 40vw;
   top: 40vw;
   -webkit-animation: anim_pattern_diamond_3 4s ease 600ms infinite;
