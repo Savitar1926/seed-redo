@@ -235,7 +235,7 @@ main {
 }
 @media (max-width: 600px) {
   main {
-    margin-bottom: calc(-1.5 * var(--step-7));
+    margin-bottom: calc(-1.65 * var(--step-7));
   }
 }
 @media (max-height: 545px) {
