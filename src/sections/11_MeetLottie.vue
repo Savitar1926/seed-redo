@@ -160,6 +160,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: max-content;
       h3 {
         font-size: var(--step-0);
       }

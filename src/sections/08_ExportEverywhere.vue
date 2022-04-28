@@ -165,7 +165,10 @@ export default {
   .export-section {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--step-7) + 2rem);
+    gap: var(--step-4);
+    @media (max-width: 600px) {
+      gap: var(--step-7);
+    }
     align-items: center;
     .main-animation {
       width: 80%;

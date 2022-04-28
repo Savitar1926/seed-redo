@@ -33,7 +33,7 @@ export default {
   width: 100%;
   margin-inline: auto;
   color: var(--primary);
-  padding-block: var(--step-4);
+  padding-block: var(--step-0);
 }
 
 .card {
@@ -57,6 +57,26 @@ export default {
     "anim__sec"
     "anim__third";
   padding-inline: var(--step-4);
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content max-content;
+    grid-auto-rows: 1fr;
+    gap: 32px 32px;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    grid-template-areas:
+      "anim__first"
+      "anim__sec"
+      "anim__third";
+    padding-inline: var(--step-4);
+  }
+  .anim {
+    height: max-content !important;
+  }
 }
 .anim {
   height: 250px;
