@@ -120,6 +120,7 @@ main {
 
     h1 {
       font-size: calc(var(--step-0) + 0.5rem);
+      line-height: 1.3;
     }
     &__lead {
       width: clamp(18.75rem, 12.41rem + 31.71vw, 35rem);
