@@ -97,16 +97,16 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             // pause animation
-            this.$refs.cursor.pause();
+            // this.$refs.cursor.pause();
             this.$refs.pattern.pause();
           }
           if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
             // play animation
-            this.$refs.cursor.play();
+            // this.$refs.cursor.play();
             this.$refs.pattern.play();
           } else {
             // pause animation
-            this.$refs.cursor.pause();
+            // this.$refs.cursor.pause();
             this.$refs.pattern.pause();
           }
         },
@@ -146,7 +146,7 @@ export default {
     lottieScroll() {
       // const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
-      const cursorelement = document.querySelector(".cursor_movement");
+      // const cursorelement = document.querySelector(".cursor_movement");
       const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
       const elemRect = document
         .querySelector("#usecasephone")
@@ -177,11 +177,11 @@ export default {
         // let scaleLottie = 2.0 - scrollTop / (10 * 35);
         let scaleDown = 1.0 - scrollTop / (10 * 70);
         let transUp = 1.0 - scrollTop / (10 * 50);
-        let cursorDown = 1.0 - scrollTop / (10 * 130);
-        cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
+        // let cursorDown = 1.0 - scrollTop / (10 * 130);
+        // cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
         // transUp = Math.min(Math.max(0, transUp), offset);
-        cursorelement.style.transform = `scale(${cursorDown}) `;
-        cursorelement.style.transition = `transform 900ms linear`;
+        // cursorelement.style.transform = `scale(${cursorDown}) `;
+        // cursorelement.style.transition = `transform 900ms linear`;
         scroll.preventDefault();
 
         // Center lottie scroll to place
