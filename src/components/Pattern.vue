@@ -40,7 +40,7 @@ export default {
   width: 100vw;
   height: 100vw;
   border-radius: 22.35vw;
-  border: clamp(0.03rem, calc(-0.03rem + 0.3vw), 0.19rem) solid #e1e4f0;
+  border: 2px solid #e1e4f0;
   margin: 0px auto;
   -webkit-animation: anim_pattern_diamond_1 4s ease infinite;
   -moz-animation: anim_pattern_diamond_1 4s ease infinite;
