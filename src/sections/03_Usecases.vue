@@ -139,6 +139,7 @@ export default {
                 display: flex;
                 gap: var(--step--5);
                 flex-direction: column;
+                align-items: center;
               "
             >
               <div
@@ -149,7 +150,7 @@ export default {
                   border-radius: var(--step-0);
                   pointer-events: none;
                   display: inline-block;
-                  padding: 8px;
+                  padding: 10px;
                 "
               />
               <div
@@ -159,7 +160,7 @@ export default {
                   color: #d8deeb;
                   border-radius: var(--step-0);
                   pointer-events: none;
-                  padding: 8px;
+                  padding: 10px;
                 "
               />
               <div
@@ -169,10 +170,16 @@ export default {
                   color: #d8deeb;
                   border-radius: var(--step--4);
                   pointer-events: none;
-                  padding: 24px;
-                  margin-top: var(--step--1);
+                  padding: 12px;
+                  margin-top: var(--step--4);
+                  color: #6770ad;
+                  font-size: var(--step--4);
+                  text-align: center;
+                  font-weight: bold;
                 "
-              />
+              >
+                Buy product
+              </div>
             </div>
             <!-- <div
               class="usecase-lottie"
