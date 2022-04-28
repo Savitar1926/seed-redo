@@ -313,7 +313,7 @@ export default {
   flex-direction: column;
   margin-inline: auto;
   padding-inline: var(--step-4);
-
+  z-index: 2;
   .arrow {
     display: inline-block;
     width: 37px !important;
