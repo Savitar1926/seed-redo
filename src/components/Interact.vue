@@ -83,10 +83,7 @@ export default {
 
 <template>
   <div class="preloading">
-    <div
-      style="width: 210px; margin-inline: auto"
-      class="preloading-icon"
-    ></div>
+    <div style="margin-inline: auto" class="preloading-icon"></div>
   </div>
 </template>
 

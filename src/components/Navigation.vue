@@ -155,6 +155,11 @@ export default {
       .logo {
         color: var(--dark);
         transform: scale(0.8);
+        width: 37px !important;
+
+        svg {
+          width: 37px !important;
+        }
       }
     }
   }

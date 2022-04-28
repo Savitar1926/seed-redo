@@ -79,7 +79,11 @@ export default {
             </button>
           </div>
           <div
-            class="usecase-hero usecase-animate card card--shadow button-relative"
+            class="
+              usecase-hero usecase-animate
+              card card--shadow
+              button-relative
+            "
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -147,7 +151,12 @@ export default {
         <div class="col-2">
           <div class="container-cases">
             <div
-              class="usecase-loading_1 usecase-animate card card--shadow button-relative"
+              class="
+                usecase-loading_1
+                usecase-animate
+                card card--shadow
+                button-relative
+              "
             >
               <!-- Usecase Content  -->
               <div class="usecase-header">
@@ -181,7 +190,12 @@ export default {
             </div>
             <div
               v-show="!mobile"
-              class="usecase-loading_2 usecase-animate card card--shadow button-relative"
+              class="
+                usecase-loading_2
+                usecase-animate
+                card card--shadow
+                button-relative
+              "
             >
               <!-- Usecase Content  -->
               <div class="usecase-header">
@@ -215,7 +229,11 @@ export default {
             </div>
           </div>
           <div
-            class="usecase-headphones usecase-animate card card--shadow button-relative"
+            class="
+              usecase-headphones usecase-animate
+              card card--shadow
+              button-relative
+            "
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -245,7 +263,11 @@ export default {
           </div>
           <div
             v-show="!mobile"
-            class="usecase-notification usecase-animate card card--shadow button-relative"
+            class="
+              usecase-notification usecase-animate
+              card card--shadow
+              button-relative
+            "
           >
             <!-- Usecase Content  -->
             <div class="usecase-header">
@@ -291,6 +313,17 @@ export default {
   flex-direction: column;
   margin-inline: auto;
   padding-inline: var(--step-4);
+
+  .arrow {
+    display: inline-block;
+    width: 37px !important;
+    display: flex;
+    stroke: var(--purple); // purple
+
+    svg {
+      width: 37px !important;
+    }
+  }
 
   .button-relative {
     position: relative;
@@ -346,6 +379,7 @@ export default {
     display: flex;
     gap: var(--step--2);
     align-items: center;
+
     .usecase-title {
       color: var(--purple); // purple
       font-weight: var(--semi-bold);
@@ -404,8 +438,14 @@ export default {
             color: var(--purple); // purple
 
             .arrow {
+              display: inline-block;
+              width: 100% !important;
               display: flex;
               stroke: var(--purple); // purple
+
+              svg {
+                width: 37px !important;
+              }
             }
           }
         }
@@ -531,8 +571,14 @@ export default {
               color: var(--purple); // purple
 
               .arrow {
+                display: inline-block;
+                width: 100% !important;
                 display: flex;
                 stroke: var(--purple); // purple
+
+                svg {
+                  width: 37px !important;
+                }
               }
             }
           }

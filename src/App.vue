@@ -7,6 +7,7 @@
 
 <script>
 // import Navigation from "@/components/Navigation.vue";
+import checkScreen from "@/mixins/checkScreen";
 
 export default {
   data() {
@@ -15,6 +16,8 @@ export default {
   components: {
     // Navigation,
   },
+  mixins: [checkScreen],
+
   created() {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.changeColourNavbar, false)
@@ -53,7 +56,9 @@ export default {
           colorLinks.forEach((link) => {
             link.style.color = "var(--dark)";
           });
-          titleHighlight.style.letterSpacing = "var(--step--2)";
+          if (!this.mobile) {
+            titleHighlight.style.letterSpacing = "var(--step--2)";
+          }
           titleHighlight.style.color = "white";
           return;
         } else {
