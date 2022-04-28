@@ -6,7 +6,7 @@
         <div class="button">
           <button
             onclick="window.open('https://lottielab.io/users/sign_up').focus()"
-            class="button__early-access animate-lead"
+            class="button__early-access animate-lead full"
           >
             Get early access
             <icon name="arrow" class="arrow" />

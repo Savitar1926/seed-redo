@@ -12,6 +12,7 @@
             App Store.</span
           >
           <button
+            class="full"
             onclick="window.open('https://airbnb.design/lottie/').focus()"
           >
             Learn more
@@ -93,6 +94,11 @@ export default {
   margin: auto;
   overflow: hidden;
   padding: var(--step-4);
+
+  .sample_container {
+    width: fit-content;
+    height: fit-content;
+  }
 
   .container {
     display: grid;

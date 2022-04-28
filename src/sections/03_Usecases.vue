@@ -73,7 +73,7 @@ export default {
         <div class="col-1-left">
           <div class="section-title section__title usecase-animate">
             <h1>Animations for all scenarios</h1>
-            <button>
+            <button class="full">
               Start with Templates
               <icon name="arrow" class="arrow" />
             </button>

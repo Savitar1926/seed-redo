@@ -14,6 +14,7 @@
                 way around - no worries.</span
               >
               <button
+                class="full"
                 onclick="window.open('https://lottielab.io/users/sign_up').focus()"
               >
                 Get Started
