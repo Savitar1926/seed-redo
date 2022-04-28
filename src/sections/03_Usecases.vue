@@ -127,7 +127,7 @@ export default {
               <icon name="edit" class="arrow" />
               <div class="usecase-title-container">
                 <span class="usecase-wrap usecase-title">
-                  Onboarding Animation
+                  E-Commerce Animation
                 </span>
                 <span class="usecase-wrap usecase-filesize"> 14 KB </span>
               </div>
