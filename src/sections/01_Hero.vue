@@ -104,7 +104,7 @@ main {
   overflow-y: hidden;
   margin-inline: auto;
   height: 85vh;
-  margin-bottom: calc(-1.5 * var(--step-4));
+  margin-bottom: calc(-1.2 * var(--step-4));
 
   .hero {
     align-items: center;
@@ -235,7 +235,7 @@ main {
 }
 @media (max-width: 600px) {
   main {
-    margin-bottom: calc(-1 * var(--step-7));
+    margin-bottom: calc(-1.5 * var(--step-7));
   }
 }
 @media (max-height: 545px) {
