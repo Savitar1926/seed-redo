@@ -186,7 +186,7 @@ export default {
 
         // Center lottie scroll to place
         let translateLottie = scrollTop - 600 / 1.8;
-        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.65);
+        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.5);
         console.log(translateLottie);
 
         if (scrollTop > 950) {
