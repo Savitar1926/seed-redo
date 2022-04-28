@@ -40,6 +40,9 @@ export default {
           <router-link to="/community">
             <icon name="discord" class="logo"
           /></router-link>
+          <router-link to="/linkedin">
+            <icon name="linkedin" class="logo"
+          /></router-link>
         </div>
         <span style="color: #585858"
           >© 2022 LottieLab Ltd. <br />

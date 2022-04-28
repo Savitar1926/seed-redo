@@ -54,6 +54,13 @@ const routes = [
     }
   },
   {
+    path: '/linkedin',
+    name: 'linkedin',
+    beforeEnter() {
+    window.open('https://www.linkedin.com/company/lottielab/').focus();
+    }
+  },
+  {
     path: '/sign-up',
     name: 'instagram',
     beforeEnter() {
