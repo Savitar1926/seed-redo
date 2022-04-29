@@ -6,7 +6,7 @@ import LottieAnimation from "lottie-web-vue";
 import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 import HeroScroll from "@/components/HeroScroll.vue";
-import Pattern2 from "@/components/Pattern.vue";
+// import Pattern2 from "@/components/Pattern.vue";
 
 // Sections
 import Hero from "@/sections/01_Hero.vue";
@@ -43,7 +43,7 @@ export default {
     HeroScroll,
     // Plugin
     LottieAnimation,
-    Pattern2,
+    // Pattern2,
     // Components
     Navigation,
     IntersectionObserver,
@@ -273,7 +273,7 @@ export default {
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
         /> -->
-        <Pattern2 class="bg__pattern" />
+        <!-- <Pattern2 class="bg__pattern" /> -->
       </section>
       <section class="section__simple">
         <Simple />
