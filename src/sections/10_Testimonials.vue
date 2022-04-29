@@ -12,7 +12,10 @@
           <div class="profile__container">
             <div class="profile">
               <div class="profile__image">
-                <img src="@/assets/08_testimonials/FlorianBolter-UIgrad.jpeg" />
+                <img
+                  loading="lazy"
+                  src="@/assets/08_testimonials/FlorianBolter-UIgrad.jpeg"
+                />
                 <div />
               </div>
               <div class="profile__info">

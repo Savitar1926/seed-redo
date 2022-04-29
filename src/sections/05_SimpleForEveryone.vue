@@ -54,6 +54,7 @@
               <div class="role__container">
                 <div class="profile__container">
                   <img
+                    loading="lazy"
                     src="@/assets/04_simple/1.png"
                     class="profile__animation"
                   />
@@ -82,6 +83,7 @@
               <div class="role__container">
                 <div class="profile__container">
                   <img
+                    loading="lazy"
                     src="@/assets/04_simple/2.png"
                     class="profile__animation"
                   />
@@ -109,6 +111,7 @@
               <div class="role__container">
                 <div class="profile__container">
                   <img
+                    loading="lazy"
                     src="@/assets/04_simple/3.png"
                     class="profile__animation"
                   />

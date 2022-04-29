@@ -264,8 +264,16 @@ export default {
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
-        <img src="@/assets/Background.svg" class="bg__gradient" />
+        <img
+          loading="lazy"
+          src="@/assets/07_exportEverywhere/Stars.svg"
+          class="bg__stars"
+        />
+        <img
+          loading="lazy"
+          src="@/assets/Background.svg"
+          class="bg__gradient"
+        />
       </section>
     </section>
     <div id="sectionIntegrate">
