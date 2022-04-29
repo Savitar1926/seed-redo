@@ -315,14 +315,14 @@ export default {
           class="getstarted-bg"
           src="@/assets/10_getStarted/startnow-bg.svg"
         />
-        <lottie-animation
+        <!-- <lottie-animation
           :auto-play="false"
           v-show="!mobile"
           ref="getstarted"
           class="getstarted-bg"
           :animationData="require('@/assets/12_startNow/Stroke_Scaled.json')"
           :loop="true"
-        />
+        /> -->
       </div>
     </section>
 
@@ -424,6 +424,7 @@ main {
     &__get-started {
       position: relative;
       overflow: hidden;
+      background: rgba(238, 49, 131);
 
       .getstarted-component {
         position: relative;
