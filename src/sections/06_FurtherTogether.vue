@@ -45,27 +45,33 @@
     </div>
     <div class="section section-right right-panel">
       <div class="lottie-container">
-        <lottie-animation
+        <!-- <lottie-animation
           v-show="this.collab"
           ref="furtherTogether"
           :auto-play="true"
           :animationData="require('@/assets/05_furtherTogether/Collab.json')"
           :loop="true"
-        />
+        /> -->
         <lottie-animation
+          ref="furtherTogether"
+          :auto-play="true"
+          :animationData="require('@/assets/05_furtherTogether/Collab.json')"
+          :loop="true"
+        />
+        <!-- <lottie-animation
           v-show="this.comment"
           ref="furtherTogether"
           :auto-play="true"
           :animationData="require('@/assets/05_furtherTogether/Comment.json')"
           :loop="true"
-        />
-        <lottie-animation
+        /> -->
+        <!-- <lottie-animation
           v-show="this.dash"
           ref="furtherTogether"
           :auto-play="true"
           :animationData="require('@/assets/05_furtherTogether/Dash.json')"
           :loop="true"
-        />
+        /> -->
       </div>
     </div>
     <intersection-observer
@@ -78,7 +84,7 @@
 <script>
 import icon from "@/assets/Icons.vue";
 import LottieAnimation from "lottie-web-vue";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import elementSelector from "@/mixins/elementSelector";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
@@ -106,33 +112,33 @@ export default {
         [...this.qsa("details")].forEach((detail) => {
           if (detail !== targetDetail) return detail.removeAttribute("open");
         });
-        const prevLottie = targetDetail.getAttribute("data-lottie");
-        if (prevLottie.match("collabLottie")) {
-          (this.collab = true),
-            (this.comment = false),
-            (this.dash = false),
-            gsap.from(".lottie-container", {
-              x: 1550,
-              duration: 0.5,
-              ease: "expo.out",
-            });
-        }
-        if (prevLottie.match("teamLottie")) {
-          gsap.from(".lottie-container", {
-            x: 1550,
-            duration: 0.5,
-            ease: "expo.out",
-          });
-          (this.collab = false), (this.comment = true), (this.dash = false);
-        }
-        if (prevLottie.match("sharedLottie")) {
-          gsap.from(".lottie-container", {
-            x: 1550,
-            duration: 0.5,
-            ease: "expo.out",
-          });
-          (this.collab = false), (this.comment = false), (this.dash = true);
-        }
+        //   const prevLottie = targetDetail.getAttribute("data-lottie");
+        //   if (prevLottie.match("collabLottie")) {
+        //     (this.collab = true),
+        //       (this.comment = false),
+        //       (this.dash = false),
+        //       gsap.from(".lottie-container", {
+        //         x: 1550,
+        //         duration: 0.5,
+        //         ease: "expo.out",
+        //       });
+        //   }
+        //   if (prevLottie.match("teamLottie")) {
+        //     gsap.from(".lottie-container", {
+        //       x: 1550,
+        //       duration: 0.5,
+        //       ease: "expo.out",
+        //     });
+        //     (this.collab = false), (this.comment = true), (this.dash = false);
+        //   }
+        //   if (prevLottie.match("sharedLottie")) {
+        //     gsap.from(".lottie-container", {
+        //       x: 1550,
+        //       duration: 0.5,
+        //       ease: "expo.out",
+        //     });
+        //     (this.collab = false), (this.comment = false), (this.dash = true);
+        //   }
       });
     });
   },

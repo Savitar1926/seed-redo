@@ -5,7 +5,7 @@ import LottieAnimation from "lottie-web-vue";
 // Components
 import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
-// import HeroScroll from "@/components/HeroScroll.vue";
+import HeroScroll from "@/components/HeroScroll.vue";
 // import Pattern2 from "@/components/Pattern.vue";
 
 // Sections
@@ -40,7 +40,7 @@ export default {
   },
   mixins: [checkScreen, elementSelector],
   components: {
-    // HeroScroll,
+    HeroScroll,
     // Plugin
     LottieAnimation,
     // Pattern2,
@@ -211,7 +211,7 @@ export default {
           <!--  Play Hero animation -->
           <Hero />
           <div style="z-index: 10">
-            <!-- <HeroScroll
+            <HeroScroll
               v-show="!mobile"
               class="hero-scroll"
               style="
@@ -219,7 +219,7 @@ export default {
                 overflow: hidden;
                 pointer-events: none;
               "
-            /> -->
+            />
             <lottie-animation
               :auto-play="true"
               v-show="mobile"

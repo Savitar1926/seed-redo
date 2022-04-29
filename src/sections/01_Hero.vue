@@ -1,5 +1,5 @@
 <script>
-import LottieAnimation from "lottie-web-vue";
+// import LottieAnimation from "lottie-web-vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 
 import checkScreen from "@/mixins/checkScreen";
@@ -13,7 +13,7 @@ export default {
   },
   mixins: [checkScreen],
   components: {
-    LottieAnimation,
+    // LottieAnimation,
     IntersectionObserver,
   },
   mounted() {
@@ -53,7 +53,7 @@ export default {
 <template>
   <main class="hero limiter position-lift">
     <div class="hero position-lift">
-      <lottie-animation
+      <!-- <lottie-animation
         ref="textAnimation"
         v-show="!mobile"
         aria-label="Create and ship animations for your products faster."
@@ -61,8 +61,8 @@ export default {
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
         :auto-play="true"
-      />
-      <h1 class="animate-lead" v-show="mobile">
+      /> -->
+      <h1 class="animate-lead">
         Create and ship animations to your products faster.
       </h1>
       <div class="hero__lead animate-lead">
@@ -119,7 +119,7 @@ main {
     }
 
     h1 {
-      font-size: calc(var(--step-0) + 0.5rem);
+      font-size: var(--step-4);
       line-height: 1.3;
     }
     &__lead {
