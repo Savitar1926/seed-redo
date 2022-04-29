@@ -13,35 +13,33 @@ export default {
     // HeroScroll,
   },
   mounted() {
-    this.centerIntersection();
+    // this.centerIntersection();
   },
   methods: {
-    centerIntersection() {
-      const el = document.querySelector("#pass-center");
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          entry.boundingClientRect.top;
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.centerAnimation.pause();
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.centerAnimation.play();
-          } else {
-            // pause animation
-            this.$refs.centerAnimation.pause();
-          }
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-    },
+    // centerIntersection() {
+    //   const el = document.querySelector("#pass-center");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+    //         // pause animation
+    //         this.$refs.centerAnimation.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         this.$refs.centerAnimation.play();
+    //       } else {
+    //         // pause animation
+    //         this.$refs.centerAnimation.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
   },
 };
 </script>

@@ -99,7 +99,7 @@ export default {
     IntersectionObserver,
   },
   mounted() {
-    this.centerIntersection();
+    // this.centerIntersection();
     [...this.qsa("details")].forEach((targetDetail) => {
       targetDetail.addEventListener("click", (event) => {
         if (targetDetail.hasAttribute("open")) return event.preventDefault();
@@ -111,12 +111,11 @@ export default {
           (this.collab = true),
             (this.comment = false),
             (this.dash = false),
-            console.log("collab");
-          gsap.from(".lottie-container", {
-            x: 1550,
-            duration: 0.5,
-            ease: "expo.out",
-          });
+            gsap.from(".lottie-container", {
+              x: 1550,
+              duration: 0.5,
+              ease: "expo.out",
+            });
         }
         if (prevLottie.match("teamLottie")) {
           gsap.from(".lottie-container", {
@@ -124,10 +123,7 @@ export default {
             duration: 0.5,
             ease: "expo.out",
           });
-          (this.collab = false),
-            (this.comment = true),
-            (this.dash = false),
-            console.log("team");
+          (this.collab = false), (this.comment = true), (this.dash = false);
         }
         if (prevLottie.match("sharedLottie")) {
           gsap.from(".lottie-container", {
@@ -135,41 +131,36 @@ export default {
             duration: 0.5,
             ease: "expo.out",
           });
-          (this.collab = false),
-            (this.comment = false),
-            (this.dash = true),
-            console.log("shared");
+          (this.collab = false), (this.comment = false), (this.dash = true);
         }
       });
     });
   },
   methods: {
-    centerIntersection() {
-      const el = document.querySelector("#pass-further");
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          entry.boundingClientRect.top;
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.furtherTogether.pause();
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.furtherTogether.play();
-          } else {
-            // pause animation
-            this.$refs.furtherTogether.pause();
-          }
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-    },
+    // centerIntersection() {
+    //   const el = document.querySelector("#pass-further");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+    //         // pause animation
+    //         this.$refs.furtherTogether.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         this.$refs.furtherTogether.play();
+    //       } else {
+    //         // pause animation
+    //         this.$refs.furtherTogether.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
   },
 };
 </script>

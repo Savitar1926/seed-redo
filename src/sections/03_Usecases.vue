@@ -18,50 +18,48 @@ export default {
     icon,
   },
   mounted() {
-    this.usecaseIntersection();
+    // this.usecaseIntersection();
   },
   methods: {
-    usecaseIntersection() {
-      const el = document.querySelector("#pass-usecases");
-
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          entry.boundingClientRect.top;
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
-          }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.hero.play();
-            // this.$refs.onboarding.play();
-            this.$refs.loadingOne.play();
-            this.$refs.loadingTwo.play();
-            this.$refs.product.play();
-            this.$refs.notification.play();
-          } else {
-            // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
-          }
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-    },
+    // usecaseIntersection() {
+    //   const el = document.querySelector("#pass-usecases");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+    //         // pause animation
+    //         this.$refs.hero.pause();
+    //         // this.$refs.onboarding.pause();
+    //         this.$refs.loadingOne.pause();
+    //         this.$refs.loadingTwo.pause();
+    //         this.$refs.product.pause();
+    //         this.$refs.notification.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         this.$refs.hero.play();
+    //         // this.$refs.onboarding.play();
+    //         this.$refs.loadingOne.play();
+    //         this.$refs.loadingTwo.play();
+    //         this.$refs.product.play();
+    //         this.$refs.notification.play();
+    //       } else {
+    //         // pause animation
+    //         this.$refs.hero.pause();
+    //         // this.$refs.onboarding.pause();
+    //         this.$refs.loadingOne.pause();
+    //         this.$refs.loadingTwo.pause();
+    //         this.$refs.product.pause();
+    //         this.$refs.notification.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
   },
 };
 </script>
@@ -105,7 +103,7 @@ export default {
                     require('@/assets/03_usecases/banner lottie vectorizado.json')
                   "
                   :loop="true"
-                  :auto-play="false"
+                  :auto-play="true"
                 />
               </div>
             </div>
@@ -191,7 +189,7 @@ export default {
                   style="height: 100%"
                   :animationData="require('@/assets/Phone.json')"
                   :loop="true"
-                  :auto-play="false"
+                  :auto-play="true"
                 />
               </div>
             </div>  -->
@@ -232,7 +230,7 @@ export default {
                     style="width: 100%"
                     :animationData="require('@/assets/03_usecases/load.json')"
                     :loop="true"
-                    :auto-play="false"
+                    :auto-play="true"
                   />
                 </div>
               </div>
@@ -271,7 +269,7 @@ export default {
                     style="height: 100%"
                     :animationData="require('@/assets/03_usecases/load_2.json')"
                     :loop="true"
-                    :auto-play="false"
+                    :auto-play="true"
                   />
                 </div>
               </div>
@@ -305,7 +303,7 @@ export default {
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/NyanCat.json')"
                   :loop="true"
-                  :auto-play="false"
+                  :auto-play="true"
                 />
               </div>
             </div>
@@ -339,7 +337,7 @@ export default {
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/preview.json')"
                   :loop="true"
-                  :auto-play="false"
+                  :auto-play="true"
                 />
               </div>
             </div>
