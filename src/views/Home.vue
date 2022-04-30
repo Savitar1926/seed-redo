@@ -275,6 +275,7 @@ export default {
               v-show="mobile"
               ref="heroLottie"
               class="heroLottie"
+              id="heroLottie"
               :animationData="require('@/assets/01_hero/Hero_Product.json')"
               :loop="true"
             />
