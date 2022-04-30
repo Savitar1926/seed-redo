@@ -123,7 +123,7 @@ main {
     }
 
     h1 {
-      font-size: var(--step-0);
+      font-size: var(--step-3);
       line-height: 1.3;
     }
     &__lead {
