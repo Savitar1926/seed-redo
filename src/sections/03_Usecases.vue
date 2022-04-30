@@ -19,8 +19,129 @@ export default {
   },
   mounted() {
     // this.usecaseIntersection();
+    // this.usecasesIntersection();
+    this.heroTemIntersection();
+    this.loadingOneIntersection();
+    this.loadingTwoeIntersection();
+    this.productTemIntersection();
+    this.notificationTemIntersection();
   },
   methods: {
+    heroTemIntersection() {
+      const el = document.querySelector("#heroTem");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.heroTem.play();
+            console.log(`heroTem play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.heroTem.pause();
+            console.log(`heroTem pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    loadingOneIntersection() {
+      const el = document.querySelector("#loadingOne");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.loadingOne.play();
+            console.log(`loadingOne play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.loadingOne.pause();
+            console.log(`loadingOne pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    loadingTwoeIntersection() {
+      const el = document.querySelector("#loadingTwo");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.loadingTwo.play();
+            console.log(`loadingTwo play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.loadingTwo.pause();
+            console.log(`loadingTwo pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    productTemIntersection() {
+      const el = document.querySelector("#productTem");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.productTem.play();
+            console.log(`productTem play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.productTem.pause();
+            console.log(`productTem pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    notificationTemIntersection() {
+      const el = document.querySelector("#notificationTem");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.notificationTem.play();
+            console.log(`notificationTem play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.notificationTem.pause();
+            console.log(`notificationTem pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
     // usecaseIntersection() {
     //   const el = document.querySelector("#pass-usecases");
     //   const observer = new window.IntersectionObserver(
@@ -97,13 +218,14 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="hero"
+                  id="heroTem"
+                  ref="heroTem"
                   style="height: 100%; transform: scale(1.02)"
                   :animationData="
                     require('@/assets/03_usecases/banner lottie vectorizado.json')
                   "
                   :loop="true"
-                  :auto-play="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -185,11 +307,12 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                id="templates-lottie"
                   ref="onboarding"
                   style="height: 100%"
                   :animationData="require('@/assets/Phone.json')"
                   :loop="true"
-                  :auto-play="true"
+                  :auto-play="false"
                 />
               </div>
             </div>  -->
@@ -226,11 +349,12 @@ export default {
               >
                 <div style="width: 100%">
                   <lottie-animation
+                    id="loadingOne"
                     ref="loadingOne"
                     style="width: 100%"
                     :animationData="require('@/assets/03_usecases/load.json')"
                     :loop="true"
-                    :auto-play="true"
+                    :auto-play="false"
                   />
                 </div>
               </div>
@@ -265,11 +389,12 @@ export default {
               >
                 <div style="width: 100%; height: 100%">
                   <lottie-animation
+                    id="loadingTwo"
                     ref="loadingTwo"
                     style="height: 100%"
                     :animationData="require('@/assets/03_usecases/load_2.json')"
                     :loop="true"
-                    :auto-play="true"
+                    :auto-play="false"
                   />
                 </div>
               </div>
@@ -299,11 +424,12 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="product"
+                  id="productTem"
+                  ref="productTem"
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/NyanCat.json')"
                   :loop="true"
-                  :auto-play="true"
+                  :auto-play="false"
                 />
               </div>
             </div>
@@ -333,11 +459,12 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="notification"
+                  id="notificationTem"
+                  ref="notificationTem"
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/preview.json')"
                   :loop="true"
-                  :auto-play="true"
+                  :auto-play="false"
                 />
               </div>
             </div>

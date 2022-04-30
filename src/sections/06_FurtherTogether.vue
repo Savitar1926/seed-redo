@@ -57,6 +57,7 @@
           :auto-play="true"
           :animationData="require('@/assets/05_furtherTogether/Collab.json')"
           :loop="true"
+          id="furtherLottie"
         />
         <!-- <lottie-animation
           v-show="this.comment"
@@ -106,6 +107,7 @@ export default {
   },
   mounted() {
     // this.centerIntersection();
+    this.furtherIntersection();
     [...this.qsa("details")].forEach((targetDetail) => {
       targetDetail.addEventListener("click", (event) => {
         if (targetDetail.hasAttribute("open")) return event.preventDefault();
@@ -143,6 +145,29 @@ export default {
     });
   },
   methods: {
+    furtherIntersection() {
+      const el = document.querySelector("#furtherLottie");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.furtherTogether.play();
+            console.log(`further play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.furtherTogether.pause();
+            console.log(`further pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
     // centerIntersection() {
     //   const el = document.querySelector("#pass-further");
     //   const observer = new window.IntersectionObserver(
