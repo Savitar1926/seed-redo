@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     getStartedIntersection() {
-      const el = document.querySelector("#getstarted");
+      const elget = document.querySelector("#getstarted");
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           entry.boundingClientRect.top;
@@ -101,7 +101,7 @@ export default {
           threshold: 0,
         }
       );
-      observer.observe(el);
+      observer.observe(elget);
     },
     heroLottieIntersection() {
       const el = document.querySelector("#heroLottie");

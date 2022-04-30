@@ -19,8 +19,7 @@ export default {
     // this.anim_Heart.addEventListener("complete", this.isDone);
     this.btn_Heart = document.getElementById("btn_Heart");
 
-    this.segment_Idle();
-    this.Addclick();
+    this.heartIntersection();
   },
   methods: {
     buildAnimation() {
@@ -34,6 +33,29 @@ export default {
       };
       anim_Heart.animationData = loading;
       return lottie.loadAnimation(anim_Heart);
+    },
+    heartIntersection() {
+      const el = document.querySelector("#heartLottie");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.segment_Idle();
+            this.Addclick();
+            console.log(`heart play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            console.log(`heart pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
     },
     // Functions
     Addclick() {
@@ -83,7 +105,11 @@ export default {
 
 <template>
   <div class="preloading">
-    <div style="margin-inline: auto" class="preloading-icon"></div>
+    <div
+      style="margin-inline: auto"
+      class="preloading-icon"
+      id="heartLottie"
+    ></div>
   </div>
 </template>
 
