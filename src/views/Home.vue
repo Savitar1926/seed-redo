@@ -76,6 +76,7 @@ export default {
     this.lottieScroll();
     // this.changeStrokeLottieHero();
     // this.heroIntersection();
+    this.heroLottieIntersection();
     this.getStartedIntersection();
   },
   methods: {
@@ -93,6 +94,29 @@ export default {
             // pause animation
             this.$refs.getstarted.pause();
             console.log(`getstarted pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    heroLottieIntersection() {
+      const el = document.querySelector("#heroLottie");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.heroLottie.play();
+            console.log(`heroLottie play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.heroLottie.pause();
+            console.log(`heroLottie pause`);
           }
         },
         {
@@ -189,7 +213,10 @@ export default {
         scroll.preventDefault();
         // Center lottie scroll to place
         let translateLottie = scrollTop - 600 / 1.8;
-        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.59);
+        translateLottie = Math.min(
+          Math.max(0, translateLottie),
+          offset / 1.585
+        );
         if (scrollTop > 950) {
           heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
           heroscroll.style.transition = "transform 350ms linear";
@@ -246,8 +273,8 @@ export default {
             <lottie-animation
               :auto-play="true"
               v-show="mobile"
-              ref="getstarted"
-              class="getstarted-bg"
+              ref="heroLottie"
+              class="heroLottie"
               :animationData="require('@/assets/01_hero/Hero_Product.json')"
               :loop="true"
             />
