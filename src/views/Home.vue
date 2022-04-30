@@ -64,16 +64,16 @@ export default {
     Footer,
   },
   created() {
-    // ["scroll", "resize"].forEach((evt) =>
-    //   window.addEventListener(evt, this.lottieScroll)
-    // );
+    ["scroll", "resize"].forEach((evt) =>
+      window.addEventListener(evt, this.lottieScroll)
+    );
   },
   mounted() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
 
-    // this.lottieScroll();
+    this.lottieScroll();
     // this.changeStrokeLottieHero();
     // this.heroIntersection();
     this.getStartedIntersection();
@@ -152,66 +152,66 @@ export default {
     //   );
     //   observer.observe(el);
     // },
-    //   lottieScroll() {
-    //     // const element = document.querySelector(".zoom");
-    //     const heroelement = document.querySelector(".hero");
-    //     // const cursorelement = document.querySelector(".cursor_movement");
-    //     const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
-    //     const elemRect = document
-    //       .querySelector("#usecasephone")
-    //       .getBoundingClientRect();
-    //     // const element = document.querySelector(".usecase-phone");
-    //     // const bodyRect_usecase = document.body.getBoundingClientRect();
-    //     // console.log(element);
-    //     // console.log(bodyRect_usecase);
-    //     // const elemRect = document
-    //     //   .querySelector("#usecasephone")
-    //     //   .getBoundingClientRect();
-    //     // console.log(`hello ${elemRect}`);
-    //     // let offset = elemRect.top - bodyRect_usecase.top;
-    //     // console.log(`Element is ${offset} vertical pixels from body`);
-    //     // On Scroll the Lottie Editor UI container scales up;
-    //     // while in reverse the Editor UI lottie scales down revealing the Whoel UI
-    //     window.onscroll = function (scroll) {
-    //       this.windownWidth = window.innerWidth;
-    //       let offset = elemRect.top - document.body.getBoundingClientRect().top;
-    //       const scrollTop = document.documentElement.scrollTop;
-    //       //  Scroll Velocity Controllers
-    //       let scaleAmt = 1.0 + scrollTop / (10 * 280);
-    //       // let scaleLottie = 2.0 - scrollTop / (10 * 35);
-    //       let scaleDown = 1.0 - scrollTop / (10 * 70);
-    //       let transUp = 1.0 - scrollTop / (10 * 50);
-    //       // let cursorDown = 1.0 - scrollTop / (10 * 130);
-    //       // cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
-    //       // transUp = Math.min(Math.max(0, transUp), offset);
-    //       // cursorelement.style.transform = `scale(${cursorDown}) `;
-    //       // cursorelement.style.transition = `transform 900ms linear`;
-    //       scroll.preventDefault();
-    //       // Center lottie scroll to place
-    //       let translateLottie = scrollTop - 600 / 1.8;
-    //       translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.59);
-    //       if (scrollTop > 950) {
-    //         heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
-    //         heroscroll.style.transition = "transform 350ms linear";
-    //         heroscroll.style.zIndex = "888";
-    //       }
-    //       if (950 > scrollTop) heroscroll.style.transform = "translateX(0px)";
-    //       if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
-    //       if (400 > scrollTop) {
-    //         heroelement.style.transformOrigin = `top`;
-    //         heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
-    //         heroelement.style.transition = `transform 100ms linear`;
-    //       }
-    //       // Conditions when passed the center lottie animation
-    //       if (this.windownWidth >= 950) {
-    //         this.mobile = true;
-    //         if (scaleAmt < 1.5) {
-    //           scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
-    //         }
-    //       }
-    //       if (this.windownWidth <= 950) heroelement.style.transform = `none`;
-    //     };
-    //   },
+    lottieScroll() {
+      // const element = document.querySelector(".zoom");
+      const heroelement = document.querySelector(".hero");
+      // const cursorelement = document.querySelector(".cursor_movement");
+      const heroscroll = document.querySelector("#HERO_PRODUCT_placement");
+      const elemRect = document
+        .querySelector("#usecasephone")
+        .getBoundingClientRect();
+      // const element = document.querySelector(".usecase-phone");
+      // const bodyRect_usecase = document.body.getBoundingClientRect();
+      // console.log(element);
+      // console.log(bodyRect_usecase);
+      // const elemRect = document
+      //   .querySelector("#usecasephone")
+      //   .getBoundingClientRect();
+      // console.log(`hello ${elemRect}`);
+      // let offset = elemRect.top - bodyRect_usecase.top;
+      // console.log(`Element is ${offset} vertical pixels from body`);
+      // On Scroll the Lottie Editor UI container scales up;
+      // while in reverse the Editor UI lottie scales down revealing the Whoel UI
+      window.onscroll = function (scroll) {
+        this.windownWidth = window.innerWidth;
+        let offset = elemRect.top - document.body.getBoundingClientRect().top;
+        const scrollTop = document.documentElement.scrollTop;
+        //  Scroll Velocity Controllers
+        let scaleAmt = 1.0 + scrollTop / (10 * 280);
+        // let scaleLottie = 2.0 - scrollTop / (10 * 35);
+        let scaleDown = 1.0 - scrollTop / (10 * 70);
+        let transUp = 1.0 - scrollTop / (10 * 50);
+        // let cursorDown = 1.0 - scrollTop / (10 * 130);
+        // cursorDown = Math.min(Math.max(0.6, cursorDown), 1);
+        // transUp = Math.min(Math.max(0, transUp), offset);
+        // cursorelement.style.transform = `scale(${cursorDown}) `;
+        // cursorelement.style.transition = `transform 900ms linear`;
+        scroll.preventDefault();
+        // Center lottie scroll to place
+        let translateLottie = scrollTop - 600 / 1.8;
+        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.59);
+        if (scrollTop > 950) {
+          heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
+          heroscroll.style.transition = "transform 350ms linear";
+          heroscroll.style.zIndex = "888";
+        }
+        if (950 > scrollTop) heroscroll.style.transform = "translateX(0px)";
+        if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
+        if (400 > scrollTop) {
+          heroelement.style.transformOrigin = `top`;
+          heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
+          heroelement.style.transition = `transform 100ms linear`;
+        }
+        // Conditions when passed the center lottie animation
+        if (this.windownWidth >= 950) {
+          this.mobile = true;
+          if (scaleAmt < 1.5) {
+            scaleAmt = Math.min(Math.max(1, scaleAmt), 1.35);
+          }
+        }
+        if (this.windownWidth <= 950) heroelement.style.transform = `none`;
+      };
+    },
     //   // Change path stroke when mounted
     //   changeStrokeLottieHero() {
     //     document.querySelectorAll(".stroke path").forEach((path) => {

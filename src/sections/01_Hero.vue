@@ -60,7 +60,7 @@ export default {
         ref="textAnimation"
         v-show="!mobile"
         aria-label="Create and ship animations for your products faster."
-        class="text-animation animate-lead"
+        class="text-animation animate-lead forceGPU"
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
         :auto-play="true"
