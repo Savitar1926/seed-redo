@@ -103,13 +103,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.lottieslow.play();
-            console.log(`lottieslow play`);
+            // console.log(`lottieslow play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.lottieslow.pause();
-            console.log(`lottieslow pause`);
+            // console.log(`lottieslow pause`);
           }
         },
         {
@@ -126,13 +126,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.lottiefast.play();
-            console.log(`lottiefast play`);
+            // console.log(`lottiefast play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.lottiefast.pause();
-            console.log(`lottiefast pause`);
+            // console.log(`lottiefast pause`);
           }
         },
         {

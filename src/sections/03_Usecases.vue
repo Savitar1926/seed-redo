@@ -34,13 +34,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.heroTem.play();
-            console.log(`heroTem play`);
+            // console.log(`heroTem play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.heroTem.pause();
-            console.log(`heroTem pause`);
+            // console.log(`heroTem pause`);
           }
         },
         {
@@ -57,13 +57,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.loadingOne.play();
-            console.log(`loadingOne play`);
+            // console.log(`loadingOne play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.loadingOne.pause();
-            console.log(`loadingOne pause`);
+            // console.log(`loadingOne pause`);
           }
         },
         {
@@ -80,13 +80,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.loadingTwo.play();
-            console.log(`loadingTwo play`);
+            // console.log(`loadingTwo play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.loadingTwo.pause();
-            console.log(`loadingTwo pause`);
+            // console.log(`loadingTwo pause`);
           }
         },
         {
@@ -103,13 +103,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.productTem.play();
-            console.log(`productTem play`);
+            // console.log(`productTem play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.productTem.pause();
-            console.log(`productTem pause`);
+            // console.log(`productTem pause`);
           }
         },
         {
@@ -126,13 +126,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.notificationTem.play();
-            console.log(`notificationTem play`);
+            // console.log(`notificationTem play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.notificationTem.pause();
-            console.log(`notificationTem pause`);
+            // console.log(`notificationTem pause`);
           }
         },
         {

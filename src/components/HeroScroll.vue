@@ -56,13 +56,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.anim_HERO_PRODUCT.play();
-            console.log(`anim play`);
+            // console.log(`anim play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.anim_HERO_PRODUCT.pause();
-            console.log(`anim pause`);
+            // console.log(`anim pause`);
           }
         },
         {

@@ -68,7 +68,7 @@ export default {
           nav.style.color = "var(--primary)";
           nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
           mobileIcon.forEach((nav) => {
-            nav.style.color = "var(--primary)!important";
+            nav.style.color = "white ";
           });
           titleHighlight.style.letterSpacing = "0rem";
           titleHighlight.style.color = "#ffb92a";

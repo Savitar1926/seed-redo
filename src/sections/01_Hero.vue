@@ -27,7 +27,7 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.textAnimation.play();
-            console.log(`play`);
+            // console.log(`play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           //   // pause animation
@@ -40,7 +40,7 @@ export default {
           else {
             // pause animation
             this.$refs.textAnimation.pause();
-            console.log(`pause`);
+            // console.log(`pause`);
           }
         },
         {

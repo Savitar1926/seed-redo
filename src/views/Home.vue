@@ -87,13 +87,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.getstarted.play();
-            console.log(`getstarted play`);
+            // console.log(`getstarted play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.getstarted.pause();
-            console.log(`getstarted pause`);
+            // console.log(`getstarted pause`);
           }
         },
         {
@@ -110,13 +110,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.heroLottie.play();
-            console.log(`heroLottie play`);
+            // console.log(`heroLottie play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.heroLottie.pause();
-            console.log(`heroLottie pause`);
+            // console.log(`heroLottie pause`);
           }
         },
         {

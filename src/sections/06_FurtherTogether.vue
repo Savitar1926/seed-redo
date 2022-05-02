@@ -152,13 +152,13 @@ export default {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
             this.$refs.furtherTogether.play();
-            console.log(`further play`);
+            // console.log(`further play`);
           }
           // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
           else {
             // pause animation
             this.$refs.furtherTogether.pause();
-            console.log(`further pause`);
+            // console.log(`further pause`);
           }
         },
         {
