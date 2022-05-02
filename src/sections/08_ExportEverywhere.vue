@@ -18,6 +18,8 @@ export default {
   },
   mounted() {
     this.colorPanel();
+    this.exportMainIntersection();
+    this.exportHolderIntersection();
   },
   methods: {
     change(color) {
@@ -43,6 +45,52 @@ export default {
         container.style.width = "240px";
         container.style.overflow = "hidden";
       });
+    },
+    exportMainIntersection() {
+      const el = document.querySelector("#exportMain");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.exportMain.play();
+            console.log(`export play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.exportMain.pause();
+            console.log(`export pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    exportHolderIntersection() {
+      const el = document.querySelector("#placeholderLottie");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.placeholderLottie.play();
+            console.log(`exportHolder play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.placeholderLottie.pause();
+            console.log(`exportHolder pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
     },
     updateAll() {
       const element = this.qs(".placeholder-devices");
@@ -77,6 +125,9 @@ export default {
             require('@/assets/07_exportEverywhere/Export-Everywhere.json')
           "
           :loop="true"
+          :auto-play="false"
+          id="exportMain"
+          ref="exportMain"
         />
         <div class="export__actions">
           <span>Try changing the colours</span>
@@ -95,6 +146,9 @@ export default {
         class="placeholder-devices"
         :animationData="require('@/assets/07_exportEverywhere/Devices_2.json')"
         :loop="true"
+        ref="placeholderLottie"
+        id="placeholderLottie"
+        :auto-play="false"
       />
       <!-- <img
         loading="lazy"
@@ -174,9 +228,6 @@ export default {
       width: 80%;
       .placeholder-rocket {
         height: fit-content;
-      }
-      .sample {
-        transform: scale(1.045);
       }
     }
 
@@ -275,10 +326,6 @@ export default {
       .main-animation {
         display: flex;
         justify-content: center;
-
-        .sample {
-          transform: scale(1);
-        }
       }
     }
   }

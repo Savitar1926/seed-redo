@@ -18,40 +18,29 @@ export default {
     icon,
   },
   mounted() {
-    this.usecaseIntersection();
+    // this.usecaseIntersection();
+    // this.usecasesIntersection();
+    this.heroTemIntersection();
+    this.loadingOneIntersection();
+    this.loadingTwoeIntersection();
+    this.productTemIntersection();
+    this.notificationTemIntersection();
   },
   methods: {
-    usecaseIntersection() {
-      const el = document.querySelector("#pass-usecases");
-
+    heroTemIntersection() {
+      const el = document.querySelector("#heroTem");
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           entry.boundingClientRect.top;
-          if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-            // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
+          if (entry.isIntersecting) {
+            this.$refs.heroTem.play();
+            console.log(`heroTem play`);
           }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            this.$refs.hero.play();
-            // this.$refs.onboarding.play();
-            this.$refs.loadingOne.play();
-            this.$refs.loadingTwo.play();
-            this.$refs.product.play();
-            this.$refs.notification.play();
-          } else {
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
             // pause animation
-            this.$refs.hero.pause();
-            // this.$refs.onboarding.pause();
-            this.$refs.loadingOne.pause();
-            this.$refs.loadingTwo.pause();
-            this.$refs.product.pause();
-            this.$refs.notification.pause();
+            this.$refs.heroTem.pause();
+            console.log(`heroTem pause`);
           }
         },
         {
@@ -59,9 +48,139 @@ export default {
           threshold: 0,
         }
       );
-
       observer.observe(el);
     },
+    loadingOneIntersection() {
+      const el = document.querySelector("#loadingOne");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.loadingOne.play();
+            console.log(`loadingOne play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.loadingOne.pause();
+            console.log(`loadingOne pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    loadingTwoeIntersection() {
+      const el = document.querySelector("#loadingTwo");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.loadingTwo.play();
+            console.log(`loadingTwo play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.loadingTwo.pause();
+            console.log(`loadingTwo pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    productTemIntersection() {
+      const el = document.querySelector("#productTem");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.productTem.play();
+            console.log(`productTem play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.productTem.pause();
+            console.log(`productTem pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    notificationTemIntersection() {
+      const el = document.querySelector("#notificationTem");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.notificationTem.play();
+            console.log(`notificationTem play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.notificationTem.pause();
+            console.log(`notificationTem pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    // usecaseIntersection() {
+    //   const el = document.querySelector("#pass-usecases");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+    //         // pause animation
+    //         this.$refs.hero.pause();
+    //         // this.$refs.onboarding.pause();
+    //         this.$refs.loadingOne.pause();
+    //         this.$refs.loadingTwo.pause();
+    //         this.$refs.product.pause();
+    //         this.$refs.notification.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         this.$refs.hero.play();
+    //         // this.$refs.onboarding.play();
+    //         this.$refs.loadingOne.play();
+    //         this.$refs.loadingTwo.play();
+    //         this.$refs.product.play();
+    //         this.$refs.notification.play();
+    //       } else {
+    //         // pause animation
+    //         this.$refs.hero.pause();
+    //         // this.$refs.onboarding.pause();
+    //         this.$refs.loadingOne.pause();
+    //         this.$refs.loadingTwo.pause();
+    //         this.$refs.product.pause();
+    //         this.$refs.notification.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
   },
 };
 </script>
@@ -99,7 +218,8 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="hero"
+                  id="heroTem"
+                  ref="heroTem"
                   style="height: 100%; transform: scale(1.02)"
                   :animationData="
                     require('@/assets/03_usecases/banner lottie vectorizado.json')
@@ -187,6 +307,7 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
+                id="templates-lottie"
                   ref="onboarding"
                   style="height: 100%"
                   :animationData="require('@/assets/Phone.json')"
@@ -228,6 +349,7 @@ export default {
               >
                 <div style="width: 100%">
                   <lottie-animation
+                    id="loadingOne"
                     ref="loadingOne"
                     style="width: 100%"
                     :animationData="require('@/assets/03_usecases/load.json')"
@@ -267,6 +389,7 @@ export default {
               >
                 <div style="width: 100%; height: 100%">
                   <lottie-animation
+                    id="loadingTwo"
                     ref="loadingTwo"
                     style="height: 100%"
                     :animationData="require('@/assets/03_usecases/load_2.json')"
@@ -301,7 +424,8 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="product"
+                  id="productTem"
+                  ref="productTem"
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/NyanCat.json')"
                   :loop="true"
@@ -335,7 +459,8 @@ export default {
             >
               <div style="width: 100%; height: 100%">
                 <lottie-animation
-                  ref="notification"
+                  id="notificationTem"
+                  ref="notificationTem"
                   style="height: 100%"
                   :animationData="require('@/assets/03_usecases/preview.json')"
                   :loop="true"

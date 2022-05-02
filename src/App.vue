@@ -68,7 +68,7 @@ export default {
           nav.style.color = "var(--primary)";
           nav.style.boxShadow = "0px 16px 32px 8px rgb(27, 27, 27, 0.5)";
           mobileIcon.forEach((nav) => {
-            nav.style.color = "var(--primary)";
+            nav.style.color = "var(--primary)!important";
           });
           titleHighlight.style.letterSpacing = "0rem";
           titleHighlight.style.color = "#ffb92a";
@@ -138,6 +138,26 @@ export default {
   --normal: 400;
   --medium: 500;
   --semi-bold: 600;
+}
+
+.forceGPU {
+  -webkit-transform: translateZ(0) !important;
+  -moz-transform: translateZ(0) !important;
+  -ms-transform: translateZ(0) !important;
+  -o-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+}
+
+.forceGPU svg {
+  -webkit-transform: translateZ(0) !important;
+  -moz-transform: translateZ(0) !important;
+  -ms-transform: translateZ(0) !important;
+  -o-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
 }
 
 #app {

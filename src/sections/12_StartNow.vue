@@ -15,6 +15,7 @@
       </div>
       <div class="col__two">
         <img
+          loading="lazy"
           class="starnow-image"
           src="@/assets/10_getStarted/startnow-updated.svg"
         />

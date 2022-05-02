@@ -6,7 +6,7 @@ import LottieAnimation from "lottie-web-vue";
 import Navigation from "@/components/Navigation.vue";
 import IntersectionObserver from "@/components/IntersectionObserver";
 import HeroScroll from "@/components/HeroScroll.vue";
-// import Pattern2 from "@/components/Pattern.vue";
+import Pattern2 from "@/components/Pattern.vue";
 
 // Sections
 import Hero from "@/sections/01_Hero.vue";
@@ -43,7 +43,7 @@ export default {
     HeroScroll,
     // Plugin
     LottieAnimation,
-    // Pattern2,
+    Pattern2,
     // Components
     Navigation,
     IntersectionObserver,
@@ -67,15 +67,6 @@ export default {
     ["scroll", "resize"].forEach((evt) =>
       window.addEventListener(evt, this.lottieScroll)
     );
-    ["scroll", "resize"].forEach((evt) =>
-      window.addEventListener(evt, () => {
-        const elemRect = document
-          .querySelector("#usecasephone")
-          .getBoundingClientRect();
-        let offset = elemRect.top - document.body.getBoundingClientRect().top;
-        console.log(`hello ${offset}`);
-      })
-    );
   },
   mounted() {
     window.onbeforeunload = function () {
@@ -83,31 +74,26 @@ export default {
     };
 
     this.lottieScroll();
-    this.changeStrokeLottieHero();
-    this.heroIntersection();
+    // this.changeStrokeLottieHero();
+    // this.heroIntersection();
+    this.heroLottieIntersection();
     this.getStartedIntersection();
   },
   methods: {
-    // new Intersection
-    heroIntersection() {
-      const el = document.querySelector("#pass-hero");
-
+    getStartedIntersection() {
+      const elget = document.querySelector("#getstarted");
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           entry.boundingClientRect.top;
           if (entry.isIntersecting) {
-            // pause animation
-            // this.$refs.cursor.pause();
-            this.$refs.pattern.pause();
+            this.$refs.getstarted.play();
+            console.log(`getstarted play`);
           }
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            // play animation
-            // this.$refs.cursor.play();
-            this.$refs.pattern.play();
-          } else {
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
             // pause animation
-            // this.$refs.cursor.pause();
-            this.$refs.pattern.pause();
+            this.$refs.getstarted.pause();
+            console.log(`getstarted pause`);
           }
         },
         {
@@ -115,23 +101,22 @@ export default {
           threshold: 0,
         }
       );
-
-      observer.observe(el);
+      observer.observe(elget);
     },
-    getStartedIntersection() {
-      const el = document.querySelector("#pass-startnow");
-
+    heroLottieIntersection() {
+      const el = document.querySelector("#heroLottie");
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           entry.boundingClientRect.top;
-          // play animation
-          if (entry.isIntersecting) this.$refs.getstarted.play();
-          // pause animation
-          if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-            this.$refs.getstarted.pause();
-          } else {
-            // play animation
-            this.$refs.getstarted.play();
+          if (entry.isIntersecting) {
+            this.$refs.heroLottie.play();
+            console.log(`heroLottie play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.heroLottie.pause();
+            console.log(`heroLottie pause`);
           }
         },
         {
@@ -139,10 +124,58 @@ export default {
           threshold: 0,
         }
       );
-
       observer.observe(el);
     },
-
+    // new Intersection
+    // heroIntersection() {
+    //   const el = document.querySelector("#pass-hero");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       if (entry.isIntersecting) {
+    //         // pause animation
+    //         // this.$refs.cursor.pause();
+    //         this.$refs.pattern.pause();
+    //       }
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         // play animation
+    //         // this.$refs.cursor.play();
+    //         this.$refs.pattern.play();
+    //       } else {
+    //         // pause animation
+    //         // this.$refs.cursor.pause();
+    //         this.$refs.pattern.pause();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
+    // getStartedIntersection() {
+    //   const el = document.querySelector("#pass-startnow");
+    //   const observer = new window.IntersectionObserver(
+    //     ([entry]) => {
+    //       entry.boundingClientRect.top;
+    //       // play animation
+    //       if (entry.isIntersecting) this.$refs.getstarted.play();
+    //       // pause animation
+    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+    //         this.$refs.getstarted.pause();
+    //       } else {
+    //         // play animation
+    //         this.$refs.getstarted.play();
+    //       }
+    //     },
+    //     {
+    //       root: null,
+    //       threshold: 0,
+    //     }
+    //   );
+    //   observer.observe(el);
+    // },
     lottieScroll() {
       // const element = document.querySelector(".zoom");
       const heroelement = document.querySelector(".hero");
@@ -151,7 +184,6 @@ export default {
       const elemRect = document
         .querySelector("#usecasephone")
         .getBoundingClientRect();
-
       // const element = document.querySelector(".usecase-phone");
       // const bodyRect_usecase = document.body.getBoundingClientRect();
       // console.log(element);
@@ -161,16 +193,12 @@ export default {
       //   .getBoundingClientRect();
       // console.log(`hello ${elemRect}`);
       // let offset = elemRect.top - bodyRect_usecase.top;
-
       // console.log(`Element is ${offset} vertical pixels from body`);
-
       // On Scroll the Lottie Editor UI container scales up;
       // while in reverse the Editor UI lottie scales down revealing the Whoel UI
-
       window.onscroll = function (scroll) {
         this.windownWidth = window.innerWidth;
         let offset = elemRect.top - document.body.getBoundingClientRect().top;
-
         const scrollTop = document.documentElement.scrollTop;
         //  Scroll Velocity Controllers
         let scaleAmt = 1.0 + scrollTop / (10 * 280);
@@ -183,12 +211,12 @@ export default {
         // cursorelement.style.transform = `scale(${cursorDown}) `;
         // cursorelement.style.transition = `transform 900ms linear`;
         scroll.preventDefault();
-
         // Center lottie scroll to place
         let translateLottie = scrollTop - 600 / 1.8;
-        translateLottie = Math.min(Math.max(0, translateLottie), offset / 1.59);
-        console.log(translateLottie);
-
+        translateLottie = Math.min(
+          Math.max(0, translateLottie),
+          offset / 1.585
+        );
         if (scrollTop > 950) {
           heroscroll.style.transform = `translateY(${translateLottie}px) translateX(160px) `;
           heroscroll.style.transition = "transform 350ms linear";
@@ -196,7 +224,6 @@ export default {
         }
         if (950 > scrollTop) heroscroll.style.transform = "translateX(0px)";
         if (500 > scrollTop) heroscroll.style.transform = "translateY(0px)";
-
         if (400 > scrollTop) {
           heroelement.style.transformOrigin = `top`;
           heroelement.style.transform = `scale(${scaleDown})  translateY(${-transUp}px)`;
@@ -212,13 +239,12 @@ export default {
         if (this.windownWidth <= 950) heroelement.style.transform = `none`;
       };
     },
-
-    // Change path stroke when mounted
-    changeStrokeLottieHero() {
-      document.querySelectorAll(".stroke path").forEach((path) => {
-        path.setAttribute("stroke", "#E1E4F0");
-      });
-    },
+    //   // Change path stroke when mounted
+    //   changeStrokeLottieHero() {
+    //     document.querySelectorAll(".stroke path").forEach((path) => {
+    //       path.setAttribute("stroke", "#E1E4F0");
+    //     });
+    //   },
   },
 };
 </script>
@@ -247,8 +273,9 @@ export default {
             <lottie-animation
               :auto-play="true"
               v-show="mobile"
-              ref="getstarted"
-              class="getstarted-bg"
+              ref="heroLottie"
+              class="heroLottie"
+              id="heroLottie"
               :animationData="require('@/assets/01_hero/Hero_Product.json')"
               :loop="true"
             />
@@ -273,7 +300,7 @@ export default {
           :animationData="require('@/assets/cursor-movement.json')"
           :loop="true"
         /> -->
-        <!-- <Pattern2 class="bg__pattern" /> -->
+        <Pattern2 class="bg__pattern" />
       </section>
       <section class="section__simple">
         <Simple />
@@ -288,8 +315,16 @@ export default {
           <ExportEverywhere />
           <SupportedDevice />
         </div>
-        <img src="@/assets/07_exportEverywhere/Stars.svg" class="bg__stars" />
-        <img src="@/assets/Background.svg" class="bg__gradient" />
+        <img
+          loading="lazy"
+          src="@/assets/07_exportEverywhere/Stars.svg"
+          class="bg__stars"
+        />
+        <img
+          loading="lazy"
+          src="@/assets/Background.svg"
+          class="bg__gradient"
+        />
       </section>
     </section>
     <div id="sectionIntegrate">
@@ -319,6 +354,7 @@ export default {
           :auto-play="false"
           v-show="!mobile"
           ref="getstarted"
+          id="getstarted"
           class="getstarted-bg"
           :animationData="require('@/assets/12_startNow/Stroke_Scaled.json')"
           :loop="true"
@@ -424,6 +460,7 @@ main {
     &__get-started {
       position: relative;
       overflow: hidden;
+      background: rgba(238, 49, 131);
 
       .getstarted-component {
         position: relative;

@@ -14,8 +14,8 @@
       </div>
       <div class="col__two">
         <img
+          loading="lazy"
           src="https://lottielab.io/assets/integrations-fde77e9128447f61e720d2ca630ac4ae530c86ebe56e6cbf092420a335d3a200.png"
-          alt=""
         />
       </div>
     </div>

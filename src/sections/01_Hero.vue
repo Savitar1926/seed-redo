@@ -17,36 +17,39 @@ export default {
     IntersectionObserver,
   },
   mounted() {
-    // this.heroTextIntersection();
+    this.heroTextIntersection();
   },
   methods: {
-    // heroTextIntersection() {
-    //   const el = document.querySelector("#pass-heroText");
-    //   const observer = new window.IntersectionObserver(
-    //     ([entry]) => {
-    //       entry.boundingClientRect.top;
-    //       if (entry.isIntersecting) {
-    //         this.$refs.textAnimation.play();
-    //       }
-    //       if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
-    //         // pause animation
-    //         this.$refs.textAnimation.pause();
-    //       }
-    //       if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
-    //         // play animation
-    //         this.$refs.textAnimation.play();
-    //       } else {
-    //         // pause animation
-    //         this.$refs.textAnimation.pause();
-    //       }
-    //     },
-    //     {
-    //       root: null,
-    //       threshold: 0,
-    //     }
-    //   );
-    //   observer.observe(el);
-    // },
+    heroTextIntersection() {
+      const el = document.querySelector(".text-animation");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.textAnimation.play();
+            console.log(`play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          //   // pause animation
+          //   this.$refs.textAnimation.pause();
+          // }
+          // if (entry.boundingClientRect.top > 0 && !entry.isIntersecting) {
+          //   // play animation
+          //   this.$refs.textAnimation.play();
+          // }
+          else {
+            // pause animation
+            this.$refs.textAnimation.pause();
+            console.log(`pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
   },
 };
 </script>
@@ -57,12 +60,12 @@ export default {
         ref="textAnimation"
         v-show="!mobile"
         aria-label="Create and ship animations for your products faster."
-        class="text-animation animate-lead"
+        class="text-animation animate-lead forceGPU"
         :animationData="require('@/assets/01_hero/Hero_Text.json')"
         :loop="true"
         :auto-play="true"
       />
-      <h1 class="animate-lead" v-show="mobile">
+      <h1 v-show="mobile" class="animate-lead">
         Create and ship animations to your products faster.
       </h1>
       <div class="hero__lead animate-lead">
@@ -84,7 +87,7 @@ export default {
       </div>
     </div>
     <intersection-observer
-      style="position: absolute; bottom: -0.5rem"
+      style="position: absolute; bottom: 3rem; padding: 1px"
       id="pass-heroText"
     />
   </main>
@@ -105,6 +108,7 @@ main {
   margin-inline: auto;
   height: 85vh;
   margin-bottom: calc(-1.2 * var(--step-4));
+  z-index: 1000;
 
   .hero {
     align-items: center;
@@ -119,7 +123,7 @@ main {
     }
 
     h1 {
-      font-size: calc(var(--step-0) + 0.5rem);
+      font-size: var(--step-3);
       line-height: 1.3;
     }
     &__lead {

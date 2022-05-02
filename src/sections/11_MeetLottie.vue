@@ -28,6 +28,9 @@
                 require('@/assets/09_meetLottie/LottieFormat_Slow.json')
               "
               :loop="true"
+              :auto-play="false"
+              ref="lottieslow"
+              id="lottieslow"
             />
             <!-- <img src="@/assets/ravie/Asset 3.svg" style="width: 100%" /> -->
 
@@ -44,6 +47,9 @@
                 require('@/assets/09_meetLottie/LottieFormat_Fast.json')
               "
               :loop="true"
+              :auto-play="false"
+              ref="lottiefast"
+              id="lottiefast"
             />
             <!-- <img src="@/assets/ravie/Asset 4.svg" style="width: 100%" /> -->
             <div style="padding-block: var(--step-0)">
@@ -84,6 +90,58 @@ export default {
   components: {
     LottieAnimation,
     icon,
+  },
+  mounted() {
+    this.lottieSlowIntersection();
+    this.lottieFastIntersection();
+  },
+  methods: {
+    lottieSlowIntersection() {
+      const el = document.querySelector("#lottieslow");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.lottieslow.play();
+            console.log(`lottieslow play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.lottieslow.pause();
+            console.log(`lottieslow pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
+    lottieFastIntersection() {
+      const el = document.querySelector("#lottiefast");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.$refs.lottiefast.play();
+            console.log(`lottiefast play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.$refs.lottiefast.pause();
+            console.log(`lottiefast pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
+    },
   },
 };
 </script>

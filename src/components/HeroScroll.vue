@@ -35,6 +35,7 @@ export default {
       //     this.anim_HERO_PRODUCT.playSegments([[90, 121]], true);
       //   }
     });
+    // this.heroScrollIntersection();
   },
   methods: {
     buildAnimation() {
@@ -47,6 +48,29 @@ export default {
       };
       anim_HERO_PRODUCT.animationData = hero;
       return lottie.loadAnimation(anim_HERO_PRODUCT);
+    },
+    heroScrollIntersection() {
+      const el = document.querySelector("#lottie_HERO_PRODUCT");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          entry.boundingClientRect.top;
+          if (entry.isIntersecting) {
+            this.anim_HERO_PRODUCT.play();
+            console.log(`anim play`);
+          }
+          // if (entry.boundingClientRect.top > 0 && entry.isIntersecting) {
+          else {
+            // pause animation
+            this.anim_HERO_PRODUCT.pause();
+            console.log(`anim pause`);
+          }
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+      observer.observe(el);
     },
   },
 };
@@ -75,24 +99,4 @@ body {
 }
 
 /* IF PLACING LOTTIE IN PARALLAX OR USING CSS TRANSFORMS */
-
-.forceGPU {
-  -webkit-transform: translateZ(0) !important;
-  -moz-transform: translateZ(0) !important;
-  -ms-transform: translateZ(0) !important;
-  -o-transform: translateZ(0) !important;
-  transform: translateZ(0) !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
-}
-
-.forceGPU svg {
-  -webkit-transform: translateZ(0) !important;
-  -moz-transform: translateZ(0) !important;
-  -ms-transform: translateZ(0) !important;
-  -o-transform: translateZ(0) !important;
-  transform: translateZ(0) !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
-}
 </style>

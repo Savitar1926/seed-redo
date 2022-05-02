@@ -62,14 +62,14 @@ const routes = [
   },
   {
     path: '/sign-up',
-    name: 'instagram',
+    name: 'signup',
     beforeEnter() {
     window.open('https://lottielab.io/users/sign_up').focus();
     }
   },
   {
     path: '/sign-in',
-    name: 'instagram',
+    name: 'signin',
     beforeEnter() {
     window.open('https://lottielab.com/users/sign_in').focus();
     }
